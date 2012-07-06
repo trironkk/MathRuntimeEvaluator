@@ -2,18 +2,19 @@
 #define CONSTANTS_H
 
 #include <string>
-#include <hash_map>
+#include <unordered_map>
 
 namespace ASCIIMathMLLibrary
 {
 	class Expression;
 
-	typedef std::string string;
-	typedef std::shared_ptr<Expression> SharedExpressionPointer;
+	typedef std::string								String;
+	typedef std::shared_ptr<Expression>				SharedExpressionPointer;
 
-	typedef StringToDoubleHashMap hash_map<const string, double>;
+	typedef std::unordered_map<std::string, double> WorkingMemoryData;
+	typedef std::vector<std::string>					DeclaredVariables;
 
-	typedef SharedExpressionPointer (*Operation)(Expression l, Expression r);
+	typedef SharedExpressionPointer(*Operation)(Expression& l, Expression& r);
 }
 
 #endif
