@@ -9,7 +9,7 @@ namespace ASCIIMathMLLibrary
 
 	WorkingMemory::WorkingMemory() :
 		_workingMemory(WorkingMemoryData()),
-		_declaredVariables(std::vector<String>()) { }
+		_declaredVariables(DeclaredVariables()) { }
 	
 	bool WorkingMemory::Contains(String variableName)
 	{
@@ -26,7 +26,11 @@ namespace ASCIIMathMLLibrary
 		ValidateVariableName(variableName);
 		if (_workingMemory.find(variableName) == _workingMemory.end())
 		{
-			_declaredVariables.push_back(variableName);
+			DeclaredVariables::iterator iter = _declaredVariables.begin();
+			if (_declaredVariables.size() > 0)
+				while (iter != _declaredVariables.end() && (*(iter)) < variableName)
+					iter++;
+			_declaredVariables.insert(iter, variableName);
 		}
 		_workingMemory[variableName] = value;
 	}
@@ -37,6 +41,13 @@ namespace ASCIIMathMLLibrary
 		{
 			throw ASCIIMathMLException(
 				"The variable name's length is longer than 32 characters.\n"
+			);
+		}
+		
+		if (variableName.length() < 1)
+		{
+			throw ASCIIMathMLException(
+				"The variable name's must be at least one character.\n"
 			);
 		}
 		
@@ -62,11 +73,14 @@ namespace ASCIIMathMLLibrary
 
 	std::ostream& operator<<(std::ostream& os, const WorkingMemory wm)
 	{
-		int maxLength = 4;
-		for (int i = 0; i < wm._declaredVariables.size(); i++)
+		unsigned int maxLength = 4;
+		DeclaredVariables::const_iterator iter;
+		for (iter = wm._declaredVariables.begin();
+			iter != wm._declaredVariables.end();
+			iter++)
 		{
-			if (maxLength < wm._declaredVariables[i].length())
-				maxLength = wm._declaredVariables[i].length();
+			if ((*(iter)).length() > maxLength)
+				maxLength = (*(iter)).length();
 		}
 
 		maxLength += 6;
@@ -78,12 +92,13 @@ namespace ASCIIMathMLLibrary
 		os << std::left << "----";
 		os << "------" << std::endl;
 
-
-		for (int i = 0; i < wm._declaredVariables.size(); i++)
+		for (iter = wm._declaredVariables.begin();
+			iter != wm._declaredVariables.end();
+			iter++)
 		{
 			os.width(maxLength);
-			os << wm._declaredVariables[i];
-			os << wm._workingMemory.at(wm._declaredVariables[i]) << std::endl;
+			os << (*(iter));
+			os << wm._workingMemory.at((*(iter))) << std::endl;
 		}
 		return os;
 	}

@@ -25,7 +25,8 @@ namespace ASCIIMathMLLibrary
 		double WorkingMemory::GetValue(String variableName);
 		void WorkingMemory::SetValue(String variableName, double value);
 		
-		friend std::ostream& operator<<(std::ostream& os, const WorkingMemory wm);
+		friend std::ostream& operator<<(std::ostream& os,
+			const WorkingMemory wm);
 	};
 }
 

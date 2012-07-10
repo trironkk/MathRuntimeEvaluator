@@ -30,25 +30,19 @@
     <ClInclude Include="WorkingMemory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Expression.h">
       <Filter>Header Files\Expressions</Filter>
     </ClInclude>
-    <ClInclude Include="UnaryExpression.h">
-      <Filter>Header Files\Expressions</Filter>
-    </ClInclude>
     <ClInclude Include="BinaryExpression.h">
       <Filter>Header Files\Expressions</Filter>
     </ClInclude>
-    <ClInclude Include="VariableExpression.h">
-      <Filter>Header Files\Expressions</Filter>
+    <ClInclude Include="Operations.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ConstantExpression.h">
+    <ClInclude Include="UnaryExpression.h">
       <Filter>Header Files\Expressions</Filter>
     </ClInclude>
   </ItemGroup>
@@ -65,13 +59,13 @@
     <ClCompile Include="Parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="VariableExpression.cpp">
-      <Filter>Source Files\Expressions</Filter>
-    </ClCompile>
-    <ClCompile Include="ConstantExpression.cpp">
-      <Filter>Source Files\Expressions</Filter>
-    </ClCompile>
     <ClCompile Include="BinaryExpression.cpp">
+      <Filter>Source Files\Expressions</Filter>
+    </ClCompile>
+    <ClCompile Include="Operations.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UnaryExpression.cpp">
       <Filter>Source Files\Expressions</Filter>
     </ClCompile>
   </ItemGroup>

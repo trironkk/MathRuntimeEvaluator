@@ -23,8 +23,10 @@ namespace ASCIIMathMLLibrary
 			Operation o
 		);
 
-		//virtual SharedExpressionPointer
-		//	BinaryExpression::Evaluate(WorkingMemory& wm);
+		virtual SharedExpressionPointer BinaryExpression::Evaluate(
+			WorkingMemory& wm);
+
+		friend std::ostream& operator<<(std::ostream& os, const BinaryExpression be);
 	};
 }
 
