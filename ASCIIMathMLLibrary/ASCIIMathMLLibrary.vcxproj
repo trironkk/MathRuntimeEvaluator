@@ -60,22 +60,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="BinaryExpression.h" />
     <ClInclude Include="Exception.h" />
     <ClInclude Include="Constants.h" />
-    <ClInclude Include="Expression.h" />
-    <ClInclude Include="Operations.h" />
-    <ClInclude Include="Parser.h" />
-    <ClInclude Include="UnaryExpression.h" />
+    <ClInclude Include="ExpressionComponent.h" />
+    <ClInclude Include="ExpressionOperator.h" />
+    <ClInclude Include="ExpressionValue.h" />
+    <ClInclude Include="Operation.h" />
     <ClInclude Include="WorkingMemory.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BinaryExpression.cpp" />
     <ClCompile Include="Exception.cpp" />
+    <ClCompile Include="ExpressionOperator.cpp" />
+    <ClCompile Include="ExpressionValue.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Operations.cpp" />
-    <ClCompile Include="Parser.cpp" />
-    <ClCompile Include="UnaryExpression.cpp" />
     <ClCompile Include="WorkingMemory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

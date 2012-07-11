@@ -4,7 +4,7 @@
 
 namespace ASCIIMathMLLibrary
 {
-	ASCIIMathMLException::ASCIIMathMLException(String description) throw()
+	ASCIIMathMLException::ASCIIMathMLException(string description) throw()
 		: Description(description)
 	{
 		std::cout << description;

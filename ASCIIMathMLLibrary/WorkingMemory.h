@@ -12,18 +12,18 @@ namespace ASCIIMathMLLibrary
 	class WorkingMemory
 	{
 	private:
-		WorkingMemoryData _workingMemory;
-		DeclaredVariables _declaredVariables;
+		std::unordered_map<string, double> _workingMemory;
+		std::list<string> _declaredVariables;
 
 		static const int MAX_VARIABLE_NAME_LENGTH = 32;
-		static const String ILLEGAL_CHARACTERS;
-		void ValidateVariableName(String variableName);
+		static const string ILLEGAL_CHARACTERS;
+		void ValidateVariableName(string variableName);
 
 	public:
 		WorkingMemory();
-		bool Contains(String variableName);
-		double WorkingMemory::GetValue(String variableName);
-		void WorkingMemory::SetValue(String variableName, double value);
+		bool Contains(string variableName) const;
+		double WorkingMemory::GetValue(string variableName) const;
+		void WorkingMemory::SetValue(string variableName, double value);
 		
 		friend std::ostream& operator<<(std::ostream& os,
 			const WorkingMemory wm);

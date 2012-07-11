@@ -4,29 +4,29 @@
 
 namespace ASCIIMathMLLibrary
 {
-	const String WorkingMemory::ILLEGAL_CHARACTERS =
+	const string WorkingMemory::ILLEGAL_CHARACTERS =
 			",./;'[]\\-=`!@#$%^&*()<>?:\"{}|+";
 
 	WorkingMemory::WorkingMemory() :
-		_workingMemory(WorkingMemoryData()),
-		_declaredVariables(DeclaredVariables()) { }
+		_workingMemory(std::unordered_map<std::string, double>()),
+		_declaredVariables(std::list<std::string>()) { }
 	
-	bool WorkingMemory::Contains(String variableName)
+	bool WorkingMemory::Contains(string variableName) const
 	{
 		return _workingMemory.find(variableName) != _workingMemory.end();
 	}
 
-	double WorkingMemory::GetValue(String variableName)
+	double WorkingMemory::GetValue(string variableName) const
 	{
-		return _workingMemory[variableName];
+		return _workingMemory.at(variableName);
 	}
 
-	void WorkingMemory::SetValue(String variableName, double value)
+	void WorkingMemory::SetValue(string variableName, double value)
 	{
 		ValidateVariableName(variableName);
 		if (_workingMemory.find(variableName) == _workingMemory.end())
 		{
-			DeclaredVariables::iterator iter = _declaredVariables.begin();
+			std::list<std::string>::iterator iter = _declaredVariables.begin();
 			if (_declaredVariables.size() > 0)
 				while (iter != _declaredVariables.end() && (*(iter)) < variableName)
 					iter++;
@@ -35,7 +35,7 @@ namespace ASCIIMathMLLibrary
 		_workingMemory[variableName] = value;
 	}
 
-	void WorkingMemory::ValidateVariableName(String variableName)
+	void WorkingMemory::ValidateVariableName(string variableName)
 	{
 		if (variableName.length() > MAX_VARIABLE_NAME_LENGTH)
 		{
@@ -55,7 +55,7 @@ namespace ASCIIMathMLLibrary
 										iter < variableName.end();
 										iter++)
 		{
-			if (ILLEGAL_CHARACTERS.find(*iter) != String::npos)
+			if (ILLEGAL_CHARACTERS.find(*iter) != string::npos)
 			{
 				throw ASCIIMathMLException(
 					"The variable name contains one or more illegal characters.\n"
@@ -74,7 +74,7 @@ namespace ASCIIMathMLLibrary
 	std::ostream& operator<<(std::ostream& os, const WorkingMemory wm)
 	{
 		unsigned int maxLength = 4;
-		DeclaredVariables::const_iterator iter;
+		std::list<std::string>::const_iterator iter;
 		for (iter = wm._declaredVariables.begin();
 			iter != wm._declaredVariables.end();
 			iter++)
