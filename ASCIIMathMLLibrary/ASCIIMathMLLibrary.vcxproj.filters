@@ -13,11 +13,41 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\ExpressionComponent">
+    <Filter Include="Header Files\Expression">
       <UniqueIdentifier>{e7c6eee5-d6be-47dc-bbeb-5ceb4d118e40}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\ExpressionComponent">
+    <Filter Include="Header Files\Operator">
+      <UniqueIdentifier>{eb16e9a0-f862-40bb-8e33-f91833dfb3f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Operator\Implementations">
+      <UniqueIdentifier>{b4701ab9-f778-4e6b-a871-18e7911f0f30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Expression\AbstractClasses">
+      <UniqueIdentifier>{4a07a958-0fc5-4bca-a844-0b847fdd38af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Expression\Implementations">
+      <UniqueIdentifier>{ca722dba-43a3-48aa-9f23-9bdc5b63d460}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Operator\AbstractClasses">
+      <UniqueIdentifier>{a3b1973b-76b6-4b80-bc15-a79b5d244d89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Expression">
       <UniqueIdentifier>{3e7ad163-3f44-47a3-9fbe-d38016cc4b2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Expression\AbstractClasses">
+      <UniqueIdentifier>{04ac9632-c55b-468f-a857-f3889785400d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Expression\Implementations">
+      <UniqueIdentifier>{c12aba92-9d49-4d84-b338-e4f1f78edb7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Operator">
+      <UniqueIdentifier>{04087227-50df-4396-8b8c-e40a108ec2d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Operator\Implementation">
+      <UniqueIdentifier>{7c30b73b-f2be-4578-a43f-eab0f44b1080}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Operator\AbstractClasses">
+      <UniqueIdentifier>{dce5cb57-2ce9-43cd-b336-41ada12779f8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -33,14 +63,32 @@
     <ClInclude Include="Operation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ExpressionComponent.h">
-      <Filter>Header Files\ExpressionComponent</Filter>
+    <ClInclude Include="Add.h">
+      <Filter>Header Files\Operator\Implementations</Filter>
     </ClInclude>
-    <ClInclude Include="ExpressionOperator.h">
-      <Filter>Header Files\ExpressionComponent</Filter>
+    <ClInclude Include="Constant.h">
+      <Filter>Header Files\Expression\Implementations</Filter>
     </ClInclude>
-    <ClInclude Include="ExpressionValue.h">
-      <Filter>Header Files\ExpressionComponent</Filter>
+    <ClInclude Include="Variable.h">
+      <Filter>Header Files\Expression\Implementations</Filter>
+    </ClInclude>
+    <ClInclude Include="Operator.h">
+      <Filter>Header Files\Operator\AbstractClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryOperator.h">
+      <Filter>Header Files\Operator\AbstractClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="UnaryOperator.h">
+      <Filter>Header Files\Operator\AbstractClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="Expression.h">
+      <Filter>Header Files\Expression\AbstractClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpressionComponentType.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CompoundExpression.h">
+      <Filter>Header Files\Expression\Implementations</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -53,11 +101,20 @@
     <ClCompile Include="Exception.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ExpressionOperator.cpp">
-      <Filter>Source Files\ExpressionComponent</Filter>
+    <ClCompile Include="Variable.cpp">
+      <Filter>Source Files\Expression\Implementations</Filter>
     </ClCompile>
-    <ClCompile Include="ExpressionValue.cpp">
-      <Filter>Source Files\ExpressionComponent</Filter>
+    <ClCompile Include="Constant.cpp">
+      <Filter>Source Files\Expression\Implementations</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryOperator.cpp">
+      <Filter>Source Files\Operator\AbstractClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Add.cpp">
+      <Filter>Source Files\Operator\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="CompoundExpressions.cpp">
+      <Filter>Source Files\Expression\Implementations</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

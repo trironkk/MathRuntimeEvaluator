@@ -4,15 +4,12 @@
 #include <string>
 #include <unordered_map>
 #include <queue>
+#include <stack>
 #include <functional>
 
 using std::string;
-
-namespace ASCIIMathMLLibrary
-{
-	struct ExpressionComponent;
-	typedef std::queue<std::reference_wrapper<ExpressionComponent>>
-		ExpressionComponentQueue;
-}
+using std::list;
+using std::stack;
+using std::shared_ptr;
 
 #endif

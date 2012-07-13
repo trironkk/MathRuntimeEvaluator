@@ -1,23 +1,24 @@
-#ifndef VARIABLE_H
-#define VARIABLE_H
+#ifndef CONSTANT_H
+#define CONSTANT_H
 
 #include "Expression.h"
 
 namespace ASCIIMathMLLibrary
 {
-	// Child class of Expression - represents a variable
-	class Variable : public Expression
+	// Child class of Expression - represents a constant value
+	class Constant : public Expression
 	{
-		// The name of the variable
-		string _variableName;
+		// The value
+		double _value;
 
 	public:
 		// Basic constructor
-		Variable(string variableName);
+		Constant(double value);
 
 		// Write a friendly string representation of this object to the inputed
 		// ostream
 		virtual std::ostream& Print(std::ostream& os);
 	};
 }
+
 #endif
