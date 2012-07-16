@@ -61,7 +61,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Add.h" />
-    <ClInclude Include="BinaryOperator.h" />
     <ClInclude Include="CompoundExpression.h" />
     <ClInclude Include="Constant.h" />
     <ClInclude Include="Exception.h" />
@@ -70,13 +69,11 @@
     <ClInclude Include="Operator.h" />
     <ClInclude Include="Expression.h" />
     <ClInclude Include="Operation.h" />
-    <ClInclude Include="UnaryOperator.h" />
     <ClInclude Include="Variable.h" />
     <ClInclude Include="WorkingMemory.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Add.cpp" />
-    <ClCompile Include="BinaryOperator.cpp" />
     <ClCompile Include="CompoundExpressions.cpp" />
     <ClCompile Include="Constant.cpp" />
     <ClCompile Include="Exception.cpp" />

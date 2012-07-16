@@ -75,12 +75,6 @@
     <ClInclude Include="Operator.h">
       <Filter>Header Files\Operator\AbstractClasses</Filter>
     </ClInclude>
-    <ClInclude Include="BinaryOperator.h">
-      <Filter>Header Files\Operator\AbstractClasses</Filter>
-    </ClInclude>
-    <ClInclude Include="UnaryOperator.h">
-      <Filter>Header Files\Operator\AbstractClasses</Filter>
-    </ClInclude>
     <ClInclude Include="Expression.h">
       <Filter>Header Files\Expression\AbstractClasses</Filter>
     </ClInclude>
@@ -106,9 +100,6 @@
     </ClCompile>
     <ClCompile Include="Constant.cpp">
       <Filter>Source Files\Expression\Implementations</Filter>
-    </ClCompile>
-    <ClCompile Include="BinaryOperator.cpp">
-      <Filter>Source Files\Operator\AbstractClasses</Filter>
     </ClCompile>
     <ClCompile Include="Add.cpp">
       <Filter>Source Files\Operator\Implementation</Filter>

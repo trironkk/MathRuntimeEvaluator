@@ -7,18 +7,24 @@
 
 namespace ASCIIMathMLLibrary
 {
+	class Operator;
+
 	// Child class of Expression - represents a compound expression, organized
 	// with a postfix scheme
 	class CompoundExpression : Expression
 	{
-		// A LIFO stack of the involved expressions
-		stack<shared_ptr<Expression>> _expressions;
-		
-		// A LIFO stack of the involved operations
-		stack<shared_ptr<Operator>> _operations;
+		// Note: these data structures are deques because the Print method will
+		// require random access. For all other operations, they should behave
+		// like a stack.
 
-		// A LIFO stack tracking the types of inserted objects
-		stack<ExpressionComponent::Types> _objectTypes;
+		// A LIFO data structure for the involved expressions
+		deque<shared_ptr<Expression>> _expressions;
+		
+		// A LIFO data structure for the involved operations
+		deque<shared_ptr<Operator>> _operations;
+
+		// A LIFO data structure for tracking the types of inserted objects
+		deque<ExpressionComponent::Types> _objectTypes;
 
 	public:
 		// Basic Constructor
@@ -37,6 +43,11 @@ namespace ASCIIMathMLLibrary
 
 		// Check the type of the top of the stack
 		ExpressionComponent::Types CheckType();
+		
+		// Write a friendly string representation of this object to the inputed
+		// ostream
+		virtual std::ostream& Print(std::ostream& os);
+
 	};
 }
 

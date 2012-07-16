@@ -1,20 +1,20 @@
 #ifndef ADD_H
 #define ADD_H
 
-#include "BinaryOperator.h"
+#include "Operator.h"
 
 namespace ASCIIMathMLLibrary
 {
-	// Child class of BinaryExpressionOperator - represents addition
-	class Add : public BinaryOperator
+	// Child class of Operator - represents addition
+	class Add : public Operator
 	{
 	public:
 		// Basic constructor
-		Add(Expression* left, Expression* right);
+		Add();
 
-		// Evaluates the ExpressionValues, freeing the left and the right side and
-		// returning a new ExpressionValue
-		virtual Expression& Evaluate(const WorkingMemory& workingMemory);
+		// Performs this operation
+		virtual Expression& Evaluate(CompoundExpression compoundExpression,
+			const WorkingMemory& workingMemory);
 
 		// Write a friendly string representation of this object to the inputed
 		// ostream

@@ -10,7 +10,6 @@
 
 using std::string;
 using std::list;
-using std::stack;
 using std::deque;	
 using std::shared_ptr;
 

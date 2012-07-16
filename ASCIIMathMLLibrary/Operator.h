@@ -2,10 +2,12 @@
 #define OPERATOR_H
 
 #include "WorkingMemory.h"
-#include "Expression.h"
+#include "CompoundExpression.h"
 
 namespace ASCIIMathMLLibrary
 {
+	class CompoundExpression;
+	
 	// Abstract base class of ExpressionComponent - represents a operator
 	class Operator
 	{
@@ -13,9 +15,9 @@ namespace ASCIIMathMLLibrary
 		// Basic Constructor
 		Operator();
 
-		// Evaluates the ExpressionValues, freeing all member ExpressionValue
-		// objects returning a new ExpressionValue
-		virtual Expression& Evaluate(const WorkingMemory& workingMemory) = 0;
+		// Performs this operation
+		virtual Expression& Evaluate(CompoundExpression compoundExpression,
+			const WorkingMemory& workingMemory) = 0;
 
 		// Write a friendly string representation of this object to the inputed
 		// ostream
