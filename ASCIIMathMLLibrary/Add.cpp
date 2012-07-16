@@ -3,13 +3,12 @@
 namespace ASCIIMathMLLibrary
 {
 	// Basic constructor
-	Add::Add(shared_ptr<Expression> left, shared_ptr<Expression> right) :
+	Add::Add(Expression* left, Expression* right) :
 		BinaryOperator(left, right) { }
-
 
 	// Evaluates the Expression, freeing the left and the right side and returning
 	// a new ExpressionValue
-	shared_ptr<Expression> Add::Evaluate(const WorkingMemory& workingMemory)
+	Expression& Add::Evaluate(const WorkingMemory& workingMemory)
 	{
 		throw ASCIIMathMLException("Not yet implemented.");
 	}

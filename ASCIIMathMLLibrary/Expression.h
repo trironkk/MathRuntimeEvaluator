@@ -9,6 +9,9 @@ namespace ASCIIMathMLLibrary
 	class Expression
 	{
 	public:
+		// Basic Constructor
+		Expression();
+
 		// Write a friendly string representation of this object to the inputed
 		// ostream
 		virtual std::ostream& Print(std::ostream& os) = 0;

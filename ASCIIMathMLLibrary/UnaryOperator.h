@@ -9,15 +9,15 @@ namespace ASCIIMathMLLibrary
 	class UnaryOperator : public Operator
 	{
 		// Represents the ExpressionValues for the left side of the operation
-		shared_ptr<Expression> Value;
+		Expression* Value;
 
 	public:
 		// Basic constructor
-		UnaryOperator(shared_ptr<Expression> value);
+		UnaryOperator(Expression* value);
 
 		// Evaluates the ExpressionValues, freeing the value and returning a new
 		// ExpressionValue
-		virtual shared_ptr<Expression> Evaluate(const WorkingMemory& workingMemory) = 0;
+		virtual Expression& Evaluate(const WorkingMemory& workingMemory) = 0;
 
 		// Write a friendly string representation of this object to the inputed
 		// ostream

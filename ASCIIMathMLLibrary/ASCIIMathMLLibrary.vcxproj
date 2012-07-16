@@ -66,7 +66,7 @@
     <ClInclude Include="Constant.h" />
     <ClInclude Include="Exception.h" />
     <ClInclude Include="Constants.h" />
-    <ClInclude Include="ExpressionComponentType.h" />
+    <ClInclude Include="ExpressionComponent.h" />
     <ClInclude Include="Operator.h" />
     <ClInclude Include="Expression.h" />
     <ClInclude Include="Operation.h" />
@@ -80,7 +80,9 @@
     <ClCompile Include="CompoundExpressions.cpp" />
     <ClCompile Include="Constant.cpp" />
     <ClCompile Include="Exception.cpp" />
+    <ClCompile Include="Expression.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Operator.cpp" />
     <ClCompile Include="Variable.cpp" />
     <ClCompile Include="WorkingMemory.cpp" />
   </ItemGroup>

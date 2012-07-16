@@ -1,9 +1,9 @@
 #ifndef	EXPRESSION_COMPONENT_TYPE
 #define EXPRESSION_COMPONENT_TYPE
 
-namespace ASCIIMathMLLibrary
+namespace ExpressionComponent
 {
-	enum ExpressionComponentType
+	enum Types
 	{
 		Expression,
 		Operator

@@ -5,11 +5,13 @@
 #include <unordered_map>
 #include <queue>
 #include <stack>
+#include <deque>
 #include <functional>
 
 using std::string;
 using std::list;
 using std::stack;
+using std::deque;	
 using std::shared_ptr;
 
 #endif

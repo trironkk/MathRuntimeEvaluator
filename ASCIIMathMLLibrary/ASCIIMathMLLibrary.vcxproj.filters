@@ -84,11 +84,11 @@
     <ClInclude Include="Expression.h">
       <Filter>Header Files\Expression\AbstractClasses</Filter>
     </ClInclude>
-    <ClInclude Include="ExpressionComponentType.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CompoundExpression.h">
       <Filter>Header Files\Expression\Implementations</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpressionComponent.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +115,12 @@
     </ClCompile>
     <ClCompile Include="CompoundExpressions.cpp">
       <Filter>Source Files\Expression\Implementations</Filter>
+    </ClCompile>
+    <ClCompile Include="Operator.cpp">
+      <Filter>Source Files\Operator\AbstractClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Expression.cpp">
+      <Filter>Source Files\Expression\AbstractClasses</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
