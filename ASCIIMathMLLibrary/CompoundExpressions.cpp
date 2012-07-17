@@ -121,7 +121,7 @@ namespace ASCIIMathMLLibrary
 
 	ExpressionComponent::Types CompoundExpression::CheckFrontType()
 	{
-		return _objectTypes.back();
+		return _objectTypes.front();
 	}
 	
 	// Check the size of the CompountExpression
@@ -131,44 +131,73 @@ namespace ASCIIMathMLLibrary
 	}
 
 	// Run each operator's Evaluate method
-	void CompoundExpression::Simplify(const WorkingMemory workingMemory)
+	shared_ptr<Expression> CompoundExpression::Simplify(
+		const WorkingMemory& workingMemory)
 	{
 		// Handle the case of having no items in the stack
-//		if (Size() == 0)
-//		{
-//			throw ASCIIMathMLException(
-//"Cannot simplify an expression with 0 terms."
-//				);
-//		}
-//
-//		// Reduce the expression to one term
-//		while (Size() > 1)
-//		{
-//			// Extract the operator
-//			shared_ptr<Operator> currentOperator = TopOperator();
-//			Pop();
-//
-//			// Extract the parameters
-//			list<shared_ptr<Expression>> parameters;
-//			int parameterCount = (*currentOperator).GetParameterCount();
-//			for (int i = 0; i < parameterCount; i++)
-//			{
-//				parameters.push_back(TopExpression());
-//				Pop();
-//			}
-//
-//			// Evaluate the operation and push the result on the stack
-//			Push((*currentOperator).Evaluate(workingMemory, parameters));
-//			// TODO: These parameters will be going in backwards
-//			// TODO: The order that these operators will be evaluated is backwards.
-//		}
-//
-//		if (CheckType() != ExpressionComponent::Operator)
-//		{
-//			throw ASCIIMathMLException(
-//"Improperly formed CompoundExpression."
-//				);
-//		}
+		if (Size() == 0)
+		{
+			throw ASCIIMathMLException(
+"Cannot simplify an expression with 0 terms."
+				);
+		}
+
+		// Holds the expressions
+		stack<shared_ptr<Expression>> expressionStack;
+
+		// Reduce the expression to one term
+		while (Size() > 1)
+		{
+			// Collect Expressions until an operator is encountered
+			while(CheckFrontType() != ExpressionComponent::Operator)
+			{
+				expressionStack.push(FrontExpression());
+				PopFront();
+			}
+
+			// Get the operation
+			shared_ptr<Operator> operation(FrontOperator());
+			PopFront();
+
+			// Get the parameters
+			int parameterCount = (*operation).GetParameterCount();
+			list<shared_ptr<Expression>> parameters;
+			for (int i = 0; i < parameterCount; i++)
+			{
+				parameters.push_front(expressionStack.top());
+				expressionStack.pop();
+			}
+
+			// Evaluate the operation and push the result onto the expressionStack
+			expressionStack.push(
+				(*operation).Evaluate(workingMemory, parameters)
+			);
+		}
+
+		// Ensure there's exactly one term left
+		if (expressionStack.size() != 1)
+		{
+			throw ASCIIMathMLException("Improperly formed CompoundExpression.");
+		}
+
+		// Push the last Expression from the expression stack into the front of
+		// the CompoundExpression
+		PushFront(expressionStack.top());
+		return expressionStack.top();
+	}
+
+	// Gets the double value associated with this expression, or throws an
+	// error
+	double CompoundExpression::GetValue()
+	{
+		// Handle the case of having no items in the stack
+		if (Size() != 1)
+		{
+			throw ASCIIMathMLException(
+"Cannot get the value of a CompoundExpression with more than one term."
+				);
+		}
+
 	}
 
 	// Write a friendly string representation of this object to the inputed

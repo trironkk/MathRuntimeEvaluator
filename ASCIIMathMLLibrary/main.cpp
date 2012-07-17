@@ -50,5 +50,8 @@ int main()
 	compoundExpression1.PushBack(add);
 	compoundExpression1.PrintLine(std::cout);
 
+	compoundExpression1.Simplify(memory);
+	compoundExpression1.PrintLine(std::cout);
+
 	std::cin.get();
 }

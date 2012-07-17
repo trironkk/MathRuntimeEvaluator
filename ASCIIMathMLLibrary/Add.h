@@ -2,7 +2,7 @@
 #define ADD_H
 
 #include "Operator.h"
-
+#include "Constant.h"
 namespace ASCIIMathMLLibrary
 {
 	// Child class of Operator - represents addition
