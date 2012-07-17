@@ -189,10 +189,12 @@ namespace ASCIIMathMLLibrary
 		// Handle the case of having no items in the stack
 		if (Size() != 1)
 		{
-			throw ASCIIMathMLException(
+		throw ASCIIMathMLException(
 "Cannot get the value of a CompoundExpression with more than one term."
-				);
+			);
 		}
+
+		return (*FrontExpression()).GetValue();
 	}
 
 	// Write a friendly string representation of this object to the inputed

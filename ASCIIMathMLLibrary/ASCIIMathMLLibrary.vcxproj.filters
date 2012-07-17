@@ -66,9 +66,6 @@
     <ClInclude Include="WorkingMemory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Operation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Add.h">
       <Filter>Header Files\Operator\Implementations</Filter>
     </ClInclude>
@@ -92,6 +89,9 @@
     </ClInclude>
     <ClInclude Include="IPrintable.h">
       <Filter>Header Files\CommonFunctionality</Filter>
+    </ClInclude>
+    <ClInclude Include="Subtract.h">
+      <Filter>Header Files\Operator\Implementations</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +124,9 @@
     </ClCompile>
     <ClCompile Include="IPrintable.cpp">
       <Filter>Source Files\CommonFunctionality</Filter>
+    </ClCompile>
+    <ClCompile Include="Subtract.cpp">
+      <Filter>Source Files\Operator\Implementation</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

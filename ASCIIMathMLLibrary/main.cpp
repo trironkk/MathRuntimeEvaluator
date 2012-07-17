@@ -6,6 +6,7 @@
 #include "Constant.h"
 #include "Variable.h"
 #include "Add.h"
+#include "Subtract.h"
 #include "Exception.h"
 #include "CompoundExpression.h"
 
@@ -25,35 +26,38 @@ int main()
 	shared_ptr<Constant> constant1(new Constant(0));
 	shared_ptr<Constant> constant2(new Constant(12));
 	shared_ptr<Constant> constant3(new Constant(17.37));
-	(*constant1).PrintLine(std::cout);
-	(*constant2).PrintLine(std::cout);
-	(*constant3).PrintLine(std::cout);
+	(*constant1).PrintLine(cout);
+	(*constant2).PrintLine(cout);
+	(*constant3).PrintLine(cout);
 	
 	// Proof of concept for Variables
 	shared_ptr<Variable> variable1(new Variable("a"));
 	shared_ptr<Variable> variable2(new Variable("b"));
 	shared_ptr<Variable> variable3(new Variable("c"));
 	shared_ptr<Variable> variable4(new Variable("d"));
-	(*variable1).PrintLine(std::cout);
-	(*variable2).PrintLine(std::cout);
-	(*variable3).PrintLine(std::cout);
-	(*variable4).PrintLine(std::cout);
+	(*variable1).PrintLine(cout);
+	(*variable2).PrintLine(cout);
+	(*variable3).PrintLine(cout);
+	(*variable4).PrintLine(cout);
 	
 	// Proof of concept for Operators
 	shared_ptr<Add> add(new Add());
-	(*add).PrintLine(std::cout);
+	(*add).PrintLine(cout);
+	shared_ptr<Subtract> subtract(new Subtract());
+	(*subtract).PrintLine(cout);
 
 	// Proof of concept for CompoundExpressions
-	std::cout << "compoundExpression1" << std::endl;
+	cout << "compoundExpression1" << std::endl;
 	CompoundExpression compoundExpression1;
 	compoundExpression1.PushBack(variable1);
 	compoundExpression1.PushBack(constant1);
 	compoundExpression1.PushBack(add);
-	compoundExpression1.PrintLine(std::cout);
+	compoundExpression1.Print(cout);
+	cout << " = ";
 	compoundExpression1.Simplify(memory);
-	compoundExpression1.PrintLine(std::cout);
+	compoundExpression1.PrintLine(cout);
 
-	std::cout << "compoundExpression2" << std::endl;
+	cout << "compoundExpression2" << std::endl;
 	CompoundExpression compoundExpression2;
 	compoundExpression2.PushBack(constant3);
 	compoundExpression2.PushBack(constant2);
@@ -62,9 +66,34 @@ int main()
 	compoundExpression2.PushBack(variable2);
 	compoundExpression2.PushBack(add);
 	compoundExpression2.PushBack(add);
-	compoundExpression2.PrintLine(std::cout);
+	compoundExpression2.Print(std::cout);
+	cout << " = ";
 	compoundExpression2.Simplify(memory);
-	compoundExpression2.PrintLine(std::cout);
+	compoundExpression2.PrintLine(cout);
+
+	cout << "compoundExpression3" << std::endl;
+	CompoundExpression compoundExpression3;
+	compoundExpression3.PushBack(variable3);
+	compoundExpression3.PushBack(variable2);
+	compoundExpression3.PushBack(subtract);
+	compoundExpression3.Print(cout);
+	cout << " = ";
+	compoundExpression3.Simplify(memory);
+	compoundExpression3.PrintLine(cout);
+
+	cout << "compoundExpression4" << std::endl;
+	CompoundExpression compoundExpression4;
+	compoundExpression4.PushBack(constant3);
+	compoundExpression4.PushBack(constant2);
+	compoundExpression4.PushBack(subtract);
+	compoundExpression4.PushBack(variable3);
+	compoundExpression4.PushBack(subtract);
+	compoundExpression4.PushBack(variable2);
+	compoundExpression4.PushBack(subtract);
+	compoundExpression4.Print(std::cout);
+	cout << " = ";
+	compoundExpression4.Simplify(memory);
+	compoundExpression4.PrintLine(cout);
 
 	std::cin.get();
 }

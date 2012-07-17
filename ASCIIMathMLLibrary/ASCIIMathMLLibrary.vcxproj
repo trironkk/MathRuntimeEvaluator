@@ -69,7 +69,7 @@
     <ClInclude Include="IPrintable.h" />
     <ClInclude Include="Operator.h" />
     <ClInclude Include="Expression.h" />
-    <ClInclude Include="Operation.h" />
+    <ClInclude Include="Subtract.h" />
     <ClInclude Include="Variable.h" />
     <ClInclude Include="WorkingMemory.h" />
   </ItemGroup>
@@ -82,6 +82,7 @@
     <ClCompile Include="IPrintable.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Operator.cpp" />
+    <ClCompile Include="Subtract.cpp" />
     <ClCompile Include="Variable.cpp" />
     <ClCompile Include="WorkingMemory.cpp" />
   </ItemGroup>

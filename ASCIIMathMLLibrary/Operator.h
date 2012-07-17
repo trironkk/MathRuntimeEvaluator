@@ -1,6 +1,7 @@
 #ifndef OPERATOR_H
 #define OPERATOR_H
 
+#include "Constants.h"
 #include "WorkingMemory.h"
 #include "CompoundExpression.h"
 
@@ -26,6 +27,13 @@ namespace ASCIIMathMLLibrary
 
 		// Returns the number of parameters involved in this operation
 		virtual int GetParameterCount() = 0;
+	
+	protected:
+		// Calls GetValue() on each of the parameters, and returns a vector of
+		// results
+		shared_ptr<vector<double>> Operator::GetValuesFromParameters(
+			const list<shared_ptr<Expression>>& parameters,
+			const WorkingMemory& workingMemory);
 	};
 }
 

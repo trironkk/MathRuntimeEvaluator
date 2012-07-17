@@ -7,11 +7,14 @@
 #include <stack>
 #include <deque>
 #include <functional>
+#include <iostream>
 
 using std::string;
 using std::list;
 using std::deque;
 using std::stack;
 using std::shared_ptr;
+using std::vector;
+using std::cout;
 
 #endif
