@@ -146,7 +146,7 @@ namespace ASCIIMathMLLibrary
 		stack<shared_ptr<Expression>> expressionStack;
 
 		// Reduce the expression to one term
-		while (Size() > 1)
+		do
 		{
 			// Collect Expressions until an operator is encountered
 			while(CheckFrontType() != ExpressionComponent::Operator)
@@ -169,21 +169,17 @@ namespace ASCIIMathMLLibrary
 			}
 
 			// Evaluate the operation and push the result onto the expressionStack
-			expressionStack.push(
-				(*operation).Evaluate(workingMemory, parameters)
-			);
-		}
+			PushFront((*operation).Evaluate(workingMemory, parameters));
+		} while (expressionStack.size() > 1 || Size() > 1);
 
 		// Ensure there's exactly one term left
-		if (expressionStack.size() != 1)
+		if (expressionStack.size() != 0)
 		{
 			throw ASCIIMathMLException("Improperly formed CompoundExpression.");
 		}
 
-		// Push the last Expression from the expression stack into the front of
-		// the CompoundExpression
-		PushFront(expressionStack.top());
-		return expressionStack.top();
+		// Return the first term in the underlying Expression deque
+		return FrontExpression();
 	}
 
 	// Gets the double value associated with this expression, or throws an
@@ -197,7 +193,6 @@ namespace ASCIIMathMLLibrary
 "Cannot get the value of a CompoundExpression with more than one term."
 				);
 		}
-
 	}
 
 	// Write a friendly string representation of this object to the inputed
@@ -222,6 +217,8 @@ namespace ASCIIMathMLLibrary
 "Unrecognized ExpressionComponent enumeration. Update CompoundExpression::Print()."
 					);
 			}
+			if (i < _objectTypes.size() - 1)
+				os << ' ';
 		}
 
 		return os;

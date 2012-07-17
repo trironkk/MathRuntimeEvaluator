@@ -13,7 +13,7 @@ namespace ASCIIMathMLLibrary
 	// For Constants, this method returns this object.
 	shared_ptr<Expression> Constant::Simplify(const WorkingMemory& workingMemory)
 	{
-		return shared_ptr<Expression>(this);
+		return *(new shared_ptr<Expression>(this));
 	}
 
 	// Gets the double value associated with this expression, or throws an

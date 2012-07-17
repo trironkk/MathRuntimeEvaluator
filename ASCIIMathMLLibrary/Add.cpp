@@ -8,16 +8,18 @@ namespace ASCIIMathMLLibrary
 	// Performs this operation
 	shared_ptr<Expression> Add::Evaluate(
 			const WorkingMemory& workingMemory,
-			list<shared_ptr<Expression>> parameters)
+			list<shared_ptr<Expression>>& parameters)
 	{
 		// Read in the right and left hand sides
+		list<shared_ptr<Expression>>::iterator iter = parameters.begin();
+
 		shared_ptr<Expression> lhs =
-			(*parameters.front()).Simplify(workingMemory);
-		parameters.pop_front();
+			(*(*iter)).Simplify(workingMemory);
+		iter++;
 
 		shared_ptr<Expression> rhs =
-			(*parameters.front()).Simplify(workingMemory);
-		parameters.pop_front();
+			(*(*iter)).Simplify(workingMemory);
+		iter++;
 
 		// Perform the addition and return
 		return shared_ptr<Expression>(

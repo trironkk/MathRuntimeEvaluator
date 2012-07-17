@@ -44,14 +44,27 @@ int main()
 	(*add).PrintLine(std::cout);
 
 	// Proof of concept for CompoundExpressions
+	std::cout << "compoundExpression1" << std::endl;
 	CompoundExpression compoundExpression1;
 	compoundExpression1.PushBack(variable1);
 	compoundExpression1.PushBack(constant1);
 	compoundExpression1.PushBack(add);
 	compoundExpression1.PrintLine(std::cout);
-
 	compoundExpression1.Simplify(memory);
 	compoundExpression1.PrintLine(std::cout);
+
+	std::cout << "compoundExpression2" << std::endl;
+	CompoundExpression compoundExpression2;
+	compoundExpression2.PushBack(constant3);
+	compoundExpression2.PushBack(constant2);
+	compoundExpression2.PushBack(add);
+	compoundExpression2.PushBack(variable3);
+	compoundExpression2.PushBack(variable2);
+	compoundExpression2.PushBack(add);
+	compoundExpression2.PushBack(add);
+	compoundExpression2.PrintLine(std::cout);
+	compoundExpression2.Simplify(memory);
+	compoundExpression2.PrintLine(std::cout);
 
 	std::cin.get();
 }

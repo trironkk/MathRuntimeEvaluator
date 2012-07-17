@@ -18,7 +18,7 @@ namespace ASCIIMathMLLibrary
 		// Performs this operation
 		virtual shared_ptr<Expression> Evaluate(
 			const WorkingMemory& workingMemory,
-			list<shared_ptr<Expression>> parameters) = 0;
+			list<shared_ptr<Expression>>& parameters) = 0;
 
 		// Write a friendly string representation of this object to the inputed
 		// ostream
