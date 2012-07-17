@@ -2,6 +2,7 @@
 #define OPERATOR_H
 
 #include "Constants.h"
+#include "Constant.h"
 #include "WorkingMemory.h"
 #include "CompoundExpression.h"
 

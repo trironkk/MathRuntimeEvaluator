@@ -63,10 +63,12 @@
     <ClInclude Include="Add.h" />
     <ClInclude Include="CompoundExpression.h" />
     <ClInclude Include="Constant.h" />
+    <ClInclude Include="Divide.h" />
     <ClInclude Include="Exception.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="ExpressionComponent.h" />
     <ClInclude Include="IPrintable.h" />
+    <ClInclude Include="Multiply.h" />
     <ClInclude Include="Operator.h" />
     <ClInclude Include="Expression.h" />
     <ClInclude Include="Subtract.h" />
@@ -77,10 +79,12 @@
     <ClCompile Include="Add.cpp" />
     <ClCompile Include="CompoundExpressions.cpp" />
     <ClCompile Include="Constant.cpp" />
+    <ClCompile Include="Divide.cpp" />
     <ClCompile Include="Exception.cpp" />
     <ClCompile Include="Expression.cpp" />
     <ClCompile Include="IPrintable.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Multiply.cpp" />
     <ClCompile Include="Operator.cpp" />
     <ClCompile Include="Subtract.cpp" />
     <ClCompile Include="Variable.cpp" />

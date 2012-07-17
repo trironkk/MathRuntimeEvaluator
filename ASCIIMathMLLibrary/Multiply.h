@@ -1,15 +1,15 @@
-#ifndef SUBTRACT_H
-#define SUBTRACT_H
+#ifndef MULTIPLY_H
+#define MULTIPLY_H
 
 #include "Operator.h"
 namespace ASCIIMathMLLibrary
 {
-	// Child class of Operator - represents subtraction
-	class Subtract : public Operator
+	// Child class of Operator - represents multiplication
+	class Multiply : public Operator
 	{
 	public:
 		// Basic constructor
-		Subtract ();
+		Multiply();
 
 		// Perform this operation
 		virtual shared_ptr<Expression> Evaluate(

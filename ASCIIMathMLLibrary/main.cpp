@@ -7,6 +7,8 @@
 #include "Variable.h"
 #include "Add.h"
 #include "Subtract.h"
+#include "Multiply.h"
+#include "Divide.h"
 #include "Exception.h"
 #include "CompoundExpression.h"
 
@@ -45,6 +47,10 @@ int main()
 	(*add).PrintLine(cout);
 	shared_ptr<Subtract> subtract(new Subtract());
 	(*subtract).PrintLine(cout);
+	shared_ptr<Multiply> multiply(new Multiply());
+	(*multiply).PrintLine(cout);
+	shared_ptr<Divide> divide(new Divide());
+	(*divide).PrintLine(cout);
 
 	// Proof of concept for CompoundExpressions
 	cout << "compoundExpression1" << std::endl;
@@ -94,6 +100,27 @@ int main()
 	cout << " = ";
 	compoundExpression4.Simplify(memory);
 	compoundExpression4.PrintLine(cout);
+
+	cout << "compoundExpression5" << std::endl;
+	CompoundExpression compoundExpression5;
+	compoundExpression5.PushBack(variable3);
+	compoundExpression5.PushBack(variable4);
+	compoundExpression5.PushBack(multiply);
+	compoundExpression5.Print(cout);
+	cout << " = ";
+	compoundExpression5.Simplify(memory);
+	compoundExpression5.PrintLine(cout);
+
+	cout << "compoundExpression6" << std::endl;
+	CompoundExpression compoundExpression6;
+	compoundExpression6.PushBack(variable3);
+	compoundExpression6.PushBack(variable4);
+	compoundExpression6.PushBack(divide);
+	compoundExpression6.Print(cout);
+	cout << " = ";
+	compoundExpression6.Simplify(memory);
+	compoundExpression6.PrintLine(cout);
+
 
 	std::cin.get();
 }
