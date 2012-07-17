@@ -10,7 +10,7 @@
 
 using std::string;
 using std::list;
-using std::deque;	
+using std::deque;
 using std::shared_ptr;
 
 #endif

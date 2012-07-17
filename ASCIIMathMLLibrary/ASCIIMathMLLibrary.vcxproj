@@ -66,6 +66,7 @@
     <ClInclude Include="Exception.h" />
     <ClInclude Include="Constants.h" />
     <ClInclude Include="ExpressionComponent.h" />
+    <ClInclude Include="IPrintable.h" />
     <ClInclude Include="Operator.h" />
     <ClInclude Include="Expression.h" />
     <ClInclude Include="Operation.h" />
@@ -78,6 +79,7 @@
     <ClCompile Include="Constant.cpp" />
     <ClCompile Include="Exception.cpp" />
     <ClCompile Include="Expression.cpp" />
+    <ClCompile Include="IPrintable.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Operator.cpp" />
     <ClCompile Include="Variable.cpp" />

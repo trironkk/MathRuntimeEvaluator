@@ -8,7 +8,6 @@ namespace ASCIIMathMLLibrary
 	// ostream
 	std::ostream& Variable::Print(std::ostream& os)
 	{
-		os << _variableName;
-		return os;
+		return os << _variableName;
 	}
 }

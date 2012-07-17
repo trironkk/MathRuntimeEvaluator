@@ -49,6 +49,12 @@
     <Filter Include="Source Files\Operator\AbstractClasses">
       <UniqueIdentifier>{dce5cb57-2ce9-43cd-b336-41ada12779f8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\CommonFunctionality">
+      <UniqueIdentifier>{d2a62d1a-9a54-42a6-b5e4-37f03fb8b5a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CommonFunctionality">
+      <UniqueIdentifier>{327980dc-432b-4f16-b5ac-558a1039d329}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Constants.h">
@@ -84,6 +90,9 @@
     <ClInclude Include="ExpressionComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="IPrintable.h">
+      <Filter>Header Files\CommonFunctionality</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -104,14 +113,17 @@
     <ClCompile Include="Add.cpp">
       <Filter>Source Files\Operator\Implementation</Filter>
     </ClCompile>
-    <ClCompile Include="CompoundExpressions.cpp">
-      <Filter>Source Files\Expression\Implementations</Filter>
-    </ClCompile>
     <ClCompile Include="Operator.cpp">
       <Filter>Source Files\Operator\AbstractClasses</Filter>
     </ClCompile>
     <ClCompile Include="Expression.cpp">
       <Filter>Source Files\Expression\AbstractClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="CompoundExpressions.cpp">
+      <Filter>Source Files\Expression\Implementations</Filter>
+    </ClCompile>
+    <ClCompile Include="IPrintable.cpp">
+      <Filter>Source Files\CommonFunctionality</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

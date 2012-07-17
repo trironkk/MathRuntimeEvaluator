@@ -9,7 +9,6 @@ namespace ASCIIMathMLLibrary
 	// ostream
 	std::ostream& Constant::Print(std::ostream& os)
 	{
-		os << _value;
-		return os;
+		return os << _value;
 	}
 }
