@@ -238,6 +238,64 @@ namespace ASCIIMathMLLibrary
 	// Gets a string representation of this object
 	string& CompoundExpression::GetStringRepresentation()
 	{
+		return GetInfixStringRepresentation();
+	}
+
+	string& CompoundExpression::GetInfixStringRepresentation()
+	{
+		int index = 0;
+		stack<string> stringStack;
+		while (index < Size())
+		{
+			// If the next term is an expression, collect it
+			if (CheckAtType(index) != ExpressionComponent::Operator)
+			{
+				stringStack.push(
+					(*(AtExpression(index++))).GetStringRepresentation()
+					);
+				continue;
+			}
+
+			// Otherwise, it's an operation, so extract it and print this
+			// component of the CompoundExpression
+			shared_ptr<Operator> operation(AtOperator(index++));
+
+			// Get the parameters
+			int parameterCount = (*operation).GetParameterCount();
+			vector<string> parameterStrings;
+			for (int i = 0; i < parameterCount; i++)
+			{
+				parameterStrings.push_back(stringStack.top());
+				stringStack.pop();
+			}
+			
+			// Print the operation and its parameters
+			string component;
+			if (parameterCount == 1)
+			{
+				component += (*(operation)).GetStringRepresentation();
+				component += "(";
+				component += parameterStrings[0];
+				component += ")";
+			}
+			else if (parameterCount == 2)
+			{
+				component += "(";
+				component += parameterStrings[0];
+				component += " ";
+				component += (*(operation)).GetStringRepresentation();
+				component += " ";
+				component += parameterStrings[1];
+				component += ")";
+			}
+			stringStack.push(component);
+		}
+
+		return *(new string(stringStack.top()));
+	}
+
+	string& CompoundExpression::GetPostfixStringRepresentation()
+	{
 		ostringstream os;
 		int expressionsIndex = 0;
 		int operationsIndex = 0;
@@ -260,47 +318,6 @@ namespace ASCIIMathMLLibrary
 			if (i < _objectTypes.size() - 1)
 				os << ' ';
 		}
-
-		//int index = 0;
-		//stack<shared_ptr<Expression>> expressionStack;
-		//while (index < Size())
-		//{
-		//	// If the next term is an expression, collect it
-		//	if (CheckAtType(index) != ExpressionComponent::Operator)
-		//	{
-		//		expressionStack.push(AtExpression(index++));
-		//		continue;
-		//	}
-
-		//	// Otherwise, it's an operation, so extract it and print this
-		//	// component of the CompoundExpression
-		//	shared_ptr<Operator> operation(AtOperator(index++));
-
-		//	// Get the parameters
-		//	int parameterCount = (*operation).GetParameterCount();
-		//	vector<shared_ptr<Expression>> parameters;
-		//	for (int i = 0; i < parameterCount; i++)
-		//	{
-		//		parameters.push_back(expressionStack.top());
-		//		expressionStack.pop();
-		//	}
-		//	
-		//	// Print the operation and its parameters
-		//	if (parameterCount == 1)
-		//	{
-		//		(*operation).Print(os);
-		//		(*(parameters.at(0))).Print(os);
-		//	}
-		//	else if (parameterCount == 2)
-		//	{
-		//		os << "(";
-		//		(*(parameters.at(0))).Print(os);
-		//		(*operation).Print(os);
-		//		(*(parameters.at(1))).Print(os);
-		//		os << ")";
-		//	}
-		//}
-
 		return *(new string(os.str()));
 	}
 }

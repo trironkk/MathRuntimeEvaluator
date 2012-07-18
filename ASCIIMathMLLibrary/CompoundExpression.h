@@ -74,7 +74,8 @@ namespace ASCIIMathMLLibrary
 
 		// Gets a string representation of this object
 		virtual string& GetStringRepresentation();
-
+		string& GetInfixStringRepresentation();
+		string& GetPostfixStringRepresentation();
 	};
 }
 
