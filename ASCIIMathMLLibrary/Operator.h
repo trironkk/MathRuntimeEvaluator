@@ -28,7 +28,7 @@ namespace ASCIIMathMLLibrary
 		virtual int GetParameterCount() = 0;
 	
 		// Gets a string representation of this operation
-		virtual string GetStringRepresentation() = 0;
+		virtual string& GetStringRepresentation() = 0;
 
 	protected:
 		// Calls GetValue() on each of the parameters, and returns a vector of

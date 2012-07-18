@@ -27,8 +27,8 @@ namespace ASCIIMathMLLibrary
 	}
 
 	// Gets a string representation of this operation
-	string AbsoluteValue::GetStringRepresentation()
+	string& AbsoluteValue::GetStringRepresentation()
 	{
-		return "abs";
+		return *(new string("abs"));
 	}
 }

@@ -27,8 +27,8 @@ namespace ASCIIMathMLLibrary
 	}
 
 	// Gets a string representation of this operation
-	string Divide::GetStringRepresentation()
+	string& Divide::GetStringRepresentation()
 	{
-		return "/";
+		return *(new string("/"));
 	}
 }

@@ -30,8 +30,8 @@ namespace ASCIIMathMLLibrary
 	}
 
 	// Gets a string representation of this object
-	string Variable::GetStringRepresentation()
+	string& Variable::GetStringRepresentation()
 	{
-		return _variableName;
+		return *(new string(_variableName));
 	}
 }

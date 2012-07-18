@@ -17,6 +17,7 @@ using std::stack;
 using std::shared_ptr;
 using std::vector;
 using std::cout;
+using std::ostream;
 using std::ostringstream;
 
 #endif

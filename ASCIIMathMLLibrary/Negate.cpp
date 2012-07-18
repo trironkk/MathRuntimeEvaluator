@@ -27,8 +27,8 @@ namespace ASCIIMathMLLibrary
 	}
 
 	// Gets a string representation of this operation
-	string Negate::GetStringRepresentation()
+	string& Negate::GetStringRepresentation()
 	{
-		return "-";
+		return *(new string("-"));
 	}
 }

@@ -24,10 +24,10 @@ namespace ASCIIMathMLLibrary
 	}
 
 	// Gets a string representation of this object
-	string Constant::GetStringRepresentation()
+	string& Constant::GetStringRepresentation()
 	{
 		ostringstream convert;
 		convert << _value;
-		return convert.str();
+		return *(new string(convert.str()));
 	}
 }

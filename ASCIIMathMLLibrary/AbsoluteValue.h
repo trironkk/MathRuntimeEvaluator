@@ -20,7 +20,7 @@ namespace ASCIIMathMLLibrary
 		virtual int GetParameterCount();
 
 		// Gets a string representation of this operation
-		virtual string GetStringRepresentation();
+		virtual string& GetStringRepresentation();
 	};
 }
 

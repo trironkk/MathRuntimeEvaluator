@@ -27,8 +27,8 @@ namespace ASCIIMathMLLibrary
 	}
 
 	// Gets a string representation of this operation
-	string CommonLogarithm::GetStringRepresentation()
+	string& CommonLogarithm::GetStringRepresentation()
 	{
-		return "log";
+		return *(new string("log"));
 	}
 }

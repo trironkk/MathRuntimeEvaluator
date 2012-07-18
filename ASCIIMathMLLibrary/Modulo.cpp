@@ -27,8 +27,8 @@ namespace ASCIIMathMLLibrary
 	}
 
 	// Gets a string representation of this operation
-	string Modulo::GetStringRepresentation()
+	string& Modulo::GetStringRepresentation()
 	{
-		return "%";
+		return *(new string("%"));
 	}
 }

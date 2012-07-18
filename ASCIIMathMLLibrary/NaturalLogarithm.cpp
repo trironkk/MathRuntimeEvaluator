@@ -27,8 +27,8 @@ namespace ASCIIMathMLLibrary
 	}
 
 	// Gets a string representation of this operation
-	string NaturalLogarithm::GetStringRepresentation()
+	string& NaturalLogarithm::GetStringRepresentation()
 	{
-		return "ln";
+		return *(new string("ln"));
 	}
 }

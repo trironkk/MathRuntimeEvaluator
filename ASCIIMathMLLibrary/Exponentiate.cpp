@@ -27,8 +27,8 @@ namespace ASCIIMathMLLibrary
 	}
 
 	// Gets a string representation of this operation
-	string Exponentiate::GetStringRepresentation()
+	string& Exponentiate::GetStringRepresentation()
 	{
-		return "^";
+		return *(new string("^"));
 	}
 }

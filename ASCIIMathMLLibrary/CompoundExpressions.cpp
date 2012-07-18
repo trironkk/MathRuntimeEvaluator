@@ -236,7 +236,7 @@ namespace ASCIIMathMLLibrary
 	}
 	
 	// Gets a string representation of this object
-	string CompoundExpression::GetStringRepresentation()
+	string& CompoundExpression::GetStringRepresentation()
 	{
 		ostringstream os;
 		int expressionsIndex = 0;
@@ -301,6 +301,6 @@ namespace ASCIIMathMLLibrary
 		//	}
 		//}
 
-		return os.str();
+		return *(new string(os.str()));
 	}
 }

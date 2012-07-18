@@ -28,7 +28,7 @@ namespace ASCIIMathMLLibrary
 		virtual double GetValue() = 0;
 
 		// Gets a string representation of this object
-		virtual string GetStringRepresentation() = 0;
+		virtual string& GetStringRepresentation() = 0;
 	};
 }
 

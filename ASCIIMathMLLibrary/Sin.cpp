@@ -27,8 +27,8 @@ namespace ASCIIMathMLLibrary
 	}
 
 	// Gets a string representation of this operation
-	string Sin::GetStringRepresentation()
+	string& Sin::GetStringRepresentation()
 	{
-		return "sin";
+		return *(new string("sin"));
 	}
 }

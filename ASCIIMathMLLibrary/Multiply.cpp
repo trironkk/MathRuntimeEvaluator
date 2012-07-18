@@ -27,8 +27,8 @@ namespace ASCIIMathMLLibrary
 	}
 
 	// Gets a string representation of this operation
-	string Multiply::GetStringRepresentation()
+	string& Multiply::GetStringRepresentation()
 	{
-		return "*";
+		return *(new string("*"));
 	}
 }

@@ -27,8 +27,8 @@ namespace ASCIIMathMLLibrary
 	}
 
 	// Gets a string representation of this operation
-	string Add::GetStringRepresentation()
+	string& Add::GetStringRepresentation()
 	{
-		return "+";
+		return *(new string("+"));
 	}
 }

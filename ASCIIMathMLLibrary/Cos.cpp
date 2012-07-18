@@ -27,8 +27,8 @@ namespace ASCIIMathMLLibrary
 	}
 
 	// Gets a string representation of this operation
-	string Cos::GetStringRepresentation()
+	string& Cos::GetStringRepresentation()
 	{
-		return "cos";
+		return *(new string("cos"));
 	}
 }

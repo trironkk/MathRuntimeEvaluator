@@ -27,8 +27,8 @@ namespace ASCIIMathMLLibrary
 	}
 
 	// Gets a string representation of this operation
-	string Tan::GetStringRepresentation()
+	string& Tan::GetStringRepresentation()
 	{
-		return "tan";
+		return *(new string("tan"));
 	}
 }

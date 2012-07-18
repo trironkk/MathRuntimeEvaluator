@@ -30,7 +30,7 @@ namespace ASCIIMathMLLibrary
 		virtual double GetValue();
 
 		// Gets a string representation of this object
-		virtual string GetStringRepresentation();
+		virtual string& GetStringRepresentation();
 	};
 }
 #endif

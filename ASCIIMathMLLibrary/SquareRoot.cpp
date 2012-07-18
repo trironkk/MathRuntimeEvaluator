@@ -27,8 +27,8 @@ namespace ASCIIMathMLLibrary
 	}
 
 	// Gets a string representation of this operation
-	string SquareRoot::GetStringRepresentation()
+	string& SquareRoot::GetStringRepresentation()
 	{
-		return "sqrt";
+		return *(new string("sqrt"));
 	}
 }

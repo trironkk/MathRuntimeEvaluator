@@ -27,8 +27,8 @@ namespace ASCIIMathMLLibrary
 	}
 
 	// Gets a string representation of this operation
-	string Subtract::GetStringRepresentation()
+	string& Subtract::GetStringRepresentation()
 	{
-		return "-";
+		return *(new string("-"));
 	}
 }
