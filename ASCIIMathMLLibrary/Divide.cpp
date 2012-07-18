@@ -26,10 +26,9 @@ namespace ASCIIMathMLLibrary
 		return 2;
 	}
 
-	// Write a friendly string representation of this object to the inputed
-	// ostream
-	std::ostream& Divide::Print(std::ostream& os)
+	// Gets a string representation of this operation
+	string Divide::GetStringRepresentation()
 	{
-		return os << "/";
+		return "/";
 	}
 }

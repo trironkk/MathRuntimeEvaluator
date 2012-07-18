@@ -1,15 +1,15 @@
-#ifndef SUBTRACT_H
-#define SUBTRACT_H
+#ifndef NEGATE_H
+#define NEGATE_H
 
 #include "Operator.h"
 
 namespace ASCIIMathMLLibrary
 {
-	class Subtract : public Operator
+	class Negate : public Operator
 	{
 	public:
 		// Basic constructor
-		Subtract ();
+		Negate();
 
 		// Perform this operation
 		virtual shared_ptr<Expression> Evaluate(

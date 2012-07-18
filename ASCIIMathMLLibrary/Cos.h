@@ -1,15 +1,15 @@
-#ifndef SUBTRACT_H
-#define SUBTRACT_H
+#ifndef COS_H
+#define COS_H
 
 #include "Operator.h"
 
 namespace ASCIIMathMLLibrary
 {
-	class Subtract : public Operator
+	class Cos : public Operator
 	{
 	public:
 		// Basic constructor
-		Subtract ();
+		Cos();
 
 		// Perform this operation
 		virtual shared_ptr<Expression> Evaluate(

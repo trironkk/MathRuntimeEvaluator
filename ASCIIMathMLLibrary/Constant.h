@@ -27,9 +27,8 @@ namespace ASCIIMathMLLibrary
 		// error
 		virtual double GetValue();
 
-		// Write a friendly string representation of this object to the inputed
-		// ostream
-		virtual std::ostream& Print(std::ostream& os);
+		// Gets a string representation of this object
+		virtual string GetStringRepresentation();
 	};
 }
 

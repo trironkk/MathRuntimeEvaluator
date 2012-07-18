@@ -23,10 +23,11 @@ namespace ASCIIMathMLLibrary
 		return _value;
 	}
 
-	// Write a friendly string representation of this object to the inputed
-	// ostream
-	std::ostream& Constant::Print(std::ostream& os)
+	// Gets a string representation of this object
+	string Constant::GetStringRepresentation()
 	{
-		return os << _value;
+		ostringstream convert;
+		convert << _value;
+		return convert.str();
 	}
 }

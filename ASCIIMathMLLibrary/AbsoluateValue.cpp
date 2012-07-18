@@ -1,12 +1,12 @@
-#include "Add.h"
+#include "AbsoluteValue.h"
 
 namespace ASCIIMathMLLibrary
 {
 	// Basic constructor
-	Add::Add() {}
+	AbsoluteValue::AbsoluteValue() {}
 
 	// Performs this operation
-	shared_ptr<Expression> Add::Evaluate(
+	shared_ptr<Expression> AbsoluteValue::Evaluate(
 			const WorkingMemory& workingMemory,
 			list<shared_ptr<Expression>>& parameters)
 	{
@@ -16,19 +16,19 @@ namespace ASCIIMathMLLibrary
 
 		// Perform the addition and return
 		return shared_ptr<Expression>(
-			new Constant((*values)[0] + (*values)[1])
+			new Constant(fabs((*values)[0]))
 		);
 	}
 
 	// Returns the number of parameters involved in this operation
-	int Add::GetParameterCount()
+	int AbsoluteValue::GetParameterCount()
 	{
-		return 2;
+		return 1;
 	}
 
 	// Gets a string representation of this operation
-	string Add::GetStringRepresentation()
+	string AbsoluteValue::GetStringRepresentation()
 	{
-		return "+";
+		return "abs";
 	}
 }

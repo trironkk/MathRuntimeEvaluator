@@ -1,15 +1,15 @@
-#ifndef SUBTRACT_H
-#define SUBTRACT_H
+#ifndef EXPONENTIATE_H
+#define EXPONENTIATE_H
 
 #include "Operator.h"
 
 namespace ASCIIMathMLLibrary
 {
-	class Subtract : public Operator
+	class Exponentiate : public Operator
 	{
 	public:
 		// Basic constructor
-		Subtract ();
+		Exponentiate();
 
 		// Perform this operation
 		virtual shared_ptr<Expression> Evaluate(

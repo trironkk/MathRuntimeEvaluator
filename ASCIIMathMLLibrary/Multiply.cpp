@@ -26,10 +26,9 @@ namespace ASCIIMathMLLibrary
 		return 2;
 	}
 
-	// Write a friendly string representation of this object to the inputed
-	// ostream
-	std::ostream& Multiply::Print(std::ostream& os)
+	// Gets a string representation of this operation
+	string Multiply::GetStringRepresentation()
 	{
-		return os << "*";
+		return "*";
 	}
 }

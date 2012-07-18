@@ -55,6 +55,18 @@
     <Filter Include="Source Files\CommonFunctionality">
       <UniqueIdentifier>{327980dc-432b-4f16-b5ac-558a1039d329}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Operator\Implementations\Trigonometric">
+      <UniqueIdentifier>{878b77ad-daee-4b37-9529-7245cdd73fbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Operator\Implementation\Trigonometric">
+      <UniqueIdentifier>{87e0fe58-9856-4b5b-92eb-83e4e61a1cdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Operator\Implementations\Arithmetic">
+      <UniqueIdentifier>{c954fd94-8550-4a34-92cb-0c3ea499b567}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Operator\Implementation\Arithmetic">
+      <UniqueIdentifier>{0ea2c89d-5bcb-498d-a956-746c8102a4c4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Constants.h">
@@ -65,9 +77,6 @@
     </ClInclude>
     <ClInclude Include="WorkingMemory.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Add.h">
-      <Filter>Header Files\Operator\Implementations</Filter>
     </ClInclude>
     <ClInclude Include="Constant.h">
       <Filter>Header Files\Expression\Implementations</Filter>
@@ -90,13 +99,43 @@
     <ClInclude Include="IPrintable.h">
       <Filter>Header Files\CommonFunctionality</Filter>
     </ClInclude>
-    <ClInclude Include="Subtract.h">
+    <ClInclude Include="Negate.h">
       <Filter>Header Files\Operator\Implementations</Filter>
     </ClInclude>
-    <ClInclude Include="Multiply.h">
+    <ClInclude Include="Exponentiate.h">
       <Filter>Header Files\Operator\Implementations</Filter>
+    </ClInclude>
+    <ClInclude Include="NaturalLogarithm.h">
+      <Filter>Header Files\Operator\Implementations</Filter>
+    </ClInclude>
+    <ClInclude Include="Modulo.h">
+      <Filter>Header Files\Operator\Implementations</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonLogarithm.h">
+      <Filter>Header Files\Operator\Implementations</Filter>
+    </ClInclude>
+    <ClInclude Include="Sin.h">
+      <Filter>Header Files\Operator\Implementations\Trigonometric</Filter>
+    </ClInclude>
+    <ClInclude Include="Tan.h">
+      <Filter>Header Files\Operator\Implementations\Trigonometric</Filter>
+    </ClInclude>
+    <ClInclude Include="Cos.h">
+      <Filter>Header Files\Operator\Implementations\Trigonometric</Filter>
+    </ClInclude>
+    <ClInclude Include="Add.h">
+      <Filter>Header Files\Operator\Implementations\Arithmetic</Filter>
     </ClInclude>
     <ClInclude Include="Divide.h">
+      <Filter>Header Files\Operator\Implementations\Arithmetic</Filter>
+    </ClInclude>
+    <ClInclude Include="Multiply.h">
+      <Filter>Header Files\Operator\Implementations\Arithmetic</Filter>
+    </ClInclude>
+    <ClInclude Include="Subtract.h">
+      <Filter>Header Files\Operator\Implementations\Arithmetic</Filter>
+    </ClInclude>
+    <ClInclude Include="SquareRoot.h">
       <Filter>Header Files\Operator\Implementations</Filter>
     </ClInclude>
   </ItemGroup>
@@ -116,9 +155,6 @@
     <ClCompile Include="Constant.cpp">
       <Filter>Source Files\Expression\Implementations</Filter>
     </ClCompile>
-    <ClCompile Include="Add.cpp">
-      <Filter>Source Files\Operator\Implementation</Filter>
-    </ClCompile>
     <ClCompile Include="Operator.cpp">
       <Filter>Source Files\Operator\AbstractClasses</Filter>
     </ClCompile>
@@ -131,13 +167,49 @@
     <ClCompile Include="IPrintable.cpp">
       <Filter>Source Files\CommonFunctionality</Filter>
     </ClCompile>
-    <ClCompile Include="Subtract.cpp">
+    <ClCompile Include="Negate.cpp">
       <Filter>Source Files\Operator\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="Exponentiate.cpp">
+      <Filter>Source Files\Operator\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="NaturalLogarithm.cpp">
+      <Filter>Source Files\Operator\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="Modulo.cpp">
+      <Filter>Source Files\Operator\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonLogarithm.cpp">
+      <Filter>Source Files\Operator\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="AbsoluteValue.h">
+      <Filter>Header Files\Operator\Implementations</Filter>
+    </ClCompile>
+    <ClCompile Include="AbsoluateValue.cpp">
+      <Filter>Source Files\Operator\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="Cos.cpp">
+      <Filter>Source Files\Operator\Implementation\Trigonometric</Filter>
+    </ClCompile>
+    <ClCompile Include="Sin.cpp">
+      <Filter>Source Files\Operator\Implementation\Trigonometric</Filter>
+    </ClCompile>
+    <ClCompile Include="Tan.cpp">
+      <Filter>Source Files\Operator\Implementation\Trigonometric</Filter>
+    </ClCompile>
+    <ClCompile Include="Add.cpp">
+      <Filter>Source Files\Operator\Implementation\Arithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="Subtract.cpp">
+      <Filter>Source Files\Operator\Implementation\Arithmetic</Filter>
     </ClCompile>
     <ClCompile Include="Multiply.cpp">
-      <Filter>Source Files\Operator\Implementation</Filter>
+      <Filter>Source Files\Operator\Implementation\Arithmetic</Filter>
     </ClCompile>
     <ClCompile Include="Divide.cpp">
+      <Filter>Source Files\Operator\Implementation\Arithmetic</Filter>
+    </ClCompile>
+    <ClCompile Include="SquareRoot.cpp">
       <Filter>Source Files\Operator\Implementation</Filter>
     </ClCompile>
   </ItemGroup>

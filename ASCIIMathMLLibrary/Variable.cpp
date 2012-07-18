@@ -17,7 +17,9 @@ namespace ASCIIMathMLLibrary
 			return shared_ptr<Expression>(
 				new Constant(workingMemory.GetValue(this->_variableName)));
 		}
-
+		throw ASCIIMathMLException(
+"Variable name does not appear in WorkingMemory."
+			);
 	}
 
 	// Gets the double value associated with this expression, or throws an
@@ -27,10 +29,9 @@ namespace ASCIIMathMLLibrary
 		throw ASCIIMathMLException("Cannot get the value of a variable.");
 	}
 
-	// Write a friendly string representation of this object to the inputed
-	// ostream
-	std::ostream& Variable::Print(std::ostream& os)
+	// Gets a string representation of this object
+	string Variable::GetStringRepresentation()
 	{
-		return os << _variableName;
+		return _variableName;
 	}
 }

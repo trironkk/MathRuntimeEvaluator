@@ -1,15 +1,15 @@
-#ifndef SUBTRACT_H
-#define SUBTRACT_H
+#ifndef SQUAREROOT_H
+#define SQUAREROOT_H
 
 #include "Operator.h"
 
 namespace ASCIIMathMLLibrary
 {
-	class Subtract : public Operator
+	class SquareRoot : public Operator
 	{
 	public:
 		// Basic constructor
-		Subtract ();
+		SquareRoot();
 
 		// Perform this operation
 		virtual shared_ptr<Expression> Evaluate(

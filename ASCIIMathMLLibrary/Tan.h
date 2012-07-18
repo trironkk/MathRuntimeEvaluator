@@ -1,15 +1,15 @@
-#ifndef SUBTRACT_H
-#define SUBTRACT_H
+#ifndef TAN_H
+#define TAN_H
 
 #include "Operator.h"
 
 namespace ASCIIMathMLLibrary
 {
-	class Subtract : public Operator
+	class Tan : public Operator
 	{
 	public:
 		// Basic constructor
-		Subtract ();
+		Tan();
 
 		// Perform this operation
 		virtual shared_ptr<Expression> Evaluate(

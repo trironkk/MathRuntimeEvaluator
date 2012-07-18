@@ -1,6 +1,8 @@
 #ifndef OPERATOR_H
 #define OPERATOR_H
 
+#include <math.h>
+
 #include "Constants.h"
 #include "Constant.h"
 #include "WorkingMemory.h"
@@ -22,13 +24,12 @@ namespace ASCIIMathMLLibrary
 			const WorkingMemory& workingMemory,
 			list<shared_ptr<Expression>>& parameters) = 0;
 
-		// Write a friendly string representation of this object to the inputed
-		// ostream
-		virtual std::ostream& Print(std::ostream& os) = 0;
-
-		// Returns the number of parameters involved in this operation
+		// Returns the number of parameters involved in this object
 		virtual int GetParameterCount() = 0;
 	
+		// Gets a string representation of this operation
+		virtual string GetStringRepresentation() = 0;
+
 	protected:
 		// Calls GetValue() on each of the parameters, and returns a vector of
 		// results

@@ -15,7 +15,7 @@ namespace ASCIIMathMLLibrary
 
 		list<shared_ptr<Expression>>::const_iterator iter = parameters.begin();
 
-		for (int i = 0; i < parameters.size(); i++, iter++)
+		for (unsigned int i = 0; i < parameters.size(); i++, iter++)
 		{
 			(*(result)).at(i) =
 				(*((*(*iter)).Simplify(workingMemory))).GetValue();

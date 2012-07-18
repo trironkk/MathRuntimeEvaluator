@@ -47,9 +47,14 @@ namespace ASCIIMathMLLibrary
 		void PopFront();
 		void PopBack();
 
+		// Get the item at the specified index
+		shared_ptr<Expression> AtExpression(int index);
+		shared_ptr<Operator> AtOperator(int index);
+
 		// Check the type of the top of the stack
 		ExpressionComponent::Types CheckFrontType();
 		ExpressionComponent::Types CheckBackType();
+		ExpressionComponent::Types CheckAtType(int index);
 		
 		// Returns the number of items
 		int Size();
@@ -67,10 +72,8 @@ namespace ASCIIMathMLLibrary
 		// error
 		virtual double GetValue();
 
-		// Write a friendly string representation of this object to the inputed
-		// ostream
-		virtual std::ostream& Print(std::ostream& os);
-
+		// Gets a string representation of this object
+		virtual string GetStringRepresentation();
 
 	};
 }

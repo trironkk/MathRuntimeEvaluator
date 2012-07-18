@@ -26,6 +26,9 @@ namespace ASCIIMathMLLibrary
 		// Gets the double value associated with this expression, or throws an
 		// error
 		virtual double GetValue() = 0;
+
+		// Gets a string representation of this object
+		virtual string GetStringRepresentation() = 0;
 	};
 }
 

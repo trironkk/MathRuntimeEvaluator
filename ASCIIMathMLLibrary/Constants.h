@@ -8,6 +8,7 @@
 #include <deque>
 #include <functional>
 #include <iostream>
+#include <sstream>
 
 using std::string;
 using std::list;
@@ -16,5 +17,6 @@ using std::stack;
 using std::shared_ptr;
 using std::vector;
 using std::cout;
+using std::ostringstream;
 
 #endif

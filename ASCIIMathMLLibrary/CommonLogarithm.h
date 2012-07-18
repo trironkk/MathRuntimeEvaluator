@@ -1,15 +1,15 @@
-#ifndef SUBTRACT_H
-#define SUBTRACT_H
+#ifndef COMMONLOGARITHM_H
+#define COMMONLOGARITHM_H
 
 #include "Operator.h"
 
 namespace ASCIIMathMLLibrary
 {
-	class Subtract : public Operator
+	class CommonLogarithm : public Operator
 	{
 	public:
 		// Basic constructor
-		Subtract ();
+		CommonLogarithm();
 
 		// Perform this operation
 		virtual shared_ptr<Expression> Evaluate(

@@ -5,10 +5,22 @@
 #include "WorkingMemory.h"
 #include "Constant.h"
 #include "Variable.h"
+
 #include "Add.h"
 #include "Subtract.h"
 #include "Multiply.h"
 #include "Divide.h"
+#include "Negate.h"
+#include "Exponentiate.h"
+#include "NaturalLogarithm.h"
+#include "Modulo.h"
+#include "CommonLogarithm.h"
+#include "Sin.h"
+#include "Cos.h"
+#include "Tan.h"
+#include "AbsoluteValue.h"
+#include "SquareRoot.h"
+
 #include "Exception.h"
 #include "CompoundExpression.h"
 
@@ -51,6 +63,26 @@ int main()
 	(*multiply).PrintLine(cout);
 	shared_ptr<Divide> divide(new Divide());
 	(*divide).PrintLine(cout);
+	shared_ptr<Negate> negate(new Negate());
+	(*negate).PrintLine(cout);
+	shared_ptr<Exponentiate> exponentiate(new Exponentiate());
+	(*exponentiate).PrintLine(cout);
+	shared_ptr<NaturalLogarithm> naturalLogarithm(new NaturalLogarithm());
+	(*naturalLogarithm).PrintLine(cout);
+	shared_ptr<Modulo> modulo(new Modulo());
+	(*modulo).PrintLine(cout);
+	shared_ptr<CommonLogarithm> commonLogarithm(new CommonLogarithm());
+	(*commonLogarithm).PrintLine(cout);
+	shared_ptr<Sin> sin(new Sin());
+	(*sin).PrintLine(cout);
+	shared_ptr<Cos> cos(new Cos());
+	(*cos).PrintLine(cout);
+	shared_ptr<Tan> tan(new Tan());
+	(*tan).PrintLine(cout);
+	shared_ptr<AbsoluteValue> absoluteValue(new AbsoluteValue());
+	(*absoluteValue).PrintLine(cout);
+	shared_ptr<SquareRoot> squareRoot(new SquareRoot());
+	(*squareRoot).PrintLine(cout);
 
 	// Proof of concept for CompoundExpressions
 	cout << "compoundExpression1" << std::endl;
@@ -121,6 +153,101 @@ int main()
 	compoundExpression6.Simplify(memory);
 	compoundExpression6.PrintLine(cout);
 
+	cout << "compoundExpression7" << std::endl;
+	CompoundExpression compoundExpression7;
+	compoundExpression7.PushBack(constant3);
+	compoundExpression7.PushBack(negate);
+	compoundExpression7.PushBack(constant3);
+	compoundExpression7.PushBack(add);
+	compoundExpression7.Print(cout);
+	cout << " = ";
+	compoundExpression7.Simplify(memory);
+	compoundExpression7.PrintLine(cout);
+
+	cout << "compoundExpression8" << std::endl;
+	CompoundExpression compoundExpression8;
+	compoundExpression8.PushBack(constant3);
+	compoundExpression8.PushBack(variable4);
+	compoundExpression8.PushBack(exponentiate);
+	compoundExpression8.Print(cout);
+	cout << " = ";
+	compoundExpression8.Simplify(memory);
+	compoundExpression8.PrintLine(cout);
+
+	cout << "compoundExpression9" << std::endl;
+	CompoundExpression compoundExpression9;
+	compoundExpression9.PushBack(constant3);
+	compoundExpression9.PushBack(naturalLogarithm);
+	compoundExpression9.Print(cout);
+	cout << " = ";
+	compoundExpression9.Simplify(memory);
+	compoundExpression9.PrintLine(cout);
+
+	cout << "compoundExpression10" << std::endl;
+	CompoundExpression compoundExpression10;
+	compoundExpression10.PushBack(variable3);
+	compoundExpression10.PushBack(variable2);
+	compoundExpression10.PushBack(modulo);
+	compoundExpression10.Print(cout);
+	cout << " = ";
+	compoundExpression10.Simplify(memory);
+	compoundExpression10.PrintLine(cout);
+
+	cout << "compoundExpression11" << std::endl;
+	CompoundExpression compoundExpression11;
+	compoundExpression11.PushBack(variable2);
+	compoundExpression11.PushBack(commonLogarithm);
+	compoundExpression11.Print(cout);
+	cout << " = ";
+	compoundExpression11.Simplify(memory);
+	compoundExpression11.PrintLine(cout);
+
+	cout << "compoundExpression12" << std::endl;
+	CompoundExpression compoundExpression12;
+	compoundExpression12.PushBack(variable1);
+	compoundExpression12.PushBack(sin);
+	compoundExpression12.Print(cout);
+	cout << " = ";
+	compoundExpression12.Simplify(memory);
+	compoundExpression12.PrintLine(cout);
+
+	cout << "compoundExpression13" << std::endl;
+	CompoundExpression compoundExpression13;
+	compoundExpression13.PushBack(variable1);
+	compoundExpression13.PushBack(cos);
+	compoundExpression13.Print(cout);
+	cout << " = ";
+	compoundExpression13.Simplify(memory);
+	compoundExpression13.PrintLine(cout);
+
+	cout << "compoundExpression14" << std::endl;
+	CompoundExpression compoundExpression14;
+	compoundExpression14.PushBack(variable1);
+	compoundExpression14.PushBack(tan);
+	compoundExpression14.Print(cout);
+	cout << " = ";
+	compoundExpression14.Simplify(memory);
+	compoundExpression14.PrintLine(cout);
+
+	cout << "compoundExpression15" << std::endl;
+	CompoundExpression compoundExpression15;
+	compoundExpression15.PushBack(variable2);
+	compoundExpression15.PushBack(variable3);
+	compoundExpression15.PushBack(subtract);
+	compoundExpression15.PushBack(absoluteValue);
+	compoundExpression15.Print(cout);
+	cout << " = ";
+	compoundExpression15.Simplify(memory);
+	compoundExpression15.PrintLine(cout);
+
+	cout << "compoundExpression16" << std::endl;
+	CompoundExpression compoundExpression16;
+	compoundExpression16.PushBack(variable3);
+	compoundExpression16.PushBack(squareRoot);
+	compoundExpression16.Print(cout);
+	cout << " = ";
+	compoundExpression16.Simplify(memory);
+	compoundExpression16.PrintLine(cout);
 
 	std::cin.get();
 }

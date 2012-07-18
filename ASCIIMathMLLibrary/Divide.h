@@ -2,9 +2,9 @@
 #define DIVIDE_H
 
 #include "Operator.h"
+
 namespace ASCIIMathMLLibrary
 {
-	// Child class of Operator - represents division
 	class Divide : public Operator
 	{
 	public:
@@ -19,9 +19,8 @@ namespace ASCIIMathMLLibrary
 		// Returns the number of parameters involved in this operation
 		virtual int GetParameterCount();
 
-		// Write a friendly string representation of this object to the inputed
-		// ostream
-		virtual std::ostream& Print(std::ostream& os);
+		// Gets a string representation of this operation
+		virtual string GetStringRepresentation();
 	};
 }
 
