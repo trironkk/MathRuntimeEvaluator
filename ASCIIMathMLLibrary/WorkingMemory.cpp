@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 
 #include "WorkingMemory.h"
 
@@ -71,35 +72,45 @@ namespace ASCIIMathMLLibrary
 		}
 	}
 
-	std::ostream& operator<<(std::ostream& os, const WorkingMemory wm)
+	string& WorkingMemory::GetStringRepresentation()
 	{
-		unsigned int maxLength = 4;
-		std::list<std::string>::const_iterator iter;
-		for (iter = wm._declaredVariables.begin();
-			iter != wm._declaredVariables.end();
+		string& result = *(new string());
+
+		// Set the width of the columns to 10 characters longer than the longest
+		// variable name
+		std::list<string>::iterator iter = std::max_element(
+			_declaredVariables.begin(),
+			_declaredVariables.end(),
+			[] (string left, string	right)
+			{
+				return left.length() < right.length();
+			}
+		);
+		unsigned int maxLength = 10 + (*iter).length();
+
+		// Write the heading
+		result += "Name" + string(maxLength - 4, ' ') + "Value\n";
+		result += "----" + string(maxLength - 4, ' ') + "-----\n";
+
+		// String stream for converting double to strings
+		ostringstream convert;
+
+		// Write every variable and its value
+		for (iter = _declaredVariables.begin();
+			iter != _declaredVariables.end();
 			iter++)
 		{
-			if ((*(iter)).length() > maxLength)
-				maxLength = (*(iter)).length();
+			result += *iter;
+			result += string(maxLength - (*iter).length(), ' ');
+			convert.str("");
+			convert << _workingMemory.at(*(iter));
+			result += convert.str();
+			result += "\n";
 		}
 
-		maxLength += 6;
-
-		os.width(maxLength);
-		os << std::left << "Name";
-		os << "Value" << std::endl;
-		os.width(maxLength);
-		os << std::left << "----";
-		os << "------" << std::endl;
-
-		for (iter = wm._declaredVariables.begin();
-			iter != wm._declaredVariables.end();
-			iter++)
-		{
-			os.width(maxLength);
-			os << (*(iter));
-			os << wm._workingMemory.at((*(iter))) << std::endl;
-		}
-		return os;
+		// Strip off the trailing newline character
+		result.resize(result.length() - 1);
+		
+		return result;
 	}
 }

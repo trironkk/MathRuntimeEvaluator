@@ -6,10 +6,11 @@
 
 #include "Constants.h"
 #include "Exception.h"
+#include "IPrintable.h"
 
 namespace ASCIIMathMLLibrary
 {
-	class WorkingMemory
+	class WorkingMemory : public IPrintable
 	{
 	private:
 		std::unordered_map<string, double> _workingMemory;
@@ -24,9 +25,8 @@ namespace ASCIIMathMLLibrary
 		bool Contains(string variableName) const;
 		double WorkingMemory::GetValue(string variableName) const;
 		void WorkingMemory::SetValue(string variableName, double value);
-		
-		friend std::ostream& operator<<(std::ostream& os,
-			const WorkingMemory wm);
+
+		virtual string& GetStringRepresentation();
 	};
 }
 
