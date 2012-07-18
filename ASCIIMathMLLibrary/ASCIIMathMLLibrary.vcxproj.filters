@@ -69,9 +69,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Constants.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Exception.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -89,9 +86,6 @@
     </ClInclude>
     <ClInclude Include="Expression.h">
       <Filter>Header Files\Expression\AbstractClasses</Filter>
-    </ClInclude>
-    <ClInclude Include="CompoundExpression.h">
-      <Filter>Header Files\Expression\Implementations</Filter>
     </ClInclude>
     <ClInclude Include="ExpressionComponent.h">
       <Filter>Header Files</Filter>
@@ -144,6 +138,12 @@
     <ClInclude Include="UnaryOperator.h">
       <Filter>Header Files\Operator\AbstractClasses</Filter>
     </ClInclude>
+    <ClInclude Include="Constants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CompoundExpression.h">
+      <Filter>Header Files\Expression\Implementations</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -163,12 +163,6 @@
     </ClCompile>
     <ClCompile Include="Operator.cpp">
       <Filter>Source Files\Operator\AbstractClasses</Filter>
-    </ClCompile>
-    <ClCompile Include="Expression.cpp">
-      <Filter>Source Files\Expression\AbstractClasses</Filter>
-    </ClCompile>
-    <ClCompile Include="CompoundExpressions.cpp">
-      <Filter>Source Files\Expression\Implementations</Filter>
     </ClCompile>
     <ClCompile Include="IPrintable.cpp">
       <Filter>Source Files\CommonFunctionality</Filter>
@@ -223,6 +217,12 @@
     </ClCompile>
     <ClCompile Include="UnaryOperator.cpp">
       <Filter>Source Files\Operator\AbstractClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="Expression.cpp">
+      <Filter>Source Files\Expression\AbstractClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="CompoundExpressions.cpp">
+      <Filter>Source Files\Expression\Implementations</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

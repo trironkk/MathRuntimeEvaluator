@@ -5,6 +5,8 @@
 #include "ExpressionComponent.h"
 #include "Operator.h"
 #include "WorkingMemory.h"
+#include "Variable.h"
+#include "Constant.h"
 
 namespace ASCIIMathMLLibrary
 {
@@ -31,11 +33,26 @@ namespace ASCIIMathMLLibrary
 		// Basic Constructor
 		CompoundExpression();
 
-		// Pushing items onto the stack
+		// Pushing expressions onto the stack
 		void PushFront(shared_ptr<Expression> expression);
-		void PushFront(shared_ptr<Operator> operation);
 		void PushBack(shared_ptr<Expression> expression);
+
+		// Pushing Expressions - Abbreviated
+		void PushFront(double value);
+		void PushFront(string variableName);
+		void PushBack(double value);
+		void PushBack(string variableName);
+
+		// Pushing operators onto the stack
+		void PushFront(shared_ptr<Operator> operation);
 		void PushBack(shared_ptr<Operator> operation);
+
+		// Pushing Operators - Abbreviated
+		// Note: Template functions cannot be prototyped, so we define them here
+		template <class T>
+		void PushFront() { PushFront(*(new shared_ptr<T>(new T()))); }
+		template <class T>
+		void PushBack() { PushBack(*(new shared_ptr<T>(new T()))); }
 
 		// Retreiving an item of the stack
 		shared_ptr<Expression> FrontExpression();

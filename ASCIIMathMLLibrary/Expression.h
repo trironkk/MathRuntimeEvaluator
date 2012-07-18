@@ -1,7 +1,6 @@
 #ifndef EXPRESSION_H
 #define EXPRESSION_H
 
-#include "Constants.h"
 #include "IPrintable.h"
 #include "WorkingMemory.h"
 

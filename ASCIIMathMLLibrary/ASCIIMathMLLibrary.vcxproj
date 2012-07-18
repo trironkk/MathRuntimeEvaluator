@@ -52,6 +52,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalOptions>/E %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -65,10 +66,10 @@
     <ClInclude Include="CommonLogarithm.h" />
     <ClInclude Include="CompoundExpression.h" />
     <ClInclude Include="Constant.h" />
+    <ClInclude Include="Constants.h" />
     <ClInclude Include="Cos.h" />
     <ClInclude Include="Divide.h" />
     <ClInclude Include="Exception.h" />
-    <ClInclude Include="Constants.h" />
     <ClInclude Include="Exponentiate.h" />
     <ClInclude Include="ExpressionComponent.h" />
     <ClInclude Include="IPrintable.h" />

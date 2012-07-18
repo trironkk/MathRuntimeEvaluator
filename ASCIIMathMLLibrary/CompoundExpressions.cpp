@@ -8,17 +8,11 @@ namespace ASCIIMathMLLibrary
 		_operations(deque<shared_ptr<Operator>>()),
 		_objectTypes(deque<ExpressionComponent::Types>()) {  }
 
-	// Pushing items onto the stack
+	// Pushing expressions onto the stack
 	void CompoundExpression::PushBack(shared_ptr<Expression> expression)
 	{
 		_expressions.push_back(expression);
 		_objectTypes.push_back(ExpressionComponent::Expression);
-	}
-
-	void CompoundExpression::PushBack(shared_ptr<Operator> operation)
-	{
-		_operations.push_back(operation);
-		_objectTypes.push_back(ExpressionComponent::Operator);
 	}
 
 	void CompoundExpression::PushFront(shared_ptr<Expression> expression)
@@ -27,13 +21,41 @@ namespace ASCIIMathMLLibrary
 		_objectTypes.push_front(ExpressionComponent::Expression);
 	}
 
+	// Pushing Expressions - Abbreviated
+	void CompoundExpression::PushFront(double value)
+	{
+		PushFront(*(new shared_ptr<Expression>(new Constant(value))));
+	}
+
+	void CompoundExpression::PushFront(string variableName)
+	{
+		PushFront(*(new shared_ptr<Expression>(new Variable(variableName))));
+	}
+
+	void CompoundExpression::PushBack(double value)
+	{
+		PushBack(*(new shared_ptr<Expression>(new Constant(value))));
+	}
+
+	void CompoundExpression::PushBack(string variableName)
+	{
+		PushBack(*(new shared_ptr<Expression>(new Variable(variableName))));
+	}
+	
+	// Pushing operators onto the stack
+	void CompoundExpression::PushBack(shared_ptr<Operator> operation)
+	{
+		_operations.push_back(operation);
+		_objectTypes.push_back(ExpressionComponent::Operator);
+	}
+
 	void CompoundExpression::PushFront(shared_ptr<Operator> operation)
 	{
 		_operations.push_front(operation);
 		_objectTypes.push_front(ExpressionComponent::Operator);
 	}
 
-	// Retreiving an item of the stack
+	// Retrieving an item of the stack
 	shared_ptr<Expression> CompoundExpression::FrontExpression()
 	{
 		if (_objectTypes.front() != ExpressionComponent::Expression)
