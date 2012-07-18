@@ -138,6 +138,12 @@
     <ClInclude Include="SquareRoot.h">
       <Filter>Header Files\Operator\Implementations</Filter>
     </ClInclude>
+    <ClInclude Include="BinaryOperator.h">
+      <Filter>Header Files\Operator\AbstractClasses</Filter>
+    </ClInclude>
+    <ClInclude Include="UnaryOperator.h">
+      <Filter>Header Files\Operator\AbstractClasses</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -211,6 +217,12 @@
     </ClCompile>
     <ClCompile Include="SquareRoot.cpp">
       <Filter>Source Files\Operator\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryOperator.cpp">
+      <Filter>Source Files\Operator\AbstractClasses</Filter>
+    </ClCompile>
+    <ClCompile Include="UnaryOperator.cpp">
+      <Filter>Source Files\Operator\AbstractClasses</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

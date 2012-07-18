@@ -20,12 +20,6 @@ namespace ASCIIMathMLLibrary
 		);
 	}
 
-	// Returns the number of parameters involved in this operation
-	int NaturalLogarithm::GetParameterCount()
-	{
-		return 1;
-	}
-
 	// Gets a string representation of this operation
 	string& NaturalLogarithm::GetStringRepresentation()
 	{

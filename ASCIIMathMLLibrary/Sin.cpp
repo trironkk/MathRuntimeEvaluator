@@ -20,12 +20,6 @@ namespace ASCIIMathMLLibrary
 		);
 	}
 
-	// Returns the number of parameters involved in this operation
-	int Sin::GetParameterCount()
-	{
-		return 1;
-	}
-
 	// Gets a string representation of this operation
 	string& Sin::GetStringRepresentation()
 	{

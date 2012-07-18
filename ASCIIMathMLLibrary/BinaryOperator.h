@@ -1,16 +1,16 @@
-#ifndef UNARYOPERATOR_H
-#define UNARYOPERATOR_H
+#ifndef BINARYOPERATOR_H
+#define BINARYOPERATOR_H
 
 #include "Operator.h"
 
 namespace ASCIIMathMLLibrary
 {
 	// Abstract base class of ExpressionComponent - represents a operator
-	class UnaryOperator : public Operator
+	class BinaryOperator : public Operator
 	{
 	public:
 		// Basic Constructor
-		UnaryOperator();
+		BinaryOperator();
 
 		// Performs this operation
 		virtual shared_ptr<Expression> Evaluate(

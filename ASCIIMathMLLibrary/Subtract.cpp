@@ -20,12 +20,6 @@ namespace ASCIIMathMLLibrary
 		);
 	}
 
-	// Returns the number of parameters involved in this operation
-	int Subtract::GetParameterCount()
-	{
-		return 2;
-	}
-
 	// Gets a string representation of this operation
 	string& Subtract::GetStringRepresentation()
 	{

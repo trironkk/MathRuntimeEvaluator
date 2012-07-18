@@ -1,11 +1,11 @@
 #ifndef ADD_H
 #define ADD_H
 
-#include "Operator.h"
+#include "BinaryOperator.h"
 
 namespace ASCIIMathMLLibrary
 {
-	class Add : public Operator
+	class Add : public BinaryOperator
 	{
 	public:
 		// Basic constructor
@@ -15,9 +15,6 @@ namespace ASCIIMathMLLibrary
 		virtual shared_ptr<Expression> Evaluate(
 			const WorkingMemory& workingMemory,
 			list<shared_ptr<Expression>>& parameters);
-
-		// Returns the number of parameters involved in this operation
-		virtual int GetParameterCount();
 
 		// Gets a string representation of this operation
 		virtual string& GetStringRepresentation();

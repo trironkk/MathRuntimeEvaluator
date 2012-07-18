@@ -20,12 +20,6 @@ namespace ASCIIMathMLLibrary
 		);
 	}
 
-	// Returns the number of parameters involved in this operation
-	int AbsoluteValue::GetParameterCount()
-	{
-		return 1;
-	}
-
 	// Gets a string representation of this operation
 	string& AbsoluteValue::GetStringRepresentation()
 	{

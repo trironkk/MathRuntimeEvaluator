@@ -309,12 +309,6 @@ namespace ASCIIMathMLLibrary
 			{
 				(*_operations.at(operationsIndex++)).Print(os);
 			}
-			else
-			{
-				throw ASCIIMathMLException(
-"Unrecognized ExpressionComponent enumeration. Update CompoundExpression::Print()."
-					);
-			}
 			if (i < _objectTypes.size() - 1)
 				os << ' ';
 		}

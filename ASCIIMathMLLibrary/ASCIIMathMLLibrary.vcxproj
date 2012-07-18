@@ -61,6 +61,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Add.h" />
+    <ClInclude Include="BinaryOperator.h" />
     <ClInclude Include="CommonLogarithm.h" />
     <ClInclude Include="CompoundExpression.h" />
     <ClInclude Include="Constant.h" />
@@ -81,6 +82,7 @@
     <ClInclude Include="SquareRoot.h" />
     <ClInclude Include="Subtract.h" />
     <ClInclude Include="Tan.h" />
+    <ClInclude Include="UnaryOperator.h" />
     <ClInclude Include="Variable.h" />
     <ClInclude Include="WorkingMemory.h" />
   </ItemGroup>
@@ -88,6 +90,7 @@
     <ClCompile Include="AbsoluateValue.cpp" />
     <ClCompile Include="AbsoluteValue.h" />
     <ClCompile Include="Add.cpp" />
+    <ClCompile Include="BinaryOperator.cpp" />
     <ClCompile Include="CommonLogarithm.cpp" />
     <ClCompile Include="CompoundExpressions.cpp" />
     <ClCompile Include="Constant.cpp" />
@@ -107,6 +110,7 @@
     <ClCompile Include="SquareRoot.cpp" />
     <ClCompile Include="Subtract.cpp" />
     <ClCompile Include="Tan.cpp" />
+    <ClCompile Include="UnaryOperator.cpp" />
     <ClCompile Include="Variable.cpp" />
     <ClCompile Include="WorkingMemory.cpp" />
   </ItemGroup>
