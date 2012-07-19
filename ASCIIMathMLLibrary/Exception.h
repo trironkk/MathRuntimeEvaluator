@@ -3,16 +3,15 @@
 
 #include <exception>
 #include <string>
-
-#include "Constants.h"
+#include <iostream>
 
 namespace ASCIIMathMLLibrary
 {
 	class ASCIIMathMLException : public std::exception
 	{
 	public:
-		string Description;
-		ASCIIMathMLException(string description) throw();
+		std::string Description;
+		ASCIIMathMLException(std::string description) throw();
 		const char* what() const throw();
 
 		friend std::ostream& operator<<(std::ostream& os,

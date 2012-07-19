@@ -1,6 +1,14 @@
 #ifndef	COMPOUND_EXPRESSION_H
 #define COMPOUND_EXPRESSION_H
 
+#include <deque>
+#include <list>
+#include <stack>
+#include <memory>
+#include <string>
+#include <sstream>
+#include <iostream>
+
 #include "Expression.h"
 #include "ExpressionComponent.h"
 #include "Operator.h"
@@ -21,31 +29,31 @@ namespace ASCIIMathMLLibrary
 		// like a stack.
 
 		// A LIFO data structure for the involved expressions
-		deque<shared_ptr<Expression>> _expressions;
+		std::deque<std::shared_ptr<Expression>> _expressions;
 		
 		// A LIFO data structure for the involved operations
-		deque<shared_ptr<Operator>> _operations;
+		std::deque<std::shared_ptr<Operator>> _operations;
 
 		// A LIFO data structure for tracking the types of inserted objects
-		deque<ExpressionComponent::Types> _objectTypes;
+		std::deque<ExpressionComponent::Types> _objectTypes;
 
 	public:
 		// Basic Constructor
 		CompoundExpression();
 
 		// Pushing expressions onto the stack
-		void PushFront(shared_ptr<Expression> expression);
-		void PushBack(shared_ptr<Expression> expression);
+		void PushFront(std::shared_ptr<Expression> expression);
+		void PushBack(std::shared_ptr<Expression> expression);
 
 		// Pushing Expressions - Abbreviated
 		void PushFront(double value);
-		void PushFront(string variableName);
+		void PushFront(std::string variableName);
 		void PushBack(double value);
-		void PushBack(string variableName);
+		void PushBack(std::string variableName);
 
 		// Pushing operators onto the stack
-		void PushFront(shared_ptr<Operator> operation);
-		void PushBack(shared_ptr<Operator> operation);
+		void PushFront(std::shared_ptr<Operator> operation);
+		void PushBack(std::shared_ptr<Operator> operation);
 
 		// Pushing Operators - Abbreviated
 		// Note: Template functions cannot be prototyped, so we define them here
@@ -55,18 +63,18 @@ namespace ASCIIMathMLLibrary
 		void PushBack() { PushBack(*(new shared_ptr<T>(new T()))); }
 
 		// Retreiving an item of the stack
-		shared_ptr<Expression> FrontExpression();
-		shared_ptr<Operator> FrontOperator();
-		shared_ptr<Expression> BackExpression();
-		shared_ptr<Operator> BackOperator();
+		std::shared_ptr<Expression> FrontExpression();
+		std::shared_ptr<Operator> FrontOperator();
+		std::shared_ptr<Expression> BackExpression();
+		std::shared_ptr<Operator> BackOperator();
 
 		// Removing an item from the stack
 		void PopFront();
 		void PopBack();
 
 		// Get the item at the specified index
-		shared_ptr<Expression> AtExpression(int index);
-		shared_ptr<Operator> AtOperator(int index);
+		std::shared_ptr<Expression> AtExpression(int index);
+		std::shared_ptr<Operator> AtOperator(int index);
 
 		// Check the type of the top of the stack
 		ExpressionComponent::Types CheckFrontType();
@@ -82,7 +90,7 @@ namespace ASCIIMathMLLibrary
 		// For Variables, this method looks its name up in the WorkingMemory, and
 		// returns a Constant with its value.
 		// For Constants, this method returns this object
-		virtual shared_ptr<Expression> Simplify(
+		virtual std::shared_ptr<Expression> Simplify(
 			const WorkingMemory& workingMemory);
 
 		// Gets the double value associated with this expression, or throws an
@@ -90,9 +98,9 @@ namespace ASCIIMathMLLibrary
 		virtual double GetValue();
 
 		// Gets a string representation of this object
-		virtual string& GetStringRepresentation();
-		string& GetInfixStringRepresentation();
-		string& GetPostfixStringRepresentation();
+		virtual std::string& GetStringRepresentation();
+		std::string& GetInfixStringRepresentation();
+		std::string& GetPostfixStringRepresentation();
 	};
 }
 

@@ -1,7 +1,8 @@
 #ifndef IPRINTABLE_H
 #define IPRINTABLE_H
 
-#include "Constants.h"
+#include <iostream>
+#include <string>
 
 namespace ASCIIMathMLLibrary
 {
@@ -10,14 +11,14 @@ namespace ASCIIMathMLLibrary
 	public:
 		// Write a friendly string representation of this object to the inputed
 		// ostream
-		ostream& Print(std::ostream& os);
+		std::ostream& Print(std::ostream& os);
 
 		// Call the child class's implementation of Print, and then write a new
 		// line character.
-		ostream& PrintLine(std::ostream& os);
+		std::ostream& PrintLine(std::ostream& os);
 
 		// Gets a string representation of this object
-		virtual string& GetStringRepresentation() = 0;
+		virtual std::string& GetStringRepresentation() = 0;
 	};
 }
 

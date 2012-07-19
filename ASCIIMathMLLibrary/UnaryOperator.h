@@ -13,15 +13,15 @@ namespace ASCIIMathMLLibrary
 		UnaryOperator();
 
 		// Performs this operation
-		virtual shared_ptr<Expression> Evaluate(
+		virtual std::shared_ptr<Expression> Evaluate(
 			const WorkingMemory& workingMemory,
-			list<shared_ptr<Expression>>& parameters) = 0;
+			std::list<std::shared_ptr<Expression>>& parameters) = 0;
 
 		// Returns the number of parameters involved in this object
 		int GetParameterCount();
 	
 		// Gets a string representation of this operation
-		virtual string& GetStringRepresentation() = 0;
+		virtual std::string& GetStringRepresentation() = 0;
 	};
 }
 

@@ -28,6 +28,7 @@
 #include "Exception.h"
 
 using namespace ASCIIMathMLLibrary;
+using namespace std;
 
 void EvaluateCompoundExpression(CompoundExpression ce, WorkingMemory memory)
 {

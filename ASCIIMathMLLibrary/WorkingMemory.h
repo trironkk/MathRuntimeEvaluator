@@ -3,8 +3,10 @@
 
 #include <vector>
 #include <algorithm>
+#include <iostream>
+#include <sstream>
+#include <unordered_map>
 
-#include "Constants.h"
 #include "Exception.h"
 #include "IPrintable.h"
 
@@ -13,20 +15,20 @@ namespace ASCIIMathMLLibrary
 	class WorkingMemory : public IPrintable
 	{
 	private:
-		std::unordered_map<string, double> _workingMemory;
-		std::list<string> _declaredVariables;
+		std::unordered_map<std::string, double> _workingMemory;
+		std::list<std::string> _declaredVariables;
 
 		static const int MAX_VARIABLE_NAME_LENGTH = 32;
-		static const string ILLEGAL_CHARACTERS;
-		void ValidateVariableName(string variableName);
+		static const std::string ILLEGAL_CHARACTERS;
+		void ValidateVariableName(std::string variableName);
 
 	public:
 		WorkingMemory();
-		bool Contains(string variableName) const;
-		double WorkingMemory::GetValue(string variableName) const;
-		void WorkingMemory::SetValue(string variableName, double value);
+		bool Contains(std::string variableName) const;
+		double WorkingMemory::GetValue(std::string variableName) const;
+		void WorkingMemory::SetValue(std::string variableName, double value);
 
-		virtual string& GetStringRepresentation();
+		virtual std::string& GetStringRepresentation();
 	};
 }
 

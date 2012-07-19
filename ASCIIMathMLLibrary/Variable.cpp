@@ -1,5 +1,8 @@
 #include "Variable.h"
 
+using std::string;
+using std::shared_ptr;
+
 namespace ASCIIMathMLLibrary
 {
 	Variable::Variable(string variableName) : _variableName(variableName) {  }

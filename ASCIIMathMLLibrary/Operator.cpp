@@ -1,5 +1,9 @@
 #include "Operator.h"
 
+using std::shared_ptr;
+using std::list;
+using std::vector;
+
 namespace ASCIIMathMLLibrary
 {
 	// Basic constructor

@@ -12,12 +12,12 @@ namespace ASCIIMathMLLibrary
 		CommonLogarithm();
 
 		// Perform this operation
-		virtual shared_ptr<Expression> Evaluate(
+		virtual std::shared_ptr<Expression> Evaluate(
 			const WorkingMemory& workingMemory,
-			list<shared_ptr<Expression>>& parameters);
+			std::list<std::shared_ptr<Expression>>& parameters);
 
 		// Gets a string representation of this operation
-		virtual string& GetStringRepresentation();
+		virtual std::string& GetStringRepresentation();
 	};
 }
 

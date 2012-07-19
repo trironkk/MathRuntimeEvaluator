@@ -66,7 +66,6 @@
     <ClInclude Include="CommonLogarithm.h" />
     <ClInclude Include="CompoundExpression.h" />
     <ClInclude Include="Constant.h" />
-    <ClInclude Include="Constants.h" />
     <ClInclude Include="Cos.h" />
     <ClInclude Include="Divide.h" />
     <ClInclude Include="Exception.h" />

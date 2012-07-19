@@ -1,6 +1,9 @@
 #ifndef EXPRESSION_H
 #define EXPRESSION_H
 
+#include <memory>
+#include <string>
+
 #include "IPrintable.h"
 #include "WorkingMemory.h"
 
@@ -19,7 +22,7 @@ namespace ASCIIMathMLLibrary
 		// For Variables, this method looks its name up in the WorkingMemory, and
 		// returns a Constant with its value.
 		// For Constants, this method returns this object.
-		virtual shared_ptr<Expression> Simplify(
+		virtual std::shared_ptr<Expression> Simplify(
 			const WorkingMemory& workingMemory) = 0;
 
 		// Gets the double value associated with this expression, or throws an
@@ -27,7 +30,7 @@ namespace ASCIIMathMLLibrary
 		virtual double GetValue() = 0;
 
 		// Gets a string representation of this object
-		virtual string& GetStringRepresentation() = 0;
+		virtual std::string& GetStringRepresentation() = 0;
 	};
 }
 

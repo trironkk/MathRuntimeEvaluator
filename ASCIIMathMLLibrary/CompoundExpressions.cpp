@@ -1,5 +1,13 @@
 #include "CompoundExpression.h"
 
+using std::deque;
+using std::list;
+using std::vector;
+using std::stack;
+using std::shared_ptr;
+using std::string;
+using std::stringstream;
+
 namespace ASCIIMathMLLibrary
 {
 	// Basic Constructor
@@ -318,7 +326,7 @@ namespace ASCIIMathMLLibrary
 
 	string& CompoundExpression::GetPostfixStringRepresentation()
 	{
-		ostringstream os;
+		stringstream os;
 		int expressionsIndex = 0;
 		int operationsIndex = 0;
 		for (unsigned int i = 0; i < _objectTypes.size(); i++)

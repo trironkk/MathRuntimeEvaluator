@@ -138,9 +138,6 @@
     <ClInclude Include="UnaryOperator.h">
       <Filter>Header Files\Operator\AbstractClasses</Filter>
     </ClInclude>
-    <ClInclude Include="Constants.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="CompoundExpression.h">
       <Filter>Header Files\Expression\Implementations</Filter>
     </ClInclude>

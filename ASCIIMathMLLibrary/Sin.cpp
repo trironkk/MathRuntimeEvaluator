@@ -1,5 +1,10 @@
 #include "Sin.h"
 
+using std::shared_ptr;
+using std::list;
+using std::vector;
+using std::string;
+
 namespace ASCIIMathMLLibrary
 {
 	// Basic constructor

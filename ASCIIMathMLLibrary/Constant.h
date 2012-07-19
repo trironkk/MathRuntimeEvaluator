@@ -1,6 +1,10 @@
 #ifndef CONSTANT_H
 #define CONSTANT_H
 
+#include <iostream>
+#include <memory>
+#include <string>
+
 #include "Expression.h"
 
 namespace ASCIIMathMLLibrary
@@ -21,14 +25,14 @@ namespace ASCIIMathMLLibrary
 		// For Variables, this method looks its name up in the WorkingMemory, and
 		// returns a Constant with its value.
 		// For Constants, this method returns this object.
-		virtual shared_ptr<Expression> Simplify(const WorkingMemory& workingMemory);
+		virtual std::shared_ptr<Expression> Simplify(const WorkingMemory& workingMemory);
 
 		// Gets the double value associated with this expression, or throws an
 		// error
 		virtual double GetValue();
 
 		// Gets a string representation of this object
-		virtual string& GetStringRepresentation();
+		virtual std::string& GetStringRepresentation();
 	};
 }
 

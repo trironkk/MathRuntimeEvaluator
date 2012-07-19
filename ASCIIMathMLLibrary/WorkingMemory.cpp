@@ -1,7 +1,9 @@
-#include <iostream>
-#include <algorithm>
-
 #include "WorkingMemory.h"
+
+using std::unordered_map;
+using std::list;
+using std::string;
+using std::stringstream;
 
 namespace ASCIIMathMLLibrary
 {
@@ -9,8 +11,8 @@ namespace ASCIIMathMLLibrary
 			",./;'[]\\-=`!@#$%^&*()<>?:\"{}|+";
 
 	WorkingMemory::WorkingMemory() :
-		_workingMemory(std::unordered_map<std::string, double>()),
-		_declaredVariables(std::list<std::string>()) { }
+		_workingMemory(unordered_map<string, double>()),
+		_declaredVariables(list<std::string>()) { }
 	
 	bool WorkingMemory::Contains(string variableName) const
 	{
@@ -93,7 +95,7 @@ namespace ASCIIMathMLLibrary
 		result += "----" + string(maxLength - 4, ' ') + "-----\n";
 
 		// String stream for converting double to strings
-		ostringstream convert;
+		stringstream convert;
 
 		// Write every variable and its value
 		for (iter = _declaredVariables.begin();

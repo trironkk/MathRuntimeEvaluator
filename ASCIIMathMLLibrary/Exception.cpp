@@ -1,6 +1,6 @@
-#include <iostream>
-
 #include "Exception.h"
+
+using std::string;
 
 namespace ASCIIMathMLLibrary
 {

@@ -1,5 +1,9 @@
 #include "Constant.h"
 
+using std::shared_ptr;
+using std::string;
+using std::ostringstream;
+
 namespace ASCIIMathMLLibrary
 {
 	// Basic Constructor
