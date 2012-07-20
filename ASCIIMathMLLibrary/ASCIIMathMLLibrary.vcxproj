@@ -61,10 +61,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AbsoluteValue.h" />
     <ClInclude Include="Add.h" />
     <ClInclude Include="BinaryOperator.h" />
     <ClInclude Include="CommonLogarithm.h" />
     <ClInclude Include="CompoundExpression.h" />
+    <ClInclude Include="CompoundExpressionFactory.h" />
     <ClInclude Include="Constant.h" />
     <ClInclude Include="Cos.h" />
     <ClInclude Include="Divide.h" />
@@ -78,20 +80,22 @@
     <ClInclude Include="Negate.h" />
     <ClInclude Include="Operator.h" />
     <ClInclude Include="Expression.h" />
+    <ClInclude Include="OperatorFactory.h" />
     <ClInclude Include="Sin.h" />
     <ClInclude Include="SquareRoot.h" />
     <ClInclude Include="Subtract.h" />
     <ClInclude Include="Tan.h" />
     <ClInclude Include="UnaryOperator.h" />
+    <ClInclude Include="Utilities.h" />
     <ClInclude Include="Variable.h" />
     <ClInclude Include="WorkingMemory.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="AbsoluateValue.cpp" />
-    <ClCompile Include="AbsoluteValue.h" />
+    <ClCompile Include="AbsoluteValue.cpp" />
     <ClCompile Include="Add.cpp" />
     <ClCompile Include="BinaryOperator.cpp" />
     <ClCompile Include="CommonLogarithm.cpp" />
+    <ClCompile Include="CompoundExpressionFactory.cpp" />
     <ClCompile Include="CompoundExpressions.cpp" />
     <ClCompile Include="Constant.cpp" />
     <ClCompile Include="Cos.cpp" />
@@ -106,11 +110,13 @@
     <ClCompile Include="NaturalLogarithm.cpp" />
     <ClCompile Include="Negate.cpp" />
     <ClCompile Include="Operator.cpp" />
+    <ClCompile Include="OperatorFactory.cpp" />
     <ClCompile Include="Sin.cpp" />
     <ClCompile Include="SquareRoot.cpp" />
     <ClCompile Include="Subtract.cpp" />
     <ClCompile Include="Tan.cpp" />
     <ClCompile Include="UnaryOperator.cpp" />
+    <ClCompile Include="Utilities.cpp" />
     <ClCompile Include="Variable.cpp" />
     <ClCompile Include="WorkingMemory.cpp" />
   </ItemGroup>

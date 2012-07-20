@@ -67,6 +67,12 @@
     <Filter Include="Source Files\Operator\Implementation\Arithmetic">
       <UniqueIdentifier>{0ea2c89d-5bcb-498d-a956-746c8102a4c4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Factories">
+      <UniqueIdentifier>{f2cd5676-473e-4c68-8ea4-2c091bbe1dc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Factories">
+      <UniqueIdentifier>{308abf7a-dee2-44a7-b030-e858179b668f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exception.h">
@@ -141,6 +147,18 @@
     <ClInclude Include="CompoundExpression.h">
       <Filter>Header Files\Expression\Implementations</Filter>
     </ClInclude>
+    <ClInclude Include="CompoundExpressionFactory.h">
+      <Filter>Header Files\Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="OperatorFactory.h">
+      <Filter>Header Files\Factories</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AbsoluteValue.h">
+      <Filter>Header Files\Operator\Implementations</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -179,12 +197,6 @@
     <ClCompile Include="CommonLogarithm.cpp">
       <Filter>Source Files\Operator\Implementation</Filter>
     </ClCompile>
-    <ClCompile Include="AbsoluteValue.h">
-      <Filter>Header Files\Operator\Implementations</Filter>
-    </ClCompile>
-    <ClCompile Include="AbsoluateValue.cpp">
-      <Filter>Source Files\Operator\Implementation</Filter>
-    </ClCompile>
     <ClCompile Include="Cos.cpp">
       <Filter>Source Files\Operator\Implementation\Trigonometric</Filter>
     </ClCompile>
@@ -220,6 +232,18 @@
     </ClCompile>
     <ClCompile Include="CompoundExpressions.cpp">
       <Filter>Source Files\Expression\Implementations</Filter>
+    </ClCompile>
+    <ClCompile Include="CompoundExpressionFactory.cpp">
+      <Filter>Source Files\Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorFactory.cpp">
+      <Filter>Source Files\Factories</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AbsoluteValue.cpp">
+      <Filter>Source Files\Operator\Implementation</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

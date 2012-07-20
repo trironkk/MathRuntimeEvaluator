@@ -35,9 +35,20 @@ namespace ASCIIMathMLLibrary
 		PushFront(*(new shared_ptr<Expression>(new Constant(value))));
 	}
 
-	void CompoundExpression::PushFront(string variableName)
+	void CompoundExpression::PushFront(string identifier)
 	{
-		PushFront(*(new shared_ptr<Expression>(new Variable(variableName))));
+		if (isDouble(identifier))
+		{
+			PushFront(*(new shared_ptr<Expression>(new Variable(identifier))));
+		}
+		else
+		{
+			PushFront(
+				*(new shared_ptr<Expression>(
+					new Constant(toDouble(identifier)))
+				)
+			);
+		}
 	}
 
 	void CompoundExpression::PushBack(double value)
@@ -45,9 +56,20 @@ namespace ASCIIMathMLLibrary
 		PushBack(*(new shared_ptr<Expression>(new Constant(value))));
 	}
 
-	void CompoundExpression::PushBack(string variableName)
+	void CompoundExpression::PushBack(string identifier)
 	{
-		PushBack(*(new shared_ptr<Expression>(new Variable(variableName))));
+		if (isDouble(identifier))
+		{
+			PushBack(*(new shared_ptr<Expression>(new Variable(identifier))));
+		}
+		else
+		{
+			PushBack(
+				*(new shared_ptr<Expression>(
+					new Constant(toDouble(identifier)))
+				)
+			);
+		}
 	}
 	
 	// Pushing operators onto the stack

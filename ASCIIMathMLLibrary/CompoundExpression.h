@@ -15,6 +15,7 @@
 #include "WorkingMemory.h"
 #include "Variable.h"
 #include "Constant.h"
+#include "Utilities.h"
 
 namespace ASCIIMathMLLibrary
 {
