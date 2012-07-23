@@ -25,16 +25,6 @@ namespace ASCIIMathMLLibrary
 		);
 	}
 
-	// Returns the rank of this operation - higher rank operations are
-	// evaluated before lower operations
-	// 3 - Unary Operations
-	// 2 - Multiply/Divide/Modulo
-	// 1 - Add/Subtract
-	int Modulo::GetRank()
-	{
-		return 2;
-	}
-
 	// Gets a string representation of this operation
 	string& Modulo::GetStringRepresentation()
 	{

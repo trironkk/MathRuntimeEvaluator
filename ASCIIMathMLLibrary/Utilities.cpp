@@ -9,8 +9,9 @@ namespace ASCIIMathMLLibrary
 	{
 		if (str.empty()) return false;
 		bool containsDecimal = false;
-		string::const_iterator it = str.begin();
-		while (it != str.end())
+		for (string::const_iterator it = str.begin();
+			it != str.end();
+			it++)
 		{
 			if (isdigit(*it) == false)
 			{

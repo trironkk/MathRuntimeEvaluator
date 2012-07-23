@@ -2,10 +2,45 @@
 
 using std::shared_ptr;
 using std::list;
+using std::string;
 using std::vector;
 
 namespace ASCIIMathMLLibrary
 {
+	// A vector of the string representations of operators
+	const char *operators[] = {
+		"+", "-", "*", "/",
+		"sin", "cos", "tan",
+		"abs", "log", "^",
+		"%", "ln", "-", "sqrt"
+	};
+	vector<string> OPERATORS(operators, std::end(operators));
+
+	// Returns true if the string is an operator, and false otherwise
+	bool IsOperator(const std::string str)
+	{
+		return find(OPERATORS.begin(), OPERATORS.end(), str) != OPERATORS.end();
+	}
+
+	// Returns the rank of the operator associated with the input string
+	int GetOperatorRank(const string str)
+	{
+		if (str == "+")
+			return 1;
+		else if (str == "-")
+			return 1;
+		else if (str == "*")
+			return 2;
+		else if (str == "/")
+			return 2;
+		else if (str == "%")
+			return 2;
+		else if (str == "^")
+			return 4;
+		else
+			return 3;
+	}
+
 	// Basic constructor
 	Operator::Operator() {}
 

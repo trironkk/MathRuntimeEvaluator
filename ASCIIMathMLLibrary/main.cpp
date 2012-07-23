@@ -76,13 +76,8 @@ int main()
 
 	std::istringstream s("123.12 + a*b + c * sqrt(4)\n");
 	cout << "123.12 + a*b + c * sqrt(4)\n" << std::endl;
-	std::string result;
-	int i = 0;
-	do {
-		result = Parser::ReadNextToken(s);
-		cout << i++ << "\t" << result << std::endl;
-		// We need to update the position of the stringstream. It's not happening.
-	} while (result != "");
-	delete s;
+	
+	Parser::ParseString(s);
+
 	std::cin.get();
 }

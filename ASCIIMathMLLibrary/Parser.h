@@ -36,8 +36,13 @@ namespace ASCIIMathMLLibrary
 	namespace Parser
 	{
 		// Parse a line of input
-		CompoundExpression& ParseString(std::istringstream& str);
 		CompoundExpression& ParseString(std::string str);
+		CompoundExpression& ParseString(std::istringstream& stream);
+
+		// Internal parsing method - necessary to clean up parenthetical recursive
+		// calls
+		std::list<std::string> InternalParse(std::istringstream& stream);
+
 
 		// Return the next token, and adjust the stringstream accordingly
 		std::string ReadNextToken(std::istringstream& stream);

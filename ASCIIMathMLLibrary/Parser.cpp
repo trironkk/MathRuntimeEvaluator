@@ -11,10 +11,55 @@ namespace ASCIIMathMLLibrary
 	namespace Parser
 	{
 		using ASCIIMathMLLibrary::ILLEGAL_CHARACTERS;
+		using ASCIIMathMLLibrary::IsOperator;
 
 		// Parse a line of input
-		CompoundExpression& ParseString(istringstream& stream);
-		CompoundExpression& ParseString(string str);
+		CompoundExpression& ParseString(string str)
+		{
+			return ParseString(istringstream(str));
+		}
+
+		CompoundExpression& ParseString(istringstream& stream)
+		{
+			CompoundExpression result;
+			list<string> identifiers = InternalParse(stream);
+			for (list<string>::iterator iter = identifiers.begin();
+				iter != identifiers.end();
+				iter++)
+			{
+				result.PushBack(*iter);
+			}
+			return result;
+		}
+
+		// Internal parsing method - necessary to clean up parenthetical recursive
+		// calls.
+		list<string> InternalParse(istringstream& stream)
+		{
+			list<string> result;
+			string token;
+			stack<string> operators;
+			list<string> parameters;
+
+			token = ReadNextToken(stream);
+			while (token != "\n")
+			{
+				// If the token is an operator, check its rank.
+				if (IsOperator(token))
+				{
+					// If the token is a "-" symbol, we need to decide whether
+					// it's negation or subtraction. If it's negation, we convert
+					// it to a "~" symbol, for our internal use. Otherwise, leave
+					// it alone.
+				}
+				std::cout << token << ' ' << IsOperator(token) << std::endl;
+				result.push_back(string(token));
+
+				// Read in the next token.
+				token = ReadNextToken(stream);
+			}
+			return result;
+		}
 
 		// Return the next token, and adjust the stringstream accordingly
 		string ReadNextToken(istringstream& stream)
