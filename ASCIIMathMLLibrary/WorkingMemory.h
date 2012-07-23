@@ -12,8 +12,7 @@
 
 namespace ASCIIMathMLLibrary
 {
-
-	const int const MAX_VARIABLE_NAME_LENGTH = 32;
+	int const MAX_VARIABLE_NAME_LENGTH = 32;
 	const char* const ILLEGAL_CHARACTERS =
 			",./;'[]\\-=`!@#$%^&*()<>?:\"{}|+";
 

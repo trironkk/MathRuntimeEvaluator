@@ -7,8 +7,8 @@
 
 namespace ASCIIMathMLLibrary
 {
-	bool isDouble(const std::string& str);
-	double toDouble(const std::string& str);
+	bool IsDouble(const std::string& str);
+	double ToDouble(const std::string& str);
 
 }
 

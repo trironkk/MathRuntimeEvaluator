@@ -10,7 +10,6 @@
 
 #include "Constant.h"
 #include "WorkingMemory.h"
-#include "CompoundExpression.h"
 
 namespace ASCIIMathMLLibrary
 {

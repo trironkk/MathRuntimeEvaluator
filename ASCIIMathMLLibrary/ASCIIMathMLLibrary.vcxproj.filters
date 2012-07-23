@@ -73,6 +73,9 @@
     <Filter Include="Source Files\Factories">
       <UniqueIdentifier>{308abf7a-dee2-44a7-b030-e858179b668f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Parser">
+      <UniqueIdentifier>{8a0720e0-06cf-4c24-a41f-480652a48403}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Exception.h">
@@ -160,7 +163,7 @@
       <Filter>Header Files\Operator\Implementations</Filter>
     </ClInclude>
     <ClInclude Include="Parser.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Parser</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -4,20 +4,7 @@
 #include <memory>
 
 // Operators
-#include "Add.h"
-#include "Subtract.h"
-#include "Multiply.h"
-#include "Divide.h"
-#include "Negate.h"
-#include "Exponentiate.h"
-#include "NaturalLogarithm.h"
-#include "Modulo.h"
-#include "CommonLogarithm.h"
-#include "Sin.h"
-#include "Cos.h"
-#include "Tan.h"
-#include "AbsoluteValue.h"
-#include "SquareRoot.h"
+#include "Operator.h"
 
 // Expressions
 #include "Constant.h"
@@ -50,34 +37,40 @@ int main()
 	memory.PrintLine(cout);
 	cout << std::endl;
 
-	CompoundExpression ce1;
-	ce1.PushBack("a");
-	ce1.PushBack(10);
-	ce1.PushBack<Add>();
-	EvaluateCompoundExpression(ce1, memory);
+	//CompoundExpression ce1;
+	//ce1.PushBack("a");
+	//ce1.PushBack(10);
+	//ce1.PushBack<Add>();
+	//EvaluateCompoundExpression(ce1, memory);
 
-	CompoundExpression ce2;
-	ce2.PushBack("a");
-	ce2.PushBack(10);
-	ce2.PushBack<Subtract>();
-	EvaluateCompoundExpression(ce2, memory);
+	//CompoundExpression ce2;
+	//ce2.PushBack("a");
+	//ce2.PushBack(10);
+	//ce2.PushBack<Subtract>();
+	//EvaluateCompoundExpression(ce2, memory);
 
-	CompoundExpression ce3;
-	ce3.PushBack("a");
-	ce3.PushBack(10);
-	ce3.PushBack<Multiply>();
-	EvaluateCompoundExpression(ce3, memory);
+	//CompoundExpression ce3;
+	//ce3.PushBack("a");
+	//ce3.PushBack(10);
+	//ce3.PushBack<Multiply>();
+	//EvaluateCompoundExpression(ce3, memory);
 
-	CompoundExpression ce4;
-	ce4.PushBack("a");
-	ce4.PushBack(10);
-	ce4.PushBack<Divide>();
-	EvaluateCompoundExpression(ce4, memory);
+	//CompoundExpression ce4;
+	//ce4.PushBack("a");
+	//ce4.PushBack(10);
+	//ce4.PushBack<Divide>();
+	//EvaluateCompoundExpression(ce4, memory);
 
 	std::istringstream s("123.12 + a*b + c * sqrt(4)\n");
 	cout << "123.12 + a*b + c * sqrt(4)\n" << std::endl;
 	
-	Parser::ParseString(s);
+	CompoundExpression compoundExpression(Parser::ParseString(s));
+	compoundExpression.PrintLine(cout);
+
+	cout << "infix:   " << compoundExpression.GetInfixStringRepresentation() << std::endl;
+	cout << "postfix: " << compoundExpression.GetPostfixStringRepresentation() << std::endl;
+	compoundExpression.Simplify(memory);
+	compoundExpression.PrintLine(cout);
 
 	std::cin.get();
 }

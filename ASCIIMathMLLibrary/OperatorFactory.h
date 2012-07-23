@@ -4,6 +4,7 @@
 #include <string>
 
 #include "Operator.h"
+
 #include "Add.h"
 #include "Divide.h"
 #include "Multiply.h"
@@ -21,7 +22,9 @@
 
 namespace ASCIIMathMLLibrary
 {
-	Operator& NewOperator(const std::string& identifier);
+	class Operator;
+
+	Operator* NewOperator(const std::string& identifier);
 }
 
 #endif

@@ -40,8 +40,11 @@ namespace ASCIIMathMLLibrary
 		CompoundExpression& ParseString(std::istringstream& stream);
 
 		// Internal parsing method - necessary to clean up parenthetical recursive
-		// calls
-		std::list<std::string> InternalParse(std::istringstream& stream);
+		// calls. This is an implementation of the shunting yard algorithm for
+		// converting the infix string expression into a postfix
+		// CompoundExpression object.
+		std::list<std::string> InternalParse(std::istringstream& stream,
+			bool parenthetical=false);
 
 
 		// Return the next token, and adjust the stringstream accordingly

@@ -16,6 +16,7 @@
 #include "Variable.h"
 #include "Constant.h"
 #include "Utilities.h"
+#include "OperatorFactory.h"
 
 namespace ASCIIMathMLLibrary
 {

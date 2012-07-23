@@ -21,29 +21,43 @@ namespace ASCIIMathMLLibrary
 
 		CompoundExpression& ParseString(istringstream& stream)
 		{
-			CompoundExpression result;
+			CompoundExpression* result = new CompoundExpression();
 			list<string> identifiers = InternalParse(stream);
 			for (list<string>::iterator iter = identifiers.begin();
 				iter != identifiers.end();
 				iter++)
 			{
-				result.PushBack(*iter);
+				(*result).PushBack(*iter);
 			}
-			return result;
+			return *result;
 		}
 
 		// Internal parsing method - necessary to clean up parenthetical recursive
-		// calls.
-		list<string> InternalParse(istringstream& stream)
+		// calls. This is an implementation of the shunting yard algorithm for
+		// converting the infix string expression into a postfix
+		// CompoundExpression object.
+		list<string> InternalParse(istringstream& stream, bool parenthetical)
 		{
+			// The list of identifiers we're going to return.
 			list<string> result;
-			string token;
-			stack<string> operators;
-			list<string> parameters;
 
-			token = ReadNextToken(stream);
-			while (token != "\n")
+			// The previous token - this is necessary for discerning subtraction
+			// from negation.
+			string previousToken;
+
+			// The current token
+			string token;
+
+			// A stack of operators
+			stack<string> operators;
+
+			while (true)
 			{
+				// Record the current token as the previous token and read in the
+				// next token.
+				previousToken = string(token);
+				token = ReadNextToken(stream);
+
 				// If the token is an operator, check its rank.
 				if (IsOperator(token))
 				{
@@ -51,13 +65,76 @@ namespace ASCIIMathMLLibrary
 					// it's negation or subtraction. If it's negation, we convert
 					// it to a "~" symbol, for our internal use. Otherwise, leave
 					// it alone.
+					if (token == "-")
+						// To determine if it's negation, we do what a wise man
+						// suggested here:
+						// http://stackoverflow.com/a/5240781/391618
+						if (IsOperator(previousToken) || previousToken == "")
+							token = "~";
+
+					// While the rank of the current token is less than the rank
+					// of the top of the operators stack, push the top of the
+					// operators stack to the back of the result list
+					while (operators.size() > 0 &&
+						GetOperatorRank(token) < GetOperatorRank(operators.top()))
+					{
+						result.push_back(operators.top());
+						operators.pop();
+					}
+					operators.push(token);
+					continue;
 				}
-				std::cout << token << ' ' << IsOperator(token) << std::endl;
+
+				// If the token is an open parentheses, recursively call this
+				// method, run it to completion, and then append the contents of
+				// the list to the end of the results.
+				if (token == "(")
+				{
+					list<string> recursiveResults = InternalParse(stream, true);
+					for(list<string>::iterator iter = recursiveResults.begin();
+						iter != recursiveResults.end();
+						iter++)
+					{
+						result.push_back(*iter);
+					}
+					continue;
+				}
+
+				// If the token is a close parentheses, assert that this method
+				// was called recursively and then break out of this loop.
+				if (token == ")")
+				{
+					if (parenthetical == false)
+					{
+						stringstream errorStream;
+						errorStream << 
+"Unmatched close parentheses encountered at position ";
+						errorStream << stream.tellg();
+						errorStream << ".";
+						throw ASCIIMathMLException(errorStream.str());
+					}
+					break;
+				}
+
+				// If it's a newline character, break out of this loop.
+				if (token == "\n")
+					break;
+
+				// If it's not any of the above, it must be a constant or a
+				// variable. For both cases, just push it to the back of the
+				// results.
 				result.push_back(string(token));
 
-				// Read in the next token.
-				token = ReadNextToken(stream);
 			}
+
+			// Pop out the rest of the operators.
+			while (operators.size() > 0)
+			{
+				result.push_back(operators.top());
+				operators.pop();
+			}
+
+			// Return the result.
 			return result;
 		}
 
@@ -102,7 +179,7 @@ namespace ASCIIMathMLLibrary
 			{
 				// Read in characters until whitespace or an illegal character is
 				// encountered.
-				stringstream temporary_stream();
+				stringstream temporary_stream;
 				stream.putback(c);
 				while (true)
 				{

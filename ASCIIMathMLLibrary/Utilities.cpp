@@ -5,7 +5,7 @@ using std::istringstream;
 
 namespace ASCIIMathMLLibrary
 {
-	bool isDouble(const string& str)
+	bool IsDouble(const string& str)
 	{
 		if (str.empty()) return false;
 		bool containsDecimal = false;
@@ -29,7 +29,7 @@ namespace ASCIIMathMLLibrary
 		return true;
 	}
 
-	double toDouble(const string& str)
+	double ToDouble(const string& str)
 	{
 		istringstream i(str);
 		double x;
