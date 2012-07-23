@@ -7,9 +7,6 @@ using std::stringstream;
 
 namespace ASCIIMathMLLibrary
 {
-	const string WorkingMemory::ILLEGAL_CHARACTERS =
-			",./;'[]\\-=`!@#$%^&*()<>?:\"{}|+";
-
 	WorkingMemory::WorkingMemory() :
 		_workingMemory(unordered_map<string, double>()),
 		_declaredVariables(list<std::string>()) { }
@@ -58,12 +55,14 @@ namespace ASCIIMathMLLibrary
 										iter < variableName.end();
 										iter++)
 		{
-			if (ILLEGAL_CHARACTERS.find(*iter) != string::npos)
+			if (strchr(ILLEGAL_CHARACTERS, *iter) != NULL)
 			{
 				throw ASCIIMathMLException(
 					"The variable name contains one or more illegal characters.\n"
 				);
 			}
+			char* i = ",./;'[]\\-=`!@#$%^&*()<>?:\"{}|+";
+			
 		}
 
 		if (isdigit(*variableName.begin()))

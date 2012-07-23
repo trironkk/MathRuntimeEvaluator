@@ -159,6 +159,9 @@
     <ClInclude Include="AbsoluteValue.h">
       <Filter>Header Files\Operator\Implementations</Filter>
     </ClInclude>
+    <ClInclude Include="Parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -244,6 +247,9 @@
     </ClCompile>
     <ClCompile Include="AbsoluteValue.cpp">
       <Filter>Source Files\Operator\Implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

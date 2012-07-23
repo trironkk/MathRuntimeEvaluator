@@ -24,7 +24,16 @@ namespace ASCIIMathMLLibrary
 			new Constant((*values)[0] / (*values)[1])
 		);
 	}
-
+	
+	// Returns the rank of this operation - higher rank operations are
+	// evaluated before lower operations
+	// 3 - Unary Operations
+	// 2 - Multiply/Divide/Modulo
+	// 1 - Add/Subtract
+	int Divide::GetRank()
+	{
+		return 2;
+	}
 
 	// Gets a string representation of this operation
 	string& Divide::GetStringRepresentation()

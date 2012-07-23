@@ -12,14 +12,16 @@
 
 namespace ASCIIMathMLLibrary
 {
+
+	const int const MAX_VARIABLE_NAME_LENGTH = 32;
+	const char* const ILLEGAL_CHARACTERS =
+			",./;'[]\\-=`!@#$%^&*()<>?:\"{}|+";
+
 	class WorkingMemory : public IPrintable
 	{
 	private:
 		std::unordered_map<std::string, double> _workingMemory;
 		std::list<std::string> _declaredVariables;
-
-		static const int MAX_VARIABLE_NAME_LENGTH = 32;
-		static const std::string ILLEGAL_CHARACTERS;
 		void ValidateVariableName(std::string variableName);
 
 	public:

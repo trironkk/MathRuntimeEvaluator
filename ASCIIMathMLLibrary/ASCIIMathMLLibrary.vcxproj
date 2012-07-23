@@ -81,6 +81,7 @@
     <ClInclude Include="Operator.h" />
     <ClInclude Include="Expression.h" />
     <ClInclude Include="OperatorFactory.h" />
+    <ClInclude Include="Parser.h" />
     <ClInclude Include="Sin.h" />
     <ClInclude Include="SquareRoot.h" />
     <ClInclude Include="Subtract.h" />
@@ -111,6 +112,7 @@
     <ClCompile Include="Negate.cpp" />
     <ClCompile Include="Operator.cpp" />
     <ClCompile Include="OperatorFactory.cpp" />
+    <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Sin.cpp" />
     <ClCompile Include="SquareRoot.cpp" />
     <ClCompile Include="Subtract.cpp" />
