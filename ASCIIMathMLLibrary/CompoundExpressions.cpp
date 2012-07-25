@@ -248,7 +248,7 @@ namespace ASCIIMathMLLibrary
 				!workingMemory.Contains((*(*iter)).GetStringRepresentation()))
 			{
 				throw ASCIIMathMLException(
-"Contains a variable that is not defined in the working memory."
+					"Unrecognized token: " + (*(*iter)).GetStringRepresentation()
 					);
 			}
 		}
@@ -298,6 +298,12 @@ namespace ASCIIMathMLLibrary
 			list<shared_ptr<Expression>> parameters;
 			for (int i = 0; i < parameterCount; i++)
 			{
+				if (expressionStack.size() == 0)
+				{
+					throw ASCIIMathMLException(
+"Malformed arithmatic expression - not enough parameters."
+						);
+				}
 				parameters.push_front(expressionStack.top());
 				expressionStack.pop();
 			}

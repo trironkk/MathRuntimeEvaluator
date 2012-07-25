@@ -15,7 +15,7 @@ namespace ASCIIMathMLLibrary
 		else if (identifier == "tan")	{ return new Tan(); }
 		else if (identifier == "abs")	{ return new AbsoluteValue(); }
 		else if (identifier == "log")	{ return new CommonLogarithm(); }
-		else if (identifier == "^")		{ return new Exponentiate(); }
+		else if (identifier == "pow")	{ return new Exponentiate(); }
 		else if (identifier == "%")		{ return new Modulo(); }
 		else if (identifier == "ln")	{ return new NaturalLogarithm(); }
 		// Note: This symbol is traditionally a '-' character, but that would

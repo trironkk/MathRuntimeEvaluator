@@ -28,6 +28,6 @@ namespace ASCIIMathMLLibrary
 	// Gets a string representation of this operation
 	string& Exponentiate::GetStringRepresentation()
 	{
-		return *(new string("^"));
+		return *(new string("pow"));
 	}
 }

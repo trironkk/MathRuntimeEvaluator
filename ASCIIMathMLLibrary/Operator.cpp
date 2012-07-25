@@ -11,7 +11,7 @@ namespace ASCIIMathMLLibrary
 	const char *operators[] = {
 		"+", "-", "*", "/",
 		"sin", "cos", "tan",
-		"abs", "log", "^",
+		"abs", "log", "pow",
 		"%", "ln", "~", "sqrt"
 	};
 	vector<string> OPERATORS(operators, std::end(operators));
