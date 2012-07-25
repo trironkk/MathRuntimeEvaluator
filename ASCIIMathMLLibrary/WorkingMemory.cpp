@@ -27,15 +27,22 @@ namespace ASCIIMathMLLibrary
 	// Sets the double value associated with a variable name.
 	void WorkingMemory::SetValue(string variableName, double value)
 	{
+		// Validate that the variable name is valid. Throw an exception if it
+		// isn't.
 		ValidateVariableName(variableName);
+
+		// If it's a new variable name...
 		if (_workingMemory.find(variableName) == _workingMemory.end())
 		{
+			// Maintain the alphabetical ordering of the list...
 			std::list<std::string>::iterator iter = _declaredVariables.begin();
 			if (_declaredVariables.size() > 0)
 				while (iter != _declaredVariables.end() && (*(iter)) < variableName)
 					iter++;
 			_declaredVariables.insert(iter, variableName);
 		}
+
+		// Perform the actual assignment.
 		_workingMemory[variableName] = value;
 	}
 
@@ -43,6 +50,7 @@ namespace ASCIIMathMLLibrary
 	// Otherwise, simply returns.
 	void WorkingMemory::ValidateVariableName(string variableName)
 	{
+		// Assert that the variable name is not too long...
 		if (variableName.length() > MAX_VARIABLE_NAME_LENGTH)
 		{
 			throw ASCIIMathMLException(
@@ -50,6 +58,7 @@ namespace ASCIIMathMLLibrary
 			);
 		}
 		
+		// Assert that the variable name is not too short...
 		if (variableName.length() < 1)
 		{
 			throw ASCIIMathMLException(
@@ -57,6 +66,7 @@ namespace ASCIIMathMLLibrary
 			);
 		}
 		
+		// Assert that the variable name does not contain illegal characters...
 		for (std::string::iterator iter = variableName.begin();
 										iter < variableName.end();
 										iter++)
@@ -71,6 +81,7 @@ namespace ASCIIMathMLLibrary
 			
 		}
 
+		// Assert that the variable name does not begin with a number...
 		if (isdigit(*variableName.begin()))
 		{
 			throw ASCIIMathMLException(
