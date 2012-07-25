@@ -27,7 +27,7 @@ namespace ASCIIMathMLLibrary
 			{
 				string operation = ReadNextToken(stream);
 				if (operation == "") { PrintHelp(); return false; }
-				else { cout << GetUsage(operation) << std::endl; return false;}
+				else { cout << std::endl << GetUsage(operation) << std::endl; return false;}
 			}
 
 			// If an assignment is specified...
@@ -57,9 +57,13 @@ namespace ASCIIMathMLLibrary
 			memory.SetValue("pi", 3.1415926535897932384626);
 			memory.SetValue("e", 2.7182818284590452353602);
 
-			PrintHelp();
+			// Welcome Message
+			cout <<
+"ASCIIMathMLLibrary Demonstration";
 
-			cout << "\n\n";
+			cout << "\n";
+			PrintHelp();
+			cout << "\n";
 
 			while (persist)
 			{
@@ -122,9 +126,12 @@ Supported Functions: \n \
     ln               Natural Logarithm \n \
     log2             Base 2 Logarithm \n \
     log10            Base 10 Logarithm \n \
+    log              Generic Logarithm \n \
     mod              Modular Division \n \
     sqrt             Square Root \n \
     abs              Absolute Value \n \
+    sum              Sum \n \
+    avg              Average \n \
 \n \
 Notes: \n \
 - All operations will be assigned to the variable \"ans\" unless otherwise \n \

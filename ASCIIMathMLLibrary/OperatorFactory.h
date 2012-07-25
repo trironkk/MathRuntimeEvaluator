@@ -25,6 +25,7 @@
 #include "Sum.h"
 #include "Avg.h"
 #include "Rand.h"
+#include "StdDev.h"
 
 namespace ASCIIMathMLLibrary
 {

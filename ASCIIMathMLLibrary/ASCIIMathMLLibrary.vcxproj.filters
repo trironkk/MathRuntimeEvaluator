@@ -183,6 +183,9 @@
     <ClInclude Include="Rand.h">
       <Filter>Header Files\Operator\Implementations\Functions</Filter>
     </ClInclude>
+    <ClInclude Include="StdDev.h">
+      <Filter>Header Files\Operator\Implementations\Functions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WorkingMemory.cpp">
@@ -285,6 +288,9 @@
       <Filter>Source Files\Operator\Implementation\Functions</Filter>
     </ClCompile>
     <ClCompile Include="Rand.cpp">
+      <Filter>Source Files\Operator\Implementation\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="StdDev.cpp">
       <Filter>Source Files\Operator\Implementation\Functions</Filter>
     </ClCompile>
   </ItemGroup>

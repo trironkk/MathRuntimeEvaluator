@@ -3,14 +3,10 @@
 #include <stack>
 #include <memory>
 
-// Operators
 #include "Operator.h"
-
-// Expressions
 #include "Constant.h"
 #include "Variable.h"
 #include "CompoundExpression.h"
-
 #include "Parser.h"
 #include "Exception.h"
 #include "WorkingMemory.h"

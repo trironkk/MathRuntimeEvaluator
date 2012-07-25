@@ -9,11 +9,8 @@ namespace ASCIIMathMLLibrary
 {
 	// A vector of the string representations of operators
 	const char *operators[] = {
-		"+", "-", "*", "/",
-		"sin", "cos", "tan",
-		"abs", "log10", "pow",
-		"mod", "ln", "~", "sqrt",
-		"log2", "log", "sum", "avg", "rand"
+		"+", "-", "*", "/", "sin", "cos", "tan", "abs", "log10", "pow", "mod",
+		"ln", "~", "sqrt", "log2", "log", "sum", "avg", "rand", "stddev"
 	};
 	vector<string> OPERATORS(operators, std::end(operators));
 
@@ -178,6 +175,13 @@ returns the sum of all parameters \n"));
 Any number of parameters \n \
 \n \
 returns the average of all parameters \n"));
+		else if (identifier == "stddev")
+			return *(new string(
+"avg(...)  Standard Deviation \n \
+\n \
+Any number of parameters \n \
+\n \
+returns the standard deviation of all parameters \n"));
 		else
 		{
 			return *(new string(

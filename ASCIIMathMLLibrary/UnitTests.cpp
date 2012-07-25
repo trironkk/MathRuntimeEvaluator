@@ -111,10 +111,14 @@ namespace UnitTests
 		RunUnitTest("avg(10)", 10);
 		RunUnitTest("avg(10,4)", 7);
 		RunUnitTest("avg(-1,-19,100)",  80.0/3.0);
+		
+		// stddev operation
+		cout << endl << "stddev operation" << endl;
+		RunUnitTest("stddev(2,4,4,4,5,5,7,9)", 2);
 
 		// big number tests (handling conversions to and from scientific notation)
 		cout << endl << "big number tests " << endl;
-		RunUnitTest("100000000000000", 100000000000000);
+		RunUnitTest("12903984128374", 12903984128374);
 		RunUnitTest("pow(pi, 20)", pow(memory.GetValue("pi"), 20.0));
 	}
 }
