@@ -6,6 +6,8 @@ using std::istream;
 using std::string;
 using std::list;
 using std::stack;
+using std::back_insert_iterator;
+using std::stack;
 
 namespace ASCIIMathMLLibrary
 {
@@ -38,7 +40,9 @@ namespace ASCIIMathMLLibrary
 		// calls. This is an implementation of the shunting yard algorithm for
 		// converting the infix string expression into a postfix
 		// CompoundExpression object.
-		list<string> InternalParse(istream& stream, bool parenthetical)
+		list<string> InternalParse(istream& stream,
+			bool expectingClose,
+			bool expectingComma)
 		{
 			// The list of identifiers we're going to return.
 			list<string> result;
@@ -63,42 +67,89 @@ namespace ASCIIMathMLLibrary
 				// If the token is an operator, check its rank.
 				if (IsOperator(token))
 				{
-					// If the token is a "-" symbol, we need to decide whether
-					// it's negation or subtraction. If it's negation, we convert
-					// it to a "~" symbol, for our internal use. Otherwise, leave
-					// it alone.
-					if (token == "-")
-						// To determine if it's negation, we do what a wise man
-						// suggested here:
-						// http://stackoverflow.com/a/5240781/391618
-						if (IsOperator(previousToken) || previousToken == "")
-							token = "~";
-
-					// While the rank of the current token is less than the rank
-					// of the top of the operators stack, push the top of the
-					// operators stack to the back of the result list
-					while (operators.size() > 0 &&
-						GetOperatorRank(token) < GetOperatorRank(operators.top()))
+					// If the token is an arithmetic operator, we follow the
+					// shunting yard algorithm.
+					if (IsArithmeticOperator(token))
 					{
-						result.push_back(operators.top());
-						operators.pop();
+						// If the token is a "-" symbol, we need to decide whether
+						// it's negation or subtraction. If it's negation, we
+						// convert it to a "~" symbol, for our internal use.
+						// Otherwise, leave it alone.
+						if (token == "-")
+							// To determine if it's negation, we do what a wise
+							// man suggested here:
+							// http://stackoverflow.com/a/5240781/391618
+							if (IsOperator(previousToken) || previousToken == "")
+								token = "~";
+
+						// While the rank of the current token is less than the
+						// rank of the top of the operators stack, push the top of
+						// the operators stack to the back of the result list.
+						while (operators.size() > 0 &&
+							GetOperatorRank(token) < GetOperatorRank(operators.top()))
+						{
+							result.push_back(operators.top());
+							operators.pop();
+						}
+						operators.push(token);
+						continue;
 					}
-					operators.push(token);
+
+					// If the token is not an arithmetic operator, it must be a
+					// function. Recursively call this method for each of the
+					// parameter.
+
+					// Construct a temporary Operator object just to determine the
+					// number of parameters
+					Operator* temporaryOperator = NewOperator(token); // leak?
+					int parameterCount = (*temporaryOperator).GetParameterCount();
+					delete temporaryOperator;
+
+					// Assert that the next token is an open parentheses
+					if (ReadNextToken(stream) != "(")
+					{
+						stringstream errorStream;
+						errorStream << 
+"Invalid syntax encountered at position ";
+						errorStream << stream.tellg();
+						errorStream << ". ";
+						errorStream <<
+"Function calls must be followed by a parentheses.";
+						throw ASCIIMathMLException(errorStream.str());
+					}
+
+					// Treat the results of each recursive call as one expression,
+					// and copy them to the result list.
+					for (int i = 0; i < parameterCount; i++)
+					{
+						list<string> tempResults;
+						// Every parameter except for the last one will be
+						// delimited by a comma.
+						if (i < parameterCount - 1)
+							tempResults = InternalParse(stream, false, true);
+						else
+							tempResults = InternalParse(stream, true, false);
+
+						copy(tempResults.begin(),
+							tempResults.end(),
+							back_insert_iterator<list<string> >(result));
+					}
+
+					// Since an operator with its parameters can be considered an
+					// expression, we append the operator to the result list.
+					result.push_back(token);
 					continue;
 				}
 
 				// If the token is an open parentheses, recursively call this
-				// method, run it to completion, and then append the contents of
-				// the list to the end of the results.
+				// method, run it to completion, and then copy the contents of the
+				// list to the end of the result list.
 				if (token == "(")
 				{
-					list<string> recursiveResults = InternalParse(stream, true);
-					for(list<string>::iterator iter = recursiveResults.begin();
-						iter != recursiveResults.end();
-						iter++)
-					{
-						result.push_back(*iter);
-					}
+					list<string> tempResults = InternalParse(stream, true);
+					copy(tempResults.begin(),
+					tempResults.end(),
+					back_insert_iterator<list<string> >(result));
 					continue;
 				}
 
@@ -106,7 +157,7 @@ namespace ASCIIMathMLLibrary
 				// was called recursively and then break out of this loop.
 				if (token == ")")
 				{
-					if (parenthetical == false)
+					if (expectingClose == false)
 					{
 						stringstream errorStream;
 						errorStream << 
@@ -118,7 +169,27 @@ namespace ASCIIMathMLLibrary
 
 					// We set the parenthetical flag to false to signify that a
 					// matching close parentheses has been encountered.
-					parenthetical = false;
+					expectingClose = false;
+					break;
+				}
+
+				// If the token is a comma, assert that this method was called
+				// recursively from a function, and then break out of this loop.
+				if (token == ",")
+				{
+					if (expectingComma == false)
+					{
+						stringstream errorStream;
+						errorStream << 
+"Unexpected comma encountered at position ";
+						errorStream << stream.tellg();
+						errorStream << ".";
+						throw ASCIIMathMLException(errorStream.str());
+					}
+
+					// We set the expectingComma flag to false to signify that a
+					// comma has been encountered.
+					expectingComma = false;
 					break;
 				}
 
@@ -129,14 +200,24 @@ namespace ASCIIMathMLLibrary
 				// If it's not any of the above, it must be a constant or a
 				// variable. For both cases, just push it to the back of the
 				// results.
-				result.push_back(string(token));
-
+				result.push_back(token);
 			}
 
-			if (parenthetical)
+			// If we were expecting a close parentheses, but never encountered
+			// one, throw an exception
+			if (expectingClose)
 			{
 				throw ASCIIMathMLException(
 					"Unmatched open parentheses encountered."
+				);
+			}
+
+			// If we were expecting a comma, but never encountered one, throw an
+			// exception
+			if (expectingComma)
+			{
+				throw ASCIIMathMLException(
+					"Too few parameters."
 				);
 			}
 

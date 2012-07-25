@@ -1,4 +1,4 @@
-#include "Subtract.h"
+#include "Log.h"
 
 using std::shared_ptr;
 using std::list;
@@ -8,19 +8,19 @@ using std::string;
 namespace ASCIIMathMLLibrary
 {
 	// Performs this operation
-	shared_ptr<Expression> Subtract::Evaluate(
+	shared_ptr<Expression> Log::Evaluate(
 			const WorkingMemory& workingMemory,
 			vector<double>& values)
 	{
 		// Perform the addition and return
 		return shared_ptr<Expression>(
-			new Constant(values[0] - values[1])
+			new Constant(log10(values[0]))
 		);
 	}
 
 	// Gets a string representation of this operation
-	string& Subtract::GetStringRepresentation()
+	string& Log::GetStringRepresentation()
 	{
-		return *(new string("-"));
+		return *(new string("log"));
 	}
 }

@@ -1,11 +1,11 @@
-#ifndef NEGATE_H
-#define NEGATE_H
+#ifndef POW_H
+#define POW_H
 
 #include "Operator.h"
 
 namespace ASCIIMathMLLibrary
 {
-	class Negate : public Operator
+	class Pow : public Operator
 	{
 	public:
 		// Perform this operation
@@ -14,10 +14,10 @@ namespace ASCIIMathMLLibrary
 			std::vector<double>& parameters);
 		
 		// Returns the number of parameters involved in this object
-		virtual int GetParameterCount() { return 1; }
-
+		virtual int GetParameterCount() { return 2; }
+		
 		// Indicates the format of this operator - arithmetic or function
-		virtual Format::Type GetFormat() { return Format::Arithmetic; }
+		virtual Format::Type GetFormat() { return Format::Function; }
 
 		// Gets a string representation of this operation
 		virtual std::string& GetStringRepresentation();

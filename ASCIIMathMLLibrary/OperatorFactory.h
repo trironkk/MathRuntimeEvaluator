@@ -9,16 +9,17 @@
 #include "Divide.h"
 #include "Multiply.h"
 #include "Subtract.h"
+#include "Negate.h"
+
+#include "Pow.h"
 #include "Sin.h"
 #include "Cos.h"
 #include "Tan.h"
-#include "AbsoluteValue.h"
-#include "CommonLogarithm.h"
-#include "Exponentiate.h"
-#include "Modulo.h"
-#include "NaturalLogarithm.h"
-#include "Negate.h"
-#include "SquareRoot.h"
+#include "Sqrt.h"
+#include "Abs.h"
+#include "Log.h"
+#include "Ln.h"
+#include "Mod.h"
 
 namespace ASCIIMathMLLibrary
 {

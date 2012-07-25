@@ -10,18 +10,18 @@ namespace ASCIIMathMLLibrary
 		else if (identifier == "/")		{ return new Divide(); }
 		else if (identifier == "*")		{ return new Multiply(); }
 		else if (identifier == "-")		{ return new Subtract(); }
-		else if (identifier == "sin")	{ return new Sin(); }
-		else if (identifier == "cos")	{ return new Cos(); }
-		else if (identifier == "tan")	{ return new Tan(); }
-		else if (identifier == "abs")	{ return new AbsoluteValue(); }
-		else if (identifier == "log")	{ return new CommonLogarithm(); }
-		else if (identifier == "pow")	{ return new Exponentiate(); }
-		else if (identifier == "%")		{ return new Modulo(); }
-		else if (identifier == "ln")	{ return new NaturalLogarithm(); }
 		// Note: This symbol is traditionally a '-' character, but that would
 		// collide with Subtract, so we use '~' instead.
 		else if (identifier == "~")		{ return new Negate(); }
-		else if (identifier == "sqrt")	{ return new SquareRoot(); }
+		else if (identifier == "pow")	{ return new Pow(); }
+		else if (identifier == "sin")	{ return new Sin(); }
+		else if (identifier == "cos")	{ return new Cos(); }
+		else if (identifier == "tan")	{ return new Tan(); }
+		else if (identifier == "sqrt")	{ return new Sqrt(); }
+		else if (identifier == "abs")	{ return new Abs(); }
+		else if (identifier == "log")	{ return new Log(); }
+		else if (identifier == "ln")	{ return new Ln(); }
+		else if (identifier == "mod")	{ return new Mod(); }
 		else
 		{
 			throw ASCIIMathMLException(

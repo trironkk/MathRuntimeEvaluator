@@ -1,11 +1,11 @@
-#ifndef NEGATE_H
-#define NEGATE_H
+#ifndef SQRT_H
+#define SQRT_H
 
 #include "Operator.h"
 
 namespace ASCIIMathMLLibrary
 {
-	class Negate : public Operator
+	class Sqrt : public Operator
 	{
 	public:
 		// Perform this operation
@@ -15,9 +15,9 @@ namespace ASCIIMathMLLibrary
 		
 		// Returns the number of parameters involved in this object
 		virtual int GetParameterCount() { return 1; }
-
+		
 		// Indicates the format of this operator - arithmetic or function
-		virtual Format::Type GetFormat() { return Format::Arithmetic; }
+		virtual Format::Type GetFormat() { return Format::Function; }
 
 		// Gets a string representation of this operation
 		virtual std::string& GetStringRepresentation();

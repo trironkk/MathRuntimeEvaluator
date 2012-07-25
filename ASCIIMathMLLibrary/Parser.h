@@ -2,6 +2,8 @@
 #define PARSER_H
 
 #include <string>
+#include <algorithm>
+#include <iterator>
 #include <string.h>
 #include <list>
 #include <stack>
@@ -9,6 +11,7 @@
 #include <iostream>
 
 #include "CompoundExpressionFactory.h"
+#include "OperatorFactory.h"
 #include "Exception.h"
 #include "WorkingMemory.h"
 #include "Constant.h"
@@ -21,15 +24,6 @@
 #include "Multiply.h"
 #include "Divide.h"
 #include "Negate.h"
-#include "Exponentiate.h"
-#include "NaturalLogarithm.h"
-#include "Modulo.h"
-#include "CommonLogarithm.h"
-#include "Sin.h"
-#include "Cos.h"
-#include "Tan.h"
-#include "AbsoluteValue.h"
-#include "SquareRoot.h"
 
 namespace ASCIIMathMLLibrary
 {
@@ -44,7 +38,7 @@ namespace ASCIIMathMLLibrary
 		// converting the infix string expression into a postfix
 		// CompoundExpression object.
 		std::list<std::string> InternalParse(std::istream& stream,
-			bool parenthetical=false);
+			bool expectingClose=false, bool expectingComma=false);
 
 
 		// Return the next token, and adjust the stringstream accordingly

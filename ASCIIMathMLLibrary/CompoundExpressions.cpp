@@ -301,7 +301,7 @@ namespace ASCIIMathMLLibrary
 				if (expressionStack.size() == 0)
 				{
 					throw ASCIIMathMLException(
-"Malformed arithmatic expression - not enough parameters."
+"Malformed expression - not enough parameters."
 						);
 				}
 				parameters.push_front(expressionStack.top());

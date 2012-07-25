@@ -1,20 +1,23 @@
 #ifndef MULTIPLY_H
 #define MULTIPLY_H
 
-#include "BinaryOperator.h"
+#include "Operator.h"
 
 namespace ASCIIMathMLLibrary
 {
-	class Multiply : public BinaryOperator
+	class Multiply : public Operator
 	{
 	public:
-		// Basic constructor
-		Multiply();
-
 		// Perform this operation
 		virtual std::shared_ptr<Expression> Evaluate(
 			const WorkingMemory& workingMemory,
-			std::list<std::shared_ptr<Expression>>& parameters);
+			std::vector<double>& parameters);
+		
+		// Returns the number of parameters involved in this object
+		virtual int GetParameterCount() { return 2; }
+
+		// Indicates the format of this operator - arithmetic or function
+		virtual Format::Type GetFormat() { return Format::Arithmetic; }
 
 		// Gets a string representation of this operation
 		virtual std::string& GetStringRepresentation();

@@ -1,4 +1,4 @@
-#include "Subtract.h"
+#include "Mod.h"
 
 using std::shared_ptr;
 using std::list;
@@ -8,19 +8,19 @@ using std::string;
 namespace ASCIIMathMLLibrary
 {
 	// Performs this operation
-	shared_ptr<Expression> Subtract::Evaluate(
+	shared_ptr<Expression> Mod::Evaluate(
 			const WorkingMemory& workingMemory,
 			vector<double>& values)
 	{
 		// Perform the addition and return
 		return shared_ptr<Expression>(
-			new Constant(values[0] - values[1])
+			new Constant(fmod(values[0], values[1]))
 		);
 	}
 
 	// Gets a string representation of this operation
-	string& Subtract::GetStringRepresentation()
+	string& Mod::GetStringRepresentation()
 	{
-		return *(new string("-"));
+		return *(new string("mod"));
 	}
 }
