@@ -138,9 +138,6 @@
     <ClInclude Include="Pow.h">
       <Filter>Header Files\Operator\Implementations\Functions</Filter>
     </ClInclude>
-    <ClInclude Include="OperatorType.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Interpreter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
