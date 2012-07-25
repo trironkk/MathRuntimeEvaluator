@@ -1,4 +1,4 @@
-#include "Sin.h"
+#include "Log.h"
 
 using std::shared_ptr;
 using std::list;
@@ -8,18 +8,18 @@ using std::string;
 namespace ASCIIMathMLLibrary
 {
 	// Performs this operation
-	shared_ptr<Expression> Sin::Evaluate(
+	shared_ptr<Expression> Log::Evaluate(
 			const WorkingMemory& workingMemory,
 			vector<double>& values)
 	{
 		return shared_ptr<Expression>(
-			new Constant(sin(values[0]))
+			new Constant((log10(values[1]) / log10(values[0])))
 		);
 	}
 
 	// Gets a string representation of this operation
-	string& Sin::GetStringRepresentation()
+	string& Log::GetStringRepresentation()
 	{
-		return *(new string("sin"));
+		return *(new string("log"));
 	}
 }

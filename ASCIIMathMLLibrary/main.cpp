@@ -19,6 +19,6 @@
 
 int main()
 {
-	//UnitTests::RunUnitTestBattery();
-	Parser::LaunchInterpreter();
+	UnitTests::RunUnitTestBattery();
+	//Parser::LaunchInterpreter();
 }

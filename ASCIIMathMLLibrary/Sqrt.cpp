@@ -18,7 +18,6 @@ namespace ASCIIMathMLLibrary
 "sqrt does not support negative numbers."
 				);
 
-		// Perform the addition and return
 		return shared_ptr<Expression>(
 			new Constant(sqrt(values[0]))
 		);

@@ -4,8 +4,8 @@ using namespace ASCIIMathMLLibrary;
 using namespace std;
 namespace UnitTests
 {
-
 	WorkingMemory memory;
+
 	void RunUnitTest(string expressionString, double expectedValue)
 	{
 		CompoundExpression ce = Parser::ParseString(expressionString);
@@ -94,6 +94,9 @@ namespace UnitTests
 		RunUnitTest("log10(100)",  2);
 		RunUnitTest("ln(100)", 4.60517);
 		RunUnitTest("log2(64)", 6);
+		RunUnitTest("log(2,64)", 6);
+		RunUnitTest("log(10,100)", 2);
+		RunUnitTest("log(e,100)", 4.60517);
 
 		// modulo operation
 		cout << endl << "modulo operation" << endl;

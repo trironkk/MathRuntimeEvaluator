@@ -12,7 +12,6 @@ namespace ASCIIMathMLLibrary
 			const WorkingMemory& workingMemory,
 			vector<double>& values)
 	{
-		// Perform the addition and return
 		return shared_ptr<Expression>(
 			new Constant(abs(values[0]))
 		);

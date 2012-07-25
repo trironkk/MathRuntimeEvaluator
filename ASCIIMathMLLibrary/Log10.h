@@ -1,5 +1,5 @@
-#ifndef LOG_H
-#define LOG_H
+#ifndef LOG_10_H
+#define LOG_10_H
 
 #include "Operator.h"
 
@@ -16,9 +16,6 @@ namespace ASCIIMathMLLibrary
 		// Returns the number of parameters involved in this object
 		virtual int GetParameterCount() { return 1; }
 		
-		// Indicates the format of this operator - arithmetic or function
-		virtual Format::Type GetFormat() { return Format::Function; }
-
 		// Gets a string representation of this operation
 		virtual std::string& GetStringRepresentation();
 	};

@@ -12,9 +12,6 @@ namespace ASCIIMathMLLibrary
 			const WorkingMemory& workingMemory,
 			vector<double>& values)
 	{
-		// log (base x) (y) = log (y) / log (x)
-		
-		// Perform the addition and return%
 		return shared_ptr<Expression>(
 			new Constant((log10(values[0]) / log10(2.0)))
 		);

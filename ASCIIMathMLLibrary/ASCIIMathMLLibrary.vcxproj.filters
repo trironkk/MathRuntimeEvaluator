@@ -174,6 +174,9 @@
     <ClInclude Include="Log10.h">
       <Filter>Header Files\Operator\Implementations\Functions</Filter>
     </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>Header Files\Operator\Implementations\Functions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WorkingMemory.cpp">
@@ -264,6 +267,9 @@
       <Filter>Source Files\Operator\Implementation\Functions</Filter>
     </ClCompile>
     <ClCompile Include="Log10.cpp">
+      <Filter>Source Files\Operator\Implementation\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
       <Filter>Source Files\Operator\Implementation\Functions</Filter>
     </ClCompile>
   </ItemGroup>

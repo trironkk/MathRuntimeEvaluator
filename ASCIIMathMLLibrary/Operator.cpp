@@ -13,7 +13,7 @@ namespace ASCIIMathMLLibrary
 		"sin", "cos", "tan",
 		"abs", "log10", "pow",
 		"mod", "ln", "~", "sqrt",
-		"log2"
+		"log2", "log"
 	};
 	vector<string> OPERATORS(operators, std::end(operators));
 
@@ -132,24 +132,31 @@ Notes: \n \
 \n \
 x: the only parameter \n \
 returns the absolute value \n"));
-		else if (identifier == "log2")
-			return *(new string(
-"log2(x)   Binary Logarithm \n \
-\n \
-x: the only parameter \n \
-returns the binary logarithm of x \n"));
 		else if (identifier == "ln")
 			return *(new string(
 "ln(x)     Natural Logarithm \n \
 \n \
 x: the only parameter \n \
 returns the natural logarithm of x \n"));
+		else if (identifier == "log2")
+			return *(new string(
+"log2(x)   Binary Logarithm \n \
+\n \
+x: the only parameter \n \
+returns the binary logarithm of x \n"));
 		else if (identifier == "log10")
 			return *(new string(
-"ln(x)     Base 10 Logarithm \n \
+"log10(x)  Base 10 Logarithm \n \
 \n \
 x: the only parameter \n \
 returns the base 10 logarithm of x \n"));
+		else if (identifier == "log")
+			return *(new string(
+"log(x,y)  Generic Logarithm \n \
+\n \
+x: the base of the logarithm \n \
+y: the input \n \
+returns the base x logarithm of y \n"));
 		else if (identifier == "mod")
 			return *(new string(
 "mod(x,y)  Modular Division \n \

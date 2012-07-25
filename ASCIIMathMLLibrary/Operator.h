@@ -39,9 +39,6 @@ namespace ASCIIMathMLLibrary
 			const WorkingMemory& workingMemory,
 			std::vector<double>& values) = 0;
 
-		// Indicates the format of this operator - arithmetic or function
-		virtual Format::Type GetFormat() = 0;
-
 		// Returns the number of parameters involved in this object
 		virtual int GetParameterCount() = 0;
 	

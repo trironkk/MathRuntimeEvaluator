@@ -16,9 +16,6 @@ namespace ASCIIMathMLLibrary
 		// Returns the number of parameters involved in this object
 		virtual int GetParameterCount() { return 1; }
 
-		// Indicates the format of this operator - arithmetic or function
-		virtual Format::Type GetFormat() { return Format::Arithmetic; }
-
 		// Gets a string representation of this operation
 		virtual std::string& GetStringRepresentation();
 	};

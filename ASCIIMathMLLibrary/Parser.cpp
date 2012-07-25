@@ -148,8 +148,8 @@ namespace ASCIIMathMLLibrary
 				{
 					list<string> tempResults = InternalParse(stream, true);
 					copy(tempResults.begin(),
-					tempResults.end(),
-					back_insert_iterator<list<string> >(result));
+						tempResults.end(),
+						back_insert_iterator<list<string> >(result));
 					continue;
 				}
 
