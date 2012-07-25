@@ -21,7 +21,11 @@
 
 namespace UnitTests
 {
+	// Parses and evaluates a string expression, and then checks it against an
+	// expected value.
 	void RunUnitTest(std::string expressionString, double expectedValue);
+
+	// Runs a battery of unit tests
 	void RunUnitTestBattery();
 }
 

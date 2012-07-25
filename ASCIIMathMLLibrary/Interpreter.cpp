@@ -1,56 +1,21 @@
 #include "Interpreter.h"
 
 using namespace ASCIIMathMLLibrary;
+using namespace UnitTests;
 using namespace std;
 
 namespace ASCIIMathMLLibrary
 {
 	namespace Parser
 	{
+		// Various variables declared in the namespace scope to avoid complicating
+		// method signatures.
 		WorkingMemory memory;
 		string resultVariableName;
 		string input;
-
 		bool persist = true;
 
-		bool Preparse(stringstream& stream)
-		{
-			string token = ReadNextToken(stream);
-
-			if (token == "exit") { persist = false; return false; }
-			else if (token == "memory") { memory.PrintLine(cout); return false; }
-			else if (token == "unittests") { UnitTests::RunUnitTestBattery(); return false; }
-	
-
-			else if (token == "") { return false; }
-			else if (token == "help")
-			{
-				string operation = ReadNextToken(stream);
-				if (operation == "") { PrintHelp(); return false; }
-				else { cout << std::endl << GetUsage(operation) << std::endl; return false;}
-			}
-
-			// If an assignment is specified...
-			if (ReadNextToken(stream) == "=")
-			{
-				try
-				{
-					// Assert that the variable name is a valid one.
-					memory.ValidateVariableName(token);
-
-					// Record the variable name.
-					resultVariableName = token;
-
-					// Reset the input string to disclude the assignment
-					getline(stream, input);
-				}
-				catch (ASCIIMathMLException&)
-				{
-					// The functionality of displaying the exception occurs in the constructor of the exception, itself. No need to do anything here.
-				}
-			}
-		}
-
+		// Launches an interpreter and persists until the user terminates
 		void LaunchInterpreter()
 		{
 			// Default variables
@@ -89,9 +54,10 @@ namespace ASCIIMathMLLibrary
 
 					cout << std::endl;
 				}
-				catch (ASCIIMathMLException&)
+				catch (ASCIIMathMLException& e)
 				{
-					// The functionality of displaying the exception occurs in the constructor of the exception, itself. No need to do anything here.
+					// Print out the error
+					cout << "Error: " << e << std::endl << std::endl;
 				}
 				catch (exception& e)
 				{
@@ -100,6 +66,48 @@ namespace ASCIIMathMLLibrary
 			}
 		}	
 
+		// Perform a pre-parse on a string, looking for and executing interpreter
+		// commands and handling working memory management.
+		bool Preparse(stringstream& stream)
+		{
+			string token = ReadNextToken(stream);
+
+			if (token == "exit") { persist = false; return false; }
+			else if (token == "memory") { memory.PrintLine(cout); return false; }
+			else if (token == "unittests") { RunUnitTestBattery(); return false; }
+			else if (token == "") { return false; }
+			else if (token == "help")
+			{
+				// Determine if help is called by itself or with an input
+				// parameter
+				string operation = ReadNextToken(stream);
+				if (operation == "") { PrintHelp(); return false; }
+				else { cout << endl << GetUsage(operation) << endl; return false;}
+			}
+
+			// If an assignment is specified...
+			if (ReadNextToken(stream) == "=")
+			{
+				try
+				{
+					// Assert that the variable name is a valid one.
+					memory.ValidateVariableName(token);
+
+					// Record the variable name.
+					resultVariableName = token;
+
+					// Reset the input string to disclude the assignment
+					getline(stream, input);
+				}
+				catch (ASCIIMathMLException& e)
+				{
+					// Print out the error.
+					cout << "Error: " << e << std::endl << std::endl;
+				}
+			}
+		}
+
+		// Prints help text
 		void PrintHelp()
 		{
 			cout <<

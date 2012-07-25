@@ -6,12 +6,56 @@ namespace UnitTests
 {
 	WorkingMemory memory;
 
+	// Parses and evaluates a string expression, and then checks it against an
+	// expected value.
 	void RunUnitTest(string expressionString, double expectedValue)
 	{
-		CompoundExpression ce = Parser::ParseString(expressionString);
-		cout << expressionString << " = ";
-		ce.Simplify(memory);
-		ce.PrintLine(cout);
+		CompoundExpression ce;
+
+		// Try to parse...
+		try
+		{
+			ce = Parser::ParseString(expressionString);
+			cout << expressionString << " = ";
+		}
+		catch (ASCIIMathMLException& e)
+		{
+			// Print the error.
+			cout << endl;
+			cout << "Encountered an exception while parsing: ";
+			cout << endl << e << endl << endl;
+			return;
+		}
+		
+		// Try to simplify...
+		try
+		{
+			ce.Simplify(memory);
+		}
+		catch (ASCIIMathMLException& e)
+		{
+			// Print the error.
+			cout << endl;
+			cout << "Encountered an exception while simplifying: ";
+			cout << endl << e << endl << endl;
+			return;
+		}
+
+		// Try to print...
+		try
+		{
+			ce.PrintLine(cout);
+		}
+		catch (ASCIIMathMLException& e)
+		{
+			// Print the error.
+			cout << endl;
+			cout << "Encountered an exception while printing: ";
+			cout << endl << e << endl << endl;
+			return;
+		}
+
+		// Evaluate accuracy...
 		if (ce.GetValue() != expectedValue)
 		{
 			stringstream errorStream;
@@ -22,10 +66,10 @@ namespace UnitTests
 			errorStream << "Actual Value:   " << ce.GetValue() << "\n";
 			errorStream << "\n";
 			cout << errorStream.str();
-			//throw ASCIIMathMLException(errorStream.str());
 		}
 	}
 
+	// Runs a battery of unit tests
 	void RunUnitTestBattery()
 	{
 		// Initilize the working memory
@@ -119,5 +163,10 @@ namespace UnitTests
 		cout << endl << "big number tests " << endl;
 		RunUnitTest("12903984128374", 12903984128374);
 		RunUnitTest("pow(pi, 20)", pow(memory.GetValue("pi"), 20.0));
+
+		// Stuff that's supposed to break it.
+		cout << endl << "Stuff that's supposed to break it..." << endl;
+		RunUnitTest("1 / 0", 0);
+		RunUnitTest("sqrt(-1)", 0);
 	}
 }

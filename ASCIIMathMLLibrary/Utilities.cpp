@@ -5,28 +5,10 @@ using std::istringstream;
 
 namespace ASCIIMathMLLibrary
 {
+	// Returns true if the string is can be converted to a double, and false
+	// otherwise
 	bool IsDouble(const string& str)
 	{
-		/*if (str.empty()) return false;
-		bool containsDecimal = false;
-		for (string::const_iterator it = str.begin();
-			it != str.end();
-			it++)
-		{
-			if (isdigit(*it) == false)
-			{
-				if ((*it) == '.')
-				{
-					if (containsDecimal) { return false; }
-					else { containsDecimal = true; }
-				}
-				else
-				{
-					return false;
-				}
-			}
-		}
-		return true;*/
 		char* endptr = 0;
 		strtod(str.c_str(), &endptr);
 
@@ -35,6 +17,7 @@ namespace ASCIIMathMLLibrary
 		return true;
 	}
 
+	// Parses a string and returns a double
 	double ToDouble(const string& str)
 	{
 		istringstream i(str);

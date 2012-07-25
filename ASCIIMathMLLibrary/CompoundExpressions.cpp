@@ -407,6 +407,11 @@ namespace ASCIIMathMLLibrary
 			stringStack.push(component);
 		}
 
+		if (stringStack.size() == 0)
+			throw ASCIIMathMLException(
+"There are no parameters in this CompoundExpression."
+				);
+
 		return *(new string(stringStack.top()));
 	}
 
