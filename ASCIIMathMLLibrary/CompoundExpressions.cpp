@@ -6,6 +6,7 @@ using std::vector;
 using std::stack;
 using std::shared_ptr;
 using std::string;
+using std::istringstream;
 using std::stringstream;
 
 namespace ASCIIMathMLLibrary
@@ -296,6 +297,19 @@ namespace ASCIIMathMLLibrary
 			// Get the parameters
 			int parameterCount = (*operation).GetParameterCount();
 			list<shared_ptr<Expression>> parameters;
+
+			// Handle the case of an indefinite number of parameters. All we need
+			// to do is get the actual parameter count, which we recorded as the
+			// first parameter to be popped off the stack when we parsed the
+			// expression.
+			if (parameterCount == -1)
+			{
+				istringstream(
+					(*(expressionStack.top())).GetStringRepresentation()
+				) >> parameterCount;
+				expressionStack.pop();
+			}
+
 			for (int i = 0; i < parameterCount; i++)
 			{
 				if (expressionStack.size() == 0)

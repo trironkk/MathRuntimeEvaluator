@@ -3,6 +3,7 @@
 using std::shared_ptr;
 using std::string;
 using std::ostringstream;
+using std::fixed;
 
 namespace ASCIIMathMLLibrary
 {
@@ -31,6 +32,7 @@ namespace ASCIIMathMLLibrary
 	string& Constant::GetStringRepresentation()
 	{
 		ostringstream convert;
+		convert << fixed;
 		convert << _value;
 		return *(new string(convert.str()));
 	}

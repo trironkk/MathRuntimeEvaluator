@@ -6,6 +6,7 @@
 #include <string>
 #include <string.h>
 #include <sstream>
+#include <fstream>
 #include <iostream>
 #include <list>
 #include <stack>

@@ -8,7 +8,6 @@
 #include <string>
 #include <algorithm>
 
-#include "OperatorType.h"
 #include "Constant.h"
 #include "WorkingMemory.h"
 

@@ -7,7 +7,7 @@ using std::string;
 using std::list;
 using std::stack;
 using std::back_insert_iterator;
-using std::stack;
+using std::fixed;
 
 namespace ASCIIMathMLLibrary
 {
@@ -108,33 +108,76 @@ namespace ASCIIMathMLLibrary
 					// Assert that the next token is an open parentheses
 					if (ReadNextToken(stream) != "(")
 					{
-						stringstream errorStream;
-						errorStream << 
-"Invalid syntax encountered at position ";
-						errorStream << stream.tellg();
-						errorStream << ". ";
-						errorStream <<
-"Function calls must be followed by a parentheses.";
-						throw ASCIIMathMLException(errorStream.str());
+						throw ASCIIMathMLException(
+"Function calls must be followed by a parentheses."
+							);
 					}
 
-					// Treat the results of each recursive call as one expression,
-					// and copy them to the result list.
-					for (int i = 0; i < parameterCount; i++)
+					// Handle the case of an indefinite number of parameters.
+					// Recursively call this method with both the expectingClose
+					// and expectingComma flags flipped.
+					if (parameterCount == -1)
 					{
+						// Our terminating condition is when a ")" is encountered.
+						string previousDelimiter;
 						list<string> tempResults;
-						// Every parameter except for the last one will be
-						// delimited by a comma.
-						if (i < parameterCount - 1)
-							tempResults = InternalParse(stream, false, true);
-						else
-							tempResults = InternalParse(stream, true, false);
+						parameterCount = 0;
+						do
+						{
+							// Get and record the results.
+							tempResults = InternalParse(stream, true, true);
+							copy(tempResults.begin(),
+								tempResults.end(),
+								back_insert_iterator<list<string> >(
+									result));
 
-						copy(tempResults.begin(),
-							tempResults.end(),
-							back_insert_iterator<list<string> >(result));
+							// Each time we pull another term, we increment the
+							// parameterCount to track the number of parameters
+							// we're recording. But if we didn't get anything from
+							// the recursive call, it's because there wasn't a
+							// term parameters. In that case, we don't want to
+							// increment the parameter count.
+							if (tempResults.size() > 0)
+								parameterCount++;
+
+							// Update the previous delimiter
+							stream.seekg(-1, std::ios::cur);
+							previousDelimiter = ReadNextToken(stream);
+						} while (previousDelimiter != ")");
+						
+						// Convert the parameterCount to a string and record it in
+						// the result list. We'll use this in CompoundExpression
+						// when we need to know how many of the parameters
+						// preceeding this operator belong to it. It comes after
+						// all the parameters, but since the expressions are
+						// push onto a stack, it's the first one to get popped
+						// off.
+						stringstream convert;
+						convert << parameterCount;
+						string tempParameterCountString;
+						convert >> tempParameterCountString;
+						result.push_back(tempParameterCountString);
 					}
+					else
+					{
+						// This is the standard case - a definite number of
+						// parameters. Treat the results of each recursive call as
+						// one expression, and copy them to the result list.
+						for (int i = 0; i < parameterCount; i++)
+						{
+							list<string> tempResults;
+							// Every parameter except for the last one will be
+							// delimited by a comma.
+							if (i < parameterCount - 1)
+								tempResults = InternalParse(stream, false, true);
+							else
+								tempResults = InternalParse(stream, true, false);
 
+							copy(tempResults.begin(),
+								tempResults.end(),
+								back_insert_iterator<list<string> >(result));
+						}
+					}
 					// Since an operator with its parameters can be considered an
 					// expression, we append the operator to the result list.
 					result.push_back(token);
@@ -170,6 +213,12 @@ namespace ASCIIMathMLLibrary
 					// We set the parenthetical flag to false to signify that a
 					// matching close parentheses has been encountered.
 					expectingClose = false;
+
+					// For the case of an indefinite number of parameters, both
+					// the expectingClose and expectingComma flags will be set.
+					// In this case, if we find an ")", we should flip the
+					// expectingComma to false, as well.
+					expectingComma = false;
 					break;
 				}
 
@@ -190,6 +239,12 @@ namespace ASCIIMathMLLibrary
 					// We set the expectingComma flag to false to signify that a
 					// comma has been encountered.
 					expectingComma = false;
+
+					// For the case of an indefinite number of parameters, both
+					// the expectingClose and expectingComma flags will be set.
+					// In this case, if we find an ",", we should flip the
+					// expectingClose to false, as well.
+					expectingClose = false;
 					break;
 				}
 
@@ -261,6 +316,7 @@ namespace ASCIIMathMLLibrary
 				stream.putback(c);
 				stream >> temporary_double;
 				stringstream convert;
+				convert << fixed;
 				convert << temporary_double;
 				result += convert.str();
 				return result;

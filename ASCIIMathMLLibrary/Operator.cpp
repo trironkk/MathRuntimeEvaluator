@@ -13,7 +13,7 @@ namespace ASCIIMathMLLibrary
 		"sin", "cos", "tan",
 		"abs", "log10", "pow",
 		"mod", "ln", "~", "sqrt",
-		"log2", "log"
+		"log2", "log", "sum", "avg", "rand"
 	};
 	vector<string> OPERATORS(operators, std::end(operators));
 
@@ -164,6 +164,20 @@ returns the base x logarithm of y \n"));
 x: the numerator\n \
 y: the denomenator \n \
 returns the remainder of x divided by y \n"));
+		else if (identifier == "sum")
+			return *(new string(
+"sum(...)  Sum \n \
+\n \
+Any number of parameters \n \
+\n \
+returns the sum of all parameters \n"));
+		else if (identifier == "avg")
+			return *(new string(
+"avg(...)  Average \n \
+\n \
+Any number of parameters \n \
+\n \
+returns the average of all parameters \n"));
 		else
 		{
 			return *(new string(

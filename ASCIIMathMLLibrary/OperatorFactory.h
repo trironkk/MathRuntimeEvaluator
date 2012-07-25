@@ -22,6 +22,9 @@
 #include "Log10.h"
 #include "Log.h"
 #include "Mod.h"
+#include "Sum.h"
+#include "Avg.h"
+#include "Rand.h"
 
 namespace ASCIIMathMLLibrary
 {

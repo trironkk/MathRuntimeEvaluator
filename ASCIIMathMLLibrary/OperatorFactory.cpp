@@ -24,6 +24,9 @@ namespace ASCIIMathMLLibrary
 		else if (identifier == "log")	{ return new Log(); }
 		else if (identifier == "log10")	{ return new Log10(); }
 		else if (identifier == "mod")	{ return new Mod(); }
+		else if (identifier == "sum")	{ return new Sum(); }
+		else if (identifier == "avg")	{ return new Avg(); }
+		else if (identifier == "rand")	{ return new Rand(); }
 		else
 		{
 			throw ASCIIMathMLException(

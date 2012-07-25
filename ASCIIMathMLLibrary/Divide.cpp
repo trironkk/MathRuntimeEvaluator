@@ -12,6 +12,12 @@ namespace ASCIIMathMLLibrary
 			const WorkingMemory& workingMemory,
 			vector<double>& values)
 	{
+		// Assert that the the denominator is not zero
+		if (values[1] == 0)
+			throw ASCIIMathMLException(
+"Cannot divide by zero."
+				);
+
 		// Perform the addition and return
 		return shared_ptr<Expression>(
 			new Constant(values[0] / values[1])

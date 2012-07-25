@@ -5,6 +5,7 @@
 #include <string>
 #include <stack>
 #include <memory>
+#include <math.h>
 
 // Operators
 #include "Operator.h"

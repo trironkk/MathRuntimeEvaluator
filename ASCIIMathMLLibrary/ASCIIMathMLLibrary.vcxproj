@@ -63,6 +63,7 @@
   <ItemGroup>
     <ClInclude Include="Abs.h" />
     <ClInclude Include="Add.h" />
+    <ClInclude Include="Avg.h" />
     <ClInclude Include="CompoundExpression.h" />
     <ClInclude Include="CompoundExpressionFactory.h" />
     <ClInclude Include="Constant.h" />
@@ -84,9 +85,11 @@
     <ClInclude Include="OperatorFactory.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="Pow.h" />
+    <ClInclude Include="Rand.h" />
     <ClInclude Include="Sin.h" />
     <ClInclude Include="Sqrt.h" />
     <ClInclude Include="Subtract.h" />
+    <ClInclude Include="Sum.h" />
     <ClInclude Include="Tan.h" />
     <ClInclude Include="UnitTests.h" />
     <ClInclude Include="Utilities.h" />
@@ -96,6 +99,7 @@
   <ItemGroup>
     <ClCompile Include="Abs.cpp" />
     <ClCompile Include="Add.cpp" />
+    <ClCompile Include="Avg.cpp" />
     <ClCompile Include="CompoundExpressionFactory.cpp" />
     <ClCompile Include="CompoundExpressions.cpp" />
     <ClCompile Include="Constant.cpp" />
@@ -110,6 +114,8 @@
     <ClCompile Include="Log10.cpp" />
     <ClCompile Include="Log2.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Rand.cpp" />
+    <ClCompile Include="Sum.cpp" />
     <ClCompile Include="UnitTests.cpp" />
     <ClCompile Include="Mod.cpp" />
     <ClCompile Include="Multiply.cpp" />

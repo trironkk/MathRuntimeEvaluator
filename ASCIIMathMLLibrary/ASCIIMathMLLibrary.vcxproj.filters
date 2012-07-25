@@ -174,6 +174,15 @@
     <ClInclude Include="Log.h">
       <Filter>Header Files\Operator\Implementations\Functions</Filter>
     </ClInclude>
+    <ClInclude Include="Sum.h">
+      <Filter>Header Files\Operator\Implementations\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="Avg.h">
+      <Filter>Header Files\Operator\Implementations\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="Rand.h">
+      <Filter>Header Files\Operator\Implementations\Functions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WorkingMemory.cpp">
@@ -267,6 +276,15 @@
       <Filter>Source Files\Operator\Implementation\Functions</Filter>
     </ClCompile>
     <ClCompile Include="Log.cpp">
+      <Filter>Source Files\Operator\Implementation\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="Sum.cpp">
+      <Filter>Source Files\Operator\Implementation\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="Avg.cpp">
+      <Filter>Source Files\Operator\Implementation\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="Rand.cpp">
       <Filter>Source Files\Operator\Implementation\Functions</Filter>
     </ClCompile>
   </ItemGroup>
