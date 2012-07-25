@@ -32,7 +32,6 @@ namespace ASCIIMathMLLibrary
 	string& Constant::GetStringRepresentation()
 	{
 		ostringstream convert;
-		convert << fixed;
 		convert << _value;
 		return *(new string(convert.str()));
 	}

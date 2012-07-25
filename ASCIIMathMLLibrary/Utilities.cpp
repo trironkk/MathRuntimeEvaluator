@@ -7,7 +7,7 @@ namespace ASCIIMathMLLibrary
 {
 	bool IsDouble(const string& str)
 	{
-		if (str.empty()) return false;
+		/*if (str.empty()) return false;
 		bool containsDecimal = false;
 		for (string::const_iterator it = str.begin();
 			it != str.end();
@@ -26,6 +26,12 @@ namespace ASCIIMathMLLibrary
 				}
 			}
 		}
+		return true;*/
+		char* endptr = 0;
+		strtod(str.c_str(), &endptr);
+
+		if(*endptr != '\0' || endptr == str)
+			return false;
 		return true;
 	}
 

@@ -12,7 +12,6 @@ namespace UnitTests
 		cout << expressionString << " = ";
 		ce.Simplify(memory);
 		ce.PrintLine(cout);
-
 		if (ce.GetValue() != expectedValue)
 		{
 			stringstream errorStream;
@@ -20,7 +19,7 @@ namespace UnitTests
 			errorStream << "The following expression failed to evaluated appropriately:\n";
 			errorStream << "Expression:     " << expressionString << "\n";
 			errorStream << "Expected Value: " << expectedValue << "\n";
-			errorStream << "Actual Value:   " << ce.GetStringRepresentation() << "\n";
+			errorStream << "Actual Value:   " << ce.GetValue() << "\n";
 			errorStream << "\n";
 			cout << errorStream.str();
 			//throw ASCIIMathMLException(errorStream.str());

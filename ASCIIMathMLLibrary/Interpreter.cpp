@@ -132,6 +132,7 @@ Supported Functions: \n \
     abs              Absolute Value \n \
     sum              Sum \n \
     avg              Average \n \
+    stddev           Standard Deviation \n \
 \n \
 Notes: \n \
 - All operations will be assigned to the variable \"ans\" unless otherwise \n \

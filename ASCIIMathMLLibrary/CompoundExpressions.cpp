@@ -264,7 +264,7 @@ namespace ASCIIMathMLLibrary
 			double result;
 			if (IsDouble((*FrontExpression()).GetStringRepresentation()))
 			{
-				result = ToDouble((*FrontExpression()).GetStringRepresentation());
+				result = (*FrontExpression()).GetValue();
 			}
 			else
 			{
