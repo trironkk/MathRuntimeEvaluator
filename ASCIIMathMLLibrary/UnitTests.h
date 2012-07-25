@@ -1,10 +1,8 @@
-#ifndef INTERPRETER_H
-#define INTERPRETER_H
+#ifndef UNIT_TESTS_H
+#define UNIT_TESTS_H
 
 #include <iostream>
 #include <string>
-#include <string.h>
-#include <sstream>
 #include <stack>
 #include <memory>
 
@@ -20,15 +18,10 @@
 #include "Exception.h"
 #include "WorkingMemory.h"
 
-using namespace ASCIIMathMLLibrary;
-using namespace std;
-namespace ASCIIMathMLLibrary
+namespace UnitTests
 {
-	namespace Parser
-	{
-		bool Preparse(std::istream& stream);
-		void LaunchInterpreter();
-		void PrintHelp();
-	}
+	void RunUnitTest(std::string expressionString, double expectedValue);
+	void RunUnitTestBattery();
 }
+
 #endif

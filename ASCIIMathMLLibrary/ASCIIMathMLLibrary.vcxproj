@@ -73,7 +73,8 @@
     <ClInclude Include="Interpreter.h" />
     <ClInclude Include="IPrintable.h" />
     <ClInclude Include="Ln.h" />
-    <ClInclude Include="Log.h" />
+    <ClInclude Include="Log10.h" />
+    <ClInclude Include="log2.h" />
     <ClInclude Include="Mod.h" />
     <ClInclude Include="Multiply.h" />
     <ClInclude Include="Negate.h" />
@@ -87,6 +88,7 @@
     <ClInclude Include="Sqrt.h" />
     <ClInclude Include="Subtract.h" />
     <ClInclude Include="Tan.h" />
+    <ClInclude Include="UnitTests.h" />
     <ClInclude Include="Utilities.h" />
     <ClInclude Include="Variable.h" />
     <ClInclude Include="WorkingMemory.h" />
@@ -101,10 +103,13 @@
     <ClCompile Include="Divide.cpp" />
     <ClCompile Include="Exception.cpp" />
     <ClCompile Include="Expression.cpp" />
+    <ClCompile Include="Interpreter.cpp" />
     <ClCompile Include="IPrintable.cpp" />
     <ClCompile Include="Ln.cpp" />
-    <ClCompile Include="Log.cpp" />
+    <ClCompile Include="Log10.cpp" />
+    <ClCompile Include="Log2.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="UnitTests.cpp" />
     <ClCompile Include="Mod.cpp" />
     <ClCompile Include="Multiply.cpp" />
     <ClCompile Include="Negate.cpp" />

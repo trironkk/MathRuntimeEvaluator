@@ -19,8 +19,9 @@ namespace ASCIIMathMLLibrary
 		else if (identifier == "tan")	{ return new Tan(); }
 		else if (identifier == "sqrt")	{ return new Sqrt(); }
 		else if (identifier == "abs")	{ return new Abs(); }
-		else if (identifier == "log")	{ return new Log(); }
+		else if (identifier == "log2")	{ return new Log2(); }
 		else if (identifier == "ln")	{ return new Ln(); }
+		else if (identifier == "log10")	{ return new Log10(); }
 		else if (identifier == "mod")	{ return new Mod(); }
 		else
 		{

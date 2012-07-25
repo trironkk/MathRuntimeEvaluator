@@ -1,14 +1,14 @@
 #ifndef PARSER_H
 #define PARSER_H
 
-#include <string>
 #include <algorithm>
 #include <iterator>
+#include <string>
 #include <string.h>
-#include <list>
-#include <stack>
 #include <sstream>
 #include <iostream>
+#include <list>
+#include <stack>
 
 #include "CompoundExpressionFactory.h"
 #include "OperatorFactory.h"

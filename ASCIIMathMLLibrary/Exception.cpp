@@ -9,7 +9,7 @@ namespace ASCIIMathMLLibrary
 		: Description(description)
 	{
 		ErrorCode = errorCode;
-		std::cout << "Error: " << description << std::endl;
+		std::cout << "Error: " << description << std::endl << std::endl;
 	}
 
 	const char* ASCIIMathMLException::what() const throw()

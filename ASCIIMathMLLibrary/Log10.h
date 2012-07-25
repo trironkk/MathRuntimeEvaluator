@@ -5,7 +5,7 @@
 
 namespace ASCIIMathMLLibrary
 {
-	class Log : public Operator
+	class Log10 : public Operator
 	{
 	public:
 		// Perform this operation

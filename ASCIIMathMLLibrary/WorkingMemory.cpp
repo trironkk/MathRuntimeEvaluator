@@ -87,7 +87,9 @@ namespace ASCIIMathMLLibrary
 				return left.length() < right.length();
 			}
 		);
-		unsigned int maxLength = 10 + (*iter).length();
+		unsigned int maxLength = 10;
+		if (iter != _declaredVariables.end())
+			maxLength += (*iter).length();
 
 		// Write the heading
 		result += "Name" + string(maxLength - 4, ' ') + "Value\n";

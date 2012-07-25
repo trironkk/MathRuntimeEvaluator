@@ -67,17 +67,17 @@
     <Filter Include="Source Files\Factories">
       <UniqueIdentifier>{308abf7a-dee2-44a7-b030-e858179b668f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Front End">
-      <UniqueIdentifier>{8a0720e0-06cf-4c24-a41f-480652a48403}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Front End">
-      <UniqueIdentifier>{5515c230-7821-4117-b6c9-fa7b53c440a8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Operator\Implementations\Functions">
       <UniqueIdentifier>{8a61baf3-c2bf-4999-976d-0c39240b9622}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Operator\Implementation\Functions">
       <UniqueIdentifier>{120ebcfd-7240-45ef-a2c4-70e2a542e4b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Parsing">
+      <UniqueIdentifier>{5515c230-7821-4117-b6c9-fa7b53c440a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Parsing">
+      <UniqueIdentifier>{8a0720e0-06cf-4c24-a41f-480652a48403}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -130,7 +130,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Parser.h">
-      <Filter>Header Files\Front End</Filter>
+      <Filter>Header Files\Parsing</Filter>
     </ClInclude>
     <ClInclude Include="Negate.h">
       <Filter>Header Files\Operator\Implementations\Arithmetic</Filter>
@@ -159,20 +159,23 @@
     <ClInclude Include="Abs.h">
       <Filter>Header Files\Operator\Implementations\Functions</Filter>
     </ClInclude>
-    <ClInclude Include="Log.h">
-      <Filter>Header Files\Operator\Implementations\Functions</Filter>
-    </ClInclude>
     <ClInclude Include="Ln.h">
       <Filter>Header Files\Operator\Implementations\Functions</Filter>
     </ClInclude>
     <ClInclude Include="Mod.h">
       <Filter>Header Files\Operator\Implementations\Functions</Filter>
     </ClInclude>
+    <ClInclude Include="UnitTests.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="log2.h">
+      <Filter>Header Files\Operator\Implementations\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="Log10.h">
+      <Filter>Header Files\Operator\Implementations\Functions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="WorkingMemory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -219,7 +222,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Parser.cpp">
-      <Filter>Source Files\Front End</Filter>
+      <Filter>Source Files\Parsing</Filter>
     </ClCompile>
     <ClCompile Include="Negate.cpp">
       <Filter>Source Files\Operator\Implementation\Arithmetic</Filter>
@@ -242,13 +245,25 @@
     <ClCompile Include="Abs.cpp">
       <Filter>Source Files\Operator\Implementation\Functions</Filter>
     </ClCompile>
-    <ClCompile Include="Log.cpp">
-      <Filter>Source Files\Operator\Implementation\Functions</Filter>
-    </ClCompile>
     <ClCompile Include="Ln.cpp">
       <Filter>Source Files\Operator\Implementation\Functions</Filter>
     </ClCompile>
     <ClCompile Include="Mod.cpp">
+      <Filter>Source Files\Operator\Implementation\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Interpreter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Log2.cpp">
+      <Filter>Source Files\Operator\Implementation\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="Log10.cpp">
       <Filter>Source Files\Operator\Implementation\Functions</Filter>
     </ClCompile>
   </ItemGroup>

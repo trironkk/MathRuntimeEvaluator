@@ -17,7 +17,8 @@
 #include "Tan.h"
 #include "Sqrt.h"
 #include "Abs.h"
-#include "Log.h"
+#include "Log10.h"
+#include "Log2.h"
 #include "Ln.h"
 #include "Mod.h"
 

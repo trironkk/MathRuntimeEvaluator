@@ -1,4 +1,4 @@
-#include "Log.h"
+#include "Log10.h"
 
 using std::shared_ptr;
 using std::list;
@@ -8,7 +8,7 @@ using std::string;
 namespace ASCIIMathMLLibrary
 {
 	// Performs this operation
-	shared_ptr<Expression> Log::Evaluate(
+	shared_ptr<Expression> Log10::Evaluate(
 			const WorkingMemory& workingMemory,
 			vector<double>& values)
 	{
@@ -19,8 +19,8 @@ namespace ASCIIMathMLLibrary
 	}
 
 	// Gets a string representation of this operation
-	string& Log::GetStringRepresentation()
+	string& Log10::GetStringRepresentation()
 	{
-		return *(new string("log"));
+		return *(new string("log10"));
 	}
 }

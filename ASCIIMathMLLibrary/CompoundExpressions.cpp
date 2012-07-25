@@ -248,7 +248,7 @@ namespace ASCIIMathMLLibrary
 				!workingMemory.Contains((*(*iter)).GetStringRepresentation()))
 			{
 				throw ASCIIMathMLException(
-					"Unrecognized token: " + (*(*iter)).GetStringRepresentation()
+"Undefined variable: " + (*(*iter)).GetStringRepresentation() + "."
 					);
 			}
 		}
