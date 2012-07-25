@@ -27,6 +27,9 @@ namespace ASCIIMathMLLibrary
 	// Returns the rank of the operator associated with the input string
 	int GetOperatorRank(const std::string str);
 
+	// Returns a string describing the usage of the inputed operator
+	std::string& GetUsage(std::string str);
+
 	// Abstract base class of ExpressionComponent - represents a operator
 	class Operator : public IPrintable
 	{
