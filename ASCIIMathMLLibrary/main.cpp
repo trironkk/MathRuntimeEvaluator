@@ -19,6 +19,5 @@
 
 int main()
 {
-	UnitTests::RunUnitTestBattery();
 	Parser::LaunchInterpreter();
 }

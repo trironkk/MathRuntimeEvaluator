@@ -19,6 +19,7 @@
 #include "Parser.h"
 #include "Exception.h"
 #include "WorkingMemory.h"
+#include "UnitTests.h"
 
 using namespace ASCIIMathMLLibrary;
 using namespace std;

@@ -19,6 +19,9 @@ namespace ASCIIMathMLLibrary
 
 			if (token == "exit") { persist = false; return false; }
 			else if (token == "memory") { memory.PrintLine(cout); return false; }
+			else if (token == "unittests") { UnitTests::RunUnitTestBattery(); return false; }
+	
+
 			else if (token == "") { return false; }
 			else if (token == "help")
 			{
@@ -102,6 +105,7 @@ Interpreter Commands: \n \
     help             Display this help text \n \
     help [operation] Display the usage of the specified operation \n \
     memory           Display all defined variables\n \
+    unittests        Perform a unit test battery run\n \
     exit             Close this session\n \
 \n \
 Arithmetic Operations: \n \

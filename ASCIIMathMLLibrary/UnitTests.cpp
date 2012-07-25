@@ -116,7 +116,5 @@ namespace UnitTests
 		cout << endl << "big number tests " << endl;
 		RunUnitTest("100000000000000", 100000000000000);
 		RunUnitTest("pow(pi, 20)", pow(memory.GetValue("pi"), 20.0));
-
-		std::cin.get();
 	}
 }
