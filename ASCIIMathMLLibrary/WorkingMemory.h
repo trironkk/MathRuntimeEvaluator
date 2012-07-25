@@ -21,7 +21,6 @@ namespace ASCIIMathMLLibrary
 	private:
 		std::unordered_map<std::string, double> _workingMemory;
 		std::list<std::string> _declaredVariables;
-		void ValidateVariableName(std::string variableName);
 
 	public:
 		WorkingMemory();
@@ -29,6 +28,7 @@ namespace ASCIIMathMLLibrary
 		double WorkingMemory::GetValue(std::string variableName) const;
 		void WorkingMemory::SetValue(std::string variableName, double value);
 
+		void ValidateVariableName(std::string variableName);
 		virtual std::string& GetStringRepresentation();
 	};
 }

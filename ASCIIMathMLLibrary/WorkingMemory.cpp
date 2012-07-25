@@ -92,6 +92,7 @@ namespace ASCIIMathMLLibrary
 			maxLength += (*iter).length();
 
 		// Write the heading
+		result += "\n";
 		result += "Name" + string(maxLength - 4, ' ') + "Value\n";
 		result += "----" + string(maxLength - 4, ' ') + "-----\n";
 
@@ -111,9 +112,6 @@ namespace ASCIIMathMLLibrary
 			result += "\n";
 		}
 
-		// Strip off the trailing newline character
-		result.resize(result.length() - 1);
-		
 		return result;
 	}
 }

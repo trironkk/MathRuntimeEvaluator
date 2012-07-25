@@ -26,7 +26,7 @@ namespace ASCIIMathMLLibrary
 {
 	namespace Parser
 	{
-		bool Preparse(std::istream& stream);
+		bool Preparse(std::stringstream& stream);
 		void LaunchInterpreter();
 		void PrintHelp();
 	}
