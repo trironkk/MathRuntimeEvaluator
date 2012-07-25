@@ -7,20 +7,24 @@ using std::stringstream;
 
 namespace ASCIIMathMLLibrary
 {
+	// Default constructor
 	WorkingMemory::WorkingMemory() :
 		_workingMemory(unordered_map<string, double>()),
 		_declaredVariables(list<std::string>()) { }
 	
+	// Returns true if the variable has been declared, and false otherwise.
 	bool WorkingMemory::Contains(string variableName) const
 	{
 		return _workingMemory.find(variableName) != _workingMemory.end();
 	}
 
+	// Returns the double value associated with a variable name.
 	double WorkingMemory::GetValue(string variableName) const
 	{
 		return _workingMemory.at(variableName);
 	}
 
+	// Sets the double value associated with a variable name.
 	void WorkingMemory::SetValue(string variableName, double value)
 	{
 		ValidateVariableName(variableName);
@@ -35,6 +39,8 @@ namespace ASCIIMathMLLibrary
 		_workingMemory[variableName] = value;
 	}
 
+	// Throws an ASCIIMathMLException if the variable name is invalid.
+	// Otherwise, simply returns.
 	void WorkingMemory::ValidateVariableName(string variableName)
 	{
 		if (variableName.length() > MAX_VARIABLE_NAME_LENGTH)
@@ -73,6 +79,7 @@ namespace ASCIIMathMLLibrary
 		}
 	}
 
+	// Returns a string representation of the working memory.
 	string& WorkingMemory::GetStringRepresentation()
 	{
 		string& result = *(new string());

@@ -168,5 +168,7 @@ namespace UnitTests
 		cout << endl << "Stuff that's supposed to break it..." << endl;
 		RunUnitTest("1 / 0", 0);
 		RunUnitTest("sqrt(-1)", 0);
+
+		
 	}
 }
