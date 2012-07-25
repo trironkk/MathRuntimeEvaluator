@@ -11,7 +11,8 @@ namespace ASCIIMathMLLibrary
 	{
 	public:
 		std::string Description;
-		ASCIIMathMLException(std::string description) throw();
+		int ErrorCode;
+		ASCIIMathMLException(std::string description, int errorCode=1) throw();
 		const char* what() const throw();
 
 		friend std::ostream& operator<<(std::ostream& os,

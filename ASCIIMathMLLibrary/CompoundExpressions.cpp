@@ -203,11 +203,15 @@ namespace ASCIIMathMLLibrary
 	// Check the type of the top of the stack
 	ExpressionComponent::Types CompoundExpression::CheckBackType()
 	{
+		if (_objectTypes.size() == 0)
+			throw ASCIIMathMLException("CompoundExpression is empty.");
 		return _objectTypes.back();
 	}
 
 	ExpressionComponent::Types CompoundExpression::CheckFrontType()
 	{
+		if (_objectTypes.size() == 0)
+			throw ASCIIMathMLException("CompoundExpression is empty.");
 		return _objectTypes.front();
 	}
 
@@ -232,6 +236,44 @@ namespace ASCIIMathMLLibrary
 			throw ASCIIMathMLException(
 "Cannot simplify an expression with 0 terms."
 				);
+		}
+
+		// Handle the case of having a variable name that is not in Working Memory
+		for (std::deque<std::shared_ptr<Expression>>::iterator iter =
+				_expressions.begin();
+			iter != _expressions.end();
+			iter++)
+		{
+			if (!IsDouble((*(*iter)).GetStringRepresentation()) &&
+				!workingMemory.Contains((*(*iter)).GetStringRepresentation()))
+			{
+				throw ASCIIMathMLException(
+"Contains a variable that is not defined in the working memory."
+					);
+			}
+		}
+
+		// Handle the case of the compound expression not containing an operator
+		if (_operations.size() == 0)
+		{
+			if (_expressions.size() > 1)
+				throw ASCIIMathMLException(
+"No operator present."
+				);
+			double result;
+			if (IsDouble((*FrontExpression()).GetStringRepresentation()))
+			{
+				result = ToDouble((*FrontExpression()).GetStringRepresentation());
+			}
+			else
+			{
+				result = workingMemory.GetValue(
+					(*FrontExpression()).GetStringRepresentation()
+				);
+			}
+			PopFront();
+			PushFront(result);
+			return FrontExpression();
 		}
 
 		// Holds the expressions

@@ -2,6 +2,7 @@
 
 using std::istringstream;
 using std::stringstream;
+using std::istream;
 using std::string;
 using std::list;
 using std::stack;
@@ -19,7 +20,7 @@ namespace ASCIIMathMLLibrary
 			return ParseString(istringstream(str));
 		}
 
-		CompoundExpression& ParseString(istringstream& stream)
+		CompoundExpression& ParseString(istream& stream)
 		{
 			CompoundExpression* result = new CompoundExpression();
 			list<string> identifiers = InternalParse(stream);
@@ -36,7 +37,7 @@ namespace ASCIIMathMLLibrary
 		// calls. This is an implementation of the shunting yard algorithm for
 		// converting the infix string expression into a postfix
 		// CompoundExpression object.
-		list<string> InternalParse(istringstream& stream, bool parenthetical)
+		list<string> InternalParse(istream& stream, bool parenthetical)
 		{
 			// The list of identifiers we're going to return.
 			list<string> result;
@@ -113,11 +114,15 @@ namespace ASCIIMathMLLibrary
 						errorStream << ".";
 						throw ASCIIMathMLException(errorStream.str());
 					}
+
+					// We set the parenthetical flag to false to signify that a
+					// matching close parentheses has been encountered.
+					parenthetical = false;
 					break;
 				}
 
 				// If it's a newline character, break out of this loop.
-				if (token == "\n")
+				if (token == "\n" || token == "")
 					break;
 
 				// If it's not any of the above, it must be a constant or a
@@ -125,6 +130,13 @@ namespace ASCIIMathMLLibrary
 				// results.
 				result.push_back(string(token));
 
+			}
+
+			if (parenthetical)
+			{
+				throw ASCIIMathMLException(
+					"Unmatched open parentheses encountered."
+				);
 			}
 
 			// Pop out the rest of the operators.
@@ -139,7 +151,7 @@ namespace ASCIIMathMLLibrary
 		}
 
 		// Return the next token, and adjust the stringstream accordingly
-		string ReadNextToken(istringstream& stream)
+		string ReadNextToken(istream& stream)
 		{
 			string result;
 			// Strip out all leading whitespaces.

@@ -19,6 +19,11 @@ namespace ASCIIMathMLLibrary
 		shared_ptr<vector<double>> values = GetValuesFromParameters(parameters,
 			workingMemory);
 
+		if ((*values)[0] < 0)
+			throw ASCIIMathMLException(
+			"Error: Cannot take a square root of a negative number."
+			);
+
 		// Perform the addition and return
 		return shared_ptr<Expression>(
 			new Constant(sqrt((*values)[0]))

@@ -4,10 +4,12 @@ using std::string;
 
 namespace ASCIIMathMLLibrary
 {
-	ASCIIMathMLException::ASCIIMathMLException(string description) throw()
+	ASCIIMathMLException::ASCIIMathMLException(string description,
+		int errorCode) throw()
 		: Description(description)
 	{
-		std::cout << description;
+		ErrorCode = errorCode;
+		std::cout << "Error: " << description << std::endl;
 	}
 
 	const char* ASCIIMathMLException::what() const throw()

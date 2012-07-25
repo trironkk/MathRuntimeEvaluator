@@ -12,7 +12,7 @@ namespace ASCIIMathMLLibrary
 		"+", "-", "*", "/",
 		"sin", "cos", "tan",
 		"abs", "log", "^",
-		"%", "ln", "-", "sqrt"
+		"%", "ln", "~", "sqrt"
 	};
 	vector<string> OPERATORS(operators, std::end(operators));
 
@@ -37,6 +37,8 @@ namespace ASCIIMathMLLibrary
 			return 2;
 		else if (str == "^")
 			return 4;
+		else if (str == "~")
+			return 5;
 		else
 			return 3;
 	}

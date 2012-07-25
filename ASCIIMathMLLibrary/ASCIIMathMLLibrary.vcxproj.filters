@@ -73,8 +73,11 @@
     <Filter Include="Source Files\Factories">
       <UniqueIdentifier>{308abf7a-dee2-44a7-b030-e858179b668f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Parser">
+    <Filter Include="Header Files\Front End">
       <UniqueIdentifier>{8a0720e0-06cf-4c24-a41f-480652a48403}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Front End">
+      <UniqueIdentifier>{5515c230-7821-4117-b6c9-fa7b53c440a8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -163,7 +166,7 @@
       <Filter>Header Files\Operator\Implementations</Filter>
     </ClInclude>
     <ClInclude Include="Parser.h">
-      <Filter>Header Files\Parser</Filter>
+      <Filter>Header Files\Front End</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -252,7 +255,7 @@
       <Filter>Source Files\Operator\Implementation</Filter>
     </ClCompile>
     <ClCompile Include="Parser.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Front End</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
