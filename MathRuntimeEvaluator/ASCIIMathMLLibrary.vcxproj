@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FBE95E0F-9DE0-4934-A28B-0B7C8336DBF7}</ProjectGuid>
+    <RootNamespace>ASCIIMathMLLibrary</RootNamespace>
+    <ProjectName>MathRuntimeEvaluator</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalOptions>/E %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Abs.h" />
+    <ClInclude Include="Add.h" />
+    <ClInclude Include="Avg.h" />
+    <ClInclude Include="CompoundExpression.h" />
+    <ClInclude Include="CompoundExpressionFactory.h" />
+    <ClInclude Include="Constant.h" />
+    <ClInclude Include="Cos.h" />
+    <ClInclude Include="Divide.h" />
+    <ClInclude Include="Exception.h" />
+    <ClInclude Include="ExpressionComponent.h" />
+    <ClInclude Include="Interpreter.h" />
+    <ClInclude Include="IPrintable.h" />
+    <ClInclude Include="Ln.h" />
+    <ClInclude Include="Log.h" />
+    <ClInclude Include="Log10.h" />
+    <ClInclude Include="log2.h" />
+    <ClInclude Include="Mod.h" />
+    <ClInclude Include="Multiply.h" />
+    <ClInclude Include="Negate.h" />
+    <ClInclude Include="Operator.h" />
+    <ClInclude Include="Expression.h" />
+    <ClInclude Include="OperatorFactory.h" />
+    <ClInclude Include="Parser.h" />
+    <ClInclude Include="Pow.h" />
+    <ClInclude Include="Rand.h" />
+    <ClInclude Include="Sin.h" />
+    <ClInclude Include="Sqrt.h" />
+    <ClInclude Include="StdDev.h" />
+    <ClInclude Include="Subtract.h" />
+    <ClInclude Include="Sum.h" />
+    <ClInclude Include="Tan.h" />
+    <ClInclude Include="UnitTests.h" />
+    <ClInclude Include="Utilities.h" />
+    <ClInclude Include="Variable.h" />
+    <ClInclude Include="WorkingMemory.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Abs.cpp" />
+    <ClCompile Include="Add.cpp" />
+    <ClCompile Include="Avg.cpp" />
+    <ClCompile Include="CompoundExpressionFactory.cpp" />
+    <ClCompile Include="CompoundExpressions.cpp" />
+    <ClCompile Include="Constant.cpp" />
+    <ClCompile Include="Cos.cpp" />
+    <ClCompile Include="Divide.cpp" />
+    <ClCompile Include="Exception.cpp" />
+    <ClCompile Include="Expression.cpp" />
+    <ClCompile Include="Interpreter.cpp" />
+    <ClCompile Include="IPrintable.cpp" />
+    <ClCompile Include="Ln.cpp" />
+    <ClCompile Include="Log.cpp" />
+    <ClCompile Include="Log10.cpp" />
+    <ClCompile Include="Log2.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Rand.cpp" />
+    <ClCompile Include="StdDev.cpp" />
+    <ClCompile Include="Sum.cpp" />
+    <ClCompile Include="UnitTests.cpp" />
+    <ClCompile Include="Mod.cpp" />
+    <ClCompile Include="Multiply.cpp" />
+    <ClCompile Include="Negate.cpp" />
+    <ClCompile Include="Operator.cpp" />
+    <ClCompile Include="OperatorFactory.cpp" />
+    <ClCompile Include="Parser.cpp" />
+    <ClCompile Include="Pow.cpp" />
+    <ClCompile Include="Sin.cpp" />
+    <ClCompile Include="Sqrt.cpp" />
+    <ClCompile Include="Subtract.cpp" />
+    <ClCompile Include="Tan.cpp" />
+    <ClCompile Include="Utilities.cpp" />
+    <ClCompile Include="Variable.cpp" />
+    <ClCompile Include="WorkingMemory.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
