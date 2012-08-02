@@ -11,17 +11,16 @@
 
 #include "Expression.h"
 #include "ExpressionComponent.h"
-#include "Operator.h"
+#include "Operation.h"
+#include "Operations.h"
 #include "WorkingMemory.h"
 #include "Variable.h"
 #include "Constant.h"
 #include "Utilities.h"
-#include "OperatorFactory.h"
+
 
 namespace MathRuntimeEvaluator
 {
-	class Operator;
-
 	// Child class of Expression - represents a compound expression, organized
 	// with a postfix scheme
 	class CompoundExpression : public Expression
@@ -34,7 +33,7 @@ namespace MathRuntimeEvaluator
 		std::deque<std::shared_ptr<Expression>> _expressions;
 		
 		// A LIFO data structure for the involved operations
-		std::deque<std::shared_ptr<Operator>> _operations;
+		std::deque<std::shared_ptr<Operation> > _operations;
 
 		// A LIFO data structure for tracking the types of inserted objects
 		std::deque<ExpressionComponent::Types> _objectTypes;
@@ -54,8 +53,8 @@ namespace MathRuntimeEvaluator
 		void PushBack(std::string variableName);
 
 		// Pushing operators onto the stack
-		void PushFront(std::shared_ptr<Operator> operation);
-		void PushBack(std::shared_ptr<Operator> operation);
+		void PushFront(std::shared_ptr<Operation> operation);
+		void PushBack(std::shared_ptr<Operation> operation);
 
 		// Pushing Operators - Abbreviated
 		// Note: Template functions cannot be prototyped, so we define them here
@@ -66,9 +65,9 @@ namespace MathRuntimeEvaluator
 
 		// Retreiving an item of the stack
 		std::shared_ptr<Expression> FrontExpression();
-		std::shared_ptr<Operator> FrontOperator();
+		std::shared_ptr<Operation> FrontOperation();
 		std::shared_ptr<Expression> BackExpression();
-		std::shared_ptr<Operator> BackOperator();
+		std::shared_ptr<Operation> BackOperation();
 
 		// Removing an item from the stack
 		void PopFront();
@@ -76,7 +75,7 @@ namespace MathRuntimeEvaluator
 
 		// Get the item at the specified index
 		std::shared_ptr<Expression> AtExpression(int index);
-		std::shared_ptr<Operator> AtOperator(int index);
+		std::shared_ptr<Operation> AtOperation(int index);
 
 		// Check the type of the top of the stack
 		ExpressionComponent::Types CheckFrontType();

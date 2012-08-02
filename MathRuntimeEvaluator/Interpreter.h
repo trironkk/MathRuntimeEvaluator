@@ -8,14 +8,13 @@
 #include <stack>
 #include <memory>
 
-// Operators
-#include "Operator.h"
 
 // Expressions
 #include "Constant.h"
 #include "Variable.h"
 #include "CompoundExpression.h"
-
+#include "Operation.h"
+#include "Operations.h"
 #include "Parser.h"
 #include "Exception.h"
 #include "WorkingMemory.h"

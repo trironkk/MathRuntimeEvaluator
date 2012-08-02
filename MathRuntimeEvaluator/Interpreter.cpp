@@ -1,7 +1,7 @@
 #include "Interpreter.h"
 
 using namespace MathRuntimeEvaluator;
-using namespace UnitTests;
+using namespace MathRuntimeEvaluator::UnitTests;
 using namespace std;
 
 namespace MathRuntimeEvaluator
@@ -82,7 +82,7 @@ namespace MathRuntimeEvaluator
 				// parameter
 				string operation = ReadNextToken(stream);
 				if (operation == "") { PrintHelp(); return false; }
-				else { cout << endl << GetUsage(operation) << endl; return false;}
+				else { cout << endl << Operations::GetUsage(operation) << endl; return false;}
 			}
 
 			// If an assignment is specified...
@@ -114,33 +114,33 @@ namespace MathRuntimeEvaluator
 " \
 \n \
 Interpreter Commands: \n \
-    help             Display this help text \n \
-    help [operation] Display the usage of the specified operation \n \
-    memory           Display all defined variables\n \
-    unittests        Perform a unit test battery run\n \
-    exit             Close this session\n \
+	help             Display this help text \n \
+	help [operation] Display the usage of the specified operation \n \
+	memory           Display all defined variables\n \
+	unittests        Perform a unit test battery run\n \
+	exit             Close this session\n \
 \n \
 Arithmetic Operations: \n \
-    +                Addition \n \
-    -                Subtraction or Negation \n \
-    *                Multiplication \n \
-    /                Division \n \
+	+                Addition \n \
+	-                Subtraction or Negation \n \
+	*                Multiplication \n \
+	/                Division \n \
 \n \
 Supported Functions: \n \
-    pow              Exponentiation \n \
-    sin              Sine Function \n \
-    cos              Cosine Function \n \
-    tan              Tangent Function \n \
-    ln               Natural Logarithm \n \
-    log2             Base 2 Logarithm \n \
-    log10            Base 10 Logarithm \n \
-    log              Generic Logarithm \n \
-    mod              Modular Division \n \
-    sqrt             Square Root \n \
-    abs              Absolute Value \n \
-    sum              Sum \n \
-    avg              Average \n \
-    stddev           Standard Deviation \n \
+	pow              Exponentiation \n \
+	sin              Sine Function \n \
+	cos              Cosine Function \n \
+	tan              Tangent Function \n \
+	ln               Natural Logarithm \n \
+	log2             Base 2 Logarithm \n \
+	log10            Base 10 Logarithm \n \
+	log              Generic Logarithm \n \
+	mod              Modular Division \n \
+	sqrt             Square Root \n \
+	abs              Absolute Value \n \
+	sum              Sum \n \
+	avg              Average \n \
+	stddev           Standard Deviation \n \
 \n \
 Notes: \n \
 - All operations will be assigned to the variable \"ans\" unless otherwise \n \

@@ -20,6 +20,11 @@ namespace MathRuntimeEvaluator
 		virtual int GetParameterCount() const;
 		
 		// Returns an integer representing the rank of this Operation
+		// Functions:		3
+		// Multiplication:	2
+		// Division:		2
+		// Addition:		1
+		// Subtraction:		1
 		virtual int GetRank() const;
 
 		// Perform this operation

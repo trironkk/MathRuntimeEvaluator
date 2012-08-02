@@ -1,11 +1,11 @@
-#ifndef DIVIDE_H
-#define DIVIDE_H
+#ifndef MULTIPLY_H
+#define MULTIPLY_H
 
 #include "Operation.h"
 
 namespace MathRuntimeEvaluator
 {
-	struct Divide : public Operation
+	struct Multiply : public Operation
 	{
 		// Returns a string representation of this Operator
 		virtual const std::string& GetIdentifier() const;
@@ -20,6 +20,11 @@ namespace MathRuntimeEvaluator
 		virtual int GetParameterCount() const;
 		
 		// Returns an integer representing the rank of this Operation
+		// Functions:		3
+		// Multiplication:	2
+		// Division:		2
+		// Addition:		1
+		// Subtraction:		1
 		virtual int GetRank() const;
 
 		// Perform this operation

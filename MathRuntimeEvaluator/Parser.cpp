@@ -9,12 +9,13 @@ using std::stack;
 using std::back_insert_iterator;
 using std::fixed;
 
+using namespace MathRuntimeEvaluator;
+
 namespace MathRuntimeEvaluator
 {
 namespace Parser
 {
 	using MathRuntimeEvaluator::ILLEGAL_CHARACTERS;
-	using MathRuntimeEvaluator::IsOperator;
 
 	// Parse a line of input
 	CompoundExpression& ParseString(string str)
@@ -65,29 +66,34 @@ namespace Parser
 			token = ReadNextToken(stream);
 
 			// If the token is an operator, check its rank.
-			if (IsOperator(token))
+			if (Operations::IsOperation(token))
 			{
-				// If the token is an arithmetic operator, we follow the shunting
-				// yard algorithm.
-				if (IsArithmeticOperator(token))
+				// If the token isn't a function, it's an arithmetic operator, so
+				// we perform the shunting yard algorithm.
+				if (Operations::IsFunction(token) == false)
 				{
 					// If the token is a "-" symbol, we need to decide whether
 					// it's negation or subtraction. If it's negation, we convert
 					// it to a "~" symbol, for our internal use. Otherwise, leave
 					// it alone.
 					if (token == "-")
+					{
 						// To determine if it's negation, we do what a wise man
 						// suggested here:
 						// http://stackoverflow.com/a/5240781/391618
-						if (IsOperator(previousToken) || previousToken == "")
+						if (Operations::IsOperation(previousToken) ||
+							previousToken == "")
+						{
 							token = "~";
+						}
+					}
 
 					// While the rank of the current token is less than the rank,
 					// of the top of the operators stack, push the top of the
 					// operators stack to the back of the result list.
 					while (operators.size() > 0 &&
-						GetOperatorRank(token) <
-							GetOperatorRank(operators.top()))
+						Operations::GetRank(token) <
+						Operations::GetRank(operators.top()))
 					{
 						result.push_back(operators.top());
 						operators.pop();
@@ -100,12 +106,6 @@ namespace Parser
 				// function. Recursively call this method for each of the
 				// parameter.
 
-				// Construct a temporary Operator object just to determine the
-				// number of parameters
-				Operator* temporaryOperator = NewOperator(token);
-				int parameterCount = (*temporaryOperator).GetParameterCount();
-				delete temporaryOperator;
-
 				// Assert that the next token is an open parentheses
 				if (ReadNextToken(stream) != "(")
 				{
@@ -113,6 +113,9 @@ namespace Parser
 "Function calls must be followed by a parentheses."
 						);
 				}
+				
+				// Get the number of parameters that will be involved.
+				int parameterCount = Operations::GetParameterCount(token);
 
 				// Handle the case of an indefinite number of parameters.
 				// Recursively call this method with both the expectingClose and,

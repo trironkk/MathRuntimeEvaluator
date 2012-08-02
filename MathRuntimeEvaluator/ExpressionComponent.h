@@ -6,7 +6,7 @@ namespace ExpressionComponent
 	enum Types
 	{
 		Expression,
-		Operator
+		Operation
 	};
 }
 

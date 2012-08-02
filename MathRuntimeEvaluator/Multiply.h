@@ -1,23 +1,29 @@
 #ifndef MULTIPLY_H
 #define MULTIPLY_H
 
-#include "Operator.h"
+#include "Operation.h"
 
 namespace MathRuntimeEvaluator
 {
-	class Multiply : public Operator
+	struct Multiply : public Operation
 	{
-	public:
-		// Perform this operation
-		virtual std::shared_ptr<Expression> Evaluate(
-			const WorkingMemory& workingMemory,
-			std::vector<double>& parameters);
+		// Returns a string representation of this Operator
+		virtual const std::string& GetIdentifier() const;
 		
-		// Returns the number of parameters involved in this object
-		virtual int GetParameterCount() { return 2; }
+		// Returns a helpful string explaining how to use this Operator
+		virtual const std::string& GetUsage() const;
 
-		// Gets a string representation of this operation
-		virtual std::string& GetStringRepresentation();
+		// Returns true if this operator is a function
+		virtual bool IsFunction() const;
+
+		// Returns the number of parameters this Operator works with
+		virtual int GetParameterCount() const;
+		
+		// Returns an integer representing the rank of this Operation
+		virtual int GetRank() const;
+
+		// Perform this operation
+		virtual double Evaluate(const std::vector<double>& parameters) const;
 	};
 }
 

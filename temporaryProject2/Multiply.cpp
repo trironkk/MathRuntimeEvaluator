@@ -14,13 +14,18 @@ namespace MathRuntimeEvaluator
 		return *(new string("multiplication usage string"));
 	}
 
-	// Returns true if this operator is a function
-	bool Multiply::IsFunction() const { return false; }
+	// Returns true if this operator is +, -, *, or /, and false otherwise
+	bool Multiply::IsFunction() const { return true; }
 
 	// Returns the number of parameters this Operator works with
 	int Multiply::GetParameterCount() const { return 2; }
 
 	// Returns an integer representing the rank of this Operation
+	// Functions:		3
+	// Multiplication:	2
+	// Division:		2
+	// Addition:		1
+	// Subtraction:		1
 	int Multiply::GetRank() const { return 2; }
 
 	// Perform this operation

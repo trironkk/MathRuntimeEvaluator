@@ -12,19 +12,13 @@
 #include <stack>
 
 #include "CompoundExpressionFactory.h"
-#include "OperatorFactory.h"
+
 #include "Exception.h"
 #include "WorkingMemory.h"
 #include "Constant.h"
 #include "Variable.h"
 #include "CompoundExpression.h"
-
-// Operators
-#include "Add.h"
-#include "Subtract.h"
-#include "Multiply.h"
-#include "Divide.h"
-#include "Negate.h"
+#include "Operations.h"
 
 namespace MathRuntimeEvaluator
 {

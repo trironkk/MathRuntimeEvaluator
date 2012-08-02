@@ -14,7 +14,7 @@ namespace MathRuntimeEvaluator
 	// Basic Constructor
 	CompoundExpression::CompoundExpression() :
 		_expressions(deque<shared_ptr<Expression>>()),
-		_operations(deque<shared_ptr<Operator>>()),
+		_operations(deque<shared_ptr<Operation>>()),
 		_objectTypes(deque<ExpressionComponent::Types>()) {  }
 
 	// Pushing expressions onto the stack
@@ -38,9 +38,9 @@ namespace MathRuntimeEvaluator
 
 	void CompoundExpression::PushFront(string identifier)
 	{
-		if (IsOperator(identifier))
+		if (Operations::IsOperation(identifier))
 		{
-			PushFront(*(new shared_ptr<Operator>(NewOperator(identifier))));
+			PushFront(Operations::GetOperation(identifier));
 		}
 		else if (IsDouble(identifier))
 		{
@@ -60,9 +60,9 @@ namespace MathRuntimeEvaluator
 
 	void CompoundExpression::PushBack(string identifier)
 	{
-		if (IsOperator(identifier))
+		if (Operations::IsOperation(identifier))
 		{
-			PushBack(*(new shared_ptr<Operator>(NewOperator(identifier))));
+			PushBack(Operations::GetOperation(identifier));
 		}
 		else if (IsDouble(identifier))
 		{
@@ -76,16 +76,16 @@ namespace MathRuntimeEvaluator
 	}
 	
 	// Pushing operators onto the stack
-	void CompoundExpression::PushBack(shared_ptr<Operator> operation)
+	void CompoundExpression::PushBack(shared_ptr<Operation> operation)
 	{
 		_operations.push_back(operation);
-		_objectTypes.push_back(ExpressionComponent::Operator);
+		_objectTypes.push_back(ExpressionComponent::Operation);
 	}
 
-	void CompoundExpression::PushFront(shared_ptr<Operator> operation)
+	void CompoundExpression::PushFront(shared_ptr<Operation> operation)
 	{
 		_operations.push_front(operation);
-		_objectTypes.push_front(ExpressionComponent::Operator);
+		_objectTypes.push_front(ExpressionComponent::Operation);
 	}
 
 	// Retrieving an item of the stack
@@ -99,11 +99,11 @@ namespace MathRuntimeEvaluator
 		return _expressions.front();
 	}
 
-	shared_ptr<Operator> CompoundExpression::FrontOperator()
+	shared_ptr<Operation> CompoundExpression::FrontOperation()
 	{
-		if (_objectTypes.front() != ExpressionComponent::Operator)
+		if (_objectTypes.front() != ExpressionComponent::Operation)
 			throw ASCIIMathMLException(
-"Tried to retrieve an Operator, but the front item of the stack is not an Operator."
+"Tried to retrieve an Operation, but the front item of the stack is not an Operation."
 			);
 
 		return _operations.front();
@@ -119,11 +119,11 @@ namespace MathRuntimeEvaluator
 		return _expressions.back();
 	}
 
-	shared_ptr<Operator> CompoundExpression::BackOperator()
+	shared_ptr<Operation> CompoundExpression::BackOperation()
 	{
-		if (_objectTypes.back() != ExpressionComponent::Operator)
+		if (_objectTypes.back() != ExpressionComponent::Operation)
 			throw ASCIIMathMLException(
-"Tried to retrieve an Operator, but the front item of the stack is not an Operator."
+"Tried to retrieve an Operation, but the front item of the stack is not an Operation."
 			);
 
 		return _operations.back();
@@ -136,7 +136,7 @@ namespace MathRuntimeEvaluator
 		{
 			_expressions.pop_back();
 		}
-		else if (CheckBackType() == ExpressionComponent::Operator)
+		else if (CheckBackType() == ExpressionComponent::Operation)
 		{
 			_operations.pop_back();
 		}
@@ -155,7 +155,7 @@ namespace MathRuntimeEvaluator
 		{
 			_expressions.pop_front();
 		}
-		else if (CheckFrontType() == ExpressionComponent::Operator)
+		else if (CheckFrontType() == ExpressionComponent::Operation)
 		{
 			_operations.pop_front();
 		}
@@ -185,9 +185,9 @@ namespace MathRuntimeEvaluator
 		return _expressions.at(count);
 	}
 
-	shared_ptr<Operator> CompoundExpression::AtOperator(int index)
+	shared_ptr<Operation> CompoundExpression::AtOperation(int index)
 	{
-		if (_objectTypes.at(index) != ExpressionComponent::Operator)
+		if (_objectTypes.at(index) != ExpressionComponent::Operation)
 			throw ASCIIMathMLException(
 "Tried to retrieve an Operator, but the front item of the stack is not an Operator."
 			);
@@ -195,7 +195,7 @@ namespace MathRuntimeEvaluator
 		int count = 0;
 		for (int i = 0; i < index; i++)
 		{
-			if (_objectTypes.at(i) == ExpressionComponent::Operator)
+			if (_objectTypes.at(i) == ExpressionComponent::Operation)
 				count++;
 		}
 		return _operations.at(count);
@@ -245,11 +245,11 @@ namespace MathRuntimeEvaluator
 			iter != _expressions.end();
 			iter++)
 		{
-			if (!IsDouble((*(*iter)).GetStringRepresentation()) &&
+			if (!IsDouble((*iter)->GetStringRepresentation()) &&
 				!workingMemory.Contains((*(*iter)).GetStringRepresentation()))
 			{
 				throw ASCIIMathMLException(
-"Undefined variable: " + (*(*iter)).GetStringRepresentation() + "."
+"Undefined variable: " + (*iter)->GetStringRepresentation() + "."
 					);
 			}
 		}
@@ -284,14 +284,14 @@ namespace MathRuntimeEvaluator
 		do
 		{
 			// Collect Expressions until an operator is encountered
-			while(CheckFrontType() != ExpressionComponent::Operator)
+			while(CheckFrontType() != ExpressionComponent::Operation)
 			{
 				expressionStack.push(FrontExpression());
 				PopFront();
 			}
 
 			// Get the operation
-			shared_ptr<Operator> operation(FrontOperator());
+			shared_ptr<Operation> operation(FrontOperation());
 			PopFront();
 
 			// Get the parameters
@@ -322,8 +322,18 @@ namespace MathRuntimeEvaluator
 				expressionStack.pop();
 			}
 
+			// Extract the parameter values into a vector of doubles
+			vector<double> parameterValues;
+			for (list<shared_ptr<Expression>>::iterator iter = parameters.begin();
+				iter != parameters.end();
+				iter++)
+			{
+				double val = (*iter)->Simplify(workingMemory)->GetValue();
+				parameterValues.push_back(val);
+			}
+
 			// Evaluate the operation and push the result onto the expressionStack
-			PushFront((*operation).Evaluate(workingMemory, parameters));
+			PushFront(operation->Evaluate(parameterValues));
 		} while (expressionStack.size() > 1 || Size() > 1);
 
 		// Ensure there's exactly one term left
@@ -364,7 +374,7 @@ namespace MathRuntimeEvaluator
 		while (index < Size())
 		{
 			// If the next term is an expression, collect it
-			if (CheckAtType(index) != ExpressionComponent::Operator)
+			if (CheckAtType(index) != ExpressionComponent::Operation)
 			{
 				stringStack.push(
 					(*(AtExpression(index++))).GetStringRepresentation()
@@ -374,7 +384,7 @@ namespace MathRuntimeEvaluator
 
 			// Otherwise, it's an operation, so extract it and print this
 			// component of the CompoundExpression
-			shared_ptr<Operator> operation(AtOperator(index++));
+			shared_ptr<Operation> operation(AtOperation(index++));
 
 			// Get the parameters
 			int parameterCount = (*operation).GetParameterCount();
@@ -426,7 +436,7 @@ namespace MathRuntimeEvaluator
 			{
 				(*_expressions.at(expressionsIndex++)).Print(os);
 			}
-			else if (_objectTypes.at(i) == ExpressionComponent::Operator)
+			else if (_objectTypes.at(i) == ExpressionComponent::Operation)
 			{
 				(*_operations.at(operationsIndex++)).Print(os);
 			}

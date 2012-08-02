@@ -1,23 +1,29 @@
 #ifndef ADD_H
 #define ADD_H
 
-#include "Operator.h"
+#include "Operation.h"
 
 namespace MathRuntimeEvaluator
 {
-	class Add : public Operator
+	struct Add : public Operation
 	{
-	public:
+		// Returns a string representation of this Operator
+		virtual const std::string& GetIdentifier() const;
+		
+		// Returns a helpful string explaining how to use this Operator
+		virtual const std::string& GetUsage() const;
+
+		// Returns true if this operator is +, -, *, or /, and false otherwise
+		virtual bool IsFunction() const;
+
+		// Returns the number of parameters this Operator works with
+		virtual int GetParameterCount() const;
+
+		// Returns an integer representing the rank of this Operation
+		virtual int GetRank() const;
+
 		// Perform this operation
-		virtual std::shared_ptr<Expression> Evaluate(
-			const WorkingMemory& workingMemory,
-			std::vector<double>& parameters);
-		
-		// Returns the number of parameters involved in this object
-		virtual int GetParameterCount() { return 2; }
-		
-		// Gets a string representation of this operation
-		virtual std::string& GetStringRepresentation();
+		virtual double Evaluate(const std::vector<double>& parameters) const;
 	};
 }
 

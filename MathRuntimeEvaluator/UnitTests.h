@@ -8,7 +8,7 @@
 #include <math.h>
 
 // Operators
-#include "Operator.h"
+#include "Operation.h"
 
 // Expressions
 #include "Constant.h"
@@ -19,6 +19,8 @@
 #include "Exception.h"
 #include "WorkingMemory.h"
 
+namespace MathRuntimeEvaluator
+{
 namespace UnitTests
 {
 	// Parses and evaluates a string expression, and then checks it against an
@@ -28,5 +30,5 @@ namespace UnitTests
 	// Runs a battery of unit tests
 	void RunUnitTestBattery();
 }
-
+}
 #endif
