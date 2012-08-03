@@ -21,6 +21,7 @@ namespace MathRuntimeEvaluator
 			operations.push_back(*new shared_ptr<Operation>(new Multiply()));
 			operations.push_back(*new shared_ptr<Operation>(new Divide()));
 			operations.push_back(*new shared_ptr<Operation>(new Negate()));
+			initialized = true;
 		}
 		return operations;
 	}
@@ -40,6 +41,7 @@ namespace MathRuntimeEvaluator
 			{
 				isFunctionMap[(*iter)->GetIdentifier()] = (*iter)->IsFunction();
 			}
+			initialized = true;
 		}
 		return isFunctionMap[identifier];
 	}
@@ -80,6 +82,7 @@ namespace MathRuntimeEvaluator
 				parameterCountMap[(*iter)->GetIdentifier()] =
 					(*iter)->GetParameterCount();
 			}
+			initialized = true;
 		}
 		return parameterCountMap[identifier];
 	}
@@ -100,6 +103,7 @@ namespace MathRuntimeEvaluator
 				rankMap[(*iter)->GetIdentifier()] =
 					(*iter)->GetRank();
 			}
+			initialized = true;
 		}
 		return rankMap[identifier];
 	}
@@ -122,6 +126,7 @@ namespace MathRuntimeEvaluator
 				pair<string,string> _pair(identifier, usage);
 				usageMap.insert(_pair);
 			}
+			initialized = true;
 		}
 		return usageMap[identifier];
 	}
@@ -144,6 +149,7 @@ namespace MathRuntimeEvaluator
 				// overloaded, * and & are not inverse operations.
 				operationsMap[(*iter)->GetIdentifier()] = (*iter);
 			}
+			initialized = true;
 		}
 		return operationsMap[identifier];
 	}
