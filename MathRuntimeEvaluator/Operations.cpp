@@ -28,6 +28,8 @@ namespace MathRuntimeEvaluator
 			operations.push_back(*new shared_ptr<Operation>(new Sin()));
 			operations.push_back(*new shared_ptr<Operation>(new Cos()));
 			operations.push_back(*new shared_ptr<Operation>(new Tan()));
+			operations.push_back(*new shared_ptr<Operation>(new Sqrt()));
+			operations.push_back(*new shared_ptr<Operation>(new Abs()));
 
 			initialized = true;
 		}

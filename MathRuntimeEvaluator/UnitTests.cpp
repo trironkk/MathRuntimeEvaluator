@@ -122,15 +122,15 @@ namespace UnitTests
 		RunUnitTest("cos(4)", cos(4.0));
 		RunUnitTest("tan(4)", tan(4.0));
 
-		//// square root operation
-		//cout << endl << "square root operation" << endl;
-		//RunUnitTest("sqrt(4)",  sqrt(4.0));
-		//RunUnitTest("sqrt(44)", sqrt(44.0));
+		// square root operation
+		cout << endl << "square root operation" << endl;
+		RunUnitTest("sqrt(4)",  sqrt(4.0));
+		RunUnitTest("sqrt(44)", sqrt(44.0));
 
-		//// absolute value operation
-		//cout << endl << "absolute value operation" << endl;
-		//RunUnitTest("abs(4)",  abs(4));
-		//RunUnitTest("abs(-4)", abs(-4));
+		// absolute value operation
+		cout << endl << "absolute value operation" << endl;
+		RunUnitTest("abs(4)",  abs(4));
+		RunUnitTest("abs(-4)", abs(-4));
 
 		//// logarithmic operations
 		//cout << endl << "logarithmic operations" << endl;

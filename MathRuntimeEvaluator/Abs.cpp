@@ -1,0 +1,28 @@
+#include "Abs.h"
+
+using std::vector;
+using std::string;
+
+namespace MathRuntimeEvaluator
+{
+	// Returns a string representation of this Operator
+	const string& Abs::GetIdentifier() const { return *(new string("abs")); }
+
+	// Returns a helpful string explaining how to use this Operator
+	const string& Abs::GetUsage() const
+	{
+		return *(new string("abs usage string"));
+	}
+
+	// Returns true if this operator is a function
+	bool Abs::IsFunction() const { return true; }
+
+	// Returns the number of parameters this Operator works with
+	int Abs::GetParameterCount() const { return 1; }
+
+	// Perform this operation
+	double Abs::Evaluate(const vector<double>& parameters) const
+	{
+		return abs(parameters[0]);
+	}
+}

@@ -62,6 +62,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Abs.h" />
     <ClInclude Include="Add.h" />
     <ClInclude Include="CompoundExpression.h" />
     <ClInclude Include="CompoundExpressionFactory.h" />
@@ -80,6 +81,7 @@
     <ClInclude Include="Parser.h" />
     <ClInclude Include="Pow.h" />
     <ClInclude Include="Sin.h" />
+    <ClInclude Include="Sqrt.h" />
     <ClInclude Include="Subtract.h" />
     <ClInclude Include="Tan.h" />
     <ClInclude Include="UnitTests.h" />
@@ -88,6 +90,7 @@
     <ClInclude Include="WorkingMemory.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Abs.cpp" />
     <ClCompile Include="Add.cpp" />
     <ClCompile Include="CompoundExpressionFactory.cpp" />
     <ClCompile Include="CompoundExpressions.cpp" />
@@ -106,6 +109,7 @@
     <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Pow.cpp" />
     <ClCompile Include="Sin.cpp" />
+    <ClCompile Include="Sqrt.cpp" />
     <ClCompile Include="Subtract.cpp" />
     <ClCompile Include="Tan.cpp" />
     <ClCompile Include="UnitTests.cpp" />

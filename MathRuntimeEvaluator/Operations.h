@@ -22,6 +22,8 @@
 #include "Sin.h"
 #include "Cos.h"
 #include "Tan.h"
+#include "Sqrt.h"
+#include "Abs.h"
 
 
 namespace MathRuntimeEvaluator
