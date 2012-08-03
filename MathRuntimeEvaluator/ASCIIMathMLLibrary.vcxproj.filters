@@ -49,17 +49,23 @@
     <Filter Include="Source Files\Operation">
       <UniqueIdentifier>{30b2586c-7b23-47c0-8609-68f7b3e1aa3a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Operation\Implementations">
-      <UniqueIdentifier>{aaf278d2-172d-4303-9b3c-e80d8b6b23ed}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Interpretation">
       <UniqueIdentifier>{8a0720e0-06cf-4c24-a41f-480652a48403}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Interpretation">
       <UniqueIdentifier>{5515c230-7821-4117-b6c9-fa7b53c440a8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Operation\Implementations">
+    <Filter Include="Header Files\Operation\Operators">
+      <UniqueIdentifier>{aaf278d2-172d-4303-9b3c-e80d8b6b23ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Operation\Functions">
+      <UniqueIdentifier>{d767f4ca-f443-4e08-9f3b-7bc21327e9b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Operation\Operators">
       <UniqueIdentifier>{97d98748-0260-47a6-850f-2998e6e15a0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Operation\Functions">
+      <UniqueIdentifier>{4e92b26f-4b52-451c-8945-a451ea681b84}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -103,16 +109,16 @@
       <Filter>Header Files\Interpretation</Filter>
     </ClInclude>
     <ClInclude Include="Subtract.h">
-      <Filter>Header Files\Operation\Implementations</Filter>
+      <Filter>Header Files\Operation\Operators</Filter>
     </ClInclude>
     <ClInclude Include="Multiply.h">
-      <Filter>Header Files\Operation\Implementations</Filter>
+      <Filter>Header Files\Operation\Operators</Filter>
     </ClInclude>
     <ClInclude Include="Divide.h">
-      <Filter>Header Files\Operation\Implementations</Filter>
+      <Filter>Header Files\Operation\Operators</Filter>
     </ClInclude>
     <ClInclude Include="Add.h">
-      <Filter>Header Files\Operation\Implementations</Filter>
+      <Filter>Header Files\Operation\Operators</Filter>
     </ClInclude>
     <ClInclude Include="Operation.h">
       <Filter>Header Files\Operation</Filter>
@@ -121,7 +127,19 @@
       <Filter>Header Files\Operation</Filter>
     </ClInclude>
     <ClInclude Include="Negate.h">
-      <Filter>Header Files\Operation\Implementations</Filter>
+      <Filter>Header Files\Operation\Operators</Filter>
+    </ClInclude>
+    <ClInclude Include="Pow.h">
+      <Filter>Header Files\Operation\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="Sin.h">
+      <Filter>Header Files\Operation\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="Cos.h">
+      <Filter>Header Files\Operation\Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="Tan.h">
+      <Filter>Header Files\Operation\Functions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -168,22 +186,34 @@
       <Filter>Source Files\Operation</Filter>
     </ClCompile>
     <ClCompile Include="Add.cpp">
-      <Filter>Source Files\Operation\Implementations</Filter>
+      <Filter>Source Files\Operation\Operators</Filter>
     </ClCompile>
     <ClCompile Include="Divide.cpp">
-      <Filter>Source Files\Operation\Implementations</Filter>
+      <Filter>Source Files\Operation\Operators</Filter>
     </ClCompile>
     <ClCompile Include="Subtract.cpp">
-      <Filter>Source Files\Operation\Implementations</Filter>
+      <Filter>Source Files\Operation\Operators</Filter>
     </ClCompile>
     <ClCompile Include="Multiply.cpp">
-      <Filter>Source Files\Operation\Implementations</Filter>
+      <Filter>Source Files\Operation\Operators</Filter>
     </ClCompile>
     <ClCompile Include="Operation.cpp">
       <Filter>Source Files\Operation</Filter>
     </ClCompile>
     <ClCompile Include="Negate.cpp">
-      <Filter>Source Files\Operation\Implementations</Filter>
+      <Filter>Source Files\Operation\Operators</Filter>
+    </ClCompile>
+    <ClCompile Include="Pow.cpp">
+      <Filter>Source Files\Operation\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="Sin.cpp">
+      <Filter>Source Files\Operation\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="Cos.cpp">
+      <Filter>Source Files\Operation\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="Tan.cpp">
+      <Filter>Source Files\Operation\Functions</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

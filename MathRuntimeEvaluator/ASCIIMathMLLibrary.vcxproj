@@ -66,6 +66,7 @@
     <ClInclude Include="CompoundExpression.h" />
     <ClInclude Include="CompoundExpressionFactory.h" />
     <ClInclude Include="Constant.h" />
+    <ClInclude Include="Cos.h" />
     <ClInclude Include="Divide.h" />
     <ClInclude Include="Exception.h" />
     <ClInclude Include="ExpressionComponent.h" />
@@ -77,7 +78,10 @@
     <ClInclude Include="Operation.h" />
     <ClInclude Include="Operations.h" />
     <ClInclude Include="Parser.h" />
+    <ClInclude Include="Pow.h" />
+    <ClInclude Include="Sin.h" />
     <ClInclude Include="Subtract.h" />
+    <ClInclude Include="Tan.h" />
     <ClInclude Include="UnitTests.h" />
     <ClInclude Include="Utilities.h" />
     <ClInclude Include="Variable.h" />
@@ -88,6 +92,7 @@
     <ClCompile Include="CompoundExpressionFactory.cpp" />
     <ClCompile Include="CompoundExpressions.cpp" />
     <ClCompile Include="Constant.cpp" />
+    <ClCompile Include="Cos.cpp" />
     <ClCompile Include="Divide.cpp" />
     <ClCompile Include="Exception.cpp" />
     <ClCompile Include="Expression.cpp" />
@@ -99,7 +104,10 @@
     <ClCompile Include="Operation.cpp" />
     <ClCompile Include="Operations.cpp" />
     <ClCompile Include="Parser.cpp" />
+    <ClCompile Include="Pow.cpp" />
+    <ClCompile Include="Sin.cpp" />
     <ClCompile Include="Subtract.cpp" />
+    <ClCompile Include="Tan.cpp" />
     <ClCompile Include="UnitTests.cpp" />
     <ClCompile Include="Utilities.cpp" />
     <ClCompile Include="Variable.cpp" />

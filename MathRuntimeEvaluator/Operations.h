@@ -10,11 +10,19 @@
 
 #include "Operation.h"
 
+// Operators
 #include "Add.h"
 #include "Subtract.h"
 #include "Multiply.h"
 #include "Divide.h"
 #include "Negate.h"
+
+// Functions
+#include "Pow.h"
+#include "Sin.h"
+#include "Cos.h"
+#include "Tan.h"
+
 
 namespace MathRuntimeEvaluator
 {

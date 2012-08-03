@@ -107,20 +107,20 @@ namespace UnitTests
 		RunUnitTest("4*5+-3", 4*5+-3);
 		RunUnitTest("4/-5+3", 4.0/-5.0+3);
 
-		//// pow operation
-		//cout << endl << "pow operation" << endl;
-		//RunUnitTest("pow(4,2)", pow(4.0,2));
-		//RunUnitTest("pow(2,2.6)", pow(2,2.6));
-		//RunUnitTest("pow(9.1,2.6)", pow(9.1,2.6));
-		//RunUnitTest("pow(4,-2)", pow(4.0,-2));
-		//RunUnitTest("pow(-4,2)", pow(-4,2.0));
-		//RunUnitTest("pow(-4,-3)", pow(-4,-3.0));
+		// pow operation
+		cout << endl << "pow operation" << endl;
+		RunUnitTest("pow(4,2)", pow(4.0,2));
+		RunUnitTest("pow(2,2.6)", pow(2,2.6));
+		RunUnitTest("pow(9.1,2.6)", pow(9.1,2.6));
+		RunUnitTest("pow(4,-2)", pow(4.0,-2));
+		RunUnitTest("pow(-4,2)", pow(-4,2.0));
+		RunUnitTest("pow(-4,-3)", pow(-4,-3.0));
 
-		//// trigonometric operations
-		//cout << endl << "trigonometric operations" << endl;
-		//RunUnitTest("sin(4)", sin(4.0));
-		//RunUnitTest("cos(4)", cos(4.0));
-		//RunUnitTest("tan(4)", tan(4.0));
+		// trigonometric operations
+		cout << endl << "trigonometric operations" << endl;
+		RunUnitTest("sin(4)", sin(4.0));
+		RunUnitTest("cos(4)", cos(4.0));
+		RunUnitTest("tan(4)", tan(4.0));
 
 		//// square root operation
 		//cout << endl << "square root operation" << endl;

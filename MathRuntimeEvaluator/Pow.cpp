@@ -1,0 +1,30 @@
+#include "Pow.h"
+
+#include <cmath>
+
+using std::vector;
+using std::string;
+
+namespace MathRuntimeEvaluator
+{
+	// Returns a string representation of this Operator
+	const string& Pow::GetIdentifier() const { return *(new string("pow")); }
+
+	// Returns a helpful string explaining how to use this Operator
+	const string& Pow::GetUsage() const
+	{
+		return *(new string("pow usage string"));
+	}
+
+	// Returns true if this operator is a function
+	bool Pow::IsFunction() const { return true; }
+
+	// Returns the number of parameters this Operator works with
+	int Pow::GetParameterCount() const { return 2; }
+
+	// Perform this operation
+	double Pow::Evaluate(const vector<double>& parameters) const
+	{
+		return pow(parameters[0], parameters[1]);
+	}
+}

@@ -243,7 +243,7 @@ namespace Parser
 				// comma has been encountered.
 				expectingComma = false;
 
-				// For the case of an indefinite number of parameters, both the
+				// For the case of an indefinite number of parameters, both thec
 				// expectingClose and expectingComma flags will be set. In this
 				// case, if we find an ",", we should flip the expectingClose to
 				// false, as well.

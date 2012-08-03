@@ -16,11 +16,19 @@ namespace MathRuntimeEvaluator
 		static list<shared_ptr<Operation>> operations;
 		if (initialized == false)
 		{
+			// Operators
 			operations.push_back(*new shared_ptr<Operation>(new Add()));
 			operations.push_back(*new shared_ptr<Operation>(new Subtract()));
 			operations.push_back(*new shared_ptr<Operation>(new Multiply()));
 			operations.push_back(*new shared_ptr<Operation>(new Divide()));
 			operations.push_back(*new shared_ptr<Operation>(new Negate()));
+
+			// Functions
+			operations.push_back(*new shared_ptr<Operation>(new Pow()));
+			operations.push_back(*new shared_ptr<Operation>(new Sin()));
+			operations.push_back(*new shared_ptr<Operation>(new Cos()));
+			operations.push_back(*new shared_ptr<Operation>(new Tan()));
+
 			initialized = true;
 		}
 		return operations;
