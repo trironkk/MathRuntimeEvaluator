@@ -164,15 +164,15 @@ namespace UnitTests
 		//cout << endl << "stddev operation" << endl;
 		//RunUnitTest("stddev(2,4,4,4,5,5,7,9)", 2);
 
-		//// big number tests (handling conversions to and from scientific notation)
-		//cout << endl << "big number tests " << endl;
-		//RunUnitTest("12903984128374", 12903984128374);
-		//RunUnitTest("pow(pi, 20)", pow(memory.GetValue("pi"), 20.0));
+		// big number tests (handling conversions to and from scientific notation)
+		cout << endl << "big number tests " << endl;
+		RunUnitTest("12903984128374", 12903984128374);
+		RunUnitTest("pow(pi, 20)", pow(memory.GetValue("pi"), 20.0));
 
-		//// Stuff that's supposed to break it.
-		//cout << endl << "Stuff that's supposed to break it..." << endl;
-		//RunUnitTest("1 / 0", 0);
-		//RunUnitTest("sqrt(-1)", 0);
+		// Stuff that's supposed to break it.
+		cout << endl << "Stuff that's supposed to break it..." << endl;
+		RunUnitTest("1 / 0", 0);
+		RunUnitTest("sqrt(-1)", 0);
 
 		
 	}

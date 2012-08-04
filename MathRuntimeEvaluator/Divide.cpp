@@ -1,5 +1,7 @@
 #include "Divide.h"
 
+#include "Exception.h"
+
 using std::vector;
 using std::string;
 
@@ -16,7 +18,9 @@ namespace MathRuntimeEvaluator
 \n \
 x: the first parameter \n \
 y: the second parameter \n \
-returns the result of x divided by y \n"));
+returns the result of x divided by y \n \
+Notes: \n \
+- Does not support denominators of 0. \n"));
 	}
 
 	// Returns true if this operator is a function
@@ -31,6 +35,10 @@ returns the result of x divided by y \n"));
 	// Perform this operation
 	double Divide::Evaluate(const vector<double>& parameters) const
 	{
+		if (parameters[1] == 0)
+			throw MathRuntimeEvaluatorException(
+"Cannot divide by zero."
+				);
 		return parameters[0] / parameters[1];
 	}
 }
