@@ -18,9 +18,6 @@ namespace MathRuntimeEvaluator
 		// Returns a helpful string explaining how to use this Operation
 		virtual const std::string& GetUsage() const = 0;
 
-		// Returns true if this operator is a function
-		virtual bool IsFunction() const = 0;
-
 		// Returns the number of parameters this Operation works with
 		virtual int GetParameterCount() const = 0;
 
@@ -32,6 +29,11 @@ namespace MathRuntimeEvaluator
 		// Addition:		1
 		// Subtraction:		1
 		virtual int GetRank() const;
+		
+		// Returns true if this operator is a function
+		// NOTE: We default to returning true because only operators will ever
+		// have return false.
+		virtual bool IsFunction() const;
 
 		// Perform this operation
 		virtual double Evaluate(const std::vector<double>& parameters) const = 0;

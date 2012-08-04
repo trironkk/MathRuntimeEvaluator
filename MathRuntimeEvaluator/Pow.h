@@ -13,9 +13,6 @@ namespace MathRuntimeEvaluator
 		// Returns a helpful string explaining how to use this Operator
 		virtual const std::string& GetUsage() const;
 
-		// Returns true if this operator is +, -, *, or /, and false otherwise
-		virtual bool IsFunction() const;
-
 		// Returns the number of parameters this operation works with
 		virtual int GetParameterCount() const;
 

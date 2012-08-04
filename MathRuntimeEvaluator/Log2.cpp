@@ -20,9 +20,6 @@ x: the only parameter \n \
 returns the binary logarithm of x \n"));
 	}
 
-	// Returns true if this operator is a function
-	bool Log2::IsFunction() const { return true; }
-
 	// Returns the number of parameters this operation works with
 	int Log2::GetParameterCount() const { return 1; }
 

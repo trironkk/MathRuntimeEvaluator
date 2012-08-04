@@ -21,9 +21,6 @@ y: the input \n \
 returns the base x logarithm of y \n"));
 	}
 
-	// Returns true if this operator is a function
-	bool Log::IsFunction() const { return true; }
-
 	// Returns the number of parameters this operation works with
 	int Log::GetParameterCount() const { return 2; }
 

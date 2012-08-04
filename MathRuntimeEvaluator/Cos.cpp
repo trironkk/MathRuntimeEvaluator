@@ -20,9 +20,6 @@ x: the angle in radians \n \
 returns the cosine of an angle \n"));
 	}
 
-	// Returns true if this operator is a function
-	bool Cos::IsFunction() const { return true; }
-
 	// Returns the number of parameters this operation works with
 	int Cos::GetParameterCount() const { return 1; }
 

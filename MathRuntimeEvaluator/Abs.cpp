@@ -18,9 +18,6 @@ x: the only parameter \n \
 returns the absolute value \n"));
 	}
 
-	// Returns true if this operator is a function
-	bool Abs::IsFunction() const { return true; }
-
 	// Returns the number of parameters this operation works with
 	int Abs::GetParameterCount() const { return 1; }
 

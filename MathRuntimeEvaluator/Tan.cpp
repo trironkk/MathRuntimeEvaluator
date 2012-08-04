@@ -20,9 +20,6 @@ x: the angle in radians \n \
 returns the tangent of an angle \n"));
 	}
 
-	// Returns true if this operator is a function
-	bool Tan::IsFunction() const { return true; }
-
 	// Returns the number of parameters this operation works with
 	int Tan::GetParameterCount() const { return 1; }
 

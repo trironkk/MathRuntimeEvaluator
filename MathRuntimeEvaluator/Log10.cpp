@@ -20,9 +20,6 @@ x: the only parameter \n \
 returns the base 10 logarithm of x \n"));
 	}
 
-	// Returns true if this operator is a function
-	bool Log10::IsFunction() const { return true; }
-
 	// Returns the number of parameters this operation works with
 	int Log10::GetParameterCount() const { return 1; }
 
