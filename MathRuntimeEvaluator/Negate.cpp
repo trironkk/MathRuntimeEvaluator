@@ -17,7 +17,7 @@ namespace MathRuntimeEvaluator
 	// Returns true if this operator is a function
 	bool Negate::IsFunction() const { return false; }
 
-	// Returns the number of parameters this Operator works with
+	// Returns the number of parameters this operation works with
 	int Negate::GetParameterCount() const { return 1; }
 
 	// Returns an integer representing the rank of this Operation

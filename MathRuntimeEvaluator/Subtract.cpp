@@ -27,7 +27,7 @@ returns the negation of x \n"));
 	// Returns true if this operator is a function
 	bool Subtract::IsFunction() const { return false; }
 
-	// Returns the number of parameters this Operator works with
+	// Returns the number of parameters this operation works with
 	int Subtract::GetParameterCount() const { return 2; }
 	
 	// Returns an integer representing the rank of this Operation

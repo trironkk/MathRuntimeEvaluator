@@ -31,6 +31,12 @@ namespace MathRuntimeEvaluator
 			operations.push_back(*new shared_ptr<Operation>(new Sqrt()));
 			operations.push_back(*new shared_ptr<Operation>(new Abs()));
 
+			operations.push_back(*new shared_ptr<Operation>(new Ln()));
+			operations.push_back(*new shared_ptr<Operation>(new Log2()));
+			operations.push_back(*new shared_ptr<Operation>(new Log10()));
+			operations.push_back(*new shared_ptr<Operation>(new Log()));
+
+
 			initialized = true;
 		}
 		return operations;

@@ -134,14 +134,14 @@ namespace UnitTests
 		RunUnitTest("abs(4)",  abs(4));
 		RunUnitTest("abs(-4)", abs(-4));
 
-		//// logarithmic operations
-		//cout << endl << "logarithmic operations" << endl;
-		//RunUnitTest("log10(100)",  log10(100.0));
-		//RunUnitTest("ln(100)", log(100.0));
-		//RunUnitTest("log2(64)", 6);
-		//RunUnitTest("log(2,64)", 6);
-		//RunUnitTest("log(10,100)", log10(100.0));
-		//RunUnitTest("log(e,100)", log(100.0));
+		// logarithmic operations
+		cout << endl << "logarithmic operations" << endl;
+		RunUnitTest("log10(100)",  log10(100.0));
+		RunUnitTest("ln(100)", log(100.0));
+		RunUnitTest("log2(64)", 6);
+		RunUnitTest("log(2,64)", 6);
+		RunUnitTest("log(10,100)", log10(100.0));
+		RunUnitTest("log(e,100)", log(100.0));
 
 		//// modulo operation
 		//cout << endl << "modulo operation" << endl;

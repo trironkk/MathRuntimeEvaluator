@@ -1,4 +1,4 @@
-#include "Abs.h"
+#include "Ln.h"
 
 using std::vector;
 using std::string;
@@ -6,27 +6,27 @@ using std::string;
 namespace MathRuntimeEvaluator
 {
 	// Returns a string representation of this Operator
-	const string& Abs::GetIdentifier() const { return *(new string("abs")); }
+	const string& Ln::GetIdentifier() const { return *(new string("ln")); }
 
 	// Returns a helpful string explaining how to use this Operator
-	const string& Abs::GetUsage() const
+	const string& Ln::GetUsage() const
 	{
 		return *(new string(
-"abs(x) Absolute value \n \
+"ln(x) Natural Logarithm \n \
 \n \
 x: the only parameter \n \
-returns the absolute value \n"));
+returns the natural logarithm of x \n"));
 	}
 
 	// Returns true if this operator is a function
-	bool Abs::IsFunction() const { return true; }
+	bool Ln::IsFunction() const { return true; }
 
 	// Returns the number of parameters this operation works with
-	int Abs::GetParameterCount() const { return 1; }
+	int Ln::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Abs::Evaluate(const vector<double>& parameters) const
+	double Ln::Evaluate(const vector<double>& parameters) const
 	{
-		return abs(parameters[0]);
+		return log(parameters[0]);
 	}
 }

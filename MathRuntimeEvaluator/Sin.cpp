@@ -23,7 +23,7 @@ returns the sine of an angle \n"));
 	// Returns true if this operator is a function
 	bool Sin::IsFunction() const { return true; }
 
-	// Returns the number of parameters this Operator works with
+	// Returns the number of parameters this operation works with
 	int Sin::GetParameterCount() const { return 1; }
 
 	// Perform this operation

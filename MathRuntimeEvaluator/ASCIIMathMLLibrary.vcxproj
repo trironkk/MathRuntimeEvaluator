@@ -74,6 +74,10 @@
     <ClInclude Include="Interpreter.h" />
     <ClInclude Include="IPrintable.h" />
     <ClInclude Include="Expression.h" />
+    <ClInclude Include="Ln.h" />
+    <ClInclude Include="Log.h" />
+    <ClInclude Include="Log10.h" />
+    <ClInclude Include="Log2.h" />
     <ClInclude Include="Multiply.h" />
     <ClInclude Include="Negate.h" />
     <ClInclude Include="Operation.h" />
@@ -101,6 +105,10 @@
     <ClCompile Include="Expression.cpp" />
     <ClCompile Include="Interpreter.cpp" />
     <ClCompile Include="IPrintable.cpp" />
+    <ClCompile Include="Ln.cpp" />
+    <ClCompile Include="Log.cpp" />
+    <ClCompile Include="Log10.cpp" />
+    <ClCompile Include="Log2.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Multiply.cpp" />
     <ClCompile Include="Negate.cpp" />

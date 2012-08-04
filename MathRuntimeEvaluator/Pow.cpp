@@ -24,7 +24,7 @@ returns x raised to the y power \n"));
 	// Returns true if this operator is a function
 	bool Pow::IsFunction() const { return true; }
 
-	// Returns the number of parameters this Operator works with
+	// Returns the number of parameters this operation works with
 	int Pow::GetParameterCount() const { return 2; }
 
 	// Perform this operation

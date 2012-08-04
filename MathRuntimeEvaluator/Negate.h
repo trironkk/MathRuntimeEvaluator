@@ -16,7 +16,7 @@ namespace MathRuntimeEvaluator
 		// Returns true if this operator is ~, +, -, *, or /, and false otherwise
 		virtual bool IsFunction() const;
 
-		// Returns the number of parameters this Operator works with
+		// Returns the number of parameters this operation works with
 		virtual int GetParameterCount() const;
 
 		// Returns an integer representing the rank of this Operation

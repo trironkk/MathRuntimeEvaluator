@@ -22,7 +22,7 @@ returns the result of x divided by y \n"));
 	// Returns true if this operator is a function
 	bool Divide::IsFunction() const { return false; }
 
-	// Returns the number of parameters this Operator works with
+	// Returns the number of parameters this operation works with
 	int Divide::GetParameterCount() const { return 2; }
 		
 	// Returns an integer representing the rank of this Operation
