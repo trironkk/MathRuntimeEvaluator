@@ -12,10 +12,10 @@ namespace MathRuntimeEvaluator
 	const string& Multiply::GetUsage() const
 	{
 		return *(new string(
-"x * y Multiplication \n \
-\n \
-x: the first parameter \n \
-y: the second parameter \n \
+"x * y Multiplication \n\
+\n\
+x: the first parameter \n\
+y: the second parameter \n\
 returns the product of x and y \n"));
 	}
 

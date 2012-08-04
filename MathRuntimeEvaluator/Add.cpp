@@ -12,10 +12,10 @@ namespace MathRuntimeEvaluator
 	const string& Add::GetUsage() const
 	{
 		return *(new string(
-"x + y Addition \n \
-\n \
-x: the first parameter \n \
-y: the second parameter \n \
+"x + y Addition \n\
+\n\
+x: the first parameter \n\
+y: the second parameter \n\
 returns the sum of x and y \n"));
 	}
 

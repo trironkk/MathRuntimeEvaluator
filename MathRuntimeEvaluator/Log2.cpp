@@ -14,9 +14,9 @@ namespace MathRuntimeEvaluator
 	const string& Log2::GetUsage() const
 	{
 		return *(new string(
-"log2(x) Binary Logarithm \n \
-\n \
-x: the only parameter \n \
+"log2(x) Binary Logarithm \n\
+\n\
+x: the only parameter \n\
 returns the binary logarithm of x \n"));
 	}
 

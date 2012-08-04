@@ -14,12 +14,12 @@ namespace MathRuntimeEvaluator
 	const string& Divide::GetUsage() const
 	{
 		return *(new string(
-"x / y Division \n \
-\n \
-x: the first parameter \n \
-y: the second parameter \n \
-returns the result of x divided by y \n \
-Notes: \n \
+"x / y Division \n\
+\n\
+x: the first parameter \n\
+y: the second parameter \n\
+returns the result of x divided by y \n\
+Notes: \n\
 - Does not support denominators of 0. \n"));
 	}
 

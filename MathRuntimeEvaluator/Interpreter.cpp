@@ -112,40 +112,41 @@ namespace MathRuntimeEvaluator
 		{
 			cout <<
 " \
-\n \
-Interpreter Commands: \n \
-	help             Display this help text \n \
-	help [operation] Display the usage of the specified operation \n \
-	memory           Display all defined variables\n \
-	unittests        Perform a unit test battery run\n \
-	exit             Close this session\n \
-\n \
-Arithmetic Operations: \n \
-	+                Addition \n \
-	-                Subtraction or Negation \n \
-	*                Multiplication \n \
-	/                Division \n \
-\n \
-Supported Functions: \n \
-	pow              Exponentiation \n \
-	sin              Sine Function \n \
-	cos              Cosine Function \n \
-	tan              Tangent Function \n \
-	ln               Natural Logarithm \n \
-	log2             Base 2 Logarithm \n \
-	log10            Base 10 Logarithm \n \
-	log              Generic Logarithm \n \
-	mod              Modular Division \n \
-	sqrt             Square Root \n \
-	abs              Absolute Value \n \
-	sum              Sum \n \
-	avg              Average \n \
-	stddev           Standard Deviation \n \
-\n \
-Notes: \n \
-- All operations will be assigned to the variable \"ans\" unless otherwise \n \
-specified. \n \
-- The constants \"e\" and \"pi\" are initialized by default. \n \
+\n\
+Interpreter Commands: \n\
+	help             Display this help text \n\
+	help [operation] Display the usage of the specified operation \n\
+	memory           Display all defined variables\n\
+	unittests        Perform a unit test battery run\n\
+	exit             Close this session\n\
+\n\
+Operators: \n\
+	+                Addition \n\
+	-                Subtraction or Negation \n\
+	*                Multiplication \n\
+	/                Division \n\
+	~                Negation \n\
+\n\
+Functions: \n\
+	pow              Exponentiation \n\
+	sin              Sine Function \n\
+	cos              Cosine Function \n\
+	tan              Tangent Function \n\
+	ln               Natural Logarithm \n\
+	log2             Base 2 Logarithm \n\
+	log10            Base 10 Logarithm \n\
+	log              Generic Logarithm \n\
+	mod              Modular Division \n\
+	sqrt             Square Root \n\
+	abs              Absolute Value \n\
+	sum              Sum \n\
+	avg              Average \n\
+	stddev           Standard Deviation \n\
+\n\
+Notes: \n\
+- All operations will be assigned to the variable \"ans\" unless otherwise \n\
+specified. \n\
+- The constants \"e\" and \"pi\" are initialized by default. \n\
 ";
 		}
 	}

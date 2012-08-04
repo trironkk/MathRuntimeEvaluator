@@ -12,9 +12,9 @@ namespace MathRuntimeEvaluator
 	const string& Ln::GetUsage() const
 	{
 		return *(new string(
-"ln(x) Natural Logarithm \n \
-\n \
-x: the only parameter \n \
+"ln(x) Natural Logarithm \n\
+\n\
+x: the only parameter \n\
 returns the natural logarithm of x \n"));
 	}
 

@@ -14,9 +14,9 @@ namespace MathRuntimeEvaluator
 	const string& Cos::GetUsage() const
 	{
 		return *(new string(
-"cos(x) Cosine function \n \
-\n \
-x: the angle in radians \n \
+"cos(x) Cosine function \n\
+\n\
+x: the angle in radians \n\
 returns the cosine of an angle \n"));
 	}
 

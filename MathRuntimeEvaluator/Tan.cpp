@@ -14,9 +14,9 @@ namespace MathRuntimeEvaluator
 	const string& Tan::GetUsage() const
 	{
 		return *(new string(
-"tan(x) Tangent function \n \
-\n \
-x: the angle in radians \n \
+"tan(x) Tangent function \n\
+\n\
+x: the angle in radians \n\
 returns the tangent of an angle \n"));
 	}
 

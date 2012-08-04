@@ -14,10 +14,10 @@ namespace MathRuntimeEvaluator
 	const string& Pow::GetUsage() const
 	{
 		return *(new string(
-"pow(x,y) Exponentiation \n \
-\n \
-x: the first parameter \n \
-y: the second parameter \n \
+"pow(x,y) Exponentiation \n\
+\n\
+x: the first parameter \n\
+y: the second parameter \n\
 returns x raised to the y power \n"));
 	}
 

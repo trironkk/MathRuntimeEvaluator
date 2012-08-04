@@ -14,9 +14,9 @@ namespace MathRuntimeEvaluator
 	const string& Log10::GetUsage() const
 	{
 		return *(new string(
-"log10(x) Base 10 Logarithm \n \
-\n \
-x: the only parameter \n \
+"log10(x) Base 10 Logarithm \n\
+\n\
+x: the only parameter \n\
 returns the base 10 logarithm of x \n"));
 	}
 

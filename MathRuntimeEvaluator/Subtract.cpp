@@ -12,15 +12,15 @@ namespace MathRuntimeEvaluator
 	const string& Subtract::GetUsage() const
 	{
 		return *(new string(
-"x - y Subtraction \n \
-\n \
-x: the first parameter \n \
-y: the second parameter \n \
-returns the result of x minus y \n \
-\n \
--x Negation \n \
-\n \
-x: the only parameter \n \
+"x - y Subtraction \n\
+\n\
+x: the first parameter \n\
+y: the second parameter \n\
+returns the result of x minus y \n\
+\n\
+-x Negation \n\
+\n\
+x: the only parameter \n\
 returns the negation of x \n"));
 	}
 

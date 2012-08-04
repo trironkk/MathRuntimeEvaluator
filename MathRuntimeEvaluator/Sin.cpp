@@ -14,9 +14,9 @@ namespace MathRuntimeEvaluator
 	const string& Sin::GetUsage() const
 	{
 		return *(new string(
-"sin(x) Sine function \n \
-\n \
-x: the angle in radians \n \
+"sin(x) Sine function \n\
+\n\
+x: the angle in radians \n\
 returns the sine of an angle \n"));
 	}
 

@@ -16,11 +16,11 @@ namespace MathRuntimeEvaluator
 	const string& Sqrt::GetUsage() const
 	{
 		return *(new string(
-"sqrt(x) Square root\n \
-\n \
-x: the only parameter \n \
-returns the square root of x \n \
-Notes: \n \
+"sqrt(x) Square root\n\
+\n\
+x: the only parameter \n\
+returns the square root of x \n\
+Notes: \n\
 - Does not support negative inputs. \n"));
 	}
 

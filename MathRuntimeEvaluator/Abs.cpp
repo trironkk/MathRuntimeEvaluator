@@ -12,9 +12,9 @@ namespace MathRuntimeEvaluator
 	const string& Abs::GetUsage() const
 	{
 		return *(new string(
-"abs(x) Absolute value \n \
-\n \
-x: the only parameter \n \
+"abs(x) Absolute value \n\
+\n\
+x: the only parameter \n\
 returns the absolute value \n"));
 	}
 

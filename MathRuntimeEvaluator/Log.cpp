@@ -14,10 +14,10 @@ namespace MathRuntimeEvaluator
 	const string& Log::GetUsage() const
 	{
 		return *(new string(
-"log(x,y) Generic Logarithm \n \
-\n \
-x: the base of the logarithm \n \
-y: the input \n \
+"log(x,y) Generic Logarithm \n\
+\n\
+x: the base of the logarithm \n\
+y: the input \n\
 returns the base x logarithm of y \n"));
 	}
 

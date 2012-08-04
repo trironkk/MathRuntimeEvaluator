@@ -11,7 +11,11 @@ namespace MathRuntimeEvaluator
 	// Returns a helpful string explaining how to use this Operator
 	const string& Negate::GetUsage() const
 	{
-		return *(new string("negation usage string"));
+		return *(new string(
+"~x Negation \n\
+\n\
+x: the only parameter \n\
+returns the negation of x \n"));
 	}
 
 	// Returns true if this operator is a function
