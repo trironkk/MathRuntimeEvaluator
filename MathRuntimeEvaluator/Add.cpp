@@ -11,7 +11,12 @@ namespace MathRuntimeEvaluator
 	// Returns a helpful string explaining how to use this Operator
 	const string& Add::GetUsage() const
 	{
-		return *(new string("addition usage string"));
+		return *(new string(
+"x + y Addition \n \
+\n \
+x: the first parameter \n \
+y: the second parameter \n \
+returns the sum of x and y \n"));
 	}
 
 	// Returns true if this operator is a function

@@ -37,8 +37,11 @@ namespace MathRuntimeEvaluator
 			// Maintain the alphabetical ordering of the list...
 			std::list<std::string>::iterator iter = _declaredVariables.begin();
 			if (_declaredVariables.size() > 0)
-				while (iter != _declaredVariables.end() && (*(iter)) < variableName)
+				while (iter != _declaredVariables.end() && (*(iter)) <
+						variableName)
+				{
 					iter++;
+				}
 			_declaredVariables.insert(iter, variableName);
 		}
 
@@ -46,14 +49,14 @@ namespace MathRuntimeEvaluator
 		_workingMemory[variableName] = value;
 	}
 
-	// Throws an ASCIIMathMLException if the variable name is invalid.
+	// Throws an MathRuntimeEvaluatorException if the variable name is invalid.
 	// Otherwise, simply returns.
 	void WorkingMemory::ValidateVariableName(string variableName)
 	{
 		// Assert that the variable name is not too long...
 		if (variableName.length() > MAX_VARIABLE_NAME_LENGTH)
 		{
-			throw ASCIIMathMLException(
+			throw MathRuntimeEvaluatorException(
 				"The variable name's length is longer than 32 characters.\n"
 			);
 		}
@@ -61,7 +64,7 @@ namespace MathRuntimeEvaluator
 		// Assert that the variable name is not too short...
 		if (variableName.length() < 1)
 		{
-			throw ASCIIMathMLException(
+			throw MathRuntimeEvaluatorException(
 				"The variable name's must be at least one character.\n"
 			);
 		}
@@ -73,7 +76,7 @@ namespace MathRuntimeEvaluator
 		{
 			if (strchr(ILLEGAL_CHARACTERS, *iter) != NULL)
 			{
-				throw ASCIIMathMLException(
+				throw MathRuntimeEvaluatorException(
 					"The variable name contains one or more illegal characters.\n"
 				);
 			}
@@ -84,7 +87,7 @@ namespace MathRuntimeEvaluator
 		// Assert that the variable name does not begin with a number...
 		if (isdigit(*variableName.begin()))
 		{
-			throw ASCIIMathMLException(
+			throw MathRuntimeEvaluatorException(
 				"The variable name begins with a digit.\n"
 			);
 		}

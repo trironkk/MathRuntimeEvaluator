@@ -109,7 +109,7 @@ namespace Parser
 				// Assert that the next token is an open parentheses
 				if (ReadNextToken(stream) != "(")
 				{
-					throw ASCIIMathMLException(
+					throw MathRuntimeEvaluatorException(
 "Function calls must be followed by a parentheses."
 						);
 				}
@@ -210,7 +210,7 @@ namespace Parser
 "Unmatched close parentheses encountered at position ";
 					errorStream << stream.tellg();
 					errorStream << ".";
-					throw ASCIIMathMLException(errorStream.str());
+					throw MathRuntimeEvaluatorException(errorStream.str());
 				}
 
 				// We set the parenthetical flag to false to signify that a
@@ -236,7 +236,7 @@ namespace Parser
 "Unexpected comma encountered at position ";
 					errorStream << stream.tellg();
 					errorStream << ".";
-					throw ASCIIMathMLException(errorStream.str());
+					throw MathRuntimeEvaluatorException(errorStream.str());
 				}
 
 				// We set the expectingComma flag to false to signify that a
@@ -264,7 +264,7 @@ namespace Parser
 		// throw an exception.
 		if (expectingClose)
 		{
-			throw ASCIIMathMLException(
+			throw MathRuntimeEvaluatorException(
 				"Unmatched open parentheses encountered."
 			);
 		}
@@ -273,7 +273,7 @@ namespace Parser
 		// exception.
 		if (expectingComma)
 		{
-			throw ASCIIMathMLException(
+			throw MathRuntimeEvaluatorException(
 				"Too few parameters."
 			);
 		}

@@ -92,7 +92,7 @@ namespace MathRuntimeEvaluator
 	shared_ptr<Expression> CompoundExpression::FrontExpression()
 	{
 		if (_objectTypes.front() != ExpressionComponent::Expression)
-			throw ASCIIMathMLException(
+			throw MathRuntimeEvaluatorException(
 "Tried to retrieve an Expression, but the front item of the stack is not an Expression."
 			);
 
@@ -102,7 +102,7 @@ namespace MathRuntimeEvaluator
 	shared_ptr<Operation> CompoundExpression::FrontOperation()
 	{
 		if (_objectTypes.front() != ExpressionComponent::Operation)
-			throw ASCIIMathMLException(
+			throw MathRuntimeEvaluatorException(
 "Tried to retrieve an Operation, but the front item of the stack is not an Operation."
 			);
 
@@ -112,7 +112,7 @@ namespace MathRuntimeEvaluator
 	shared_ptr<Expression> CompoundExpression::BackExpression()
 	{
 		if (_objectTypes.back() != ExpressionComponent::Expression)
-			throw ASCIIMathMLException(
+			throw MathRuntimeEvaluatorException(
 "Tried to retrieve an Expression, but the front item of the stack is not an Expression."
 			);
 
@@ -122,7 +122,7 @@ namespace MathRuntimeEvaluator
 	shared_ptr<Operation> CompoundExpression::BackOperation()
 	{
 		if (_objectTypes.back() != ExpressionComponent::Operation)
-			throw ASCIIMathMLException(
+			throw MathRuntimeEvaluatorException(
 "Tried to retrieve an Operation, but the front item of the stack is not an Operation."
 			);
 
@@ -142,7 +142,7 @@ namespace MathRuntimeEvaluator
 		}
 		else
 		{
-			throw ASCIIMathMLException(
+			throw MathRuntimeEvaluatorException(
 "Unrecognized ExpressionComponent enumeration. Update CompoundExpression::Pop()."
 				);
 		}
@@ -161,7 +161,7 @@ namespace MathRuntimeEvaluator
 		}
 		else
 		{
-			throw ASCIIMathMLException(
+			throw MathRuntimeEvaluatorException(
 "Unrecognized ExpressionComponent enumeration. Update CompoundExpression::Pop()."
 				);
 		}
@@ -172,7 +172,7 @@ namespace MathRuntimeEvaluator
 	shared_ptr<Expression> CompoundExpression::AtExpression(int index)
 	{
 		if (_objectTypes.at(index) != ExpressionComponent::Expression)
-			throw ASCIIMathMLException(
+			throw MathRuntimeEvaluatorException(
 "Tried to retrieve an Expression, but the front item of the stack is not an Expression."
 			);
 
@@ -188,7 +188,7 @@ namespace MathRuntimeEvaluator
 	shared_ptr<Operation> CompoundExpression::AtOperation(int index)
 	{
 		if (_objectTypes.at(index) != ExpressionComponent::Operation)
-			throw ASCIIMathMLException(
+			throw MathRuntimeEvaluatorException(
 "Tried to retrieve an Operator, but the front item of the stack is not an Operator."
 			);
 
@@ -205,14 +205,14 @@ namespace MathRuntimeEvaluator
 	ExpressionComponent::Types CompoundExpression::CheckBackType()
 	{
 		if (_objectTypes.size() == 0)
-			throw ASCIIMathMLException("CompoundExpression is empty.");
+			throw MathRuntimeEvaluatorException("CompoundExpression is empty.");
 		return _objectTypes.back();
 	}
 
 	ExpressionComponent::Types CompoundExpression::CheckFrontType()
 	{
 		if (_objectTypes.size() == 0)
-			throw ASCIIMathMLException("CompoundExpression is empty.");
+			throw MathRuntimeEvaluatorException("CompoundExpression is empty.");
 		return _objectTypes.front();
 	}
 
@@ -234,7 +234,7 @@ namespace MathRuntimeEvaluator
 		// Handle the case of having no items in the stack
 		if (Size() == 0)
 		{
-			throw ASCIIMathMLException(
+			throw MathRuntimeEvaluatorException(
 "Cannot simplify an expression with 0 terms."
 				);
 		}
@@ -248,7 +248,7 @@ namespace MathRuntimeEvaluator
 			if (!IsDouble((*iter)->GetStringRepresentation()) &&
 				!workingMemory.Contains((*(*iter)).GetStringRepresentation()))
 			{
-				throw ASCIIMathMLException(
+				throw MathRuntimeEvaluatorException(
 "Undefined variable: " + (*iter)->GetStringRepresentation() + "."
 					);
 			}
@@ -258,7 +258,7 @@ namespace MathRuntimeEvaluator
 		if (_operations.size() == 0)
 		{
 			if (_expressions.size() > 1)
-				throw ASCIIMathMLException(
+				throw MathRuntimeEvaluatorException(
 "No operator present."
 				);
 			double result;
@@ -314,7 +314,7 @@ namespace MathRuntimeEvaluator
 			{
 				if (expressionStack.size() == 0)
 				{
-					throw ASCIIMathMLException(
+					throw MathRuntimeEvaluatorException(
 "Malformed expression - not enough parameters."
 						);
 				}
@@ -339,7 +339,7 @@ namespace MathRuntimeEvaluator
 		// Ensure there's exactly one term left
 		if (expressionStack.size() != 0)
 		{
-			throw ASCIIMathMLException("Improperly formed CompoundExpression.");
+			throw MathRuntimeEvaluatorException("Improperly formed CompoundExpression.");
 		}
 
 		// Return the first term in the underlying Expression deque
@@ -353,7 +353,7 @@ namespace MathRuntimeEvaluator
 		// Handle the case of having no items in the stack
 		if (Size() != 1)
 		{
-		throw ASCIIMathMLException(
+		throw MathRuntimeEvaluatorException(
 "Cannot get the value of a CompoundExpression with more than one term."
 			);
 		}
@@ -418,7 +418,7 @@ namespace MathRuntimeEvaluator
 		}
 
 		if (stringStack.size() == 0)
-			throw ASCIIMathMLException(
+			throw MathRuntimeEvaluatorException(
 "There are no parameters in this CompoundExpression."
 				);
 

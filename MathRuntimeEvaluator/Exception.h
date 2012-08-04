@@ -7,16 +7,16 @@
 
 namespace MathRuntimeEvaluator
 {
-	class ASCIIMathMLException : public std::exception
+	class MathRuntimeEvaluatorException : public std::exception
 	{
 	public:
 		std::string Description;
 		int ErrorCode;
-		ASCIIMathMLException(std::string description, int errorCode=1) throw();
+		MathRuntimeEvaluatorException(std::string description, int errorCode=1) throw();
 		const char* what() const throw();
 
 		friend std::ostream& operator<<(std::ostream& os,
-			const ASCIIMathMLException e);
+			const MathRuntimeEvaluatorException e);
 	};
 }
 

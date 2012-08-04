@@ -11,7 +11,11 @@ namespace MathRuntimeEvaluator
 	// Returns a helpful string explaining how to use this Operator
 	const string& Abs::GetUsage() const
 	{
-		return *(new string("abs usage string"));
+		return *(new string(
+"abs(x) Absolute value \n \
+\n \
+x: the only parameter \n \
+returns the absolute value \n"));
 	}
 
 	// Returns true if this operator is a function

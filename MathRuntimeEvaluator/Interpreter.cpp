@@ -54,7 +54,7 @@ namespace MathRuntimeEvaluator
 
 					cout << std::endl;
 				}
-				catch (ASCIIMathMLException& e)
+				catch (MathRuntimeEvaluatorException& e)
 				{
 					// Print out the error
 					cout << "Error: " << e << std::endl << std::endl;
@@ -99,7 +99,7 @@ namespace MathRuntimeEvaluator
 					// Reset the input string to disclude the assignment
 					getline(stream, input);
 				}
-				catch (ASCIIMathMLException& e)
+				catch (MathRuntimeEvaluatorException& e)
 				{
 					// Print out the error.
 					cout << "Error: " << e << std::endl << std::endl;

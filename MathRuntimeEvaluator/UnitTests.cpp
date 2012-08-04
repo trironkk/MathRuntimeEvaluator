@@ -21,7 +21,7 @@ namespace UnitTests
 			ce = Parser::ParseString(expressionString);
 			cout << expressionString << " = ";
 		}
-		catch (ASCIIMathMLException& e)
+		catch (MathRuntimeEvaluatorException& e)
 		{
 			// Print the error.
 			cout << endl;
@@ -35,7 +35,7 @@ namespace UnitTests
 		{
 			ce.Simplify(memory);
 		}
-		catch (ASCIIMathMLException& e)
+		catch (MathRuntimeEvaluatorException& e)
 		{
 			// Print the error.
 			cout << endl;
@@ -49,7 +49,7 @@ namespace UnitTests
 		{
 			ce.PrintLine(cout);
 		}
-		catch (ASCIIMathMLException& e)
+		catch (MathRuntimeEvaluatorException& e)
 		{
 			// Print the error.
 			cout << endl;
@@ -100,6 +100,8 @@ namespace UnitTests
 		RunUnitTest("4+5/2", 4+5.0/2.0);
 		RunUnitTest("4/5-3", 4.0/5.0-3);
 		RunUnitTest("4-5/2", 4-5.0/2.0);
+		RunUnitTest("(4-5)/2", (4-5.0)/2.0);
+		RunUnitTest("(4+5)*3", (4+5)*3);
 
 		// Order of Operations with Negations
 		cout << endl << "Order of Operations with Negations" << endl;

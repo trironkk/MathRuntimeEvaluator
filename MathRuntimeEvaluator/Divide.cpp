@@ -11,7 +11,12 @@ namespace MathRuntimeEvaluator
 	// Returns a helpful string explaining how to use this Operator
 	const string& Divide::GetUsage() const
 	{
-		return *(new string("division usage string"));
+		return *(new string(
+"x / y Division \n \
+\n \
+x: the first parameter \n \
+y: the second parameter \n \
+returns the result of x divided by y \n"));
 	}
 
 	// Returns true if this operator is a function

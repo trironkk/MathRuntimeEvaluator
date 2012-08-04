@@ -11,7 +11,17 @@ namespace MathRuntimeEvaluator
 	// Returns a helpful string explaining how to use this Operator
 	const string& Subtract::GetUsage() const
 	{
-		return *(new string("subtraction usage string"));
+		return *(new string(
+"x - y Subtraction \n \
+\n \
+x: the first parameter \n \
+y: the second parameter \n \
+returns the result of x minus y \n \
+\n \
+-x Negation \n \
+\n \
+x: the only parameter \n \
+returns the negation of x \n"));
 	}
 
 	// Returns true if this operator is a function

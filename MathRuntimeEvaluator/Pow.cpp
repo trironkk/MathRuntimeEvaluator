@@ -13,7 +13,12 @@ namespace MathRuntimeEvaluator
 	// Returns a helpful string explaining how to use this Operator
 	const string& Pow::GetUsage() const
 	{
-		return *(new string("pow usage string"));
+		return *(new string(
+"pow(x,y) Exponentiation \n \
+\n \
+x: the first parameter \n \
+y: the second parameter \n \
+returns x raised to the y power \n"));
 	}
 
 	// Returns true if this operator is a function

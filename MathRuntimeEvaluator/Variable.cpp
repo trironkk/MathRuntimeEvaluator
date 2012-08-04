@@ -20,7 +20,7 @@ namespace MathRuntimeEvaluator
 			return shared_ptr<Expression>(
 				new Constant(workingMemory.GetValue(this->_variableName)));
 		}
-		throw ASCIIMathMLException(
+		throw MathRuntimeEvaluatorException(
 "Variable name does not appear in WorkingMemory."
 			);
 	}
@@ -29,7 +29,7 @@ namespace MathRuntimeEvaluator
 	// error
 	double Variable::GetValue()
 	{
-		throw ASCIIMathMLException("Cannot get the value of a variable.");
+		throw MathRuntimeEvaluatorException("Cannot get the value of a variable.");
 	}
 
 	// Gets a string representation of this object

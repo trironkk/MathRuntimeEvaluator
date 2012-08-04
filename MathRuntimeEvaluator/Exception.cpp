@@ -4,19 +4,19 @@ using std::string;
 
 namespace MathRuntimeEvaluator
 {
-	ASCIIMathMLException::ASCIIMathMLException(string description,
+	MathRuntimeEvaluatorException::MathRuntimeEvaluatorException(string description,
 		int errorCode) throw()
 		: Description(description)
 	{
 		ErrorCode = errorCode;
 	}
 
-	const char* ASCIIMathMLException::what() const throw()
+	const char* MathRuntimeEvaluatorException::what() const throw()
 	{
 		return Description.c_str();
 	}
 
-	std::ostream& operator<<(std::ostream& os, const ASCIIMathMLException e)
+	std::ostream& operator<<(std::ostream& os, const MathRuntimeEvaluatorException e)
 	{
 		os << e.Description;
 		return os;

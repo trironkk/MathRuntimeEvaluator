@@ -13,7 +13,11 @@ namespace MathRuntimeEvaluator
 	// Returns a helpful string explaining how to use this Operator
 	const string& Sin::GetUsage() const
 	{
-		return *(new string("sin usage string"));
+		return *(new string(
+"sin(x) Sine function \n \
+\n \
+x: the angle in radians \n \
+returns the sine of an angle \n"));
 	}
 
 	// Returns true if this operator is a function
