@@ -36,7 +36,6 @@ namespace MathRuntimeEvaluator
 			operations.push_back(*new shared_ptr<Operation>(new Log10()));
 			operations.push_back(*new shared_ptr<Operation>(new Log()));
 
-
 			initialized = true;
 		}
 		return operations;
@@ -156,13 +155,10 @@ namespace MathRuntimeEvaluator
 		{
 			list<shared_ptr<Operation>> operations = GetOperations();
 			for (list<shared_ptr<Operation>>::const_iterator iter =
-					operations.begin();
-				iter != operations.end();
-				iter++)
+						operations.begin();
+					iter != operations.end();
+					iter++)
 			{
-				// This is tricky. We have to dereference the const_iterator, and
-				// then save a pointer to it. Because of the * operator is
-				// overloaded, * and & are not inverse operations.
 				operationsMap[(*iter)->GetIdentifier()] = (*iter);
 			}
 			initialized = true;

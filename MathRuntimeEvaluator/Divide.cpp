@@ -8,7 +8,7 @@ using std::string;
 namespace MathRuntimeEvaluator
 {
 	// Returns a string representation of this Operator
-	const string& Divide::GetIdentifier() const { return *(new string("/")); }
+	string Divide::GetIdentifier() const { return "/"; }
 
 	// Returns a helpful string explaining how to use this Operator
 	const string& Divide::GetUsage() const

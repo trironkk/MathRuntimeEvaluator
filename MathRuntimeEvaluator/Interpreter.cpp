@@ -72,21 +72,21 @@ namespace MathRuntimeEvaluator
 		{
 			string token = ReadNextToken(stream);
 
-			if (token == "exit") { persist = false; return false; }
-			else if (token == "memory") { memory.PrintLine(cout); return false; }
-			else if (token == "unittests") { RunUnitTestBattery(); return false; }
-			else if (token == "") { return false; }
-			else if (token == "help")
+			if ("exit" == token) { persist = false; return false; }
+			else if ("memory" == token) { memory.PrintLine(cout); return false; }
+			else if ("unittests" == token) { RunUnitTestBattery(); return false; }
+			else if ("" == token) { return false; }
+			else if ("help" == token)
 			{
 				// Determine if help is called by itself or with an input
 				// parameter
 				string operation = ReadNextToken(stream);
-				if (operation == "") { PrintHelp(); return false; }
+				if ("" == operation) { PrintHelp(); return false; }
 				else { cout << endl << Operations::GetUsage(operation) << endl; return false;}
 			}
 
 			// If an assignment is specified...
-			if (ReadNextToken(stream) == "=")
+			if ("=" == ReadNextToken(stream))
 			{
 				try
 				{

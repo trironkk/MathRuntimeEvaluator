@@ -8,7 +8,7 @@ namespace MathRuntimeEvaluator
 	struct Divide : public Operation
 	{
 		// Returns a string representation of this Operator
-		virtual const std::string& GetIdentifier() const;
+		virtual std::string GetIdentifier() const;
 		
 		// Returns a helpful string explaining how to use this Operator
 		virtual const std::string& GetUsage() const;

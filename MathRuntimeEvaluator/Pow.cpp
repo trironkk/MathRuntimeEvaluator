@@ -8,7 +8,7 @@ using std::string;
 namespace MathRuntimeEvaluator
 {
 	// Returns a string representation of this Operator
-	const string& Pow::GetIdentifier() const { return *(new string("pow")); }
+	string Pow::GetIdentifier() const { return "pow"; }
 
 	// Returns a helpful string explaining how to use this Operator
 	const string& Pow::GetUsage() const

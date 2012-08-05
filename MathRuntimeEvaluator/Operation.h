@@ -13,7 +13,7 @@ namespace MathRuntimeEvaluator
 	struct Operation : public IPrintable
 	{
 		// Returns a string representation of this Operation
-		virtual const std::string& GetIdentifier() const = 0;
+		virtual std::string GetIdentifier() const = 0;
 
 		// Returns a helpful string explaining how to use this Operation
 		virtual const std::string& GetUsage() const = 0;
@@ -34,7 +34,7 @@ namespace MathRuntimeEvaluator
 		// NOTE: We default to returning true because only operators will ever
 		// have return false.
 		virtual bool IsFunction() const;
-
+		\
 		// Perform this operation
 		virtual double Evaluate(const std::vector<double>& parameters) const = 0;
 

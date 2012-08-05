@@ -8,7 +8,7 @@ using std::string;
 namespace MathRuntimeEvaluator
 {
 	// Returns a string representation of this Operator
-	const string& Cos::GetIdentifier() const { return *(new string("cos")); }
+	string Cos::GetIdentifier() const { return "cos"; }
 
 	// Returns a helpful string explaining how to use this Operator
 	const string& Cos::GetUsage() const

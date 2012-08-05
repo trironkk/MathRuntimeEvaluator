@@ -8,7 +8,7 @@ using std::string;
 namespace MathRuntimeEvaluator
 {
 	// Returns a string representation of this Operator
-	const string& Tan::GetIdentifier() const { return *(new string("tan")); }
+	string Tan::GetIdentifier() const { return "tan"; }
 
 	// Returns a helpful string explaining how to use this Operator
 	const string& Tan::GetUsage() const

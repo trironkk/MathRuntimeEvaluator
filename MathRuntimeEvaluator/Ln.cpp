@@ -6,7 +6,7 @@ using std::string;
 namespace MathRuntimeEvaluator
 {
 	// Returns a string representation of this Operator
-	const string& Ln::GetIdentifier() const { return *(new string("ln")); }
+	string Ln::GetIdentifier() const { return "Ln"; }
 
 	// Returns a helpful string explaining how to use this Operator
 	const string& Ln::GetUsage() const

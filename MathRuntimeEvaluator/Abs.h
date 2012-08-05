@@ -7,8 +7,8 @@ namespace MathRuntimeEvaluator
 {
 	struct Abs : public Operation
 	{
-		// Returns a string representation of this Operator
-		virtual const std::string& GetIdentifier() const;
+		// Returns a string representation of this Operation
+		virtual std::string GetIdentifier() const;
 		
 		// Returns a helpful string explaining how to use this Operator
 		virtual const std::string& GetUsage() const;

@@ -10,7 +10,7 @@ using std::string;
 namespace MathRuntimeEvaluator
 {
 	// Returns a string representation of this Operator
-	const string& Sqrt::GetIdentifier() const { return *(new string("sqrt")); }
+	string Sqrt::GetIdentifier() const { return "sqrt"; }
 
 	// Returns a helpful string explaining how to use this Operator
 	const string& Sqrt::GetUsage() const

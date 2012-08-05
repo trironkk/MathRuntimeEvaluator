@@ -8,7 +8,7 @@ using std::string;
 namespace MathRuntimeEvaluator
 {
 	// Returns a string representation of this Operator
-	const string& Log::GetIdentifier() const { return *(new string("log")); }
+	string Log::GetIdentifier() const { return "log"; }
 
 	// Returns a helpful string explaining how to use this Operator
 	const string& Log::GetUsage() const

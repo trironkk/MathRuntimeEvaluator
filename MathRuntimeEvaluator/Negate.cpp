@@ -6,7 +6,7 @@ using std::string;
 namespace MathRuntimeEvaluator
 {
 	// Returns a string representation of this Operator
-	const string& Negate::GetIdentifier() const { return *(new string("~")); }
+	string Negate::GetIdentifier() const { return "~"; }
 
 	// Returns a helpful string explaining how to use this Operator
 	const string& Negate::GetUsage() const
