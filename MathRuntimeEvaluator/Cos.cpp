@@ -11,13 +11,13 @@ namespace MathRuntimeEvaluator
 	string Cos::GetIdentifier() const { return "cos"; }
 
 	// Returns a helpful string explaining how to use this Operator
-	const string& Cos::GetUsage() const
+	string Cos::GetUsage() const
 	{
-		return *(new string(
+		return
 "cos(x) Cosine function \n\
 \n\
 x: the angle in radians \n\
-returns the cosine of an angle \n"));
+returns the cosine of an angle \n";
 	}
 
 	// Returns the number of parameters this operation works with

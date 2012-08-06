@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-#include "Exception.h"
+#include "MathRuntimeEvaluatorException.h"
 
 using std::vector;
 using std::string;
@@ -13,15 +13,15 @@ namespace MathRuntimeEvaluator
 	string Sqrt::GetIdentifier() const { return "sqrt"; }
 
 	// Returns a helpful string explaining how to use this Operator
-	const string& Sqrt::GetUsage() const
+	string Sqrt::GetUsage() const
 	{
-		return *(new string(
+		return
 "sqrt(x) Square root\n\
 \n\
 x: the only parameter \n\
 returns the square root of x \n\
 Notes: \n\
-- Does not support negative inputs. \n"));
+- Does not support negative inputs. \n";
 	}
 
 	// Returns the number of parameters this operation works with

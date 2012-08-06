@@ -11,14 +11,14 @@ namespace MathRuntimeEvaluator
 	string Log::GetIdentifier() const { return "log"; }
 
 	// Returns a helpful string explaining how to use this Operator
-	const string& Log::GetUsage() const
+	string Log::GetUsage() const
 	{
-		return *(new string(
+		return
 "log(x,y) Generic Logarithm \n\
 \n\
 x: the base of the logarithm \n\
 y: the input \n\
-returns the base x logarithm of y \n"));
+returns the base x logarithm of y \n";
 	}
 
 	// Returns the number of parameters this operation works with

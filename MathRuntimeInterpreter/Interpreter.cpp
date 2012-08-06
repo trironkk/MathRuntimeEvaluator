@@ -105,6 +105,7 @@ namespace MathRuntimeEvaluator
 					cout << "Error: " << e << std::endl << std::endl;
 				}
 			}
+			return true;
 		}
 
 		// Prints help text

@@ -9,14 +9,14 @@ namespace MathRuntimeEvaluator
 	string Multiply::GetIdentifier() const { return "*"; }
 
 	// Returns a helpful string explaining how to use this Operator
-	const string& Multiply::GetUsage() const
+	string Multiply::GetUsage() const
 	{
-		return *(new string(
+		return
 "x * y Multiplication \n\
 \n\
 x: the first parameter \n\
 y: the second parameter \n\
-returns the product of x and y \n"));
+returns the product of x and y \n";
 	}
 
 	// Returns true if this operator is a function

@@ -18,7 +18,7 @@ namespace MathRuntimeEvaluator
 		std::ostream& PrintLine(std::ostream& os);
 
 		// Gets a string representation of this object
-		virtual std::string& GetStringRepresentation() = 0;
+		virtual std::string GetStringRepresentation() = 0;
 	};
 }
 

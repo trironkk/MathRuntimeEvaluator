@@ -362,12 +362,12 @@ namespace MathRuntimeEvaluator
 	}
 	
 	// Gets a string representation of this object
-	string& CompoundExpression::GetStringRepresentation()
+	string CompoundExpression::GetStringRepresentation()
 	{
 		return GetInfixStringRepresentation();
 	}
 
-	string& CompoundExpression::GetInfixStringRepresentation()
+	string CompoundExpression::GetInfixStringRepresentation()
 	{
 		int index = 0;
 		stack<string> stringStack;
@@ -422,10 +422,10 @@ namespace MathRuntimeEvaluator
 "There are no parameters in this CompoundExpression."
 				);
 
-		return *(new string(stringStack.top()));
+		return stringStack.top();
 	}
 
-	string& CompoundExpression::GetPostfixStringRepresentation()
+	string CompoundExpression::GetPostfixStringRepresentation()
 	{
 		stringstream os;
 		int expressionsIndex = 0;
@@ -443,6 +443,6 @@ namespace MathRuntimeEvaluator
 			if (i < _objectTypes.size() - 1)
 				os << ' ';
 		}
-		return *(new string(os.str()));
+		return os.str();
 	}
 }

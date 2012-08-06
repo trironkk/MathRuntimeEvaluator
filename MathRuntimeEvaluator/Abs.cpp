@@ -9,13 +9,13 @@ namespace MathRuntimeEvaluator
 	string Abs::GetIdentifier() const { return "abs"; }
 
 	// Returns a helpful string explaining how to use this Operator
-	const string& Abs::GetUsage() const
+	string Abs::GetUsage() const
 	{
-		return *(new string(
+		return
 "abs(x) Absolute value \n \
 \n \
 x: the only parameter \n \
-returns the absolute value \n"));
+returns the absolute value \n";
 	}
 
 	// Returns the number of parameters this operation works with

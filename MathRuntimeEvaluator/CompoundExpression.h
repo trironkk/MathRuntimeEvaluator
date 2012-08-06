@@ -99,9 +99,9 @@ namespace MathRuntimeEvaluator
 		virtual double GetValue();
 
 		// Gets a string representation of this object
-		virtual std::string& GetStringRepresentation();
-		std::string& GetInfixStringRepresentation();
-		std::string& GetPostfixStringRepresentation();
+		virtual std::string GetStringRepresentation();
+		std::string GetInfixStringRepresentation();
+		std::string GetPostfixStringRepresentation();
 	};
 }
 

@@ -1,6 +1,6 @@
 #include "Divide.h"
 
-#include "Exception.h"
+#include "MathRuntimeEvaluatorException.h"
 
 using std::vector;
 using std::string;
@@ -11,16 +11,16 @@ namespace MathRuntimeEvaluator
 	string Divide::GetIdentifier() const { return "/"; }
 
 	// Returns a helpful string explaining how to use this Operator
-	const string& Divide::GetUsage() const
+	string Divide::GetUsage() const
 	{
-		return *(new string(
+		return
 "x / y Division \n\
 \n\
 x: the first parameter \n\
 y: the second parameter \n\
 returns the result of x divided by y \n\
 Notes: \n\
-- Does not support denominators of 0. \n"));
+- Does not support denominators of 0. \n";
 	}
 
 	// Returns true if this operator is a function

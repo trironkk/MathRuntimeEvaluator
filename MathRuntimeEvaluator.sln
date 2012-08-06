@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MathRuntimeEvaluator", "MathRuntimeEvaluator\ASCIIMathMLLibrary.vcxproj", "{FBE95E0F-9DE0-4934-A28B-0B7C8336DBF7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MathRuntimeInterpreter", "MathRuntimeInterpreter\MathRuntimeInterpreter.vcxproj", "{31E3FB11-58B8-48AD-9133-D7DBFBE9247A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -13,6 +15,10 @@ Global
 		{FBE95E0F-9DE0-4934-A28B-0B7C8336DBF7}.Debug|Win32.Build.0 = Debug|Win32
 		{FBE95E0F-9DE0-4934-A28B-0B7C8336DBF7}.Release|Win32.ActiveCfg = Release|Win32
 		{FBE95E0F-9DE0-4934-A28B-0B7C8336DBF7}.Release|Win32.Build.0 = Release|Win32
+		{31E3FB11-58B8-48AD-9133-D7DBFBE9247A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{31E3FB11-58B8-48AD-9133-D7DBFBE9247A}.Debug|Win32.Build.0 = Debug|Win32
+		{31E3FB11-58B8-48AD-9133-D7DBFBE9247A}.Release|Win32.ActiveCfg = Release|Win32
+		{31E3FB11-58B8-48AD-9133-D7DBFBE9247A}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

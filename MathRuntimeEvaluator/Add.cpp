@@ -10,14 +10,14 @@ namespace MathRuntimeEvaluator
 	string Add::GetIdentifier() const { return "+"; }
 
 	// Returns a helpful string explaining how to use this Operator
-	const string& Add::GetUsage() const
+	string Add::GetUsage() const
 	{
-		return *(new string(
+		return
 "x + y Addition \n\
 \n\
 x: the first parameter \n\
 y: the second parameter \n\
-returns the sum of x and y \n"));
+returns the sum of x and y \n";
 	}
 
 	// Returns true if this operator is a function

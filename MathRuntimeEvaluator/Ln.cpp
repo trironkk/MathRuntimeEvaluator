@@ -9,13 +9,13 @@ namespace MathRuntimeEvaluator
 	string Ln::GetIdentifier() const { return "Ln"; }
 
 	// Returns a helpful string explaining how to use this Operator
-	const string& Ln::GetUsage() const
+	string Ln::GetUsage() const
 	{
-		return *(new string(
+		return
 "ln(x) Natural Logarithm \n\
 \n\
 x: the only parameter \n\
-returns the natural logarithm of x \n"));
+returns the natural logarithm of x \n";
 	}
 
 	// Returns the number of parameters this operation works with

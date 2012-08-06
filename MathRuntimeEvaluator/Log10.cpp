@@ -11,13 +11,13 @@ namespace MathRuntimeEvaluator
 	string Log10::GetIdentifier() const { return "log10"; }
 
 	// Returns a helpful string explaining how to use this Operator
-	const string& Log10::GetUsage() const
+	string Log10::GetUsage() const
 	{
-		return *(new string(
+		return
 "log10(x) Base 10 Logarithm \n\
 \n\
 x: the only parameter \n\
-returns the base 10 logarithm of x \n"));
+returns the base 10 logarithm of x \n";
 	}
 
 	// Returns the number of parameters this operation works with

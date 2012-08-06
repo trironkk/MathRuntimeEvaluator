@@ -12,8 +12,7 @@
 #include <stack>
 
 #include "CompoundExpressionFactory.h"
-
-#include "Exception.h"
+#include "MathRuntimeEvaluatorException.h"
 #include "WorkingMemory.h"
 #include "Constant.h"
 #include "Variable.h"

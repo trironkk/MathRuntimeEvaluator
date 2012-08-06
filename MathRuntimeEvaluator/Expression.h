@@ -30,7 +30,7 @@ namespace MathRuntimeEvaluator
 		virtual double GetValue() = 0;
 
 		// Gets a string representation of this object
-		virtual std::string& GetStringRepresentation() = 0;
+		virtual std::string GetStringRepresentation() = 0;
 	};
 }
 

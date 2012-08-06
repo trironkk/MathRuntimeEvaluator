@@ -21,8 +21,8 @@ namespace MathRuntimeEvaluator
 	bool Operation::IsFunction() const { return true; }
 
 	// Gets a string representation of this object
-	std::string& Operation::GetStringRepresentation()
+	std::string Operation::GetStringRepresentation()
 	{
-		return *(new string(this->GetIdentifier()));
+		return (this->GetIdentifier());
 	}
 }

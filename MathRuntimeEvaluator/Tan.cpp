@@ -11,13 +11,13 @@ namespace MathRuntimeEvaluator
 	string Tan::GetIdentifier() const { return "tan"; }
 
 	// Returns a helpful string explaining how to use this Operator
-	const string& Tan::GetUsage() const
+	string Tan::GetUsage() const
 	{
-		return *(new string(
+		return
 "tan(x) Tangent function \n\
 \n\
 x: the angle in radians \n\
-returns the tangent of an angle \n"));
+returns the tangent of an angle \n";
 	}
 
 	// Returns the number of parameters this operation works with

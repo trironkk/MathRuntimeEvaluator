@@ -33,8 +33,8 @@ namespace MathRuntimeEvaluator
 	}
 
 	// Gets a string representation of this object
-	string& Variable::GetStringRepresentation()
+	string Variable::GetStringRepresentation()
 	{
-		return *(new string(_variableName));
+		return _variableName;
 	}
 }

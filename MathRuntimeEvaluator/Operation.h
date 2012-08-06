@@ -16,7 +16,7 @@ namespace MathRuntimeEvaluator
 		virtual std::string GetIdentifier() const = 0;
 
 		// Returns a helpful string explaining how to use this Operation
-		virtual const std::string& GetUsage() const = 0;
+		virtual std::string GetUsage() const = 0;
 
 		// Returns the number of parameters this Operation works with
 		virtual int GetParameterCount() const = 0;
@@ -39,7 +39,7 @@ namespace MathRuntimeEvaluator
 		virtual double Evaluate(const std::vector<double>& parameters) const = 0;
 
 		// Gets a string representation of this object
-		virtual std::string& GetStringRepresentation();
+		virtual std::string GetStringRepresentation();
 	};
 }
 

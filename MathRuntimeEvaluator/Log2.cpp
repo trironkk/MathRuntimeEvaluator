@@ -11,13 +11,13 @@ namespace MathRuntimeEvaluator
 	string Log2::GetIdentifier() const { return "log2"; }
 
 	// Returns a helpful string explaining how to use this Operator
-	const string& Log2::GetUsage() const
+	string Log2::GetUsage() const
 	{
-		return *(new string(
+		return
 "log2(x) Binary Logarithm \n\
 \n\
 x: the only parameter \n\
-returns the binary logarithm of x \n"));
+returns the binary logarithm of x \n";
 	}
 
 	// Returns the number of parameters this operation works with

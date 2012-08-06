@@ -49,12 +49,6 @@
     <Filter Include="Source Files\Operation">
       <UniqueIdentifier>{30b2586c-7b23-47c0-8609-68f7b3e1aa3a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Interpretation">
-      <UniqueIdentifier>{8a0720e0-06cf-4c24-a41f-480652a48403}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Interpretation">
-      <UniqueIdentifier>{5515c230-7821-4117-b6c9-fa7b53c440a8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Operation\Operators">
       <UniqueIdentifier>{aaf278d2-172d-4303-9b3c-e80d8b6b23ed}</UniqueIdentifier>
     </Filter>
@@ -69,9 +63,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Exception.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="WorkingMemory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -93,20 +84,11 @@
     <ClInclude Include="ExpressionComponent.h">
       <Filter>Header Files\Expression\Implementations</Filter>
     </ClInclude>
-    <ClInclude Include="Parser.h">
-      <Filter>Header Files\Interpretation</Filter>
-    </ClInclude>
-    <ClInclude Include="Interpreter.h">
-      <Filter>Header Files\Interpretation</Filter>
-    </ClInclude>
     <ClInclude Include="CompoundExpression.h">
       <Filter>Header Files\Expression\Implementations</Filter>
     </ClInclude>
     <ClInclude Include="Variable.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UnitTests.h">
-      <Filter>Header Files\Interpretation</Filter>
     </ClInclude>
     <ClInclude Include="Subtract.h">
       <Filter>Header Files\Operation\Operators</Filter>
@@ -159,12 +141,15 @@
     <ClInclude Include="Log2.h">
       <Filter>Header Files\Operation\Functions</Filter>
     </ClInclude>
+    <ClInclude Include="MathRuntimeEvaluatorException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WorkingMemory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Exception.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Variable.cpp">
@@ -185,20 +170,8 @@
     <ClCompile Include="Utilities.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="CompoundExpressions.cpp">
       <Filter>Source Files\Expression\Implementations</Filter>
-    </ClCompile>
-    <ClCompile Include="Interpreter.cpp">
-      <Filter>Source Files\Interpretation</Filter>
-    </ClCompile>
-    <ClCompile Include="Parser.cpp">
-      <Filter>Source Files\Interpretation</Filter>
-    </ClCompile>
-    <ClCompile Include="UnitTests.cpp">
-      <Filter>Source Files\Interpretation</Filter>
     </ClCompile>
     <ClCompile Include="Operations.cpp">
       <Filter>Source Files\Operation</Filter>
@@ -250,6 +223,12 @@
     </ClCompile>
     <ClCompile Include="Log2.cpp">
       <Filter>Source Files\Operation\Functions</Filter>
+    </ClCompile>
+    <ClCompile Include="MathRuntimeEvaluatorException.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

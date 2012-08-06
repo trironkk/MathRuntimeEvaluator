@@ -9,9 +9,9 @@ namespace MathRuntimeEvaluator
 	string Subtract::GetIdentifier() const { return "-"; }
 	
 	// Returns a helpful string explaining how to use this Operator
-	const string& Subtract::GetUsage() const
+	string Subtract::GetUsage() const
 	{
-		return *(new string(
+		return
 "x - y Subtraction \n\
 \n\
 x: the first parameter \n\
@@ -21,7 +21,7 @@ returns the result of x minus y \n\
 -x Negation \n\
 \n\
 x: the only parameter \n\
-returns the negation of x \n"));
+returns the negation of x \n";
 	}
 
 	// Returns true if this operator is a function

@@ -11,14 +11,14 @@ namespace MathRuntimeEvaluator
 	string Pow::GetIdentifier() const { return "pow"; }
 
 	// Returns a helpful string explaining how to use this Operator
-	const string& Pow::GetUsage() const
+	string Pow::GetUsage() const
 	{
-		return *(new string(
+		return
 "pow(x,y) Exponentiation \n\
 \n\
 x: the first parameter \n\
 y: the second parameter \n\
-returns x raised to the y power \n"));
+returns x raised to the y power \n";
 	}
 
 	// Returns the number of parameters this operation works with

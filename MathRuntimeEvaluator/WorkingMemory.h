@@ -7,7 +7,7 @@
 #include <sstream>
 #include <unordered_map>
 
-#include "Exception.h"
+#include "MathRuntimeEvaluatorException.h"
 #include "IPrintable.h"
 
 namespace MathRuntimeEvaluator
@@ -46,7 +46,7 @@ namespace MathRuntimeEvaluator
 		void ValidateVariableName(std::string variableName);
 
 		// Returns a string representation of the working memory.
-		virtual std::string& GetStringRepresentation();
+		virtual std::string GetStringRepresentation();
 	};
 }
 

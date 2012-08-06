@@ -7,17 +7,13 @@
 #include <memory>
 #include <math.h>
 
-// Operators
-#include "Operation.h"
+#include "../MathRuntimeEvaluator/Constant.h"
+#include "../MathRuntimeEvaluator/Variable.h"
+#include "../MathRuntimeEvaluator/CompoundExpression.h"
+#include "../MathRuntimeEvaluator/WorkingMemory.h"
+#include "../MathRuntimeEvaluator/MathRuntimeEvaluatorException.h"
 
-// Expressions
-#include "Constant.h"
-#include "Variable.h"
-#include "CompoundExpression.h"
-
-#include "Parser.h"
-#include "Exception.h"
-#include "WorkingMemory.h"
+#include "../MathRuntimeEvaluator/Parser.h"
 
 namespace MathRuntimeEvaluator
 {

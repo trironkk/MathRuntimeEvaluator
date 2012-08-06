@@ -94,9 +94,9 @@ namespace MathRuntimeEvaluator
 	}
 
 	// Returns a string representation of the working memory.
-	string& WorkingMemory::GetStringRepresentation()
+	string WorkingMemory::GetStringRepresentation()
 	{
-		string& result = *(new string());
+		string result = "";
 
 		// Set the width of the columns to 10 characters longer than the longest
 		// variable name
