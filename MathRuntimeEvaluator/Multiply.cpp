@@ -1,6 +1,6 @@
 #include "Multiply.h"
 
-using std::vector;
+using std::deque;
 using std::string;
 
 namespace MathRuntimeEvaluator
@@ -29,7 +29,7 @@ returns the product of x and y \n";
 	int Multiply::GetRank() const { return 2; }
 
 	// Perform this operation
-	double Multiply::Evaluate(const vector<double>& parameters) const
+	double Multiply::Evaluate(const deque<double>& parameters) const
 	{
 		return parameters[0] * parameters[1];
 	}

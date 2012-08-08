@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-using std::vector;
+using std::deque;
 using std::string;
 
 namespace MathRuntimeEvaluator
@@ -25,7 +25,7 @@ returns x raised to the y power \n";
 	int Pow::GetParameterCount() const { return 2; }
 
 	// Perform this operation
-	double Pow::Evaluate(const vector<double>& parameters) const
+	double Pow::Evaluate(const deque<double>& parameters) const
 	{
 		return pow(parameters[0], parameters[1]);
 	}

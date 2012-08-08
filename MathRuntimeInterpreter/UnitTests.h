@@ -7,11 +7,9 @@
 #include <memory>
 #include <math.h>
 
-#include "../MathRuntimeEvaluator/Constant.h"
-#include "../MathRuntimeEvaluator/Variable.h"
-#include "../MathRuntimeEvaluator/CompoundExpression.h"
 #include "../MathRuntimeEvaluator/WorkingMemory.h"
 #include "../MathRuntimeEvaluator/MathRuntimeEvaluatorException.h"
+#include "../MathRuntimeEvaluator/ExposedFunctionality.h"
 
 #include "../MathRuntimeEvaluator/Parser.h"
 

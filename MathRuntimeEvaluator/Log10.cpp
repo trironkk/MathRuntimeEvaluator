@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-using std::vector;
+using std::deque;
 using std::string;
 
 namespace MathRuntimeEvaluator
@@ -24,7 +24,7 @@ returns the base 10 logarithm of x \n";
 	int Log10::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Log10::Evaluate(const vector<double>& parameters) const
+	double Log10::Evaluate(const deque<double>& parameters) const
 	{
 		return log10(parameters[0]);
 	}

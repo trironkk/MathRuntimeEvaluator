@@ -1,6 +1,6 @@
 #include "Negate.h"
 
-using std::vector;
+using std::deque;
 using std::string;
 
 namespace MathRuntimeEvaluator
@@ -28,7 +28,7 @@ returns the negation of x \n";
 	int Negate::GetRank() const { return 3; }
 
 	// Perform this operation
-	double Negate::Evaluate(const vector<double>& parameters) const
+	double Negate::Evaluate(const deque<double>& parameters) const
 	{
 		return -parameters[0];
 	}

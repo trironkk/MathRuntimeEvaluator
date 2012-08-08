@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-using std::vector;
+using std::deque;
 using std::string;
 
 namespace MathRuntimeEvaluator
@@ -24,7 +24,7 @@ returns the sine of an angle \n";
 	int Sin::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Sin::Evaluate(const vector<double>& parameters) const
+	double Sin::Evaluate(const deque<double>& parameters) const
 	{
 		return sin(parameters[0]);
 	}

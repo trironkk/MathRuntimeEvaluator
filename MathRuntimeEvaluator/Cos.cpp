@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-using std::vector;
+using std::deque;
 using std::string;
 
 namespace MathRuntimeEvaluator
@@ -24,7 +24,7 @@ returns the cosine of an angle \n";
 	int Cos::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Cos::Evaluate(const vector<double>& parameters) const
+	double Cos::Evaluate(const deque<double>& parameters) const
 	{
 		return cos(parameters[0]);
 	}

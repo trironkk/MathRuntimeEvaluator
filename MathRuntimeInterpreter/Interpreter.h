@@ -10,14 +10,12 @@
 
 
 // Expressions
-#include "../MathRuntimeEvaluator/Constant.h"
-#include "../MathRuntimeEvaluator/Variable.h"
-#include "../MathRuntimeEvaluator/CompoundExpression.h"
 #include "../MathRuntimeEvaluator/Operation.h"
 #include "../MathRuntimeEvaluator/Operations.h"
 #include "../MathRuntimeEvaluator/MathRuntimeEvaluatorException.h"
 #include "../MathRuntimeEvaluator/WorkingMemory.h"
 #include "../MathRuntimeEvaluator/Parser.h"
+#include "../MathRuntimeEvaluator/ExposedFunctionality.h"
 #include "UnitTests.h"
 
 using namespace MathRuntimeEvaluator;

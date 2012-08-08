@@ -2,7 +2,7 @@
 
 #include "MathRuntimeEvaluatorException.h"
 
-using std::vector;
+using std::deque;
 using std::string;
 
 namespace MathRuntimeEvaluator
@@ -33,7 +33,7 @@ Notes: \n\
 	int Divide::GetRank() const { return 2; }
 
 	// Perform this operation
-	double Divide::Evaluate(const vector<double>& parameters) const
+	double Divide::Evaluate(const deque<double>& parameters) const
 	{
 		if (parameters[1] == 0)
 			throw MathRuntimeEvaluatorException(

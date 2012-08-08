@@ -1,6 +1,6 @@
 #include "Ln.h"
 
-using std::vector;
+using std::deque;
 using std::string;
 
 namespace MathRuntimeEvaluator
@@ -22,7 +22,7 @@ returns the natural logarithm of x \n";
 	int Ln::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Ln::Evaluate(const vector<double>& parameters) const
+	double Ln::Evaluate(const deque<double>& parameters) const
 	{
 		return log(parameters[0]);
 	}

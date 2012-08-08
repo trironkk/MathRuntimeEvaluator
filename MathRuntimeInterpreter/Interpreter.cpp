@@ -10,7 +10,7 @@ namespace MathRuntimeEvaluator
 	{
 		// Various variables declared in the namespace scope to avoid complicating
 		// method signatures.
-		WorkingMemory memory;
+		//WorkingMemory memory;
 		string resultVariableName;
 		string input;
 		bool persist = true;
@@ -19,8 +19,8 @@ namespace MathRuntimeEvaluator
 		void LaunchInterpreter()
 		{
 			// Default variables
-			memory.SetValue("pi", 3.1415926535897932384626);
-			memory.SetValue("e", 2.7182818284590452353602);
+			//memory.SetValue("pi", 3.1415926535897932384626);
+			//memory.SetValue("e", 2.7182818284590452353602);
 
 			// Welcome Message
 			cout <<
@@ -42,23 +42,23 @@ namespace MathRuntimeEvaluator
 					if (Preparse(stream) == false)
 						continue;
 
-					CompoundExpression compoundExpression(ParseString(input));
+					//CompoundExpression compoundExpression(ParseString(input));
 
-					// Perform the math and print the result.
-					compoundExpression.Simplify(memory);
-					compoundExpression.PrintLine(cout);
+					//// Perform the math and print the result.
+					//compoundExpression.Simplify(memory);
+					//compoundExpression.PrintLine(cout);
 
-					// Records the result.
-					memory.SetValue(resultVariableName,
-						compoundExpression.GetValue());
+					//// Records the result.
+					//memory.SetValue(resultVariableName,
+					//	compoundExpression.GetValue());
 
-					cout << std::endl;
+					cout << MathRuntimeEvaluator::Evaluate(input) << std::endl;
 				}
-				catch (MathRuntimeEvaluatorException& e)
-				{
-					// Print out the error
-					cout << "Error: " << e << std::endl << std::endl;
-				}
+				//catch (MathRuntimeEvaluatorException& e)
+				//{
+				//	// Print out the error
+				//	cout << "Error: " << e << std::endl << std::endl;
+				//}
 				catch (exception& e)
 				{
 					cout << e.what();
@@ -70,41 +70,41 @@ namespace MathRuntimeEvaluator
 		// commands and handling working memory management.
 		bool Preparse(stringstream& stream)
 		{
-			string token = ReadNextToken(stream);
+			//string token = ReadNextToken(stream);
 
-			if ("exit" == token) { persist = false; return false; }
-			else if ("memory" == token) { memory.PrintLine(cout); return false; }
-			else if ("unittests" == token) { RunUnitTestBattery(); return false; }
-			else if ("" == token) { return false; }
-			else if ("help" == token)
-			{
-				// Determine if help is called by itself or with an input
-				// parameter
-				string operation = ReadNextToken(stream);
-				if ("" == operation) { PrintHelp(); return false; }
-				else { cout << endl << Operations::GetUsage(operation) << endl; return false;}
-			}
+			//if ("exit" == token) { persist = false; return false; }
+			//else if ("memory" == token) { memory.PrintLine(cout); return false; }
+			//else if ("unittests" == token) { RunUnitTestBattery(); return false; }
+			//else if ("" == token) { return false; }
+			//else if ("help" == token)
+			//{
+			//	// Determine if help is called by itself or with an input
+			//	// parameter
+			//	string operation = ReadNextToken(stream);
+			//	if ("" == operation) { PrintHelp(); return false; }
+			//	else { cout << endl << Operations::GetUsage(operation) << endl; return false;}
+			//}
 
-			// If an assignment is specified...
-			if ("=" == ReadNextToken(stream))
-			{
-				try
-				{
-					// Assert that the variable name is a valid one.
-					memory.ValidateVariableName(token);
+			//// If an assignment is specified...
+			//if ("=" == ReadNextToken(stream))
+			//{
+			//	try
+			//	{
+			//		// Assert that the variable name is a valid one.
+			//		memory.ValidateVariableName(token);
 
-					// Record the variable name.
-					resultVariableName = token;
+			//		// Record the variable name.
+			//		resultVariableName = token;
 
-					// Reset the input string to disclude the assignment
-					getline(stream, input);
-				}
-				catch (MathRuntimeEvaluatorException& e)
-				{
-					// Print out the error.
-					cout << "Error: " << e << std::endl << std::endl;
-				}
-			}
+			//		// Reset the input string to disclude the assignment
+			//		getline(stream, input);
+			//	}
+			//	catch (MathRuntimeEvaluatorException& e)
+			//	{
+			//		// Print out the error.
+			//		cout << "Error: " << e << std::endl << std::endl;
+			//	}
+			//}
 			return true;
 		}
 

@@ -7,77 +7,79 @@ namespace MathRuntimeEvaluator
 {
 namespace UnitTests
 {
-	WorkingMemory memory;
+	//WorkingMemory memory;
 
 	// Parses and evaluates a string expression, and then checks it against an
 	// expected value.
 	void RunUnitTest(string expressionString, double expectedValue)
 	{
-		CompoundExpression ce;
+		Evaluate(expressionString);
 
-		// Try to parse...
-		try
-		{
-			ce = Parser::ParseString(expressionString);
-			cout << expressionString << " = ";
-		}
-		catch (MathRuntimeEvaluatorException& e)
-		{
-			// Print the error.
-			cout << endl;
-			cout << "Encountered an exception while parsing: ";
-			cout << endl << e << endl << endl;
-			return;
-		}
+		//CompoundExpression ce;
+
+		//// Try to parse...
+		//try
+		//{
+		//	ce = Parser::ParseString(expressionString);
+		//	cout << expressionString << " = ";
+		//}
+		//catch (MathRuntimeEvaluatorException& e)
+		//{
+		//	// Print the error.
+		//	cout << endl;
+		//	cout << "Encountered an exception while parsing: ";
+		//	cout << endl << e << endl << endl;
+		//	return;
+		//}
 		
-		// Try to simplify...
-		try
-		{
-			ce.Simplify(memory);
-		}
-		catch (MathRuntimeEvaluatorException& e)
-		{
-			// Print the error.
-			cout << endl;
-			cout << "Encountered an exception while simplifying: ";
-			cout << endl << e << endl << endl;
-			return;
-		}
+		//// Try to simplify...
+		//try
+		//{
+		//	ce.Simplify(memory);
+		//}
+		//catch (MathRuntimeEvaluatorException& e)
+		//{
+		//	// Print the error.
+		//	cout << endl;
+		//	cout << "Encountered an exception while simplifying: ";
+		//	cout << endl << e << endl << endl;
+		//	return;
+		//}
 
-		// Try to print...
-		try
-		{
-			ce.PrintLine(cout);
-		}
-		catch (MathRuntimeEvaluatorException& e)
-		{
-			// Print the error.
-			cout << endl;
-			cout << "Encountered an exception while printing: ";
-			cout << endl << e << endl << endl;
-			return;
-		}
+		//// Try to print...
+		//try
+		//{
+		//	ce.PrintLine(cout);
+		//}
+		//catch (MathRuntimeEvaluatorException& e)
+		//{
+		//	// Print the error.
+		//	cout << endl;
+		//	cout << "Encountered an exception while printing: ";
+		//	cout << endl << e << endl << endl;
+		//	return;
+		//}
 
-		// Evaluate accuracy...
-		if (ce.GetValue() != expectedValue)
-		{
-			stringstream errorStream;
-			errorStream << "\n";
-			errorStream << "The following expression failed to evaluated appropriately:\n";
-			errorStream << "Expression:     " << expressionString << "\n";
-			errorStream << "Expected Value: " << expectedValue << "\n";
-			errorStream << "Actual Value:   " << ce.GetValue() << "\n";
-			errorStream << "\n";
-			cout << errorStream.str();
-		}
+		//// Evaluate accuracy...
+		//if (ce.GetValue() != expectedValue)
+		//{
+		//	stringstream errorStream;
+		//	errorStream << "\n";
+		//	errorStream << "The following expression failed to evaluated appropriately:\n";
+		//	errorStream << "Expression:     " << expressionString << "\n";
+		//	errorStream << "Expected Value: " << expectedValue << "\n";
+		//	errorStream << "Actual Value:   " << ce.GetValue() << "\n";
+		//	errorStream << "\n";
+		//	cout << errorStream.str();
+		//}
 	}
 
 	// Runs a battery of unit tests
 	void RunUnitTestBattery()
 	{
-		// Initilize the working memory
-		memory.SetValue("pi", 3.1415926535897932384626);
-		memory.SetValue("e", 2.7182818284590452353602);
+		//// Initilize the working memory
+		//memory.SetValue("pi", 3.1415926535897932384626);
+		//memory.SetValue("e", 2.7182818284590452353602);
 
 		// Basic Arithmetic
 		cout << "Basic Arithmetic" << endl;
@@ -167,7 +169,7 @@ namespace UnitTests
 		// big number tests (handling conversions to and from scientific notation)
 		cout << endl << "big number tests " << endl;
 		RunUnitTest("12903984128374", 12903984128374);
-		RunUnitTest("pow(pi, 20)", pow(memory.GetValue("pi"), 20.0));
+		//RunUnitTest("pow(pi, 20)", pow(memory.GetValue("pi"), 20.0));
 
 		// Stuff that's supposed to break it.
 		cout << endl << "Stuff that's supposed to break it..." << endl;

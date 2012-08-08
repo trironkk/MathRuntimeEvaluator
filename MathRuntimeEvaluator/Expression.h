@@ -2,35 +2,55 @@
 #define EXPRESSION_H
 
 #include <memory>
+#include <deque>
 #include <string>
 
+#include "Operation.h"
+#include "ExpressionComponent.h"
 #include "IPrintable.h"
-#include "WorkingMemory.h"
 
 namespace MathRuntimeEvaluator
 {
 	// Abstract base class of expressions
 	class Expression : public IPrintable
 	{
+		std::deque<double> _values;
+		std::deque<std::shared_ptr<Operation>> _operations;
+		std::deque<std::string> _variables;
+		std::deque<ExpressionComponent::Types> _expressionComponentTypes;
 	public:
 		// Basic Constructor
 		Expression();
 
-		// Simplify this expression
-		// For CompoundExpressions, this method executes all operations and
-		// returns the simplest Expression
-		// For Variables, this method looks its name up in the WorkingMemory, and
-		// returns a Constant with its value.
-		// For Constants, this method returns this object.
-		virtual std::shared_ptr<Expression> Simplify(
-			const WorkingMemory& workingMemory) = 0;
+		// Pushing items to the back of this expression
+		void PushBack(std::string variableName);
+		void PushBack(double value);
+		void PushBack(std::shared_ptr<Operation> operation);
 
-		// Gets the double value associated with this expression, or throws an
-		// error
-		virtual double GetValue() = 0;
+		// Pushing items to the front of this expression
+		void PushFront(std::string variableName);
+		void PushFront(double value);
+		void PushFront(std::shared_ptr<Operation> operation);
 
-		// Gets a string representation of this object
-		virtual std::string GetStringRepresentation() = 0;
+		// Returns the number of items in this expression
+		int Size();
+		int ValuesSize();
+		int VariablesSize();
+		int OperationsSize();
+
+		// Returns the front item
+		ExpressionComponent::Types FrontType();
+		double FrontValue();
+		std::string FrontVariable();
+		std::shared_ptr<Operation> FrontOperation();
+
+		// Returns the front item
+		void PopFrontValue();
+		void PopFrontVariable();
+		void PopFrontOperation();
+
+		// Gets a string representation of this expression
+		std::string GetStringRepresentation();
 	};
 }
 

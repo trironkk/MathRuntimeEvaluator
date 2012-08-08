@@ -11,29 +11,26 @@
 #include <list>
 #include <stack>
 
-#include "CompoundExpressionFactory.h"
 #include "MathRuntimeEvaluatorException.h"
 #include "WorkingMemory.h"
-#include "Constant.h"
-#include "Variable.h"
-#include "CompoundExpression.h"
+
 #include "Operations.h"
+#include "Expression.h"
+#include "Utilities.h"
 
 namespace MathRuntimeEvaluator
 {
 namespace Parser
 {
 	// Parse a line of input
-	CompoundExpression& ParseString(std::string str);
-	CompoundExpression& ParseString(std::istream& stream);
+	Expression& ParseString(std::string str);
+	Expression& ParseString(std::istream& stream);
 
 	// Internal parsing method - necessary to clean up parenthetical recursive
 	// calls. This is an implementation of the shunting yard algorithm for
-	// converting the infix string expression into a postfix CompoundExpression
-	// object.
+	// converting the infix string expression into a postfix Expression object.
 	std::list<std::string> InternalParse(std::istream& stream,
 		bool expectingClose=false, bool expectingComma=false);
-
 
 	// Return the next token, and adjust the stringstream accordingly
 	std::string ReadNextToken(std::istream& stream);

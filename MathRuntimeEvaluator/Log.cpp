@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-using std::vector;
+using std::deque;
 using std::string;
 
 namespace MathRuntimeEvaluator
@@ -25,7 +25,7 @@ returns the base x logarithm of y \n";
 	int Log::GetParameterCount() const { return 2; }
 
 	// Perform this operation
-	double Log::Evaluate(const vector<double>& parameters) const
+	double Log::Evaluate(const deque<double>& parameters) const
 	{
 		return log10(parameters[1]) / log10(parameters[0]);
 	}

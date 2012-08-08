@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-using std::vector;
+using std::deque;
 using std::string;
 
 namespace MathRuntimeEvaluator
@@ -24,7 +24,7 @@ returns the binary logarithm of x \n";
 	int Log2::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Log2::Evaluate(const vector<double>& parameters) const
+	double Log2::Evaluate(const deque<double>& parameters) const
 	{
 		return log10(parameters[0]) / log10(2.0);
 	}

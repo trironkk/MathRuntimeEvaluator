@@ -16,32 +16,14 @@
     <Filter Include="Header Files\Expression">
       <UniqueIdentifier>{e7c6eee5-d6be-47dc-bbeb-5ceb4d118e40}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Expression\AbstractClasses">
-      <UniqueIdentifier>{4a07a958-0fc5-4bca-a844-0b847fdd38af}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Expression\Implementations">
-      <UniqueIdentifier>{ca722dba-43a3-48aa-9f23-9bdc5b63d460}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Expression">
       <UniqueIdentifier>{3e7ad163-3f44-47a3-9fbe-d38016cc4b2d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Expression\AbstractClasses">
-      <UniqueIdentifier>{04ac9632-c55b-468f-a857-f3889785400d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Expression\Implementations">
-      <UniqueIdentifier>{c12aba92-9d49-4d84-b338-e4f1f78edb7a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\CommonFunctionality">
       <UniqueIdentifier>{d2a62d1a-9a54-42a6-b5e4-37f03fb8b5a3}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\CommonFunctionality">
       <UniqueIdentifier>{327980dc-432b-4f16-b5ac-558a1039d329}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Factories">
-      <UniqueIdentifier>{f2cd5676-473e-4c68-8ea4-2c091bbe1dc5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Factories">
-      <UniqueIdentifier>{308abf7a-dee2-44a7-b030-e858179b668f}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\Operation">
       <UniqueIdentifier>{edbc107a-c229-4261-98b1-eb0738ec36f4}</UniqueIdentifier>
@@ -66,28 +48,10 @@
     <ClInclude Include="WorkingMemory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Constant.h">
-      <Filter>Header Files\Expression\Implementations</Filter>
-    </ClInclude>
-    <ClInclude Include="Expression.h">
-      <Filter>Header Files\Expression\AbstractClasses</Filter>
-    </ClInclude>
     <ClInclude Include="IPrintable.h">
       <Filter>Header Files\CommonFunctionality</Filter>
     </ClInclude>
-    <ClInclude Include="CompoundExpressionFactory.h">
-      <Filter>Header Files\Factories</Filter>
-    </ClInclude>
     <ClInclude Include="Utilities.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ExpressionComponent.h">
-      <Filter>Header Files\Expression\Implementations</Filter>
-    </ClInclude>
-    <ClInclude Include="CompoundExpression.h">
-      <Filter>Header Files\Expression\Implementations</Filter>
-    </ClInclude>
-    <ClInclude Include="Variable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Subtract.h">
@@ -147,31 +111,28 @@
     <ClInclude Include="Parser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ExposedFunctionality.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Evaluator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ExpressionComponent.h">
+      <Filter>Header Files\Expression</Filter>
+    </ClInclude>
+    <ClInclude Include="Expression.h">
+      <Filter>Header Files\Expression</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WorkingMemory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Variable.cpp">
-      <Filter>Source Files\Expression\Implementations</Filter>
-    </ClCompile>
-    <ClCompile Include="Constant.cpp">
-      <Filter>Source Files\Expression\Implementations</Filter>
-    </ClCompile>
     <ClCompile Include="IPrintable.cpp">
       <Filter>Source Files\CommonFunctionality</Filter>
     </ClCompile>
-    <ClCompile Include="Expression.cpp">
-      <Filter>Source Files\Expression\AbstractClasses</Filter>
-    </ClCompile>
-    <ClCompile Include="CompoundExpressionFactory.cpp">
-      <Filter>Source Files\Factories</Filter>
-    </ClCompile>
     <ClCompile Include="Utilities.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CompoundExpressions.cpp">
-      <Filter>Source Files\Expression\Implementations</Filter>
     </ClCompile>
     <ClCompile Include="Operations.cpp">
       <Filter>Source Files\Operation</Filter>
@@ -229,6 +190,12 @@
     </ClCompile>
     <ClCompile Include="Parser.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ExposedFunctionality.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Expression.cpp">
+      <Filter>Source Files\Expression</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

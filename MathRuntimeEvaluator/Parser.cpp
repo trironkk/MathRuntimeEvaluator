@@ -18,20 +18,27 @@ namespace Parser
 	using MathRuntimeEvaluator::ILLEGAL_CHARACTERS;
 
 	// Parse a line of input
-	CompoundExpression& ParseString(string str)
+	Expression& ParseString(string str)
 	{
 		return ParseString(istringstream(str));
 	}
 
-	CompoundExpression& ParseString(istream& stream)
+	Expression& ParseString(istream& stream)
 	{
-		CompoundExpression* result = new CompoundExpression();
+		Expression* result = new Expression();
 		list<string> identifiers = InternalParse(stream);
 		for (list<string>::iterator iter = identifiers.begin();
 			iter != identifiers.end();
 			iter++)
 		{
-			(*result).PushBack(*iter);
+			if (IsDouble(*iter))
+			{
+				(*result).PushBack(ToDouble(*iter));
+			}
+			else if(Operations::IsOperation(*iter))
+			{
+				(*result).PushBack(Operations::GetOperation(*iter));
+			}
 		}
 			
 		return *result;

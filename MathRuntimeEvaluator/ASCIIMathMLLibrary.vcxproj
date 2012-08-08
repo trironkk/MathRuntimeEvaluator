@@ -64,11 +64,10 @@
   <ItemGroup>
     <ClInclude Include="Abs.h" />
     <ClInclude Include="Add.h" />
-    <ClInclude Include="CompoundExpression.h" />
-    <ClInclude Include="CompoundExpressionFactory.h" />
-    <ClInclude Include="Constant.h" />
     <ClInclude Include="Cos.h" />
     <ClInclude Include="Divide.h" />
+    <ClInclude Include="Evaluator.h" />
+    <ClInclude Include="ExposedFunctionality.h" />
     <ClInclude Include="MathRuntimeEvaluatorException.h" />
     <ClInclude Include="ExpressionComponent.h" />
     <ClInclude Include="IPrintable.h" />
@@ -88,17 +87,14 @@
     <ClInclude Include="Subtract.h" />
     <ClInclude Include="Tan.h" />
     <ClInclude Include="Utilities.h" />
-    <ClInclude Include="Variable.h" />
     <ClInclude Include="WorkingMemory.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Abs.cpp" />
     <ClCompile Include="Add.cpp" />
-    <ClCompile Include="CompoundExpressionFactory.cpp" />
-    <ClCompile Include="CompoundExpressions.cpp" />
-    <ClCompile Include="Constant.cpp" />
     <ClCompile Include="Cos.cpp" />
     <ClCompile Include="Divide.cpp" />
+    <ClCompile Include="ExposedFunctionality.cpp" />
     <ClCompile Include="MathRuntimeEvaluatorException.cpp" />
     <ClCompile Include="Expression.cpp" />
     <ClCompile Include="IPrintable.cpp" />
@@ -117,7 +113,6 @@
     <ClCompile Include="Subtract.cpp" />
     <ClCompile Include="Tan.cpp" />
     <ClCompile Include="Utilities.cpp" />
-    <ClCompile Include="Variable.cpp" />
     <ClCompile Include="WorkingMemory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

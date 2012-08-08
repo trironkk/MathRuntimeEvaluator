@@ -4,7 +4,7 @@
 
 #include "MathRuntimeEvaluatorException.h"
 
-using std::vector;
+using std::deque;
 using std::string;
 
 namespace MathRuntimeEvaluator
@@ -28,7 +28,7 @@ Notes: \n\
 	int Sqrt::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Sqrt::Evaluate(const vector<double>& parameters) const
+	double Sqrt::Evaluate(const deque<double>& parameters) const
 	{
 		if (parameters[0] < 0)
 			throw MathRuntimeEvaluatorException(

@@ -17,7 +17,7 @@ namespace MathRuntimeEvaluator
 		virtual int GetParameterCount() const;
 
 		// Perform this operation
-		virtual double Evaluate(const std::vector<double>& parameters) const;
+		virtual double Evaluate(const std::deque<double>& parameters) const;
 	};
 }
 

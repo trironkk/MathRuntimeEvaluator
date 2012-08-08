@@ -1,6 +1,6 @@
 #include "Abs.h"
 
-using std::vector;
+using std::deque;
 using std::string;
 
 namespace MathRuntimeEvaluator
@@ -22,7 +22,7 @@ returns the absolute value \n";
 	int Abs::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Abs::Evaluate(const vector<double>& parameters) const
+	double Abs::Evaluate(const deque<double>& parameters) const
 	{
 		return abs(parameters[0]);
 	}

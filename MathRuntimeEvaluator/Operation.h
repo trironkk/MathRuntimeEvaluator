@@ -3,7 +3,7 @@
 
 #include <string>
 #include <list>
-#include <vector>
+#include <deque>
 #include <map>
 
 #include "IPrintable.h"
@@ -36,7 +36,7 @@ namespace MathRuntimeEvaluator
 		virtual bool IsFunction() const;
 		\
 		// Perform this operation
-		virtual double Evaluate(const std::vector<double>& parameters) const = 0;
+		virtual double Evaluate(const std::deque<double>& parameters) const = 0;
 
 		// Gets a string representation of this object
 		virtual std::string GetStringRepresentation();

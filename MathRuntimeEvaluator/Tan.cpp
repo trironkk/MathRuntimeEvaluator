@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-using std::vector;
+using std::deque;
 using std::string;
 
 namespace MathRuntimeEvaluator
@@ -24,7 +24,7 @@ returns the tangent of an angle \n";
 	int Tan::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Tan::Evaluate(const vector<double>& parameters) const
+	double Tan::Evaluate(const deque<double>& parameters) const
 	{
 		return tan(parameters[0]);
 	}

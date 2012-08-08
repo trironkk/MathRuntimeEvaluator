@@ -1,6 +1,6 @@
 #include "Add.h"
 
-using std::vector;
+using std::deque;
 using std::string;
 
 namespace MathRuntimeEvaluator
@@ -30,7 +30,7 @@ returns the sum of x and y \n";
 	int Add::GetRank() const { return 1; }
 
 	// Perform this operation
-	double Add::Evaluate(const vector<double>& parameters) const
+	double Add::Evaluate(const deque<double>& parameters) const
 	{
 		return parameters[0] + parameters[1];
 	}

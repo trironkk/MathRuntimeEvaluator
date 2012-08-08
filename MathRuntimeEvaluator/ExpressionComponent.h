@@ -5,8 +5,9 @@ namespace ExpressionComponent
 {
 	enum Types
 	{
-		Expression,
-		Operation
+		Operation,
+		Variable,
+		Value
 	};
 }
 
