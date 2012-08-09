@@ -61,7 +61,7 @@ namespace MathRuntimeEvaluator
 				//}
 				catch (exception& e)
 				{
-					cout << e.what();
+					cout << e.what() << std::endl;
 				}
 			}
 		}	
