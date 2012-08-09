@@ -42,7 +42,7 @@ namespace MathRuntimeEvaluator
 		void WorkingMemory::SetValue(std::string variableName, double value);
 
 		// Throws an MathRuntimeEvaluatorException if the variable name is
-		// invalid. Otherwise, simply returns.
+		// invalid. Otherwise, simply returns
 		void ValidateVariableName(std::string variableName);
 
 		// Returns a string representation of the working memory.
