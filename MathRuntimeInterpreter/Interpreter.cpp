@@ -1,5 +1,8 @@
 #include "Interpreter.h"
 
+#include "WorkingMemory.h"
+#include "MathRuntimeEvaluatorException.h"
+
 using namespace MathRuntimeInterpreter::UnitTests;
 using namespace std;
 
@@ -9,7 +12,6 @@ namespace MathRuntimeInterpreter
 	{
 		// Various variables declared in the namespace scope to avoid complicating
 		// method signatures.
-		//WorkingMemory memory;
 		string resultVariableName;
 		string input;
 		bool persist = true;
@@ -18,8 +20,8 @@ namespace MathRuntimeInterpreter
 		void LaunchInterpreter()
 		{
 			// Default variables
-			//memory.SetValue("pi", 3.1415926535897932384626);
-			//memory.SetValue("e", 2.7182818284590452353602);
+			WorkingMemory::SetValue("pi", 3.1415926535897932384626);
+			WorkingMemory::SetValue("e", 2.7182818284590452353602);
 
 			// Welcome Message
 			cout <<
@@ -41,17 +43,14 @@ namespace MathRuntimeInterpreter
 					if (Preparse(stream) == false)
 						continue;
 
-					//CompoundExpression compoundExpression(Parse(input));
+					// Perform parsing and evaluation
+					double result = MathRuntimeEvaluator::Evaluate(input);
 
-					//// Perform the math and print the result.
-					//compoundExpression.Simplify(memory);
-					//compoundExpression.PrintLine(cout);
+					// Record the result
+					WorkingMemory::SetValue(resultVariableName, result);
 
-					//// Records the result.
-					//memory.SetValue(resultVariableName,
-					//	compoundExpression.GetValue());
-
-					cout << MathRuntimeEvaluator::Evaluate(input) << std::endl;
+					// Print the result
+					cout << result << std::endl;
 				}
 				//catch (MathRuntimeEvaluatorException& e)
 				//{
@@ -72,7 +71,7 @@ namespace MathRuntimeInterpreter
 			string token = MathRuntimeEvaluator::ReadNextToken(stream);
 
 			if ("exit" == token) { persist = false; return false; }
-			//else if ("memory" == token) { memory.PrintLine(cout); return false; }
+			else if ("memory" == token) { WorkingMemory::PrintLine(cout); return false; }
 			else if ("unittests" == token) { RunUnitTestBattery(); return false; }
 			else if ("" == token) { return false; }
 			else if ("help" == token)
@@ -82,7 +81,8 @@ namespace MathRuntimeInterpreter
 				string operation = MathRuntimeEvaluator::ReadNextToken(stream);
 				if ("" == operation)
 				{
-					PrintHelp(); return false;
+					PrintHelp();
+					return false;
 				}
 				else
 				{
@@ -98,26 +98,26 @@ namespace MathRuntimeInterpreter
 				}
 			}
 
-			//// If an assignment is specified...
-			//if ("=" == ReadNextToken(stream))
-			//{
-			//	try
-			//	{
-			//		// Assert that the variable name is a valid one.
-			//		memory.ValidateVariableName(token);
+			// If an assignment is specified...
+			if ("=" == MathRuntimeEvaluator::ReadNextToken(stream))
+			{
+				//try
+				//{
+					// Assert that the variable name is a valid one.
+					WorkingMemory::ValidateVariableName(token);
 
-			//		// Record the variable name.
-			//		resultVariableName = token;
+					// Record the variable name.
+					resultVariableName = token;
 
-			//		// Reset the input string to disclude the assignment
-			//		getline(stream, input);
-			//	}
-			//	catch (MathRuntimeEvaluatorException& e)
-			//	{
-			//		// Print out the error.
-			//		cout << "Error: " << e << std::endl << std::endl;
-			//	}
-			//}
+					// Reset the input string to disclude the assignment
+					getline(stream, input);
+				//}
+				//catch (MathRuntimeEvaluatorException& e)
+				//{
+				//	// Print out the error.
+				//	cout << "Error: " << e << std::endl << std::endl;
+				//}
+			}
 			return true;
 		}
 

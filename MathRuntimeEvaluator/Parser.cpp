@@ -15,8 +15,6 @@ namespace MathRuntimeEvaluatorNamespace
 {
 namespace Parser
 {
-	using MathRuntimeEvaluatorNamespace::ILLEGAL_CHARACTERS;
-
 	Expression& Parse(istream& stream)
 	{
 		Expression* result = new Expression();

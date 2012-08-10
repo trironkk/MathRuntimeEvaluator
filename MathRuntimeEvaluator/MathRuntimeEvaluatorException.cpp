@@ -2,23 +2,20 @@
 
 using std::string;
 
-namespace MathRuntimeEvaluatorNamespace
+MathRuntimeEvaluatorException::MathRuntimeEvaluatorException(string description,
+	int errorCode) throw()
+	: Description(description)
 {
-	MathRuntimeEvaluatorException::MathRuntimeEvaluatorException(string description,
-		int errorCode) throw()
-		: Description(description)
-	{
-		ErrorCode = errorCode;
-	}
+	ErrorCode = errorCode;
+}
 
-	const char* MathRuntimeEvaluatorException::what() const throw()
-	{
-		return Description.c_str();
-	}
+const char* MathRuntimeEvaluatorException::what() const throw()
+{
+	return Description.c_str();
+}
 
-	std::ostream& operator<<(std::ostream& os, const MathRuntimeEvaluatorException e)
-	{
-		os << e.Description;
-		return os;
-	}
+std::ostream& operator<<(std::ostream& os, const MathRuntimeEvaluatorException e)
+{
+	os << e.Description;
+	return os;
 }

@@ -10,46 +10,43 @@
 #include "MathRuntimeEvaluatorException.h"
 #include "IPrintable.h"
 
-namespace MathRuntimeEvaluatorNamespace
+// The maximum length of a variable name
+int const MAX_VARIABLE_NAME_LENGTH = 32;
+
+// An array of illegal characters
+const char* const ILLEGAL_CHARACTERS =
+		",./;'[]\\-=`!@#$%^&*()<>?:\"{}|+";
+
+class __declspec(dllexport) WorkingMemory
 {
-	// The maximum length of a variable name
-	int const MAX_VARIABLE_NAME_LENGTH = 32;
+private:
+	// Get a singleton instance, which persists in this method's static scope
+	static std::unordered_map<std::string, double>& GetMap();
+	static std::list<std::string>& GetVariableList();
 
-	// An array of illegal characters
-	const char* const ILLEGAL_CHARACTERS =
-			",./;'[]\\-=`!@#$%^&*()<>?:\"{}|+";
+	// Default constructor - Hidden to follow the Singleton pattern
+	WorkingMemory();
 
-	class WorkingMemory : public IPrintable
-	{
-	private:
-		// Get a singleton instance, which persists in this method's static scope
-		static std::unordered_map<std::string, double>& GetMap();
-		static std::list<std::string>& GetVariableList();
+public:
+	// Returns true if the variable has been declared, and false otherwise.
+	static bool Contains(std::string variableName);
 
-		// Default constructor - Hidden to follow the Singleton pattern
-		WorkingMemory();
+	// Returns the double value associated with a variable name.
+	static double WorkingMemory::GetValue(std::string variableName);
 
-	public:
-		// Returns true if the variable has been declared, and false otherwise.
-		static bool Contains(std::string variableName);
+	// Sets the double value associated with a variable name.
+	static void WorkingMemory::SetValue(std::string variableName,
+		double value);
 
-		// Returns the double value associated with a variable name.
-		static double WorkingMemory::GetValue(std::string variableName);
+	// Throws an MathRuntimeEvaluatorException if the variable name is
+	// invalid. Otherwise, simply returns
+	static void ValidateVariableName(std::string variableName);
 
-		// Sets the double value associated with a variable name.
-		static void WorkingMemory::SetValue(std::string variableName,
-			double value);
-
-		// Throws an MathRuntimeEvaluatorException if the variable name is
-		// invalid. Otherwise, simply returns
-		static void ValidateVariableName(std::string variableName);
-
-		// The same methods that IPrintable implements, but staticly declared, so
-		// that the same conventions for printing can be used.
-		std::ostream& Print(std::ostream& os);
-		std::ostream& PrintLine(std::ostream& os);
-		std::string GetStringRepresentation();
-	};
-}
+	// The same methods that IPrintable implements, but staticly declared, so
+	// that the same conventions for printing can be used.
+	static std::ostream& Print(std::ostream& os);
+	static std::ostream& PrintLine(std::ostream& os);
+	static std::string GetStringRepresentation();
+};
 
 #endif
