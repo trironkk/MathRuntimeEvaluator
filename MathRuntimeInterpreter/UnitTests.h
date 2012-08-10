@@ -7,7 +7,7 @@
 #include <memory>
 #include <math.h>
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeInterpreter
 {
 namespace UnitTests
 {

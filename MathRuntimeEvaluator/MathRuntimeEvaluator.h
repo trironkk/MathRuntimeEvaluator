@@ -1,17 +1,18 @@
-#ifndef EXPOSED_FUNCTIONALITY
-#define	EXPOSED_FUNCTIONALITY
+#ifndef MATH_RUNTIME_EVALUATOR_H
+#define	MATH_RUNTIME_EVALUATOR_H
 
 #include <string>
 #include <sstream>
 
-namespace MathRuntimeEvaluator
+class __declspec(dllexport) MathRuntimeEvaluator
 {
+public:
 	// Takes in a string representation of an expression and returns the result
-	__declspec(dllexport) double Evaluate(std::string expression);
+	static double Evaluate(std::string expression);
 
 	// Takes in a string stream representation of an expression and returns the
 	// result
-	__declspec(dllexport) double Evaluate(std::stringstream expression);
-}
+	static double Evaluate(std::stringstream expression);
+};
 
 #endif

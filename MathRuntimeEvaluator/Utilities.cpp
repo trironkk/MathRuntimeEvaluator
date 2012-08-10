@@ -3,7 +3,7 @@
 using std::string;
 using std::istringstream;
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeEvaluatorNamespace
 {
 	// Returns true if the string is can be converted to a double, and false
 	// otherwise

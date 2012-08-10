@@ -7,25 +7,18 @@
 
 using std::string;
 using std::stringstream;
+using namespace MathRuntimeEvaluatorNamespace;
 
-namespace MathRuntimeEvaluator
+double MathRuntimeEvaluator::Evaluate(string expressionString)
 {
-	//class MathRuntimeEvaluator
-	//{
-	//public:
-		// Takes in a string representation of an expression and returns the result
-		static double Evaluate(string expressionString)
-		{
-			Expression expression(Parser::ParseString(expressionString));
-			return Evaluator::Evaluate(expression);
-		}
+	Expression expression(Parser::ParseString(expressionString));
+	return Evaluator::Evaluate(expression);
+}
 
-		// Takes in a string stream representation of an expression and returns the
-		// result
-		static double Evaluate(stringstream expressionStream)
-		{
-			Expression expression(Parser::ParseString(expressionStream));
-			return Evaluator::Evaluate(expression);
-		}
-	//}
+// Takes in a string stream representation of an expression and returns the
+// result
+double MathRuntimeEvaluator::Evaluate(stringstream expressionStream)
+{
+	Expression expression(Parser::ParseString(expressionStream));
+	return Evaluator::Evaluate(expression);
 }

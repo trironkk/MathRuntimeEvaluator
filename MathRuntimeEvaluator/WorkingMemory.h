@@ -10,7 +10,7 @@
 #include "MathRuntimeEvaluatorException.h"
 #include "IPrintable.h"
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeEvaluatorNamespace
 {
 	// The maximum length of a variable name
 	int const MAX_VARIABLE_NAME_LENGTH = 32;

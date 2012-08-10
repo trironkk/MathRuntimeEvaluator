@@ -2,7 +2,7 @@
 
 using std::string;
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeEvaluatorNamespace
 {
 	// Returns an integer representing the rank of this Operation
 	// Functions:		3

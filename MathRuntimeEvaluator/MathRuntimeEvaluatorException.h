@@ -5,7 +5,7 @@
 #include <string>
 #include <iostream>
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeEvaluatorNamespace
 {
 	class MathRuntimeEvaluatorException : public std::exception
 	{

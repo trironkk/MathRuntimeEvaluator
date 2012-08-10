@@ -2,7 +2,7 @@
 
 using std::string;
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeEvaluatorNamespace
 {
 	MathRuntimeEvaluatorException::MathRuntimeEvaluatorException(string description,
 		int errorCode) throw()

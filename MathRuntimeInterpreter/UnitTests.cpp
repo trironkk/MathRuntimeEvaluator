@@ -1,9 +1,8 @@
 #include "UnitTests.h"
 
-using namespace MathRuntimeEvaluator;
 using namespace std;
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeInterpreter
 {
 namespace UnitTests
 {

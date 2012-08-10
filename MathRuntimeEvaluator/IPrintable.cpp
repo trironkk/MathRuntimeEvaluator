@@ -2,7 +2,7 @@
 
 using std::ostream;
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeEvaluatorNamespace
 {
 	// Write a friendly string representation of this object to the inputed
 	// ostream

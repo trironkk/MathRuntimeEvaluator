@@ -1,10 +1,9 @@
 #include "Interpreter.h"
 
-using namespace MathRuntimeEvaluator;
-using namespace MathRuntimeEvaluator::UnitTests;
+using namespace MathRuntimeInterpreter::UnitTests;
 using namespace std;
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeInterpreter
 {
 	namespace Parser
 	{

@@ -9,13 +9,13 @@ using std::stack;
 using std::back_insert_iterator;
 using std::fixed;
 
-using namespace MathRuntimeEvaluator;
+using namespace MathRuntimeEvaluatorNamespace;
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeEvaluatorNamespace
 {
 namespace Parser
 {
-	using MathRuntimeEvaluator::ILLEGAL_CHARACTERS;
+	using MathRuntimeEvaluatorNamespace::ILLEGAL_CHARACTERS;
 
 	// Parse a line of input
 	Expression& ParseString(string str)

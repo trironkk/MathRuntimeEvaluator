@@ -5,7 +5,7 @@ using std::list;
 using std::string;
 using std::stringstream;
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeEvaluatorNamespace
 {
 	// Default constructor
 	WorkingMemory::WorkingMemory() :

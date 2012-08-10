@@ -9,7 +9,7 @@
 #include "ExpressionComponent.h"
 #include "IPrintable.h"
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeEvaluatorNamespace
 {
 	// Abstract base class of expressions
 	class Expression : public IPrintable

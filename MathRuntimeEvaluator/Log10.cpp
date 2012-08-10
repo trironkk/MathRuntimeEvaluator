@@ -5,7 +5,7 @@
 using std::deque;
 using std::string;
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeEvaluatorNamespace
 {
 	// Returns a string representation of this Operator
 	string Log10::GetIdentifier() const { return "log10"; }

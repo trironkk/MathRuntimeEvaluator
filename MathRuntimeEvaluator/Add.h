@@ -3,7 +3,7 @@
 
 #include "Operation.h"
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeEvaluatorNamespace
 {
 	struct Add : public Operation
 	{

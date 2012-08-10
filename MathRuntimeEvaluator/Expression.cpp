@@ -5,7 +5,7 @@ using std::deque;
 using std::shared_ptr;
 using ExpressionComponent::Types;
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeEvaluatorNamespace
 {
 	// Basic Constructor
 	Expression::Expression() :

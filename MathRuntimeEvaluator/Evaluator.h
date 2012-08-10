@@ -14,7 +14,7 @@ using std::vector;
 using std::istringstream;
 using std::shared_ptr;
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeEvaluatorNamespace
 {
 namespace Evaluator
 {

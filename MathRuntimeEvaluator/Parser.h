@@ -18,7 +18,7 @@
 #include "Expression.h"
 #include "Utilities.h"
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeEvaluatorNamespace
 {
 namespace Parser
 {

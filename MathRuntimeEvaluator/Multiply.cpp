@@ -3,7 +3,7 @@
 using std::deque;
 using std::string;
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeEvaluatorNamespace
 {
 	// Returns a string representation of this Operator
 	string Multiply::GetIdentifier() const { return "*"; }

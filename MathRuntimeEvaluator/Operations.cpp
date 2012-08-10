@@ -7,7 +7,7 @@ using std::list;
 using std::string;
 using std::shared_ptr;
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeEvaluatorNamespace
 {
 	// Returns a vector of all available operations
 	const list<shared_ptr<Operation>>& Operations::GetOperations()

@@ -8,7 +8,7 @@
 
 #include "IPrintable.h"
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeEvaluatorNamespace
 {
 	struct Operation : public IPrintable
 	{

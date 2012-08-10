@@ -1,6 +1,6 @@
 #include "Interpreter.h"
 
-using namespace MathRuntimeEvaluator;
+using namespace MathRuntimeInterpreter;
 
 int main()
 {
