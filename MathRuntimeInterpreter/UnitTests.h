@@ -7,12 +7,6 @@
 #include <memory>
 #include <math.h>
 
-#include "../MathRuntimeEvaluator/WorkingMemory.h"
-#include "../MathRuntimeEvaluator/MathRuntimeEvaluatorException.h"
-#include "../MathRuntimeEvaluator/ExposedFunctionality.h"
-
-#include "../MathRuntimeEvaluator/Parser.h"
-
 namespace MathRuntimeEvaluator
 {
 namespace UnitTests

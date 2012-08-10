@@ -46,6 +46,14 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>
+      </Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -67,7 +75,7 @@
     <ClInclude Include="Cos.h" />
     <ClInclude Include="Divide.h" />
     <ClInclude Include="Evaluator.h" />
-    <ClInclude Include="ExposedFunctionality.h" />
+    <ClInclude Include="MathRuntimeEvaluator.h" />
     <ClInclude Include="MathRuntimeEvaluatorException.h" />
     <ClInclude Include="ExpressionComponent.h" />
     <ClInclude Include="IPrintable.h" />
@@ -94,7 +102,7 @@
     <ClCompile Include="Add.cpp" />
     <ClCompile Include="Cos.cpp" />
     <ClCompile Include="Divide.cpp" />
-    <ClCompile Include="ExposedFunctionality.cpp" />
+    <ClCompile Include="MathRuntimeEvaluator.cpp" />
     <ClCompile Include="MathRuntimeEvaluatorException.cpp" />
     <ClCompile Include="Expression.cpp" />
     <ClCompile Include="IPrintable.cpp" />

@@ -8,14 +8,7 @@
 #include <stack>
 #include <memory>
 
-
-// Expressions
-#include "../MathRuntimeEvaluator/Operation.h"
-#include "../MathRuntimeEvaluator/Operations.h"
-#include "../MathRuntimeEvaluator/MathRuntimeEvaluatorException.h"
-#include "../MathRuntimeEvaluator/WorkingMemory.h"
-#include "../MathRuntimeEvaluator/Parser.h"
-#include "../MathRuntimeEvaluator/ExposedFunctionality.h"
+#include "MathRuntimeEvaluator.h"
 #include "UnitTests.h"
 
 using namespace MathRuntimeEvaluator;

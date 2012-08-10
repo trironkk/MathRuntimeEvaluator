@@ -13,7 +13,7 @@ namespace UnitTests
 	// expected value.
 	void RunUnitTest(string expressionString, double expectedValue)
 	{
-		Evaluate(expressionString);
+		//Evaluate(expressionString);
 
 		//CompoundExpression ce;
 
