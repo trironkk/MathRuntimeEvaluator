@@ -15,6 +15,10 @@ public:
 	// result
 	static std::string ReadNextToken(std::string& expression);
 	static std::string ReadNextToken(std::istringstream& expression);
+
+	// Exposing Operation fields
+	static std::string GetUsage(std::string identifier);
+	static bool IsOperation(std::string identifier);
 };
 
 #endif

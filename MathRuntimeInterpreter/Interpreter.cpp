@@ -80,8 +80,22 @@ namespace MathRuntimeInterpreter
 				// Determine if help is called by itself or with an input
 				// parameter
 				string operation = MathRuntimeEvaluator::ReadNextToken(stream);
-				if ("" == operation) { PrintHelp(); return false; }
-				//else { cout << endl << Operations::GetUsage(operation) << endl; return false;}
+				if ("" == operation)
+				{
+					PrintHelp(); return false;
+				}
+				else
+				{
+					if (MathRuntimeEvaluator::IsOperation(operation))
+					{
+						cout << endl << MathRuntimeEvaluator::GetUsage(operation) << endl;
+					}
+					else
+					{
+						cout << endl << "Unknown operation: " << operation << endl << endl;
+					}
+					return false;
+				}
 			}
 
 			//// If an assignment is specified...

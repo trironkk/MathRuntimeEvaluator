@@ -51,7 +51,7 @@ namespace MathRuntimeEvaluatorNamespace
 		static const int GetRank(std::string identifier);
 
 		// Returns a helpful string describing how the operation is used
-		static const std::string& GetUsage(std::string identifier);
+		static std::string GetUsage(std::string identifier);
 
 		// Returns a shared pointer to the operation
 		static std::shared_ptr<Operation> GetOperation(std::string identifier);

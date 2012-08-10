@@ -35,3 +35,13 @@ std::string MathRuntimeEvaluator::ReadNextToken(std::istringstream& line)
 {
 	return Parser::ReadNextToken(line);
 }
+
+std::string MathRuntimeEvaluator::GetUsage(std::string identifier)
+{
+	return Operations::GetUsage(identifier);
+}
+
+bool MathRuntimeEvaluator::IsOperation(std::string identifier)
+{
+	return Operations::IsOperation(identifier);
+}
