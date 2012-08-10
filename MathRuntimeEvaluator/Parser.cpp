@@ -15,6 +15,7 @@ namespace MathRuntimeEvaluatorNamespace
 {
 namespace Parser
 {
+	// Parse a line of input
 	Expression& Parse(istream& stream)
 	{
 		Expression* result = new Expression();

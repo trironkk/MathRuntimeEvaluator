@@ -14,6 +14,7 @@ const char* MathRuntimeEvaluatorException::what() const throw()
 	return Description.c_str();
 }
 
+__declspec(dllexport)
 std::ostream& operator<<(std::ostream& os, const MathRuntimeEvaluatorException e)
 {
 	os << e.Description;

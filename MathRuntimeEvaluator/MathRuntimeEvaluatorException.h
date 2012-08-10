@@ -13,6 +13,7 @@ public:
 	MathRuntimeEvaluatorException(std::string description, int errorCode=1) throw();
 	const char* what() const throw();
 
+	__declspec(dllexport)
 	friend std::ostream& operator<<(std::ostream& os,
 		const MathRuntimeEvaluatorException e);
 };

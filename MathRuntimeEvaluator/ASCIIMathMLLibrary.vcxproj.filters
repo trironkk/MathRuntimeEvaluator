@@ -54,9 +54,6 @@
     <ClInclude Include="IPrintable.h">
       <Filter>Header Files\CommonFunctionality</Filter>
     </ClInclude>
-    <ClInclude Include="Utilities.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Subtract.h">
       <Filter>Header Files\Operation\Operators</Filter>
     </ClInclude>
@@ -128,6 +125,9 @@
     </ClInclude>
     <ClInclude Include="WorkingMemory.h">
       <Filter>Header Files\ExposedFunctionality</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities.h">
+      <Filter>Header Files\CommonFunctionality</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -101,8 +101,8 @@ namespace MathRuntimeInterpreter
 			// If an assignment is specified...
 			if ("=" == MathRuntimeEvaluator::ReadNextToken(stream))
 			{
-				//try
-				//{
+				try
+				{
 					// Assert that the variable name is a valid one.
 					WorkingMemory::ValidateVariableName(token);
 
@@ -111,12 +111,12 @@ namespace MathRuntimeInterpreter
 
 					// Reset the input string to disclude the assignment
 					getline(stream, input);
-				//}
-				//catch (MathRuntimeEvaluatorException& e)
-				//{
-				//	// Print out the error.
-				//	cout << "Error: " << e << std::endl << std::endl;
-				//}
+				}
+				catch (MathRuntimeEvaluatorException& e)
+				{
+					// Print out the error.
+					cout << "Error: " << e << std::endl << std::endl;
+				}
 			}
 			return true;
 		}
