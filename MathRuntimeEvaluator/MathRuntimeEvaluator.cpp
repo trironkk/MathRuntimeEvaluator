@@ -4,21 +4,34 @@
 #include "Expression.h"
 #include "Evaluator.h"
 
-
 using std::string;
 using std::stringstream;
+using std::istringstream;
 using namespace MathRuntimeEvaluatorNamespace;
 
+// Takes in a string representation of an expression and returns the result
 double MathRuntimeEvaluator::Evaluate(string expressionString)
 {
-	Expression expression(Parser::ParseString(expressionString));
+	return Evaluate(stringstream(expressionString));
+}
+
+double MathRuntimeEvaluator::Evaluate(stringstream expressionStream)
+{
+	Expression expression(Parser::Parse(expressionStream));
 	return Evaluator::Evaluate(expression);
 }
 
 // Takes in a string stream representation of an expression and returns the
 // result
-double MathRuntimeEvaluator::Evaluate(stringstream expressionStream)
+std::string MathRuntimeEvaluator::ReadNextToken(std::string& line)
 {
-	Expression expression(Parser::ParseString(expressionStream));
-	return Evaluator::Evaluate(expression);
+	std::istringstream line_stringstream(line);
+	std::string result = ReadNextToken(line_stringstream);
+	line = line_stringstream.str();
+	return ReadNextToken(result);
+}
+
+std::string MathRuntimeEvaluator::ReadNextToken(std::istringstream& line)
+{
+	return Parser::ReadNextToken(line);
 }

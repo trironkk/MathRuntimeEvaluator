@@ -35,13 +35,13 @@ namespace MathRuntimeInterpreter
 				{
 					cout << ">>> ";
 					getline(cin, input);
-					stringstream stream(input);
+					istringstream stream(input);
 
 					resultVariableName = "ans";
 					if (Preparse(stream) == false)
 						continue;
 
-					//CompoundExpression compoundExpression(ParseString(input));
+					//CompoundExpression compoundExpression(Parse(input));
 
 					//// Perform the math and print the result.
 					//compoundExpression.Simplify(memory);
@@ -67,22 +67,22 @@ namespace MathRuntimeInterpreter
 
 		// Perform a pre-parse on a string, looking for and executing interpreter
 		// commands and handling working memory management.
-		bool Preparse(stringstream& stream)
+		bool Preparse(istringstream& stream)
 		{
-			//string token = ReadNextToken(stream);
+			string token = MathRuntimeEvaluator::ReadNextToken(stream);
 
-			//if ("exit" == token) { persist = false; return false; }
+			if ("exit" == token) { persist = false; return false; }
 			//else if ("memory" == token) { memory.PrintLine(cout); return false; }
-			//else if ("unittests" == token) { RunUnitTestBattery(); return false; }
-			//else if ("" == token) { return false; }
-			//else if ("help" == token)
-			//{
-			//	// Determine if help is called by itself or with an input
-			//	// parameter
-			//	string operation = ReadNextToken(stream);
-			//	if ("" == operation) { PrintHelp(); return false; }
-			//	else { cout << endl << Operations::GetUsage(operation) << endl; return false;}
-			//}
+			else if ("unittests" == token) { RunUnitTestBattery(); return false; }
+			else if ("" == token) { return false; }
+			else if ("help" == token)
+			{
+				// Determine if help is called by itself or with an input
+				// parameter
+				string operation = MathRuntimeEvaluator::ReadNextToken(stream);
+				if ("" == operation) { PrintHelp(); return false; }
+				//else { cout << endl << Operations::GetUsage(operation) << endl; return false;}
+			}
 
 			//// If an assignment is specified...
 			//if ("=" == ReadNextToken(stream))

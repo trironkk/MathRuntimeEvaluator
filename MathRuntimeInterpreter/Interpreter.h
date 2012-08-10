@@ -22,7 +22,7 @@ namespace MathRuntimeInterpreter
 
 		// Perform a pre-parse on a string, looking for and executing interpreter
 		// commands and handling working memory management.
-		bool Preparse(stringstream& stream);
+		bool Preparse(istringstream& stream);
 
 		// Prints help text
 		void PrintHelp();

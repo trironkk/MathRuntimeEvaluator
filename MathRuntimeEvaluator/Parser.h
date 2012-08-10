@@ -23,8 +23,7 @@ namespace MathRuntimeEvaluatorNamespace
 namespace Parser
 {
 	// Parse a line of input
-	Expression& ParseString(std::string str);
-	Expression& ParseString(std::istream& stream);
+	Expression& Parse(std::istream& stream);
 
 	// Internal parsing method - necessary to clean up parenthetical recursive
 	// calls. This is an implementation of the shunting yard algorithm for

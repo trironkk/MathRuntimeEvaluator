@@ -17,13 +17,7 @@ namespace Parser
 {
 	using MathRuntimeEvaluatorNamespace::ILLEGAL_CHARACTERS;
 
-	// Parse a line of input
-	Expression& ParseString(string str)
-	{
-		return ParseString(istringstream(str));
-	}
-
-	Expression& ParseString(istream& stream)
+	Expression& Parse(istream& stream)
 	{
 		Expression* result = new Expression();
 		list<string> identifiers = InternalParse(stream);

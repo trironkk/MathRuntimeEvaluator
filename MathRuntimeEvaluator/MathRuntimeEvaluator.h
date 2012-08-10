@@ -9,10 +9,12 @@ class __declspec(dllexport) MathRuntimeEvaluator
 public:
 	// Takes in a string representation of an expression and returns the result
 	static double Evaluate(std::string expression);
+	static double Evaluate(std::stringstream expression);
 
 	// Takes in a string stream representation of an expression and returns the
 	// result
-	static double Evaluate(std::stringstream expression);
+	static std::string ReadNextToken(std::string& expression);
+	static std::string ReadNextToken(std::istringstream& expression);
 };
 
 #endif

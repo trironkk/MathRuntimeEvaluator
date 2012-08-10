@@ -19,7 +19,7 @@ namespace UnitTests
 		//// Try to parse...
 		//try
 		//{
-		//	ce = Parser::ParseString(expressionString);
+		//	ce = Parser::Parse(expressionString);
 		//	cout << expressionString << " = ";
 		//}
 		//catch (MathRuntimeEvaluatorException& e)
