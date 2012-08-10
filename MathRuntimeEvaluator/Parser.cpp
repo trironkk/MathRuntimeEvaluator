@@ -27,6 +27,10 @@ namespace Parser
 			{
 				(*result).PushBack(ToDouble(*iter));
 			}
+			else if(WorkingMemory::Contains(*iter))
+			{
+				(*result).PushBack(WorkingMemory::GetValue(*iter));
+			}
 			else if(Operations::IsOperation(*iter))
 			{
 				(*result).PushBack(Operations::GetOperation(*iter));
