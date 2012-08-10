@@ -6,22 +6,30 @@ using std::string;
 using std::stringstream;
 
 namespace MathRuntimeEvaluatorNamespace
-{
-	// Default constructor
-	WorkingMemory::WorkingMemory() :
-		_workingMemory(unordered_map<string, double>()),
-		_declaredVariables(list<std::string>()) { }
-	
-	// Returns true if the variable has been declared, and false otherwise.
-	bool WorkingMemory::Contains(string variableName) const
+{	
+	// Get a singleton instance fields, which persists through the methods' static
+	//scope
+	std::unordered_map<std::string, double>& WorkingMemory::GetMap()
 	{
-		return _workingMemory.find(variableName) != _workingMemory.end();
+		static std::unordered_map<std::string, double> map;
+		return map;
+	}
+	std::list<std::string>& WorkingMemory::GetVariableList()
+	{
+		static std::list<std::string> declaredVariables;
+		return declaredVariables;
+	}
+
+	// Returns true if the variable has been declared, and false otherwise.
+	bool WorkingMemory::Contains(string variableName)
+	{
+		return GetMap().find(variableName) != GetMap().end();
 	}
 
 	// Returns the double value associated with a variable name.
-	double WorkingMemory::GetValue(string variableName) const
+	double WorkingMemory::GetValue(string variableName)
 	{
-		return _workingMemory.at(variableName);
+		return GetMap().at(variableName);
 	}
 
 	// Sets the double value associated with a variable name.
@@ -29,24 +37,24 @@ namespace MathRuntimeEvaluatorNamespace
 	{
 		// Validate that the variable name is valid. Throw an exception if it
 		// isn't.
-		ValidateVariableName(variableName);
+		WorkingMemory::ValidateVariableName(variableName);
 
 		// If it's a new variable name...
-		if (_workingMemory.find(variableName) == _workingMemory.end())
+		if (GetMap().find(variableName) == GetMap().end())
 		{
 			// Maintain the alphabetical ordering of the list...
-			std::list<std::string>::iterator iter = _declaredVariables.begin();
-			if (_declaredVariables.size() > 0)
-				while (iter != _declaredVariables.end() && (*(iter)) <
+			std::list<std::string>::iterator iter = GetVariableList().begin();
+			if (GetVariableList().size() > 0)
+				while (iter != GetVariableList().end() && (*(iter)) <
 						variableName)
 				{
 					iter++;
 				}
-			_declaredVariables.insert(iter, variableName);
+			GetVariableList().insert(iter, variableName);
 		}
 
 		// Perform the actual assignment.
-		_workingMemory[variableName] = value;
+		GetMap()[variableName] = value;
 	}
 
 	// Throws an MathRuntimeEvaluatorException if the variable name is invalid.
@@ -93,23 +101,33 @@ namespace MathRuntimeEvaluatorNamespace
 		}
 	}
 
-	// Returns a string representation of the working memory.
-	string WorkingMemory::GetStringRepresentation()
+	// The same methods that IPrintable implements, but staticly declared, so
+	// that the same conventions for printing can be used.
+	std::ostream& WorkingMemory::Print(std::ostream& os)
+	{
+		return os << WorkingMemory::GetStringRepresentation();
+	}
+	std::ostream& WorkingMemory::PrintLine(std::ostream& os)
+	{
+		WorkingMemory::Print(os);
+		return os << std::endl;
+	}
+	std::string WorkingMemory::GetStringRepresentation()
 	{
 		string result = "";
 
 		// Set the width of the columns to 10 characters longer than the longest
 		// variable name
 		std::list<string>::iterator iter = std::max_element(
-			_declaredVariables.begin(),
-			_declaredVariables.end(),
+			GetVariableList().begin(),
+			GetVariableList().end(),
 			[] (string left, string	right)
 			{
 				return left.length() < right.length();
 			}
 		);
 		unsigned int maxLength = 10;
-		if (iter != _declaredVariables.end())
+		if (iter != GetVariableList().end())
 			maxLength += (*iter).length();
 
 		// Write the heading
@@ -121,14 +139,14 @@ namespace MathRuntimeEvaluatorNamespace
 		stringstream convert;
 
 		// Write every variable and its value
-		for (iter = _declaredVariables.begin();
-			iter != _declaredVariables.end();
+		for (iter = GetVariableList().begin();
+			iter != GetVariableList().end();
 			iter++)
 		{
 			result += *iter;
 			result += string(maxLength - (*iter).length(), ' ');
 			convert.str("");
-			convert << _workingMemory.at(*(iter));
+			convert << GetMap().at(*(iter));
 			result += convert.str();
 			result += "\n";
 		}

@@ -22,31 +22,33 @@ namespace MathRuntimeEvaluatorNamespace
 	class WorkingMemory : public IPrintable
 	{
 	private:
-		// The underlying hash map relating variable names to double values.
-		std::unordered_map<std::string, double> _workingMemory;
+		// Get a singleton instance, which persists in this method's static scope
+		static std::unordered_map<std::string, double>& GetMap();
+		static std::list<std::string>& GetVariableList();
 
-		// A linked list of all declared variables.
-		std::list<std::string> _declaredVariables;
-
-	public:
-		// Default constructor.
+		// Default constructor - Hidden to follow the Singleton pattern
 		WorkingMemory();
 
+	public:
 		// Returns true if the variable has been declared, and false otherwise.
-		bool Contains(std::string variableName) const;
+		static bool Contains(std::string variableName);
 
 		// Returns the double value associated with a variable name.
-		double WorkingMemory::GetValue(std::string variableName) const;
+		static double WorkingMemory::GetValue(std::string variableName);
 
 		// Sets the double value associated with a variable name.
-		void WorkingMemory::SetValue(std::string variableName, double value);
+		static void WorkingMemory::SetValue(std::string variableName,
+			double value);
 
 		// Throws an MathRuntimeEvaluatorException if the variable name is
 		// invalid. Otherwise, simply returns
-		void ValidateVariableName(std::string variableName);
+		static void ValidateVariableName(std::string variableName);
 
-		// Returns a string representation of the working memory.
-		virtual std::string GetStringRepresentation();
+		// The same methods that IPrintable implements, but staticly declared, so
+		// that the same conventions for printing can be used.
+		std::ostream& Print(std::ostream& os);
+		std::ostream& PrintLine(std::ostream& os);
+		std::string GetStringRepresentation();
 	};
 }
 
