@@ -206,5 +206,8 @@
     <ClCompile Include="WorkingMemory.cpp">
       <Filter>Source Files\ExposedFunctionality</Filter>
     </ClCompile>
+    <ClCompile Include="Value.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
