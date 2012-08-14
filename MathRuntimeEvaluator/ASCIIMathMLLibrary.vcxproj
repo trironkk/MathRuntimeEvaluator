@@ -95,6 +95,7 @@
     <ClInclude Include="Subtract.h" />
     <ClInclude Include="Tan.h" />
     <ClInclude Include="Utilities.h" />
+    <ClInclude Include="Value.h" />
     <ClInclude Include="WorkingMemory.h" />
   </ItemGroup>
   <ItemGroup>
