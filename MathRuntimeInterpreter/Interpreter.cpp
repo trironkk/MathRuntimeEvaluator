@@ -52,11 +52,11 @@ namespace MathRuntimeInterpreter
 					// Print the result
 					cout << result << std::endl;
 				}
-				//catch (MathRuntimeEvaluatorException& e)
-				//{
-				//	// Print out the error
-				//	cout << "Error: " << e << std::endl << std::endl;
-				//}
+				catch (MathRuntimeEvaluatorException& e)
+				{
+					// Print out the error
+					cout << "Error: " << e << std::endl << std::endl;
+				}
 				catch (exception& e)
 				{
 					cout << e.what() << std::endl;
