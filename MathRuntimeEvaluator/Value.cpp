@@ -11,23 +11,31 @@ namespace MathRuntimeEvaluatorNamespace
 	Value::Value(string identifier) :
 		Number(0),
 		Name(""),
-		Type(Type::UnassignedVariable)
+		Type(UnassignedVariable)
 	{
 		if (IsDouble(identifier))
 		{
-			Type = Type::RawValue;
+			Type = RawValue;
 			Number = ToDouble(identifier);
 		}
 		else if (WorkingMemory::Contains(Name))
 		{
-			Type = Type::AssignedVariable;
+			Type = AssignedVariable;
 			Number = WorkingMemory::GetValue(Name);
 			Name = identifier;
 		}
 		else
 		{
-			Type = Type::UnassignedVariable;
+			Type = UnassignedVariable;
 			Name = identifier;
 		}
+	}
+
+	// RawValue constructor
+	Value::Value(double value) :
+		Number(value),
+		Name(""),
+		Type(RawValue)
+	{
 	}
 }

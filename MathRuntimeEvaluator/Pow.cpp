@@ -25,7 +25,7 @@ returns x raised to the y power \n";
 	int Pow::GetParameterCount() const { return 2; }
 
 	// Perform this operation
-	double Pow::Evaluate(const deque<Value>& parameters) const
+	Value Pow::Evaluate(const deque<Value>& parameters) const
 	{
 		AssertNoUnassignedVariables(parameters);
 

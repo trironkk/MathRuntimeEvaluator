@@ -18,7 +18,7 @@ namespace MathRuntimeEvaluatorNamespace
 {
 namespace Evaluator
 {
-	double Evaluate(Expression expression)
+	Value Evaluate(Expression expression)
 	{
 		// Handle the case of having no items in the stack
 		if (expression.Size() == 0)

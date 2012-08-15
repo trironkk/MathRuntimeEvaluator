@@ -29,7 +29,7 @@ returns the product of x and y \n";
 	int Multiply::GetRank() const { return 2; }
 
 	// Perform this operation
-	double Multiply::Evaluate(const deque<Value>& parameters) const
+	Value Multiply::Evaluate(const deque<Value>& parameters) const
 	{
 		AssertNoUnassignedVariables(parameters);
 

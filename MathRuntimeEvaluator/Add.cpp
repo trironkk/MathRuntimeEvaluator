@@ -30,7 +30,7 @@ returns the sum of x and y \n";
 	int Add::GetRank() const { return 1; }
 
 	// Perform this operation
-	double Add::Evaluate(const deque<Value>& parameters) const
+	Value Add::Evaluate(const deque<Value>& parameters) const
 	{
 		AssertNoUnassignedVariables(parameters);
 

@@ -4,6 +4,7 @@
 #include <exception>
 #include <string>
 #include <iostream>
+#include <xstring>
 
 class __declspec(dllexport) MathRuntimeEvaluatorException : public std::exception
 {

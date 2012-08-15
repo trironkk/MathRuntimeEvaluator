@@ -33,7 +33,7 @@ Notes: \n\
 	int Divide::GetRank() const { return 2; }
 
 	// Perform this operation
-	double Divide::Evaluate(const deque<Value>& parameters) const
+	Value Divide::Evaluate(const deque<Value>& parameters) const
 	{
 		AssertNoUnassignedVariables(parameters);
 

@@ -12,7 +12,7 @@ public:
 	static double Evaluate(std::stringstream expression);
 
 	// Takes in a string stream representation of an expression and returns the
-	// result
+	// next token
 	static std::string ReadNextToken(std::string& expression);
 	static std::string ReadNextToken(std::istringstream& expression);
 

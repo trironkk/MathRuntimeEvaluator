@@ -28,7 +28,7 @@ returns the negation of x \n";
 	int Negate::GetRank() const { return 3; }
 
 	// Perform this operation
-	double Negate::Evaluate(const deque<Value>& parameters) const
+	Value Negate::Evaluate(const deque<Value>& parameters) const
 	{
 		AssertNoUnassignedVariables(parameters);
 

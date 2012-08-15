@@ -22,7 +22,7 @@ returns the natural logarithm of x \n";
 	int Ln::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Ln::Evaluate(const deque<Value>& parameters) const
+	Value Ln::Evaluate(const deque<Value>& parameters) const
 	{
 		AssertNoUnassignedVariables(parameters);
 

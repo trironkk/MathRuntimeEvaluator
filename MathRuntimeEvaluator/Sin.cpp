@@ -24,7 +24,7 @@ returns the sine of an angle \n";
 	int Sin::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Sin::Evaluate(const deque<Value>& parameters) const
+	Value Sin::Evaluate(const deque<Value>& parameters) const
 	{
 		AssertNoUnassignedVariables(parameters);
 

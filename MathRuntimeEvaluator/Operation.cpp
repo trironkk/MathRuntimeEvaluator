@@ -32,7 +32,7 @@ namespace MathRuntimeEvaluatorNamespace
 	void Operation::AssertNoUnassignedVariables(
 		const std::deque<Value>& parameters) const
 	{
-		for (std::deque<Value>::const_iterator iter;
+		for (std::deque<Value>::const_iterator iter = parameters.begin();
 			iter != parameters.end();
 			iter++)
 		{

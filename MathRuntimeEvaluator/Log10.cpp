@@ -24,7 +24,7 @@ returns the base 10 logarithm of x \n";
 	int Log10::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Log10::Evaluate(const deque<Value>& parameters) const
+	Value Log10::Evaluate(const deque<Value>& parameters) const
 	{
 		AssertNoUnassignedVariables(parameters);
 			

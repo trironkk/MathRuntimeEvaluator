@@ -22,7 +22,7 @@ returns the absolute value \n";
 	int Abs::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Abs::Evaluate(const deque<Value>& parameters) const
+	Value Abs::Evaluate(const deque<Value>& parameters) const
 	{
 		AssertNoUnassignedVariables(parameters);
 		return abs(parameters[0].Number);

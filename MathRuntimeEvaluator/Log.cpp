@@ -25,7 +25,7 @@ returns the base x logarithm of y \n";
 	int Log::GetParameterCount() const { return 2; }
 
 	// Perform this operation
-	double Log::Evaluate(const deque<Value>& parameters) const
+	Value Log::Evaluate(const deque<Value>& parameters) const
 	{
 		AssertNoUnassignedVariables(parameters);
 		

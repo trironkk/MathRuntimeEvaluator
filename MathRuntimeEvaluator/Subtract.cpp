@@ -34,7 +34,7 @@ returns the negation of x \n";
 	int Subtract::GetRank() const { return 1; }
 
 	// Perform this operation
-	double Subtract::Evaluate(const deque<Value>& parameters) const
+	Value Subtract::Evaluate(const deque<Value>& parameters) const
 	{
 		AssertNoUnassignedVariables(parameters);
 

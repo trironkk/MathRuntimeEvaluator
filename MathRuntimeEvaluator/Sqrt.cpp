@@ -28,7 +28,7 @@ Notes: \n\
 	int Sqrt::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Sqrt::Evaluate(const deque<Value>& parameters) const
+	Value Sqrt::Evaluate(const deque<Value>& parameters) const
 	{
 		AssertNoUnassignedVariables(parameters);
 

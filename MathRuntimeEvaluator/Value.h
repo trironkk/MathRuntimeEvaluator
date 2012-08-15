@@ -22,6 +22,9 @@ namespace MathRuntimeEvaluatorNamespace
 		// Identifier constructor
 		Value(std::string identifier);
 
+		// RawValue constructor
+		Value(double value);
+
 		double Number;
 		std::string Name;
 		Type Type;

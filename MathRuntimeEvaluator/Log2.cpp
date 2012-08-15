@@ -24,7 +24,7 @@ returns the binary logarithm of x \n";
 	int Log2::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Log2::Evaluate(const deque<Value>& parameters) const
+	Value Log2::Evaluate(const deque<Value>& parameters) const
 	{
 		AssertNoUnassignedVariables(parameters);
 
