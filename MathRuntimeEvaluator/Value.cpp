@@ -1,28 +1,33 @@
 #include "Value.h"
 
 #include "WorkingMemory.h"
+#include "Utilities.h"
 
 using std::string;
 
 namespace MathRuntimeEvaluatorNamespace
 {
-	// Number constructor
-	Value::Value(double val) :
-		Number(val),
-		Name(""),
-		Type(Type::RawValue)
-	{ }
-
 	// UnassignedVariable and AssignedVariable constructor
-	Value::Value(string name) :
+	Value::Value(string identifier) :
 		Number(0),
-		Name(name),
+		Name(""),
 		Type(Type::UnassignedVariable)
 	{
-		if (WorkingMemory::Contains(Name))
+		if (IsDouble(identifier))
 		{
-			Number = WorkingMemory::GetValue(Name);
+			Type = Type::RawValue;
+			Number = ToDouble(identifier);
+		}
+		else if (WorkingMemory::Contains(Name))
+		{
 			Type = Type::AssignedVariable;
+			Number = WorkingMemory::GetValue(Name);
+			Name = identifier;
+		}
+		else
+		{
+			Type = Type::UnassignedVariable;
+			Name = identifier;
 		}
 	}
 }

@@ -77,7 +77,6 @@
     <ClInclude Include="Evaluator.h" />
     <ClInclude Include="MathRuntimeEvaluator.h" />
     <ClInclude Include="MathRuntimeEvaluatorException.h" />
-    <ClInclude Include="ExpressionComponent.h" />
     <ClInclude Include="IPrintable.h" />
     <ClInclude Include="Expression.h" />
     <ClInclude Include="Ln.h" />

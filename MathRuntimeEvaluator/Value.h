@@ -23,7 +23,7 @@ namespace MathRuntimeEvaluatorNamespace
 		Value(double val);
 		
 		// UnassignedVariable and AssignedVariable constructor
-		Value(std::string name);
+		Value(std::string identifier);
 
 		double Number;
 		std::string Name;
