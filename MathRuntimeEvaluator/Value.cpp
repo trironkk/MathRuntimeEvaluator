@@ -7,7 +7,7 @@ using std::string;
 
 namespace MathRuntimeEvaluatorNamespace
 {
-	// UnassignedVariable and AssignedVariable constructor
+	// Identifier constructor
 	Value::Value(string identifier) :
 		Number(0),
 		Name(""),

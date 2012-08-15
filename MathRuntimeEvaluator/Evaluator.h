@@ -28,14 +28,6 @@ namespace Evaluator
 				);
 		}
 
-		// Handle the case of having unresolved variable names
-		if (expression.VariablesSize() > 0)
-		{
-			throw MathRuntimeEvaluatorException(
-"Undefined variables detected."
-				);
-		}
-
 		// Handle the case of the compound expression not containing an operator
 		if (expression.OperationsSize() == 0)
 		{
@@ -44,17 +36,22 @@ namespace Evaluator
 	"No operator present."
 				);
 
-			return expression.FrontValue();
+			if (expression.FrontValue().Type == Value::UnassignedVariable)
+				throw MathRuntimeEvaluatorException(
+	"Undefined variable: " + expression.FrontValue().Name + "."
+				);
+
+			return expression.FrontValue().Number;
 		}
 
 		// Holds the values
-		stack<double> valuesStack;
+		stack<Value> valuesStack;
 
 		// Reduce the expression to one term
 		do
 		{
 			// Collect Expressions until an operator is encountered
-			while(expression.FrontType() != ExpressionComponent::Operation)
+			while(expression.FrontType() != Expression::ComponentType::OPERATION)
 			{
 				valuesStack.push(expression.FrontValue());
 				expression.PopFrontValue();
@@ -66,7 +63,7 @@ namespace Evaluator
 
 			// Get the parameters
 			int parameterCount = (*operation).GetParameterCount();
-			deque<double> parameters;
+			deque<Value> parameters;
 
 			// Handle the case of an indefinite number of parameters. All we need
 			// to do is get the actual parameter count, which we recorded as the
@@ -74,7 +71,7 @@ namespace Evaluator
 			// expression.
 			if (parameterCount == -1)
 			{
-				parameterCount = (int)valuesStack.top();
+				parameterCount = (int)valuesStack.top().Number;
 				valuesStack.pop();
 			}
 
@@ -105,7 +102,7 @@ namespace Evaluator
 		}
 
 		// Return the first term in the underlying Expression deque
-		return expression.FrontValue();
+		return expression.FrontValue().Number;
 	}
 }
 }

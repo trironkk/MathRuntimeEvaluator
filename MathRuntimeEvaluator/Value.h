@@ -19,10 +19,7 @@ namespace MathRuntimeEvaluatorNamespace
 		// Default constructor
 		Value();
 
-		// Number constructor
-		Value(double val);
-		
-		// UnassignedVariable and AssignedVariable constructor
+		// Identifier constructor
 		Value(std::string identifier);
 
 		double Number;

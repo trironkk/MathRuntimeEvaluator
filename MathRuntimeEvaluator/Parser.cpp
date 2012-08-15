@@ -1,5 +1,7 @@
 #include "Parser.h"
 
+#include "Value.h"
+
 using std::istringstream;
 using std::stringstream;
 using std::istream;
@@ -24,17 +26,13 @@ namespace Parser
 			iter != identifiers.end();
 			iter++)
 		{
-			if (IsDouble(*iter))
-			{
-				(*result).PushBack(ToDouble(*iter));
-			}
-			else if(WorkingMemory::Contains(*iter))
-			{
-				(*result).PushBack(WorkingMemory::GetValue(*iter));
-			}
-			else if(Operations::IsOperation(*iter))
+			if(Operations::IsOperation(*iter))
 			{
 				(*result).PushBack(Operations::GetOperation(*iter));
+			}
+			else
+			{
+				(*result).PushBack(Value(*iter));
 			}
 		}
 			

@@ -13,15 +13,18 @@ namespace MathRuntimeEvaluatorNamespace
 {
 	class Expression : public IPrintable
 	{
+	public:
 		enum ComponentType
 		{
 			VALUE,
 			OPERATION
 		};
 
+	private:
 		std::deque<std::shared_ptr<Operation>> _operations;
 		std::deque<Value> _values;
 		std::deque<ComponentType> _expressionComponentTypes;
+
 	public:
 		// Basic Constructor
 		Expression();
