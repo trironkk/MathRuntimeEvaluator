@@ -3,7 +3,7 @@
 
 #include <string>
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeEvaluatorNamespace
 {
 	class Value
 	{
@@ -11,7 +11,7 @@ namespace MathRuntimeEvaluator
 		// Enumerated types of Values
 		enum Type
 		{
-			Number,
+			RawValue,
 			AssignedVariable,
 			UnassignedVariable
 		};
@@ -25,10 +25,9 @@ namespace MathRuntimeEvaluator
 		// UnassignedVariable and AssignedVariable constructor
 		Value(std::string name);
 
-	private:
-		double _Number;
-		std::string _Name;
-		Type _Type;
+		double Number;
+		std::string Name;
+		Type Type;
 	};
 }
 

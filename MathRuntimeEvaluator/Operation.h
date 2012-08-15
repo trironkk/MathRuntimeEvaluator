@@ -7,6 +7,7 @@
 #include <map>
 
 #include "IPrintable.h"
+#include "Value.h"
 
 namespace MathRuntimeEvaluatorNamespace
 {
@@ -34,12 +35,16 @@ namespace MathRuntimeEvaluatorNamespace
 		// NOTE: We default to returning true because only operators will ever
 		// have return false.
 		virtual bool IsFunction() const;
-		\
+		
 		// Perform this operation
-		virtual double Evaluate(const std::deque<double>& parameters) const = 0;
+		virtual double Evaluate(const std::deque<Value>& parameters) const = 0;
 
 		// Gets a string representation of this object
 		virtual std::string GetStringRepresentation();
+
+		// Parameter type checking methods
+		void AssertNoUnassignedVariables(
+			const std::deque<Value>& parameters) const;
 	};
 }
 

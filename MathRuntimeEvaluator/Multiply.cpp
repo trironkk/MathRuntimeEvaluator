@@ -29,8 +29,10 @@ returns the product of x and y \n";
 	int Multiply::GetRank() const { return 2; }
 
 	// Perform this operation
-	double Multiply::Evaluate(const deque<double>& parameters) const
+	double Multiply::Evaluate(const deque<Value>& parameters) const
 	{
-		return parameters[0] * parameters[1];
+		AssertNoUnassignedVariables(parameters);
+
+		return parameters[0].Number * parameters[1].Number;
 	}
 }

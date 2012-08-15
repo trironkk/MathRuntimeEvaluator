@@ -1,5 +1,7 @@
 #include "Operation.h"
 
+#include "MathRuntimeEvaluatorException.h"
+
 using std::string;
 
 namespace MathRuntimeEvaluatorNamespace
@@ -24,5 +26,20 @@ namespace MathRuntimeEvaluatorNamespace
 	std::string Operation::GetStringRepresentation()
 	{
 		return (this->GetIdentifier());
+	}
+
+	// Parameter type checking methods
+	void Operation::AssertNoUnassignedVariables(
+		const std::deque<Value>& parameters) const
+	{
+		for (std::deque<Value>::const_iterator iter;
+			iter != parameters.end();
+			iter++)
+		{
+			if (iter->Type == Value::UnassignedVariable)
+				throw MathRuntimeEvaluatorException(
+"Undefined variable encountered: " + iter->Name + "."
+				);
+		}
 	}
 }

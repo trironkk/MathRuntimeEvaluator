@@ -4,23 +4,25 @@
 
 using std::string;
 
-namespace MathRuntimeEvaluator
+namespace MathRuntimeEvaluatorNamespace
 {
+	// Number constructor
 	Value::Value(double val) :
-		_Number(val),
-		_Name(""),
-		_Type(Type::Number)
+		Number(val),
+		Name(""),
+		Type(Type::RawValue)
 	{ }
 
+	// UnassignedVariable and AssignedVariable constructor
 	Value::Value(string name) :
-		_Number(0),
-		_Name(name),
-		_Type(Type::UnassignedVariable)
+		Number(0),
+		Name(name),
+		Type(Type::UnassignedVariable)
 	{
-		if (WorkingMemory::Contains(_Name))
+		if (WorkingMemory::Contains(Name))
 		{
-			_Number = WorkingMemory::GetValue(_Name);
-			_Type = Type::AssignedVariable;
+			Number = WorkingMemory::GetValue(Name);
+			Type = Type::AssignedVariable;
 		}
 	}
 }

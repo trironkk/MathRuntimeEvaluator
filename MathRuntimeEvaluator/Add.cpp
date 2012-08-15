@@ -30,8 +30,10 @@ returns the sum of x and y \n";
 	int Add::GetRank() const { return 1; }
 
 	// Perform this operation
-	double Add::Evaluate(const deque<double>& parameters) const
+	double Add::Evaluate(const deque<Value>& parameters) const
 	{
-		return parameters[0] + parameters[1];
+		AssertNoUnassignedVariables(parameters);
+
+		return parameters[0].Number + parameters[1].Number;
 	}
 }

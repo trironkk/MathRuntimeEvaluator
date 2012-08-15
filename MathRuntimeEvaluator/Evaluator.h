@@ -99,7 +99,9 @@ namespace Evaluator
 		// Ensure there's exactly one term left
 		if (valuesStack.size() != 0)
 		{
-			throw MathRuntimeEvaluatorException("Improperly formed CompoundExpression.");
+			throw MathRuntimeEvaluatorException(
+				"Improperly formed CompoundExpression."
+				);
 		}
 
 		// Return the first term in the underlying Expression deque

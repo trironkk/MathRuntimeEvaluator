@@ -22,8 +22,10 @@ returns the natural logarithm of x \n";
 	int Ln::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Ln::Evaluate(const deque<double>& parameters) const
+	double Ln::Evaluate(const deque<Value>& parameters) const
 	{
-		return log(parameters[0]);
+		AssertNoUnassignedVariables(parameters);
+
+		return log(parameters[0].Number);
 	}
 }
