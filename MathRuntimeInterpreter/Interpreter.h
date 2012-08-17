@@ -9,7 +9,6 @@
 #include <memory>
 
 #include "MathRuntimeEvaluator.h"
-#include "UnitTests.h"
 
 using namespace std;
 

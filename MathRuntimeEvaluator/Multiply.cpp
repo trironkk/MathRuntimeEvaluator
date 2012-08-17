@@ -29,10 +29,10 @@ returns the product of x and y \n";
 	int Multiply::GetRank() const { return 2; }
 
 	// Perform this operation
-	Value Multiply::Evaluate(const deque<Value>& parameters) const
+	Value& Multiply::Evaluate(const deque<Value>& parameters) const
 	{
 		ValidateParameterTypes(parameters);
 
-		return parameters[0].Number * parameters[1].Number;
+		return *(new Value(parameters[0].Number * parameters[1].Number));
 	}
 }

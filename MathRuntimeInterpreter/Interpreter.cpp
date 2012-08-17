@@ -3,7 +3,6 @@
 #include "WorkingMemory.h"
 #include "MathRuntimeEvaluatorException.h"
 
-using namespace MathRuntimeInterpreter::UnitTests;
 using namespace std;
 
 namespace MathRuntimeInterpreter
@@ -69,7 +68,6 @@ namespace MathRuntimeInterpreter
 
 			if ("exit" == token) { persist = false; return false; }
 			else if ("memory" == token) { WorkingMemory::PrintLine(cout); return false; }
-			else if ("unittests" == token) { RunUnitTestBattery(); return false; }
 			else if ("" == token) { return false; }
 			else if ("help" == token)
 			{

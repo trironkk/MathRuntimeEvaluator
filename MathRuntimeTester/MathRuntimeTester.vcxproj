@@ -11,15 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{FBE95E0F-9DE0-4934-A28B-0B7C8336DBF7}</ProjectGuid>
-    <RootNamespace>ASCIIMathMLLibrary</RootNamespace>
-    <ProjectName>MathRuntimeEvaluator</ProjectName>
+    <ProjectGuid>{90351F53-ED40-4FB1-949D-35A5CF649546}</ProjectGuid>
+    <RootNamespace>MathRuntimeTester</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -42,18 +41,11 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)MathRuntimeEvaluator\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
-    <PostBuildEvent>
-      <Command>
-      </Command>
-    </PostBuildEvent>
-    <PostBuildEvent>
-      <Message>
-      </Message>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -61,7 +53,6 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalOptions>/E %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -70,61 +61,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Abs.h" />
-    <ClInclude Include="Add.h" />
-    <ClInclude Include="Cos.h" />
-    <ClInclude Include="Divide.h" />
-    <ClInclude Include="Evaluator.h" />
-    <ClInclude Include="Gets.h" />
-    <ClInclude Include="MathRuntimeEvaluator.h" />
-    <ClInclude Include="MathRuntimeEvaluatorException.h" />
-    <ClInclude Include="IPrintable.h" />
-    <ClInclude Include="Expression.h" />
-    <ClInclude Include="Ln.h" />
-    <ClInclude Include="Log.h" />
-    <ClInclude Include="Log10.h" />
-    <ClInclude Include="Log2.h" />
-    <ClInclude Include="Multiply.h" />
-    <ClInclude Include="Negate.h" />
-    <ClInclude Include="Operation.h" />
-    <ClInclude Include="Operations.h" />
-    <ClInclude Include="Parser.h" />
-    <ClInclude Include="Pow.h" />
-    <ClInclude Include="Sin.h" />
-    <ClInclude Include="Sqrt.h" />
-    <ClInclude Include="Subtract.h" />
-    <ClInclude Include="Tan.h" />
-    <ClInclude Include="Utilities.h" />
-    <ClInclude Include="Value.h" />
-    <ClInclude Include="WorkingMemory.h" />
+    <ClInclude Include="Tests.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Abs.cpp" />
-    <ClCompile Include="Add.cpp" />
-    <ClCompile Include="Cos.cpp" />
-    <ClCompile Include="Divide.cpp" />
-    <ClCompile Include="Gets.cpp" />
-    <ClCompile Include="MathRuntimeEvaluator.cpp" />
-    <ClCompile Include="MathRuntimeEvaluatorException.cpp" />
-    <ClCompile Include="Expression.cpp" />
-    <ClCompile Include="IPrintable.cpp" />
-    <ClCompile Include="Ln.cpp" />
-    <ClCompile Include="Log.cpp" />
-    <ClCompile Include="Log10.cpp" />
-    <ClCompile Include="Log2.cpp" />
-    <ClCompile Include="Multiply.cpp" />
-    <ClCompile Include="Negate.cpp" />
-    <ClCompile Include="Operation.cpp" />
-    <ClCompile Include="Operations.cpp" />
-    <ClCompile Include="Parser.cpp" />
-    <ClCompile Include="Pow.cpp" />
-    <ClCompile Include="Sin.cpp" />
-    <ClCompile Include="Sqrt.cpp" />
-    <ClCompile Include="Subtract.cpp" />
-    <ClCompile Include="Tan.cpp" />
-    <ClCompile Include="Utilities.cpp" />
-    <ClCompile Include="Value.cpp" />
-    <ClCompile Include="WorkingMemory.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Tests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MathRuntimeEvaluator\ASCIIMathMLLibrary.vcxproj">
+      <Project>{fbe95e0f-9de0-4934-a28b-0b7c8336dbf7}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

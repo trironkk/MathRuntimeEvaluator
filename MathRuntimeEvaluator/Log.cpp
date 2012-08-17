@@ -25,10 +25,11 @@ returns the base x logarithm of y \n";
 	int Log::GetParameterCount() const { return 2; }
 
 	// Perform this operation
-	Value Log::Evaluate(const deque<Value>& parameters) const
+	Value& Log::Evaluate(const deque<Value>& parameters) const
 	{
 		ValidateParameterTypes(parameters);
 		
-		return log10(parameters[1].Number) / log10(parameters[0].Number);
+		return *(new Value(log10(parameters[1].Number) /
+						log10(parameters[0].Number)));
 	}
 }

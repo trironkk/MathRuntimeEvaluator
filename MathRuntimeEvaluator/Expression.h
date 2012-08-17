@@ -34,7 +34,7 @@ namespace MathRuntimeEvaluatorNamespace
 		void PushBack(std::shared_ptr<Operation> operation);
 
 		// Pushing items to the front of this expression
-		void PushFront(Value value);
+		void PushFront(Value& value);
 		void PushFront(std::shared_ptr<Operation> operation);
 
 		// Returns the number of items in this expression

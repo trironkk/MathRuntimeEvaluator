@@ -24,10 +24,10 @@ returns the binary logarithm of x \n";
 	int Log2::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	Value Log2::Evaluate(const deque<Value>& parameters) const
+	Value& Log2::Evaluate(const deque<Value>& parameters) const
 	{
 		ValidateParameterTypes(parameters);
 
-		return log10(parameters[0].Number) / log10(2.0);
+		return *(new Value(log10(parameters[0].Number) / log10(2.0)));
 	}
 }

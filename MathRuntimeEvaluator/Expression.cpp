@@ -28,7 +28,7 @@ namespace MathRuntimeEvaluatorNamespace
 	}
 
 	// Pushing items to the back of this expression
-	void Expression::PushFront(Value value)
+	void Expression::PushFront(Value& value)
 	{
 		_expressionComponentTypes.push_front(ComponentType::VALUE);
 		_values.push_front(value);

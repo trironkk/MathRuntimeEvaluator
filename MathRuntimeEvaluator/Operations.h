@@ -25,11 +25,13 @@
 #include "Sqrt.h"
 #include "Abs.h"
 
+// Logarithms
 #include "Ln.h"
 #include "Log.h"
 #include "Log10.h"
 #include "Log2.h"
 
+// Assignments
 #include "Gets.h"
 
 namespace MathRuntimeEvaluatorNamespace

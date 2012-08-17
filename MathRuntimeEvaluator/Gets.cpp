@@ -47,11 +47,11 @@ returns the sum of x and y \n";
 	std::string Gets::ParameterTypes() const { return "v "; }
 
 	// Perform this operation
-	Value Gets::Evaluate(const deque<Value>& parameters) const
+	Value& Gets::Evaluate(const deque<Value>& parameters) const
 	{
 		ValidateParameterTypes(parameters);
 
 		WorkingMemory::SetValue(parameters[0].Name, parameters[1].Number);
-		return parameters[1].Number;
+		return *(new Value(parameters[1].Number));
 	}
 }

@@ -17,7 +17,7 @@ namespace MathRuntimeEvaluatorNamespace
 		virtual int GetParameterCount() const;
 
 		// Perform this operation
-		virtual Value Evaluate(const std::deque<Value>& parameters) const;
+		virtual Value& Evaluate(const std::deque<Value>& parameters) const;
 	};
 }
 

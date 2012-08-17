@@ -1,5 +1,5 @@
-#ifndef UNIT_TESTS_H
-#define UNIT_TESTS_H
+#ifndef TESTS_H
+#define TESTS_H
 
 #include <iostream>
 #include <string>
@@ -7,16 +7,13 @@
 #include <memory>
 #include <math.h>
 
-namespace MathRuntimeInterpreter
-{
-namespace UnitTests
+namespace MathRuntimeTester
 {
 	// Parses and evaluates a string expression, and then checks it against an
 	// expected value.
-	void RunUnitTest(std::string expressionString, double expectedValue);
+	void RunTest(std::string expressionString, double expectedValue);
 
 	// Runs a battery of unit tests
-	void RunUnitTestBattery();
-}
+	void RunTestBattery();
 }
 #endif

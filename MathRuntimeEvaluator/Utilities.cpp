@@ -1,5 +1,7 @@
 #include "Utilities.h"
 
+#include "WorkingMemory.h"
+
 using std::string;
 using std::istringstream;
 using std::ostringstream;
@@ -15,6 +17,7 @@ namespace MathRuntimeEvaluatorNamespace
 
 		if(*endptr != '\0' || endptr == str)
 			return false;
+
 		return true;
 	}
 

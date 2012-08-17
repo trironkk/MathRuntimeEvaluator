@@ -18,7 +18,7 @@ namespace MathRuntimeEvaluatorNamespace
 {
 namespace Evaluator
 {
-	Value Evaluate(Expression expression)
+	Value& Evaluate(Expression expression)
 	{
 		// Handle the case of having no items in the stack
 		if (expression.Size() == 0)
@@ -41,7 +41,7 @@ namespace Evaluator
 	"Undefined variable: " + expression.FrontValue().Name + "."
 				);
 
-			return expression.FrontValue().Number;
+			return *(new Value(expression.FrontValue().Number));
 		}
 
 		// Holds the values
@@ -102,7 +102,7 @@ namespace Evaluator
 		}
 
 		// Return the first term in the underlying Expression deque
-		return expression.FrontValue().Number;
+		return expression.FrontValue();
 	}
 }
 }

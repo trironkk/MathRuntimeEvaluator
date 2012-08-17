@@ -6,7 +6,7 @@ using std::string;
 namespace MathRuntimeEvaluatorNamespace
 {
 	// Returns a string representation of this Operator
-	string Ln::GetIdentifier() const { return "Ln"; }
+	string Ln::GetIdentifier() const { return "ln"; }
 
 	// Returns a helpful string explaining how to use this Operator
 	string Ln::GetUsage() const
@@ -22,10 +22,10 @@ returns the natural logarithm of x \n";
 	int Ln::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	Value Ln::Evaluate(const deque<Value>& parameters) const
+	Value& Ln::Evaluate(const deque<Value>& parameters) const
 	{
 		ValidateParameterTypes(parameters);
 
-		return log(parameters[0].Number);
+		return *(new Value(log(parameters[0].Number)));
 	}
 }

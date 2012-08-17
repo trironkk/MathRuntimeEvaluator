@@ -62,12 +62,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Interpreter.h" />
-    <ClInclude Include="UnitTests.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Interpreter.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="UnitTests.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MathRuntimeEvaluator\ASCIIMathMLLibrary.vcxproj">

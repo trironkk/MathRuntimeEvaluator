@@ -62,6 +62,7 @@ namespace MathRuntimeEvaluatorNamespace
 			{
 				isOperationSet.insert((*iter)->GetIdentifier());
 			}
+			initialized = true;			
 		}
 		return isOperationSet.find(identifier) != isOperationSet.end();
 	}

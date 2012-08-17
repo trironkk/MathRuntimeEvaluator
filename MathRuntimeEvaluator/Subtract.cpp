@@ -34,10 +34,10 @@ returns the negation of x \n";
 	int Subtract::GetRank() const { return 1; }
 
 	// Perform this operation
-	Value Subtract::Evaluate(const deque<Value>& parameters) const
+	Value& Subtract::Evaluate(const deque<Value>& parameters) const
 	{
 		ValidateParameterTypes(parameters);
 
-		return parameters[0].Number - parameters[1].Number;
+		return *(new Value(parameters[0].Number - parameters[1].Number));
 	}
 }

@@ -41,7 +41,7 @@ namespace MathRuntimeEvaluatorNamespace
 	// - '*'
 	//     - There are an indefinite number of parameters. All following
 	//       parameters must abide by the previous character
-	std::string Operation::ParameterTypes() const { return " *"; }
+	std::string Operation::ParameterTypes() const { return "#*"; }
 
 	// Parameter type checking methods
 	void Operation::ValidateParameterTypes(

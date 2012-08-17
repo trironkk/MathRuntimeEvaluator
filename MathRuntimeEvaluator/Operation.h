@@ -37,7 +37,7 @@ namespace MathRuntimeEvaluatorNamespace
 		virtual bool IsFunction() const;
 		
 		// Perform this operation
-		virtual Value Evaluate(const std::deque<Value>& parameters) const = 0;
+		virtual Value& Evaluate(const std::deque<Value>& parameters) const = 0;
 
 		// Gets a string representation of this object
 		virtual std::string GetStringRepresentation();

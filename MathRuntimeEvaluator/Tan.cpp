@@ -24,9 +24,9 @@ returns the tangent of an angle \n";
 	int Tan::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	Value Tan::Evaluate(const deque<Value>& parameters) const
+	Value& Tan::Evaluate(const deque<Value>& parameters) const
 	{
 		ValidateParameterTypes(parameters);
-		return tan(parameters[0].Number);
+		return *(new Value(tan(parameters[0].Number)));
 	}
 }
