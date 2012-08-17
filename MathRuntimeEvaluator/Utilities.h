@@ -13,6 +13,9 @@ namespace MathRuntimeEvaluatorNamespace
 
 	// Parses a string and returns a double
 	double ToDouble(const std::string& str);
+
+	// Converts an integer value to its string representation
+	std::string ToString(int value);
 }
 
 #endif

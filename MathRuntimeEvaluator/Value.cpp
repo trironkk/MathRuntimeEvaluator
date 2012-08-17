@@ -18,11 +18,11 @@ namespace MathRuntimeEvaluatorNamespace
 			Type = RawValue;
 			Number = ToDouble(identifier);
 		}
-		else if (WorkingMemory::Contains(Name))
+		else if (WorkingMemory::Contains(identifier))
 		{
 			Type = AssignedVariable;
-			Number = WorkingMemory::GetValue(Name);
 			Name = identifier;
+			Number = WorkingMemory::GetValue(Name);
 		}
 		else
 		{
@@ -37,5 +37,19 @@ namespace MathRuntimeEvaluatorNamespace
 		Name(""),
 		Type(RawValue)
 	{
+	}
+
+	// Get a string representation of the Value's type
+	std::string Value::GetTypeString() const
+	{
+		switch(Type)
+		{
+		case Value::RawValue:
+			return "RawValue";
+		case Value::AssignedVariable:
+			return "AssignedVariable";
+		case Value::UnassignedVariable:
+			return "UnassignedVariable";
+		}
 	}
 }

@@ -75,6 +75,7 @@
     <ClInclude Include="Cos.h" />
     <ClInclude Include="Divide.h" />
     <ClInclude Include="Evaluator.h" />
+    <ClInclude Include="Gets.h" />
     <ClInclude Include="MathRuntimeEvaluator.h" />
     <ClInclude Include="MathRuntimeEvaluatorException.h" />
     <ClInclude Include="IPrintable.h" />
@@ -102,6 +103,7 @@
     <ClCompile Include="Add.cpp" />
     <ClCompile Include="Cos.cpp" />
     <ClCompile Include="Divide.cpp" />
+    <ClCompile Include="Gets.cpp" />
     <ClCompile Include="MathRuntimeEvaluator.cpp" />
     <ClCompile Include="MathRuntimeEvaluatorException.cpp" />
     <ClCompile Include="Expression.cpp" />

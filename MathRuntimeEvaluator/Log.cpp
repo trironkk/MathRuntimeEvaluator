@@ -27,7 +27,7 @@ returns the base x logarithm of y \n";
 	// Perform this operation
 	Value Log::Evaluate(const deque<Value>& parameters) const
 	{
-		AssertNoUnassignedVariables(parameters);
+		ValidateParameterTypes(parameters);
 		
 		return log10(parameters[1].Number) / log10(parameters[0].Number);
 	}

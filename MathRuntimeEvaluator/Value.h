@@ -25,6 +25,9 @@ namespace MathRuntimeEvaluatorNamespace
 		// RawValue constructor
 		Value(double value);
 
+		// Get a string representation of the Value's type
+		std::string GetTypeString() const;
+
 		double Number;
 		std::string Name;
 		Type Type;

@@ -2,6 +2,7 @@
 
 using std::string;
 using std::istringstream;
+using std::ostringstream;
 
 namespace MathRuntimeEvaluatorNamespace
 {
@@ -25,5 +26,14 @@ namespace MathRuntimeEvaluatorNamespace
 		if (!(i >> x))
 			return 0;
 		return x;
+	}
+
+	// Converts an integer value to its string representation
+	std::string ToString(int value)
+	{
+		string Result;
+		ostringstream convert;
+		convert << value;
+		return convert.str();
 	}
 }

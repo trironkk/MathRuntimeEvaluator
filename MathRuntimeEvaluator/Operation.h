@@ -42,8 +42,23 @@ namespace MathRuntimeEvaluatorNamespace
 		// Gets a string representation of this object
 		virtual std::string GetStringRepresentation();
 
+		// Parameter types formatting string
+		// - '#'
+		//     - The parameter at this index must be defined - it cannot be an
+		//       unassigned variable
+		// - 'v'
+		//     - The parameter at this index must be assignable - it cannot be
+		//       a raw number
+		// - ' '
+		//     - The parameter at this index can be anything - there are no
+		//       restrictions
+		// - '*'
+		//     - There are an indefinite number of parameters. All following
+		//       parameters must abide by the previous character
+		virtual std::string ParameterTypes() const;
+
 		// Parameter type checking methods
-		void AssertNoUnassignedVariables(
+		void ValidateParameterTypes(
 			const std::deque<Value>& parameters) const;
 	};
 }

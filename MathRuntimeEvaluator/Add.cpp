@@ -32,7 +32,7 @@ returns the sum of x and y \n";
 	// Perform this operation
 	Value Add::Evaluate(const deque<Value>& parameters) const
 	{
-		AssertNoUnassignedVariables(parameters);
+		ValidateParameterTypes(parameters);
 
 		return parameters[0].Number + parameters[1].Number;
 	}

@@ -26,7 +26,7 @@ returns the base 10 logarithm of x \n";
 	// Perform this operation
 	Value Log10::Evaluate(const deque<Value>& parameters) const
 	{
-		AssertNoUnassignedVariables(parameters);
+		ValidateParameterTypes(parameters);
 			
 		return log10(parameters[0].Number);
 	}

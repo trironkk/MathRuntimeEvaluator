@@ -35,7 +35,7 @@ Notes: \n\
 	// Perform this operation
 	Value Divide::Evaluate(const deque<Value>& parameters) const
 	{
-		AssertNoUnassignedVariables(parameters);
+		ValidateParameterTypes(parameters);
 
 		if (parameters[1].Number == 0)
 			throw MathRuntimeEvaluatorException(

@@ -24,7 +24,7 @@ returns the absolute value \n";
 	// Perform this operation
 	Value Abs::Evaluate(const deque<Value>& parameters) const
 	{
-		AssertNoUnassignedVariables(parameters);
+		ValidateParameterTypes(parameters);
 		return abs(parameters[0].Number);
 	}
 }

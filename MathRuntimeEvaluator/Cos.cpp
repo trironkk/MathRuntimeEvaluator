@@ -26,7 +26,7 @@ returns the cosine of an angle \n";
 	// Perform this operation
 	Value Cos::Evaluate(const deque<Value>& parameters) const
 	{
-		AssertNoUnassignedVariables(parameters);
+		ValidateParameterTypes(parameters);
 
 		return cos(parameters[0].Number);
 	}

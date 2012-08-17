@@ -27,7 +27,7 @@ returns x raised to the y power \n";
 	// Perform this operation
 	Value Pow::Evaluate(const deque<Value>& parameters) const
 	{
-		AssertNoUnassignedVariables(parameters);
+		ValidateParameterTypes(parameters);
 
 		return pow(parameters[0].Number, parameters[1].Number);
 	}

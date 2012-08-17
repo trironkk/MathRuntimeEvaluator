@@ -26,7 +26,7 @@ returns the tangent of an angle \n";
 	// Perform this operation
 	Value Tan::Evaluate(const deque<Value>& parameters) const
 	{
-		AssertNoUnassignedVariables(parameters);
+		ValidateParameterTypes(parameters);
 		return tan(parameters[0].Number);
 	}
 }

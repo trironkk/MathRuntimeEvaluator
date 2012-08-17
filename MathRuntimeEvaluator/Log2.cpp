@@ -26,7 +26,7 @@ returns the binary logarithm of x \n";
 	// Perform this operation
 	Value Log2::Evaluate(const deque<Value>& parameters) const
 	{
-		AssertNoUnassignedVariables(parameters);
+		ValidateParameterTypes(parameters);
 
 		return log10(parameters[0].Number) / log10(2.0);
 	}

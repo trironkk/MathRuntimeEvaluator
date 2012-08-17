@@ -30,6 +30,8 @@
 #include "Log10.h"
 #include "Log2.h"
 
+#include "Gets.h"
+
 namespace MathRuntimeEvaluatorNamespace
 {
 	struct Operations

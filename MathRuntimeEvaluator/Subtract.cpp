@@ -36,7 +36,7 @@ returns the negation of x \n";
 	// Perform this operation
 	Value Subtract::Evaluate(const deque<Value>& parameters) const
 	{
-		AssertNoUnassignedVariables(parameters);
+		ValidateParameterTypes(parameters);
 
 		return parameters[0].Number - parameters[1].Number;
 	}

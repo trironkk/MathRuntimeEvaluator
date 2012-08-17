@@ -26,7 +26,7 @@ returns the sine of an angle \n";
 	// Perform this operation
 	Value Sin::Evaluate(const deque<Value>& parameters) const
 	{
-		AssertNoUnassignedVariables(parameters);
+		ValidateParameterTypes(parameters);
 
 		return sin(parameters[0].Number);
 	}

@@ -129,6 +129,9 @@
     <ClInclude Include="Value.h">
       <Filter>Header Files\Parsing</Filter>
     </ClInclude>
+    <ClInclude Include="Gets.h">
+      <Filter>Header Files\Operation\Operators</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IPrintable.cpp">
@@ -205,6 +208,9 @@
     </ClCompile>
     <ClCompile Include="Value.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Gets.cpp">
+      <Filter>Source Files\Operation\Operators</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

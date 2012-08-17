@@ -30,7 +30,7 @@ Notes: \n\
 	// Perform this operation
 	Value Sqrt::Evaluate(const deque<Value>& parameters) const
 	{
-		AssertNoUnassignedVariables(parameters);
+		ValidateParameterTypes(parameters);
 
 		if (parameters[0].Number < 0)
 			throw MathRuntimeEvaluatorException(

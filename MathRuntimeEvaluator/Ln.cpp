@@ -24,7 +24,7 @@ returns the natural logarithm of x \n";
 	// Perform this operation
 	Value Ln::Evaluate(const deque<Value>& parameters) const
 	{
-		AssertNoUnassignedVariables(parameters);
+		ValidateParameterTypes(parameters);
 
 		return log(parameters[0].Number);
 	}

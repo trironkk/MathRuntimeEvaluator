@@ -30,7 +30,7 @@ returns the negation of x \n";
 	// Perform this operation
 	Value Negate::Evaluate(const deque<Value>& parameters) const
 	{
-		AssertNoUnassignedVariables(parameters);
+		ValidateParameterTypes(parameters);
 
 		return -parameters[0].Number;
 	}
