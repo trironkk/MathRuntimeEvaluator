@@ -24,8 +24,10 @@ returns the sine of an angle \n";
 	int Sin::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Sin::Evaluate(const deque<double>& parameters) const
+	Value Sin::Evaluate(const deque<Value>& parameters) const
 	{
-		return sin(parameters[0]);
+		ValidateParameterTypes(parameters);
+
+		return sin(parameters[0].Number);
 	}
 }

@@ -38,6 +38,9 @@ namespace MathRuntimeEvaluatorNamespace
 			operations.push_back(*new shared_ptr<Operation>(new Log10()));
 			operations.push_back(*new shared_ptr<Operation>(new Log()));
 
+			// Assignments
+			operations.push_back(*new shared_ptr<Operation>(new Gets()));
+
 			initialized = true;
 		}
 		return operations;

@@ -28,8 +28,10 @@ returns the negation of x \n";
 	int Negate::GetRank() const { return 3; }
 
 	// Perform this operation
-	double Negate::Evaluate(const deque<double>& parameters) const
+	Value Negate::Evaluate(const deque<Value>& parameters) const
 	{
-		return -parameters[0];
+		ValidateParameterTypes(parameters);
+
+		return -parameters[0].Number;
 	}
 }

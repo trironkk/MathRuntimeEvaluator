@@ -33,12 +33,14 @@ Notes: \n\
 	int Divide::GetRank() const { return 2; }
 
 	// Perform this operation
-	double Divide::Evaluate(const deque<double>& parameters) const
+	Value Divide::Evaluate(const deque<Value>& parameters) const
 	{
-		if (parameters[1] == 0)
+		ValidateParameterTypes(parameters);
+
+		if (parameters[1].Number == 0)
 			throw MathRuntimeEvaluatorException(
 "Cannot divide by zero."
 				);
-		return parameters[0] / parameters[1];
+		return parameters[0].Number / parameters[1].Number;
 	}
 }

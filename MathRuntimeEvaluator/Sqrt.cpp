@@ -28,12 +28,14 @@ Notes: \n\
 	int Sqrt::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Sqrt::Evaluate(const deque<double>& parameters) const
+	Value Sqrt::Evaluate(const deque<Value>& parameters) const
 	{
-		if (parameters[0] < 0)
+		ValidateParameterTypes(parameters);
+
+		if (parameters[0].Number < 0)
 			throw MathRuntimeEvaluatorException(
 "sqrt does not support negative inputs."
 				);
-		return sqrt(parameters[0]);
+		return sqrt(parameters[0].Number);
 	}
 }

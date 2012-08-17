@@ -22,8 +22,9 @@ returns the absolute value \n";
 	int Abs::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Abs::Evaluate(const deque<double>& parameters) const
+	Value Abs::Evaluate(const deque<Value>& parameters) const
 	{
-		return abs(parameters[0]);
+		ValidateParameterTypes(parameters);
+		return abs(parameters[0].Number);
 	}
 }

@@ -75,9 +75,9 @@
     <ClInclude Include="Cos.h" />
     <ClInclude Include="Divide.h" />
     <ClInclude Include="Evaluator.h" />
+    <ClInclude Include="Gets.h" />
     <ClInclude Include="MathRuntimeEvaluator.h" />
     <ClInclude Include="MathRuntimeEvaluatorException.h" />
-    <ClInclude Include="ExpressionComponent.h" />
     <ClInclude Include="IPrintable.h" />
     <ClInclude Include="Expression.h" />
     <ClInclude Include="Ln.h" />
@@ -95,6 +95,7 @@
     <ClInclude Include="Subtract.h" />
     <ClInclude Include="Tan.h" />
     <ClInclude Include="Utilities.h" />
+    <ClInclude Include="Value.h" />
     <ClInclude Include="WorkingMemory.h" />
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +103,7 @@
     <ClCompile Include="Add.cpp" />
     <ClCompile Include="Cos.cpp" />
     <ClCompile Include="Divide.cpp" />
+    <ClCompile Include="Gets.cpp" />
     <ClCompile Include="MathRuntimeEvaluator.cpp" />
     <ClCompile Include="MathRuntimeEvaluatorException.cpp" />
     <ClCompile Include="Expression.cpp" />
@@ -121,6 +123,7 @@
     <ClCompile Include="Subtract.cpp" />
     <ClCompile Include="Tan.cpp" />
     <ClCompile Include="Utilities.cpp" />
+    <ClCompile Include="Value.cpp" />
     <ClCompile Include="WorkingMemory.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

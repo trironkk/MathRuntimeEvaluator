@@ -18,11 +18,11 @@ double MathRuntimeEvaluator::Evaluate(string expressionString)
 double MathRuntimeEvaluator::Evaluate(stringstream expressionStream)
 {
 	Expression expression(Parser::Parse(expressionStream));
-	return Evaluator::Evaluate(expression);
+	return Evaluator::Evaluate(expression).Number;
 }
 
 // Takes in a string stream representation of an expression and returns the
-// result
+// next token
 std::string MathRuntimeEvaluator::ReadNextToken(std::string& line)
 {
 	std::istringstream line_stringstream(line);

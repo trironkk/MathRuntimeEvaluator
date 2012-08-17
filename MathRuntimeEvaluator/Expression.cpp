@@ -3,54 +3,40 @@
 using std::string;
 using std::deque;
 using std::shared_ptr;
-using ExpressionComponent::Types;
 
 namespace MathRuntimeEvaluatorNamespace
 {
 	// Basic Constructor
 	Expression::Expression() :
-		_values(deque<double>()),
+		_values(deque<Value>()),
 		_operations(deque<shared_ptr<Operation>>()),
-		_variables(deque<string>()),
-		_expressionComponentTypes(deque<Types>())
+		_expressionComponentTypes(deque<ComponentType>())
 	{
 	}
 
 	// Pushing items to the back of this expression
-	void Expression::PushBack(double value)
+	void Expression::PushBack(Value value)
 	{
-		_expressionComponentTypes.push_back(Types::Value);
+		_expressionComponentTypes.push_back(ComponentType::VALUE);
 		_values.push_back(value);
 	}
 	
-	void Expression::PushBack(std::string variableName)
-	{
-		_expressionComponentTypes.push_back(Types::Variable);
-		_variables.push_back(variableName);
-	}
-
 	void Expression::PushBack(std::shared_ptr<Operation> operation)
 	{
-		_expressionComponentTypes.push_back(Types::Operation);
+		_expressionComponentTypes.push_back(ComponentType::OPERATION);
 		_operations.push_back(operation);
 	}
 
 	// Pushing items to the back of this expression
-	void Expression::PushFront(double value)
+	void Expression::PushFront(Value value)
 	{
-		_expressionComponentTypes.push_front(Types::Value);
+		_expressionComponentTypes.push_front(ComponentType::VALUE);
 		_values.push_front(value);
 	}
 	
-	void Expression::PushFront(std::string variableName)
-	{
-		_expressionComponentTypes.push_front(Types::Variable);
-		_variables.push_front(variableName);
-	}
-
 	void Expression::PushFront(std::shared_ptr<Operation> operation)
 	{
-		_expressionComponentTypes.push_front(Types::Operation);
+		_expressionComponentTypes.push_front(ComponentType::OPERATION);
 		_operations.push_front(operation);
 	}
 
@@ -65,30 +51,20 @@ namespace MathRuntimeEvaluatorNamespace
 		return _values.size();
 	}
 
-	int Expression::VariablesSize()
-	{
-		return _variables.size();
-	}
-
 	int Expression::OperationsSize()
 	{
 		return _operations.size();
 	}
 
 	// Get the front items
-	Types Expression::FrontType()
+	Expression::ComponentType Expression::FrontType()
 	{
 		return _expressionComponentTypes.front();
 	}
 
-	double Expression::FrontValue()
+	Value Expression::FrontValue()
 	{
 		return _values.front();
-	}
-
-	string Expression::FrontVariable()
-	{
-		return _variables.front();
 	}
 
 	shared_ptr<Operation> Expression::FrontOperation()
@@ -101,12 +77,6 @@ namespace MathRuntimeEvaluatorNamespace
 	{
 		_expressionComponentTypes.pop_front();
 		_values.pop_front();
-	}
-
-	void Expression::PopFrontVariable()
-	{
-		_expressionComponentTypes.pop_front();
-		_variables.pop_front();
 	}
 
 	void Expression::PopFrontOperation()

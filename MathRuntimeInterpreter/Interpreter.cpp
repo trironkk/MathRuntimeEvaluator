@@ -46,17 +46,14 @@ namespace MathRuntimeInterpreter
 					// Perform parsing and evaluation
 					double result = MathRuntimeEvaluator::Evaluate(input);
 
-					// Record the result
-					WorkingMemory::SetValue(resultVariableName, result);
-
 					// Print the result
 					cout << result << std::endl;
 				}
-				//catch (MathRuntimeEvaluatorException& e)
-				//{
-				//	// Print out the error
-				//	cout << "Error: " << e << std::endl << std::endl;
-				//}
+				catch (MathRuntimeEvaluatorException& e)
+				{
+					// Print out the error
+					cout << "Error: " << e << std::endl << std::endl;
+				}
 				catch (exception& e)
 				{
 					cout << e.what() << std::endl;
@@ -95,27 +92,6 @@ namespace MathRuntimeInterpreter
 						cout << endl << "Unknown operation: " << operation << endl << endl;
 					}
 					return false;
-				}
-			}
-
-			// If an assignment is specified...
-			if ("=" == MathRuntimeEvaluator::ReadNextToken(stream))
-			{
-				try
-				{
-					// Assert that the variable name is a valid one.
-					WorkingMemory::ValidateVariableName(token);
-
-					// Record the variable name.
-					resultVariableName = token;
-
-					// Reset the input string to disclude the assignment
-					getline(stream, input);
-				}
-				catch (MathRuntimeEvaluatorException& e)
-				{
-					// Print out the error.
-					cout << "Error: " << e << std::endl << std::endl;
 				}
 			}
 			return true;

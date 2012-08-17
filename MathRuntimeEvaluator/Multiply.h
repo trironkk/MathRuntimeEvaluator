@@ -23,7 +23,7 @@ namespace MathRuntimeEvaluatorNamespace
 		virtual int GetRank() const;
 
 		// Perform this operation
-		virtual double Evaluate(const std::deque<double>& parameters) const;
+		virtual Value Evaluate(const std::deque<Value>& parameters) const;
 	};
 }
 

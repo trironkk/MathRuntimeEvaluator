@@ -24,8 +24,10 @@ returns the cosine of an angle \n";
 	int Cos::GetParameterCount() const { return 1; }
 
 	// Perform this operation
-	double Cos::Evaluate(const deque<double>& parameters) const
+	Value Cos::Evaluate(const deque<Value>& parameters) const
 	{
-		return cos(parameters[0]);
+		ValidateParameterTypes(parameters);
+
+		return cos(parameters[0].Number);
 	}
 }

@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\Expression">
-      <UniqueIdentifier>{e7c6eee5-d6be-47dc-bbeb-5ceb4d118e40}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Expression">
       <UniqueIdentifier>{3e7ad163-3f44-47a3-9fbe-d38016cc4b2d}</UniqueIdentifier>
     </Filter>
@@ -48,6 +45,9 @@
     </Filter>
     <Filter Include="Source Files\ExposedFunctionality">
       <UniqueIdentifier>{c317c1a4-230e-4b63-8aa0-6204f1f4b418}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Parsing">
+      <UniqueIdentifier>{e7c6eee5-d6be-47dc-bbeb-5ceb4d118e40}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -105,17 +105,11 @@
     <ClInclude Include="Log2.h">
       <Filter>Header Files\Operation\Functions</Filter>
     </ClInclude>
-    <ClInclude Include="Parser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Evaluator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ExpressionComponent.h">
-      <Filter>Header Files\Expression</Filter>
-    </ClInclude>
     <ClInclude Include="Expression.h">
-      <Filter>Header Files\Expression</Filter>
+      <Filter>Header Files\Parsing</Filter>
     </ClInclude>
     <ClInclude Include="MathRuntimeEvaluator.h">
       <Filter>Header Files\ExposedFunctionality</Filter>
@@ -128,6 +122,15 @@
     </ClInclude>
     <ClInclude Include="Utilities.h">
       <Filter>Header Files\CommonFunctionality</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser.h">
+      <Filter>Header Files\Parsing</Filter>
+    </ClInclude>
+    <ClInclude Include="Value.h">
+      <Filter>Header Files\Parsing</Filter>
+    </ClInclude>
+    <ClInclude Include="Gets.h">
+      <Filter>Header Files\Operation\Operators</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -202,6 +205,12 @@
     </ClCompile>
     <ClCompile Include="WorkingMemory.cpp">
       <Filter>Source Files\ExposedFunctionality</Filter>
+    </ClCompile>
+    <ClCompile Include="Value.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Gets.cpp">
+      <Filter>Source Files\Operation\Operators</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

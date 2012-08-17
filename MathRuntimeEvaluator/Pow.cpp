@@ -25,8 +25,10 @@ returns x raised to the y power \n";
 	int Pow::GetParameterCount() const { return 2; }
 
 	// Perform this operation
-	double Pow::Evaluate(const deque<double>& parameters) const
+	Value Pow::Evaluate(const deque<Value>& parameters) const
 	{
-		return pow(parameters[0], parameters[1]);
+		ValidateParameterTypes(parameters);
+
+		return pow(parameters[0].Number, parameters[1].Number);
 	}
 }
