@@ -10,30 +10,6 @@
 
 #include "Operation.h"
 
-// Operators
-#include "Add.h"
-#include "Subtract.h"
-#include "Multiply.h"
-#include "Divide.h"
-#include "Negate.h"
-
-// Functions
-#include "Pow.h"
-#include "Sin.h"
-#include "Cos.h"
-#include "Tan.h"
-#include "Sqrt.h"
-#include "Abs.h"
-
-// Logarithms
-#include "Ln.h"
-#include "Log.h"
-#include "Log10.h"
-#include "Log2.h"
-
-// Assignments
-#include "Gets.h"
-
 namespace MathRuntimeEvaluatorNamespace
 {
 	struct Operations

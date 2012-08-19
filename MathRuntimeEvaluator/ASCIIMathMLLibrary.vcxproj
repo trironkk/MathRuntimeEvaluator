@@ -72,6 +72,7 @@
   <ItemGroup>
     <ClInclude Include="Abs.h" />
     <ClInclude Include="Add.h" />
+    <ClInclude Include="Avg.h" />
     <ClInclude Include="Cos.h" />
     <ClInclude Include="Divide.h" />
     <ClInclude Include="Evaluator.h" />
@@ -84,6 +85,7 @@
     <ClInclude Include="Log.h" />
     <ClInclude Include="Log10.h" />
     <ClInclude Include="Log2.h" />
+    <ClInclude Include="Modulo.h" />
     <ClInclude Include="Multiply.h" />
     <ClInclude Include="Negate.h" />
     <ClInclude Include="Operation.h" />
@@ -92,7 +94,9 @@
     <ClInclude Include="Pow.h" />
     <ClInclude Include="Sin.h" />
     <ClInclude Include="Sqrt.h" />
+    <ClInclude Include="StdDev.h" />
     <ClInclude Include="Subtract.h" />
+    <ClInclude Include="Sum.h" />
     <ClInclude Include="Tan.h" />
     <ClInclude Include="Utilities.h" />
     <ClInclude Include="Value.h" />
@@ -101,6 +105,7 @@
   <ItemGroup>
     <ClCompile Include="Abs.cpp" />
     <ClCompile Include="Add.cpp" />
+    <ClCompile Include="Avg.cpp" />
     <ClCompile Include="Cos.cpp" />
     <ClCompile Include="Divide.cpp" />
     <ClCompile Include="Gets.cpp" />
@@ -112,6 +117,7 @@
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="Log10.cpp" />
     <ClCompile Include="Log2.cpp" />
+    <ClCompile Include="Modulo.cpp" />
     <ClCompile Include="Multiply.cpp" />
     <ClCompile Include="Negate.cpp" />
     <ClCompile Include="Operation.cpp" />
@@ -120,7 +126,9 @@
     <ClCompile Include="Pow.cpp" />
     <ClCompile Include="Sin.cpp" />
     <ClCompile Include="Sqrt.cpp" />
+    <ClCompile Include="StdDev.cpp" />
     <ClCompile Include="Subtract.cpp" />
+    <ClCompile Include="Sum.cpp" />
     <ClCompile Include="Tan.cpp" />
     <ClCompile Include="Utilities.cpp" />
     <ClCompile Include="Value.cpp" />

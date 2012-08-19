@@ -53,8 +53,7 @@ namespace MathRuntimeEvaluatorNamespace
 		//     - The parameter at this index can be anything - there are no
 		//       restrictions
 		// - '*'
-		//     - There are an indefinite number of parameters. All following
-		//       parameters must abide by the previous character
+		//     - All following parameters must abide by the previous character
 		virtual std::string ParameterTypes() const;
 
 		// Parameter type checking methods

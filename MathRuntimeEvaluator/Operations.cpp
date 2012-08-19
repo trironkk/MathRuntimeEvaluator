@@ -2,6 +2,34 @@
 
 #include "MathRuntimeEvaluatorException.h"
 
+// Operators
+#include "Add.h"
+#include "Subtract.h"
+#include "Multiply.h"
+#include "Divide.h"
+#include "Negate.h"
+
+// Functions
+#include "Pow.h"
+#include "Sin.h"
+#include "Cos.h"
+#include "Tan.h"
+#include "Sqrt.h"
+#include "Abs.h"
+#include "Modulo.h"
+#include "Sum.h"
+#include "Avg.h"
+#include "StdDev.h"
+
+// Logarithms
+#include "Ln.h"
+#include "Log.h"
+#include "Log10.h"
+#include "Log2.h"
+
+// Assignments
+#include "Gets.h"
+
 using std::pair;
 using std::set;
 using std::map;
@@ -32,6 +60,10 @@ namespace MathRuntimeEvaluatorNamespace
 			operations.push_back(*new shared_ptr<Operation>(new Tan()));
 			operations.push_back(*new shared_ptr<Operation>(new Sqrt()));
 			operations.push_back(*new shared_ptr<Operation>(new Abs()));
+			operations.push_back(*new shared_ptr<Operation>(new Modulo()));
+			operations.push_back(*new shared_ptr<Operation>(new Sum()));
+			operations.push_back(*new shared_ptr<Operation>(new Average()));
+			operations.push_back(*new shared_ptr<Operation>(new StdDev()));
 
 			operations.push_back(*new shared_ptr<Operation>(new Ln()));
 			operations.push_back(*new shared_ptr<Operation>(new Log2()));

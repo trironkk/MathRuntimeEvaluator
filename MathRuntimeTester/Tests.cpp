@@ -128,25 +128,25 @@ namespace MathRuntimeTester
 		RunTest("log(e,100)", log(100.0));
 
 		//// modulo operation
-		//cout << endl << "modulo operation" << endl;
-		//RunTest("mod(100, 7)",  2);
+		cout << endl << "modulo operation" << endl;
+		RunTest("mod(100, 7)",  2);
 
 		//// sum operation
-		//cout << endl << "sum operation" << endl;
-		//RunTest("sum(10)", 10);
-		//RunTest("sum(10,4)", 14);
-		//RunTest("sum(-1,-19,100)",  80);
-		//RunTest("sum()",  0);
+		cout << endl << "sum operation" << endl;
+		RunTest("sum(10)", 10);
+		RunTest("sum(10,4)", 14);
+		RunTest("sum(-1,-19,100)",  80);
+		RunTest("sum()",  0);
 
 		//// avg operation
-		//cout << endl << "avg operation" << endl;
-		//RunTest("avg(10)", 10);
-		//RunTest("avg(10,4)", 7);
-		//RunTest("avg(-1,-19,100)",  80.0/3.0);
-		//
+		cout << endl << "avg operation" << endl;
+		RunTest("avg(10)", 10);
+		RunTest("avg(10,4)", 7);
+		RunTest("avg(-1,-19,100)",  80.0/3.0);
+		
 		//// stddev operation
-		//cout << endl << "stddev operation" << endl;
-		//RunTest("stddev(2,4,4,4,5,5,7,9)", 2);
+		cout << endl << "stddev operation" << endl;
+		RunTest("stddev(2,4,4,4,5,5,7,9)", 2);
 
 		// big number tests (handling conversions to and from scientific notation)
 		cout << endl << "big number tests " << endl;
