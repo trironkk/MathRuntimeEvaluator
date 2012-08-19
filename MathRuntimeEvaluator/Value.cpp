@@ -52,4 +52,18 @@ namespace MathRuntimeEvaluatorNamespace
 			return "UnassignedVariable";
 		}
 	}
+
+	// Gets a string representation of this object
+	std::string Value::GetStringRepresentation()
+	{
+		switch(Type)
+		{
+		case Value::RawValue:
+			return "Value: " + ToString(Number);
+		case Value::AssignedVariable:
+			return "Value: " + Name + " = " + ToString(Number);
+		case Value::UnassignedVariable:
+			return "Value: " + Name;
+		}
+	}
 }

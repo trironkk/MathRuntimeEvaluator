@@ -1,7 +1,13 @@
 #include "Expression.h"
 
+#include "MathRuntimeEvaluatorException.h"
+
+#include <iostream>
+#include <sstream>
+
 using std::string;
 using std::deque;
+using std::stringstream;
 using std::shared_ptr;
 
 namespace MathRuntimeEvaluatorNamespace
@@ -88,6 +94,37 @@ namespace MathRuntimeEvaluatorNamespace
 	// Gets a string representation of this expression
 	std::string Expression::GetStringRepresentation()
 	{
-		return "expression string";
+		deque<shared_ptr<Operation>>::iterator operationIter =
+			_operations.begin();
+		deque<Value>::iterator valueIter =
+			_values.begin();
+		deque<Expression::ComponentType>::iterator componentIter =
+			_expressionComponentTypes.begin();
+		int index = 0;
+
+		stringstream result;
+
+		result << "Expression:\n";
+
+		while (componentIter != _expressionComponentTypes.end())
+		{
+			result << index << ":\t";
+			if (*componentIter == VALUE)
+			{
+				
+				result << valueIter->GetStringRepresentation() << "\n";
+				valueIter++;
+			}
+			else
+			{
+				result << (*operationIter)->GetStringRepresentation() << "\n";
+				operationIter++;
+			}
+			componentIter++;
+			index++;
+		}
+		string final = result.str();
+		final.erase(final.size()-1, 1);
+		return final;
 	}
 }

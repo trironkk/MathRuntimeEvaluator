@@ -39,4 +39,13 @@ namespace MathRuntimeEvaluatorNamespace
 		convert << value;
 		return convert.str();
 	}
+
+	// Converts an double value to its string representation
+	std::string ToString(double value)
+	{
+		string Result;
+		ostringstream convert;
+		convert << value;
+		return convert.str();
+	}
 }

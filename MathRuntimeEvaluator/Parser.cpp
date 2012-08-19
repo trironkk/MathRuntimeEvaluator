@@ -35,7 +35,7 @@ namespace Parser
 				(*result).PushBack(Value(*iter));
 			}
 		}
-			
+		
 		return *result;
 	}
 
